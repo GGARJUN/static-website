@@ -8,7 +8,8 @@ import DesktopFeature from "./components/DesktopFeature";
 
 const Feture = () => {
     return (
-        <AuroraBackground className="py-20 sm:py-32">
+        <AuroraBackground className="py-20 sm:py-32 mt-20">
+        {/* <div className="py-20 sm:py-32"> */}
             <motion.div
                 initial={{ opacity: 0.0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -20,13 +21,10 @@ const Feture = () => {
                 className="relative"
             >
 
-                <div className="max-w-2xl mx-auto lg:mx-0 lg:max-w-3xl px-20">
-                    <h2 className="font-bold text-4xl tracking-tight text-white">Every feature you need to win. Try it for yourself.</h2>
-                    <p className="mt-2 text-lg text-gray-400">
-                        Investa was built for investors like you who play by their own rules
-                        and are not going to let SEC regulations get in the way of their
-                        dreams. If other investing tools are afraid to build it, Investa has
-                        it.
+                <div className="px-20 flex flex-col justify-center items-center gap-5">
+                    <h2 className="font-bold text-5xl tracking-tight text-center text-white ">We Exceed Customer Expectations in Quality, Delivery and Service building long term relationships.</h2>
+                    <p className="mt-2 text-lg text-gray-300/70  max-w-4xl text-center">
+                    We specialize in advanced product design and development services, including build-to-specification  build-to-print  and comprehensive system engineering for a wide range of applications. Our expertise spans two primary business verticals.
                     </p>
                 </div>
 
@@ -40,7 +38,8 @@ const Feture = () => {
                 </div> */}
 
             </motion.div>
-        </AuroraBackground>
+            {/* </div> */}
+         </AuroraBackground>
 
     )
 }

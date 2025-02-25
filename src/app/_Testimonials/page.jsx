@@ -41,7 +41,7 @@ const Testimonials = () => {
     ];
     return (
         <div>
-            <h2 className='md:text-7xl text-4xl font-bold text-center my-10 text-slate-800'>Testimonial</h2>
+            <h2 className='md:text-7xl text-4xl font-bold text-center my-10 mb-20 text-slate-800'>Testimonial</h2>
             <div className="bg-gradient-to-r from-red-300/10 via-pink-400/40 to-purple-500/80 md:mx-20 md:mb-20 md:mt-10 rounded-3xl md:py-10 shadow-xl">
                 <AnimatedTestimonials testimonials={testimonials} />
             </div>

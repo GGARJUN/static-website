@@ -154,7 +154,7 @@ const TimeLine = () => {
     ];
     return (
         <div className="">
-            <div className="w-full ">
+            <div className="w-full mt-20">
                 <Timeline data={data} />
             </div>
         </div>

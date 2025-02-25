@@ -140,7 +140,7 @@ function InviteScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Invite people</AppScreen.Title>
+        <AppScreen.Title>Invite Engineer</AppScreen.Title>
         <AppScreen.Subtitle>
           Get tips <span className="text-white">5s sooner</span> for every
           invite.
@@ -173,8 +173,8 @@ function StocksScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Stocks</AppScreen.Title>
-        <AppScreen.Subtitle>March 9, 2022</AppScreen.Subtitle>
+        <AppScreen.Title>Chain Management</AppScreen.Title>
+        <AppScreen.Subtitle>Feb 25, 2025</AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="divide-y divide-gray-100 flex flex-col gap-4">
@@ -273,21 +273,21 @@ function InvestScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full">
       <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Buy $LA</AppScreen.Title>
+        <AppScreen.Title>Buy ₹INR</AppScreen.Title>
         <AppScreen.Subtitle>
-          <span className="text-white">$34.28</span> per share
+          <span className="text-white">₹34.28</span> per Engineer
         </AppScreen.Subtitle>
       </MotionAppScreenHeader>
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-6">
           <div className="space-y-4">
             {[
-              { label: "Number of shares", value: "100" },
+              { label: "Number of Engineer", value: "100" },
               {
                 label: "Current market price",
                 value: (
                   <div className="flex">
-                    $34.28
+                    ₹34.28
                     <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
                       <path
                         d="M17 15V7H9M17 7 7 17"
@@ -300,7 +300,7 @@ function InvestScreen({ custom, animated = false }) {
                   </div>
                 ),
               },
-              { label: "Estimated cost", value: "$3,428.00" },
+              { label: "Estimated cost", value: "₹3,428.00" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -313,7 +313,7 @@ function InvestScreen({ custom, animated = false }) {
               </div>
             ))}
             <div className="rounded-lg bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white">
-              Buy shares
+              Buy Engineer
             </div>
           </div>
         </div>
@@ -324,23 +324,23 @@ function InvestScreen({ custom, animated = false }) {
 
 export const features = [
   {
-    name: "Invite friends for better returns",
+    name: "Cost-effective end-to-end product design with",
     description:
-      "For every friend you invite to Investa, you get insider notifications 5 seconds sooner. And it is 10 seconds if you invite an insider.",
+      "Embedded Development Services employ industrial designers, user experience professionals and engineers to cover every.",
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
   {
-    name: "Notifications on stock dips",
+    name: "Supply Chain Management",
     description:
-      "Get a push notification every time we find out something that is going to lower the share price on your holdings so you can sell before the information hits the public markets.",
+      "Transform your idea into a complete product. Our embedded product development services engineers combine attention to detail and good",
     icon: DeviceNotificationIcon,
     screen: StocksScreen,
   },
   {
-    name: "Invest what you want",
+    name: "Planning, Forecasting and Inventory Management",
     description:
-      "We hide your stock purchases behind thousands of anonymous trading accounts, so suspicious activity can never be traced back to you.",
+      "Embedded Development Services employ industrial designers, user experience professionals and engineers to cover every.",
     icon: DeviceTouchIcon,
     screen: InvestScreen,
   },
