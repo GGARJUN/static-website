@@ -21,7 +21,7 @@ const Banner = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80 "></div>
 
-      <div className="flex flex-col  justify-center gap-10 h-screen mx-20 items-start  relative z-10">
+      <div className="flex flex-col  justify-center gap-10 h-screen md:mx-20 mx-5 items-start  relative z-10">
         {/* Animated Title */}
         <motion.h1
           className="text-4xl md:text-5xl  font font-medium mb-6"
