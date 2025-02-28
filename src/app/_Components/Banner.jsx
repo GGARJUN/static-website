@@ -103,15 +103,13 @@ const Banner = () => {
         </div>
       </div>
       </div>
-      {/* <motion.img
-            src="/images/dummy-logo.png"
-            alt="Client Logo"
+      <motion.h2
             className="mt-8 mx-auto w-32 animate-pulse"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-          /> */}
+          >SUNKEY</motion.h2>
     </section>
   );
 };

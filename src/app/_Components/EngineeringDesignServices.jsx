@@ -123,7 +123,7 @@ const EngineeringDesignServices = () => {
 
                 <div className="my-10 ">
                     <Tabs defaultValue="Hardware" className="">
-                        <TabsList className="w-60">
+                        <TabsList className=" bg-transparent border">
                             <TabsTrigger value="Hardware">Hardware Design</TabsTrigger>
                             <TabsTrigger value="Firmware">Firmware Development</TabsTrigger>
                             <TabsTrigger value="Software">Software Solutions</TabsTrigger>
