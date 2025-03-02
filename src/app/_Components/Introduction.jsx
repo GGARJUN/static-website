@@ -117,7 +117,7 @@ const Introduction = () => {
   };
 
   return (
-    <section className="py-32 bg-white text-gray-900 px-4 sm:px-6 md:px-8 lg:px-20">
+    <section className="py-32 shadow-2xl bg-gradient-to-r  from-pink-300/10 via-blue-200  to-indigo-400/10 overflow-hidden  ">
       {/* Content Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="md:flex justify-between items-center">
@@ -149,7 +149,7 @@ const Introduction = () => {
         </motion.p>
 
 
-        <div className=" mt-8">
+        <div className=" mt-20">
           <div className="md:flex md:justify-between md:gap-6 ">
 
             <motion.div

@@ -184,7 +184,7 @@ const CarouselPrevious = React.forwardRef(
         className={cn(
           "absolute h-8 w-8 rounded-s-lg",
           orientation === "horizontal"
-            ? "left-10 -bottom-16 -translate-y-1/2"
+            ? "left-10 -bottom-28 -translate-y-1/2"
             : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
           className
         )}
@@ -212,8 +212,8 @@ const CarouselNext = React.forwardRef(
         className={cn(
           "absolute h-8 w-8 rounded-e-lg",
           orientation === "horizontal"
-            ? "left-20 -bottom-16 -translate-y-1/2"
-            : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+            ? "left-20 -bottom-28 -translate-y-1/2"
+            : "-bottom-24 left-1/2 -translate-x-1/2 rotate-90",
           className
         )}
         disabled={!canScrollNext}
@@ -281,7 +281,7 @@ const CarouselDots = () => {
   const totalSlides = api?.scrollSnapList().length || 0;
 
   return (
-    <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center w-60 h-1 bg-white rounded-full overflow-hidden">
+    <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex items-center w-60 h-1 bg-white rounded-full overflow-hidden">
       <div
         className="h-full bg-black rounded-full transition-transform duration-300"
         style={{

@@ -101,44 +101,34 @@ const ElectronicDesign = () => {
   const features = [
     {
       icon: <Users className="h-12 w-12 text-blue-500" />,
-      img: "/expertise.png",
-      title: "Expertise",
-      description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.",
+      img: "/pcbservice.png",
+      title: "PCB Design Services",
+      description: "Creating PCBs that are both functional and efficient operation.",
       image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg",
     },
     {
       icon: <Lightbulb className="h-12 w-12 text-blue-500" />,
-      img: "/innovation.png",
-      title: "Innovation",
-      description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.",
+      img: "/layout.png",
+      title: "PCB Layout",
+      description: "Ensuring optimal component placement for better performance.",
       image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg",
     },
 
   ];
 
-  const design = [
+  const features2 = [
     {
-      img: "/expertise.png",
-      title: "Expertise",
-      description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.",
-      image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg",
-    },
-    {
-      img: "/innovation.png",
-      title: "Innovation",
-      description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.",
-      image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg",
-    },
-    {
-      img: "/customer.png",
-      title: "Customer-Centric",
-      description: "Tailored solutions and exceptional support designed around your unique needs.",
+      icon: <Users className="h-12 w-12 text-blue-500" />,
+      img: "/analysis.png",
+      title: "SI/PI Analysis",
+      description: "Conducting signal integrity and power integrity analyses to ensure reliable operation.",
       image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
     },
     {
-      img: "/quality.png",
-      title: "Quality Assurance",
-      description: "Uncompromising standards ensure excellence in every project we deliver.",
+      icon: <Lightbulb className="h-12 w-12 text-blue-500" />,
+      img: "/reverse.png",
+      title: "Reverse Engineering",
+      description: "Analyzing existing products to improve or replicate them.",
       image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg",
     },
 
@@ -146,8 +136,10 @@ const ElectronicDesign = () => {
 
 
 
+
+
   return (
-    <section className="py-32 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-violet-200 to-slate-400 overflow-hidden  ">
+    <section className="py-32 shadow-2xl bg-gradient-to-r  from-pink-300/10 via-blue-200  to-indigo-400/10 overflow-hidden  ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="md:flex justify-between items-center">
           <motion.h2
@@ -245,68 +237,7 @@ const ElectronicDesign = () => {
           {/* Second Section */}
 
           <div className="md:col-span-4 col-span-12 ">
-            {/* <ServiceCarousel /> */}
             <Slider/>
-
-            {/* <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="flex  gap-6 "
-            >
-              {design.map((feature) => (
-                <motion.div
-                  key={feature.title}
-                  variants={itemVariants}
-                  whileHover="hover"
-                  className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group"
-                >
-
-                  <motion.div
-                    variants={imageVariants}
-                    className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500"
-                  >
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      className="w-full h-full object-cover rounded-xl"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
-                  </motion.div>
-                  <div>
-                        <img src="ele.png" alt="" className="w-full h-72"/>
-                  </div>
-
-                  <div className="relative z-10">
-                    <div className="flex  items-center justify-between mb-6">
-                      
-                      <motion.div
-                        className="text-blue-500"
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                      >
-  
-                        <img src={feature.img} alt="" className="w-12" />
-                      </motion.div>
-                    </div>
-                    <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
-                      {feature.description}
-                    </p>
-                    <motion.div
-                      className="mt-6 flex items-center gap-3 text-blue-500 hover:text-blue-700 group-hover:text-white transition-colors duration-300"
-                      whileHover={{ x: 10 }}
-                    >
-                      <button className="text-sm font-medium">Learn More</button>
-                      <ArrowRight className="h-5 w-5" />
-                    </motion.div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div> */}
           </div>
 
           {/* Third Section */}
@@ -319,7 +250,7 @@ const ElectronicDesign = () => {
               viewport={{ once: true }}
               className="flex flex-col gap-6 "
             >
-              {features.map((feature) => (
+              {features2.map((feature) => (
                 <motion.div
                   key={feature.title}
                   variants={itemVariants}

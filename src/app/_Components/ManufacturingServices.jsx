@@ -1,8 +1,9 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaCogs, FaClipboardCheck, FaBoxOpen } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+
+import MSlider from "./_Manufacturing/Slide";
 
 // Animation Variants
 const sectionVariants = {
@@ -58,26 +59,10 @@ const ManufacturingServices = () => {
     return () => clearInterval(timer);
   }, [images.length]);
 
-  const services = [
-    {
-      text: "PCBA (Printed Circuit Board Assembly) ",
-      icon: <FaCogs />,
-      description: "Our PCBA services ensure high-quality, reliable circuit boards for your electronic products, with precision and efficiency.",
-    },
-    {
-      text: "Test Fixtures",
-      icon: <FaClipboardCheck />,
-      description: "We design and build custom test fixtures to ensure your products meet the highest standards of quality and reliability.",
-    },
-    {
-      text: "Box Build",
-      icon: <FaBoxOpen />,
-      description: "From components to finished products, our box build services deliver complete assembly solutions for your manufacturing needs.",
-    },
-  ];
+
 
   return (
-    <section className="py-32  bg-gradient-to-b from-gray-100 to-white overflow-hidden">
+    <section className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <motion.h2
@@ -106,7 +91,7 @@ const ManufacturingServices = () => {
           SunKey Technologies provides comprehensive manufacturing services to support your product development needs.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -136,7 +121,8 @@ const ManufacturingServices = () => {
               </motion.span>
             </motion.div>
           ))}
-        </div>
+        </div> */}
+        <MSlider/>
       </div>
     </section>
   );

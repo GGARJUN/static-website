@@ -23,24 +23,16 @@ const itemVariants = {
 // Sample Data
 const design = [
   {
-    img: "/expertise.png",
-    title: "Expertise",
-    description:
-      "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.",
-    // image:
-    //   "https://img.freepik.com/free-photo/3d-rendering-biorobots-concept_23-2149524396.jpg",
-    cimg:
-      "https://img.freepik.com/free-vector/ai-technology-microchip-background-vector-digital-transformation-concept_53876-117808.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
+    img: "/dms.png",
+    title: "Design Modification Services",
+    description:"Enhancing existing designs for better functionality or manufacturability.",
+    cimg:"https://img.freepik.com/free-photo/man-architect-looking-tablet-with-building-design-plan-development-project-architectural-office-young-engineer-using-device-blueprint-model-construction-layout_482257-28750.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
   },
   {
-    img: "/innovation.png",
-    title: "Innovation",
-    description:
-      "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.",
-    // image:
-    // "https://img.freepik.com/free-photo/3d-rendering-biorobots-concept_23-2149524396.jpg",
-    cimg:
-      "https://img.freepik.com/free-vector/ai-technology-microchip-background-vector-digital-transformation-concept_53876-117808.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
+    img: "/dfm.png",
+    title: "Design for Manufacturability",
+    description:"Ensuring designs are optimized for efficient production.",
+    cimg:"https://img.freepik.com/free-photo/two-colleagues-factory_1303-14059.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
   },
 ];
 
@@ -89,7 +81,7 @@ const Slider = () => {
             <img
               src={design[index].cimg}
               alt=""
-              className="w-full h-72 rounded-t-xl"
+              className="w-full h-64 rounded-t-xl object-cover"
             />
           </div>
 

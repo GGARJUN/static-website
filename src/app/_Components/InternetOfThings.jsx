@@ -1,6 +1,5 @@
 "use client"
 import { motion } from "framer-motion";
-import { FaIndustry, FaHome, FaLightbulb, FaWater, } from "react-icons/fa";
 import Grid from "./Grid";
 
 const InternetOfThings = () => {
@@ -16,27 +15,14 @@ const InternetOfThings = () => {
       }
     },
   };
-  const listVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-  const services = [
-    { text: "Industrial IoT: Enhancing industrial efficiency.", icon: <FaIndustry /> },
-    { text: "Smart Homes IoT: Convenient living solutions.", icon: <FaHome /> },
-    { text: "Smart Lighting IoT: Energy-efficient lighting.", icon: <FaLightbulb /> },
-    { text: "Level Monitoring: IoT-based monitoring solutions.", icon: <FaWater /> },
-  ];
+
   return (
-    <section className="py-16 bg-white md:mx-24 mx-5">
+    <section className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 overflow-hidden">
       <div className="container mx-auto">
         <div className="md:flex justify-between items-center">
           <motion.h2
-            className="text-4xl sm:text-5xl  font-extrabold text-center mb-8 sm:mb-4 text-gray-900"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center mb-8 sm:mb-4 text-gray-900"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -54,7 +40,7 @@ const InternetOfThings = () => {
         </div>
 
         <motion.p
-          className="text-lg text-gray-500 font-medium  my-8 sm:mb-12 max-w-3xl"
+          className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -62,37 +48,7 @@ const InternetOfThings = () => {
         >
           We specialize in IoT solutions that transform industries and homes. Our focus areas include
         </motion.p>
-        {/* <div className="flex flex-col md:flex-row items-center">
-          <motion.ul
-            className="md:w-1/2 grid gap-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={listVariants}
-          >
-            {services.map((service, index) => (
-              <motion.li
-                key={index}
-                className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                variants={itemVariants}
-              >
-                <span className="text-3xl text-purple-600">{service.icon}</span>
-                <p className="text-lg text-gray-700">{service.text}</p>
-              </motion.li>
-            ))}
-          </motion.ul>
-          <motion.img
-            src="/images/iot.jpg"
-            alt="Internet of Things"
-            className="md:w-1/2 mt-6 md:mt-0 rounded-lg shadow-lg"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          />
-        </div> */}
-
-        <Grid/>
+        <Grid />
       </div>
     </section>
   )
