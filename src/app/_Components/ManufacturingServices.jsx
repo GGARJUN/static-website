@@ -77,12 +77,11 @@ const ManufacturingServices = () => {
   ];
 
   return (
-    <section className="py-16  bg-gradient-to-b from-gray-100 to-white overflow-hidden">
+    <section className="py-32  bg-gradient-to-b from-gray-100 to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center md:text-left mb-4 sm:mb-6 text-gray-900"
-            initial="hidden"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center mb-8 sm:mb-4 text-gray-900" initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={sectionVariants}
@@ -98,7 +97,7 @@ const ManufacturingServices = () => {
         </div>
 
         <motion.p
-          className="text-lg text-gray-500 font-medium my-8 sm:mb-12 max-w-3xl"
+          className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -126,15 +125,15 @@ const ManufacturingServices = () => {
                 <p className="text-sm opacity-80 mb-10">{service.description}</p>
               </div>
               <motion.span
-                  className="text-white  flex  gap-3 items-center absolute bottom-5 left-[-100%] group-hover:left-5  transition-all duration-500 ease-in-out cursor-pointer"
-                >
-                  Read More
-                </motion.span>
-                <motion.span
-                  className="flex gap-3   items-center absolute bottom-5 left-[15px] group-hover:left-28 transition-all duration-300 ease-in-out"
-                >
-                  <ArrowRight />
-                </motion.span>
+                className="text-white  flex  gap-3 items-center absolute bottom-5 left-[-100%] group-hover:left-5  transition-all duration-500 ease-in-out cursor-pointer"
+              >
+                Read More
+              </motion.span>
+              <motion.span
+                className="flex gap-3   items-center absolute bottom-5 left-[15px] group-hover:left-28 transition-all duration-300 ease-in-out"
+              >
+                <ArrowRight />
+              </motion.span>
             </motion.div>
           ))}
         </div>

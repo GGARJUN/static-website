@@ -18,17 +18,17 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full px-20 py-4 z-50 transition-all ${
+      className={`fixed top-0 left-0 w-full px-20 2xl:py-8 py-4 z-50 transition-all ${
         scrolled ? "bg-white shadow-lg text-black fixed" : "absolute bg-transparent text-white"
       }`}
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div>
-          <Link href="/">
+          <Link href="/" className="-m-1.5 p-1.5">
             <h2
               className={`${
-                scrolled ? "text-3xl font-bold duration-300" : "text-3xl font-bold"
+                scrolled ? "text-4xl font-bold duration-300" : "text-4xl font-bold"
               }`}
             >
               SunKey

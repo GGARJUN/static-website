@@ -17,7 +17,6 @@ export function NavLinks() {
     const about = [
         { title: "Who we are", href: "/about/who_we_are", },
         { title: "Career", href: "/about/career", },
-        { title: "Contact", href: "/docs/primitives/progress", },
         { title: "Partners", href: "/docs/primitives/progress", },
     ]
     return (

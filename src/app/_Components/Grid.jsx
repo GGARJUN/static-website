@@ -3,8 +3,6 @@ import { BentoCard, BentoGrid } from '@/components/magicui/bento-grid';
 import React from 'react'
 import { FaIndustry, FaHome, FaLightbulb, FaWater } from "react-icons/fa";
 
-import { cn } from '@/lib/utils';
-import { Marquee } from '@/components/magicui/marquee';
 
 const Grid = () => {
 

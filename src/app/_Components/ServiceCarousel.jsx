@@ -103,7 +103,7 @@ const ServiceCarousel = () => {
 
   return (
     <div className="col-span-8">
-      <div className="relative w-full h-[550px] ">
+      <div className="relative w-full  ">
         {/* Navigation Arrows */}
         <button
           onClick={goToPrev}
@@ -125,7 +125,7 @@ const ServiceCarousel = () => {
             <div className="flex justify-evenly items-center gap-5 w-full">
               {/* First Card (Left) */}
               <motion.div
-                className=" group md:h-[550px] h-[600px] shadow-xl bg-white/70 w-full rounded-lg relative"
+                className=" group md:h-[650px] h-[600px] shadow-xl bg-white/70 w-full rounded-lg relative"
                 variants={cardVariants}
               >
                 <img  src={cards[currentSlide].image} alt="" className="rounded-t-lg  object-scale-down transition-all duration-300" />

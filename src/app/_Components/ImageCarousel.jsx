@@ -1,53 +1,99 @@
-"use client";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-// Animation Variants
-const slideVariants = {
-  hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-  exit: { opacity: 0, x: -100, transition: { duration: 0.5 } },
-};
+const images = [
+    "https://img.freepik.com/free-photo/set-construction-tools-wooden-table_155003-865.jpg",
+    "https://img.freepik.com/free-photo/technology-concept-with-futuristic-element_23-2151910929.jpg",
+    "https://img.freepik.com/free-photo/futurism-perspective-digital-nomads-lifestyle_23-2151252519.jpg",
+    "https://img.freepik.com/free-photo/workman-wearing-hard-hat-working-with-metal-constructions-factory_1303-26645.jpg",
+];
 
 const ImageCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const images = [
-    "https://img.freepik.com/free-photo/business-entrepreneur-man-presenting-company-statistics-using-tablet-financial-presentation_482257-4608.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/futuristic-technology-hologram_23-2151917425.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/portrait-engineer-job-site-work-hours_23-2151589589.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
-    "https://img.freepik.com/free-photo/person-working-with-ai-robot_23-2151015325.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
-  ];
+    const [index, setIndex] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [direction, setDirection] = useState(1);
 
-  // Auto-play functionality
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 2000); // Change slide every 2 seconds (as per your updated interval)
-    return () => clearInterval(timer); // Cleanup on unmount
-  }, [images.length]);
+    const nextSlide = () => {
+        setDirection(1);
+        setIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevSlide = () => {
+        setDirection(-1);
+        setIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    const goToSlide = (slideIndex) => {
+        setDirection(slideIndex > index ? 1 : -1);
+        setIndex(slideIndex);
+    };
+
+    useEffect(() => {
+        if (!isPlaying) return;
+        const interval = setInterval(nextSlide, 2000);
+        return () => clearInterval(interval);
+    }, [index, isPlaying]);
+
+    return (
+        <div className="flex flex-col justify-center  gap-10">
+            <div className="  w-full  mx-auto overflow-hidden rounded-lg shadow-xl">
+                {/* Image Transition */}
+                <AnimatePresence mode="wait">
+                    <motion.img
+                        key={index}
+                        src={images[index]}
+                        alt={`Slide ${index}`}
+                        className="w-full h-[480px] object-cover rounded-lg"
+                        initial={{ opacity: 0, x: direction * 100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -direction * 100 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                    />
+                </AnimatePresence>
+            </div>
+
+            <div className="flex justify-between items-center mt-1 mx-3">
+                {/* Navigation Buttons */}
+                <div className="flex justify-center items-center gap-2 ">
+                    <Button
+                        onClick={prevSlide}
+                        className=""
+                    >
+                        <ArrowLeft className="" />
+                    </Button>
+                    <Button
+                        onClick={nextSlide}
+                        className=" "
+                    >
+                        <ArrowRight className="" />
+                    </Button>
+                </div>
+
+                {/* Dots Indicator */}
+                <div className="  ">
+                    {images.map((_, i) => (
+                        <motion.button
+                            key={i}
+                            className={`w-10 h-1 -ml-2 rounded-full transition-all ${i === index ? "bg-black  shadow-lg" : "bg-gray-400"
+                                }`}
+                            onClick={() => goToSlide(i)}
+                        ></motion.button>
+                    ))}
+                </div>
 
 
-  return (
-    <div className="h-[614px] w-[100%] border rounded-lg  overflow-hidden relative">
-      {/* Carousel Container */}
-      <div className="w-full h-full relative">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={currentSlide}
-            src={images[currentSlide]}
-            alt={`Slide ${currentSlide + 1}`}
-            className="absolute inset-0 w-full h-full object-cover rounded-lg"
-            variants={slideVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          />
-        </AnimatePresence>
-
-
-      </div>
-    </div>
-  );
+                {/* Play/Pause Button */}
+                <Button
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    className=" "
+                >
+                    {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                </Button>
+            </div>
+        </div>
+    );
 };
 
 export default ImageCarousel;

@@ -2,6 +2,7 @@ import { Geist_Mono, Space_Grotesk, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Header from "./_Navbar/Header";
 import Footer from "./_Components/Footer";
+import NavBar from "./_Navbar/NavBar";
 
 // Load Google Fonts
 const spaceGrotesk = Space_Grotesk({
@@ -34,7 +35,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${spaceGrotesk.variable} antialiased`}
       >
-        <Header />
+        {/* <Header /> */}
+        <NavBar/>
         {children}
         <Footer/>
       </body>

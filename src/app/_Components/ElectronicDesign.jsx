@@ -2,7 +2,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FaMicrochip, FaDraftingCompass, FaChartLine, FaTools } from "react-icons/fa";
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lightbulb, Shield, UserCheck, Users } from "lucide-react";
+import Slider from "./_ElectronicDesign/Slider";
 import ServiceCarousel from "./ServiceCarousel";
 
 // Animation Variants
@@ -64,6 +65,30 @@ const imageVariants = {
   },
 };
 
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+      delayChildren: 0.4,
+    },
+  },
+};
+
+
+
+const glowVariants = {
+  animate: {
+    scale: [1, 1.2, 1],
+    opacity: [0.3, 0.6, 0.3],
+    transition: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+  },
+};
+
+
+
 const ElectronicDesign = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
@@ -73,29 +98,60 @@ const ElectronicDesign = () => {
     "https://img.freepik.com/free-photo/close-up-wires-tech-background_23-2148882631.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
   ];
 
-  // Auto-cycle images
-  useState(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000); // Change image every 4 seconds
-    return () => clearInterval(timer);
-  }, [images.length]);
+  const features = [
+    {
+      icon: <Users className="h-12 w-12 text-blue-500" />,
+      img: "/expertise.png",
+      title: "Expertise",
+      description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.",
+      image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg",
+    },
+    {
+      icon: <Lightbulb className="h-12 w-12 text-blue-500" />,
+      img: "/innovation.png",
+      title: "Innovation",
+      description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.",
+      image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg",
+    },
 
-  const services = [
-    { text: "PCB Design Services: Creating PCBs that are both functional and efficient.", icon: <FaMicrochip /> },
-    { text: "PCB Layout: Ensuring optimal component placement for better performance.", icon: <FaDraftingCompass /> },
-    { text: "SI/PI Analysis: Conducting signal integrity and power integrity analyses to ensure reliable operation.", icon: <FaChartLine /> },
-    { text: "Reverse Engineering: Analyzing existing products to improve or replicate them.", icon: <FaTools /> },
-    { text: "Design Modification Services: Enhancing existing designs for better functionality or manufacturability.", icon: <FaTools /> },
-    { text: "Design for Manufacturability: Ensuring designs are optimized for efficient production.", icon: <FaMicrochip /> },
   ];
 
+  const design = [
+    {
+      img: "/expertise.png",
+      title: "Expertise",
+      description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.",
+      image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg",
+    },
+    {
+      img: "/innovation.png",
+      title: "Innovation",
+      description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.",
+      image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg",
+    },
+    {
+      img: "/customer.png",
+      title: "Customer-Centric",
+      description: "Tailored solutions and exceptional support designed around your unique needs.",
+      image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
+    },
+    {
+      img: "/quality.png",
+      title: "Quality Assurance",
+      description: "Uncompromising standards ensure excellence in every project we deliver.",
+      image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg",
+    },
+
+  ];
+
+
+
   return (
-    <section  className="py-16 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-violet-200 to-slate-400 overflow-hidden h-[2100px] md:h-full">
+    <section className="py-32 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-violet-200 to-slate-400 overflow-hidden  ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="md:flex justify-between items-center">
           <motion.h2
-            className="text-4xl sm:text-5xl  font-extrabold text-center mb-8 sm:mb-4 text-gray-900"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center mb-8 sm:mb-4 text-gray-900"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -104,7 +160,7 @@ const ElectronicDesign = () => {
             Electronic Design
           </motion.h2>
           <motion.button
-            className="border px-4 sm:px-6 py-2 sm:py-3 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out"
+            className="border px-4 sm:px-6 py-2 sm:py-3 mt-5 md:mt-0 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out"
             variants={sectionVariants}
           >
             Learn More
@@ -112,7 +168,7 @@ const ElectronicDesign = () => {
         </div>
 
         <motion.p
-          className="text-lg text-gray-500 font-medium  my-8 sm:mb-12 max-w-3xl"
+          className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -122,162 +178,200 @@ const ElectronicDesign = () => {
         </motion.p>
 
 
-        <div className=" w-full  mb-10 grid grid-cols-12 justify-center items-center gap-5">
+        <div className=" w-full  mb-10 grid grid-cols-12  gap-5">
 
           {/* First Section */}
 
 
           <div className="md:col-span-4 col-span-12">
-            <div className="flex flex-col  justify-evenly w-full items-center gap-5 h-[550px]">
-
-
-              <div className="border group bg-white/70 hover:bg-gradient-to-tl from-blue-500 to-violet-800 transition-all duration-500 text-gray-900 hover:text-white h-[50%] w-full p-5  flex flex-col justify- rounded-lg relative overflow-hidden">
-                <span className="text-2xl sm:text-2xl text-blue-600 bg-blue-100 p-3 w-12 rounded-full">
-                  <FaMicrochip />
-                </span>
-
-
-                {/* Title (Gradient Text) */}
-                <h2 className="mt-3 group-hover:text-white font-bold text-2xl bg-gradient-to-tl from-violet-700 to-blue-600 bg-clip-text text-transparent">
-                  PCB Design Services
-                </h2>
-
-                {/* Description */}
-                <p className="py-3 text-md text-gray-700 group-hover:text-white  ">
-                  Designing PCBs requires a balance of functionality and efficiency.
-                </p>
-
-                {/* Read More (Initially Hidden) */}
-                <motion.span
-                  className="text-white flex  gap-3 items-center absolute bottom-5 left-[-100%] group-hover:left-5  transition-all duration-500 ease-in-out cursor-pointer"
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex flex-col gap-6 "
+            >
+              {features.map((feature) => (
+                <motion.div
+                  key={feature.title}
+                  variants={itemVariants}
+                  whileHover="hover"
+                  className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group"
                 >
-                  Read More
-                </motion.span>
-                <motion.span
-                  className="flex gap-3 text-black group-hover:text-white items-center absolute bottom-5 left-[15px] group-hover:left-28 transition-all duration-300 ease-in-out"
-                >
-                  <ArrowRight />
-                </motion.span>
+                  {/* Image Layer */}
+                  <motion.div
+                    variants={imageVariants}
+                    className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500"
+                  >
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
+                  </motion.div>
 
-
-              </div>
-
-
-              <div className="border group bg-white/70 hover:bg-gradient-to-tl from-blue-500 to-violet-800 transition-all duration-500 text-gray-900 hover:text-white h-[50%] w-full p-5  flex flex-col justify- rounded-lg relative overflow-hidden">
-
-
-                <span className="text-2xl sm:text-2xl text-blue-600 bg-blue-100 p-3 w-12 rounded-full">
-                  <FaDraftingCompass />
-                </span>
-
-
-                {/* Title (Gradient Text) */}
-                <h2 className="mt-3 group-hover:text-white font-bold text-2xl bg-gradient-to-tl from-violet-700 to-blue-600 bg-clip-text text-transparent">
-                  PCB Layout
-                </h2>
-
-                {/* Description */}
-                <p className="py-3 text-md text-gray-700 group-hover:text-white  ">
-                  Ensuring optimal component placement for better performance.
-                </p>
-
-                {/* Read More (Initially Hidden) */}
-                <motion.span
-                  className="text-white flex  gap-3 items-center absolute bottom-5 left-[-100%] group-hover:left-5  transition-all duration-500 ease-in-out cursor-pointer"
-                >
-                  Read More
-                </motion.span>
-                <motion.span
-                  className="flex gap-3 text-black group-hover:text-white items-center absolute bottom-5 left-[15px] group-hover:left-28 transition-all duration-300 ease-in-out"
-                >
-                  <ArrowRight />
-                </motion.span>
-
-
-              </div>
-
-
-            </div>
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <motion.div
+                        className="text-blue-500"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        {/* {feature.icon} */}
+                        <img src={feature.img} alt="" className="w-12" />
+                      </motion.div>
+                    </div>
+                    <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
+                      {feature.description}
+                    </p>
+                    <motion.div
+                      className="mt-6 flex items-center gap-3 text-blue-500 hover:text-blue-700 group-hover:text-white transition-colors duration-300"
+                      whileHover={{ x: 10 }}
+                    >
+                      <button className="text-sm font-medium">Learn More</button>
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
           {/* Second Section */}
 
-          <div className="md:col-span-8 col-span-12 ">
-            {/* <div className="flex  justify-evenly w-full items-center gap-5 h-[550px]">
+          <div className="md:col-span-4 col-span-12 ">
+            {/* <ServiceCarousel /> */}
+            <Slider/>
 
+            {/* <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex  gap-6 "
+            >
+              {design.map((feature) => (
+                <motion.div
+                  key={feature.title}
+                  variants={itemVariants}
+                  whileHover="hover"
+                  className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group"
+                >
 
-              <div className="bg-gray-200 group h-[550px] w-full rounded-lg relative">
-
-                <img src="https://hcltech.imgix.net/sites/default/files/inline-images/article-600x360-2.webp" alt="" className="rounded-t-lg" />
-
-
-                <div className="px-7 mt-14">
-                  <div className="bg-blue-200 text-blue-600 py-3 w-14 flex justify-center items-center rounded-full text-3xl">
-                    <FaMicrochip className="" />
+                  <motion.div
+                    variants={imageVariants}
+                    className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500"
+                  >
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
+                  </motion.div>
+                  <div>
+                        <img src="ele.png" alt="" className="w-full h-72"/>
                   </div>
-                  <h2 className="my-5 font-bold text-2xl bg-gradient-to-tl from-violet-700 to-blue-600 bg-clip-text text-transparent">
-                    SI/PI Analysis
-                  </h2>
 
-                  <p className=" text-md text-gray-700   ">
-                    Conducting signal integrity and power integrity analyses to ensure reliable operation.
-                  </p>
-
-                  <motion.span
-                    className=" flex  opacity-0 group-hover:opacity-100 gap-3 items-center absolute bottom-5 left-[-30%] group-hover:left-5  transition-all duration-500 ease-in-out cursor-pointer"
-                  >
-                    Read More
-                  </motion.span>
-                  <motion.span
-                    className="flex gap-3 text-black  items-center absolute bottom-5 left-[25px] group-hover:left-28 transition-all duration-300 ease-in-out"
-                  >
-                    <ArrowRight />
-                  </motion.span>
-
-                </div>
-
-              </div>
-
-
-              <div className="bg-gray-200 group h-[550px] w-full rounded-lg relative">
-
-                <img src="https://hcltech.imgix.net/sites/default/files/inline-images/article-600x360-2.webp" alt="" className="rounded-t-lg" />
-
-
-                <div className="px-7 mt-14">
-                  <div className="bg-blue-200 text-blue-600 py-3 w-14 flex justify-center items-center rounded-full text-3xl">
-                    <FaMicrochip className="" />
+                  <div className="relative z-10">
+                    <div className="flex  items-center justify-between mb-6">
+                      
+                      <motion.div
+                        className="text-blue-500"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+  
+                        <img src={feature.img} alt="" className="w-12" />
+                      </motion.div>
+                    </div>
+                    <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
+                      {feature.description}
+                    </p>
+                    <motion.div
+                      className="mt-6 flex items-center gap-3 text-blue-500 hover:text-blue-700 group-hover:text-white transition-colors duration-300"
+                      whileHover={{ x: 10 }}
+                    >
+                      <button className="text-sm font-medium">Learn More</button>
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.div>
                   </div>
-                  <h2 className="my-5 font-bold text-2xl bg-gradient-to-tl from-violet-700 to-blue-600 bg-clip-text text-transparent">
-                    SI/PI Analysis
-                  </h2>
+                </motion.div>
+              ))}
+            </motion.div> */}
+          </div>
 
-                  <p className=" text-md text-gray-700   ">
-                    Conducting signal integrity and power integrity analyses to ensure reliable operation.
-                  </p>
+          {/* Third Section */}
 
-                  <motion.span
-                    className=" flex  opacity-0 group-hover:opacity-100 gap-3 items-center absolute bottom-5 left-[-30%] group-hover:left-5  transition-all duration-500 ease-in-out cursor-pointer"
+          <div className="md:col-span-4 col-span-12">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex flex-col gap-6 "
+            >
+              {features.map((feature) => (
+                <motion.div
+                  key={feature.title}
+                  variants={itemVariants}
+                  whileHover="hover"
+                  className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group"
+                >
+                  {/* Image Layer */}
+                  <motion.div
+                    variants={imageVariants}
+                    className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500"
                   >
-                    Read More
-                  </motion.span>
-                  <motion.span
-                    className="flex gap-3 text-black  items-center absolute bottom-5 left-[25px] group-hover:left-28 transition-all duration-300 ease-in-out"
-                  >
-                    <ArrowRight />
-                  </motion.span>
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
+                  </motion.div>
 
-                </div>
-
-              </div>
-
-            </div> */}
-
-            <ServiceCarousel/>
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <motion.div
+                        className="text-blue-500"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        {/* {feature.icon} */}
+                        <img src={feature.img} alt="" className="w-12" />
+                      </motion.div>
+                    </div>
+                    <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
+                      {feature.description}
+                    </p>
+                    <motion.div
+                      className="mt-6 flex items-center gap-3 text-blue-500 hover:text-blue-700 group-hover:text-white transition-colors duration-300"
+                      whileHover={{ x: 10 }}
+                    >
+                      <button className="text-sm font-medium">Learn More</button>
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
         </div>
-        
+
       </div>
     </section>
   );

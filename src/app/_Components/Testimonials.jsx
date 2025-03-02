@@ -11,8 +11,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-
-import { motion } from "framer-motion";
 import { useRef } from "react";
 
 const Testimonials = () => {

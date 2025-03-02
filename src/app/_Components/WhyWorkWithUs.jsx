@@ -66,24 +66,28 @@ const WhyWorkWithUs = () => {
   const features = [
     {
       icon: <Users className="h-12 w-12 text-blue-500" />,
+      img: "/expertise.png",
       title: "Expertise",
       description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.",
       image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg",
     },
     {
       icon: <Lightbulb className="h-12 w-12 text-blue-500" />,
+      img: "/innovation.png",
       title: "Innovation",
       description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.",
       image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg",
     },
     {
       icon: <UserCheck className="h-12 w-12 text-blue-500" />,
+      img: "/customer.png",
       title: "Customer-Centric",
       description: "Tailored solutions and exceptional support designed around your unique needs.",
       image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
     },
     {
       icon: <Shield className="h-12 w-12 text-blue-500" />,
+      img: "/quality.png",
       title: "Quality Assurance",
       description: "Uncompromising standards ensure excellence in every project we deliver.",
       image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg",
@@ -91,8 +95,8 @@ const WhyWorkWithUs = () => {
   ];
 
   return (
-    <section style={{ backgroundImage: "url('https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')" }} className="py-24 bg-cover overflow-hidden relative">
-  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80 "></div>
+    <section style={{ backgroundImage: "url('https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')" }} className="py-32 bg-cover overflow-hidden relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80 "></div>
       {/* Background Glow Effect (optional, subtle) */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-blue-100/20 to-transparent"
@@ -100,7 +104,7 @@ const WhyWorkWithUs = () => {
         animate="animate"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -60 }}
@@ -109,34 +113,30 @@ const WhyWorkWithUs = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl  font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white mb-4">
             Why Work With Us
           </h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="text-lg text-gray-300 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto"
           >
             SunKey Technologies stands out as a partner of choice for businesses seeking reliable, high-quality solutions
           </motion.p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="md:flex md:justify-between md:gap-5 ">
-          <div className="md:h-96 md:w-[50%] rounded-lg mb-10 md:mb-0 ">
-            {/* <img src="https://img.freepik.com/free-photo/portrait-engineer-job-site-work-hours_23-2151589589.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="rounded-lg object-cover w-full" />
-            <img src="https://img.freepik.com/free-photo/portrait-engineer-job-site-work-hours_23-2151589589.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="rounded-lg object-cover w-full" />
-            <img src="https://img.freepik.com/free-photo/portrait-engineer-job-site-work-hours_23-2151589589.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="rounded-lg object-cover w-full" />
-            <img src="https://img.freepik.com/free-photo/portrait-engineer-job-site-work-hours_23-2151589589.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="rounded-lg object-cover w-full" /> */}
-            <ImageCarousel/>
+        <div className="md:flex md:justify-between items-start md:gap-6 mt-20">
+          <div className=" md:w-[50%] h-full rounded-lg mb-10 md:mb-0 ">
+            <ImageCarousel />
           </div>
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2  gap-4"
+            className="grid md:grid-cols-2  gap-6"
           >
             {features.map((feature) => (
               <motion.div
@@ -166,13 +166,14 @@ const WhyWorkWithUs = () => {
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
-                      {feature.icon}
+                      {/* {feature.icon} */}
+                      <img src={feature.img} alt="" className="w-12" />
                     </motion.div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">
+                  <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
                     {feature.description}
                   </p>
                   <motion.div
@@ -188,24 +189,6 @@ const WhyWorkWithUs = () => {
           </motion.div>
 
 
-        </div>
-
-        {/* Call-to-Action Buttons */}
-        <div className="mt-12 text-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
-          >
-            Explore More Trends
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="ml-4 bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
-          >
-            See All Events
-          </motion.button>
         </div>
       </div>
     </section>
