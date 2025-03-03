@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { NavLinks } from "../components/NavLinks";
+import { NavLinks } from "./NavLinks";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
