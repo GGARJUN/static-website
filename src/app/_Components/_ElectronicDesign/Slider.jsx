@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 // Animation Variants
 const itemVariants = {
-  hidden: { opacity: 0, y: 0,  },
+  hidden: { opacity: 0, y: 0, },
   visible: {
     opacity: 1,
     y: 0,
@@ -13,7 +13,7 @@ const itemVariants = {
     transition: { type: "spring", stiffness: 100, damping: 10, duration: 0.6 },
   },
   hover: {
-    scale: 1.05,
+
     boxShadow: "0 15px 25px rgba(0, 0, 0, 0.15)",
     transition: { duration: 0.3 },
   },
@@ -25,14 +25,14 @@ const design = [
   {
     img: "/dms.png",
     title: "Design Modification Services",
-    description:"Enhancing existing designs for better functionality or manufacturability.",
-    cimg:"https://img.freepik.com/free-photo/man-architect-looking-tablet-with-building-design-plan-development-project-architectural-office-young-engineer-using-device-blueprint-model-construction-layout_482257-28750.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
+    description: "Enhancing existing designs for better functionality or manufacturability.",
+    cimg: "https://img.freepik.com/free-photo/man-architect-looking-tablet-with-building-design-plan-development-project-architectural-office-young-engineer-using-device-blueprint-model-construction-layout_482257-28750.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
   },
   {
     img: "/dfm.png",
     title: "Design for Manufacturability",
-    description:"Ensuring designs are optimized for efficient production.",
-    cimg:"https://img.freepik.com/free-photo/two-colleagues-factory_1303-14059.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
+    description: "Ensuring designs are optimized for efficient production.",
+    cimg: "https://img.freepik.com/free-photo/two-colleagues-factory_1303-14059.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
   },
 ];
 
@@ -60,31 +60,16 @@ const Slider = () => {
         <motion.div
           key={index}
           variants={itemVariants}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
+          initial="initial"
+          whileHover="hover"
+          
           className="relative bg-white rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group overflow-hidden"
         >
-          {/* <motion.div
-            variants={imageVariants}
-            className="absolute inset-0 z-0 opacity-10 rounded-xl"
-          >
-            <img
-              src={design[index].image}
-              alt={design[index].title}
-              className="w-full h-full object-cover rounded-xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
-          </motion.div> */}
-
           <div>
-            <img
-              src={design[index].cimg}
-              alt=""
-              className="w-full h-64 rounded-t-xl object-cover"
-            />
+            <img src={design[index].cimg} alt="" className="w-full h-64 rounded-t-xl object-cover" />
           </div>
 
+          {/* Content */}
           <div className="relative z-10 p-6">
             <div className="flex items-center justify-between mb-6">
               <motion.div
@@ -95,19 +80,34 @@ const Slider = () => {
                 <img src={design[index].img} alt="" className="w-12" />
               </motion.div>
             </div>
+
             <h3 className="text-3xl font-semibold mb-3 text-gray-900 transition-colors duration-300">
               {design[index].title}
             </h3>
             <p className="text-gray-600 text-md leading-relaxed transition-colors duration-300">
               {design[index].description}
             </p>
-            <motion.div
-              className="mt-6 flex items-center gap-3 text-blue-500 hover:text-blue-700 transition-colors duration-300"
-              whileHover={{ x: 10 }}
-            >
-              <button className="text-sm font-medium">Learn More</button>
-              <ArrowRight className="h-5 w-5" />
-            </motion.div>
+
+            {/* Learn More Button + Arrow (Triggers on Main Card Hover) */}
+            <div className="flex items-center gap-3 transition-colors duration-300 mt-6 ">
+              <motion.div
+                className=" "
+                variants={{
+                  hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } },
+                  initial: { x: -20, opacity: 0 },
+                }}
+              >
+                <motion.button className="text-sm font-medium text-black">
+                  Learn More
+                </motion.button>
+              </motion.div>
+
+
+              <motion.div className="h-5 w-5 text-black">
+                <ArrowRight className="h-5 w-5 -translate-x-20  group-hover:translate-x-0 transition-all duration-300 " />
+              </motion.div>
+            </div>
+
           </div>
         </motion.div>
       </AnimatePresence>
@@ -130,9 +130,8 @@ const Slider = () => {
         {design.map((_, i) => (
           <button
             key={i}
-            className={`w-6 h-1 rounded-full transition-all ${
-              i === index ? "bg-black shadow-lg" : "bg-gray-400"
-            }`}
+            className={`w-6 h-1 rounded-full transition-all ${i === index ? "bg-black shadow-lg" : "bg-gray-400"
+              }`}
             onClick={() => setIndex(i)}
           ></button>
         ))}

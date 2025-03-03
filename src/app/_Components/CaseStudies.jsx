@@ -121,49 +121,7 @@ const CaseStudies = () => {
         >
           Case Studies
         </motion.h2>
-        {/* <motion.div
-          className="grid md:grid-cols-3 gap-8 mt-20"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        > */}
-        {/* {caseStudies.map((study, index) => (
-            <motion.div
-              key={index}
-              className= "group bg-black/20 h-[550px] rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl"
 
-              whileHover="hover"
-            >
-              <div className="relative h-60 overflow-hidden">
-                <motion.img
-                  src={study.img}
-                  alt={study.title}
-                  className="w-full h-full object-cover"
-                  initial={{ scale: 1 }}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent"></div>
-              </div>
-              <div className="py-10 px-5">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  {study.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{study.desc}</p>
-                <motion.span
-                  className="text-black  flex  gap-3 items-center absolute bottom-2 left-[-100%] group-hover:left-5  transition-all duration-500 ease-in-out cursor-pointer"
-                >
-                  Read More
-                </motion.span>
-                <motion.span
-                  className="flex gap-3  text-black items-center absolute bottom-2 left-[10px] group-hover:left-28 transition-all duration-300 ease-in-out"
-                >
-                  <ArrowRight />
-                </motion.span>
-              </div>
-            </motion.div>
-          ))} */}
 
         <motion.div
           variants={containerVariants}
@@ -176,8 +134,9 @@ const CaseStudies = () => {
             <motion.div
               key={feature.title}
               variants={itemVariants}
+              initial="initial"
               whileHover="hover"
-              className="relative bg-white  rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group w-full"
+              className="relative bg-white  rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group "
             >
               {/* Image Layer */}
               <motion.div
@@ -191,9 +150,9 @@ const CaseStudies = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
               </motion.div>
-                <div className="rounded-t-xl">
-                  <img src={feature.timg} alt="" className="w-full h-72 rounded-t-xl object-cover"/>
-                </div>
+              <div className="rounded-t-xl">
+                <img src={feature.timg} alt="" className="w-full h-72 rounded-t-xl object-cover" />
+              </div>
 
               {/* Content */}
               <div className="relative z-10 2xl:py-14 py-10 px-8 2xl:px-10">
@@ -203,23 +162,38 @@ const CaseStudies = () => {
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    {/* {feature.icon} */}
                     <img src={feature.img} alt="" className="w-12" />
                   </motion.div>
                 </div>
+
                 <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
                   {feature.title}
                 </h3>
+
                 <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
                   {feature.description}
                 </p>
-                <motion.div
-                  className="mt-6 flex items-center gap-3 text-blue-500 hover:text-blue-700 group-hover:text-white transition-colors duration-300"
-                  whileHover={{ x: 10 }}
-                >
-                  <button className="text-sm font-medium">Learn More</button>
-                  <ArrowRight className="h-5 w-5" />
-                </motion.div>
+
+                {/* Learn More Button + Arrow (Triggers on Main Card Hover) */}
+                <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
+                  <motion.div
+                    className=" "
+                    variants={{
+                      hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } },
+                      initial: { x: -20, opacity: 0 },
+                    }}
+                  >
+                    <motion.button className="text-sm font-medium text-white">
+                      Learn More
+                    </motion.button>
+                  </motion.div>
+
+
+                  <motion.div className="h-5 w-5 text-black">
+                    <ArrowRight className="h-5 w-5 group-hover:text-white -translate-x-20 -z-50 group-hover:translate-x-0 transition-all duration-300 " />
+                  </motion.div>
+                </div>
+
               </div>
             </motion.div>
           ))}

@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Patners = () => {
+const Careers = () => {
   return (
     <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
       <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Patners</h2>
+      <h2 className='text-5xl font-bold'>Careers</h2>
       </div>
     </div>
   )
 }
 
-export default Patners
+export default Careers

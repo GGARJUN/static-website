@@ -138,54 +138,70 @@ const WhyWorkWithUs = () => {
             viewport={{ once: true }}
             className="grid md:grid-cols-2  gap-6"
           >
-            {features.map((feature) => (
-              <motion.div
-                key={feature.title}
-                variants={itemVariants}
-                whileHover="hover"
-                className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group"
-              >
-                {/* Image Layer */}
+              {features.map((feature) => (
                 <motion.div
-                  variants={imageVariants}
-                  className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500"
+                  key={feature.title}
+                  variants={itemVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group"
                 >
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
-                </motion.div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <motion.div
-                      className="text-blue-500"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      {/* {feature.icon} */}
-                      <img src={feature.img} alt="" className="w-12" />
-                    </motion.div>
-                  </div>
-                  <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
-                    {feature.description}
-                  </p>
+                  {/* Image Layer */}
                   <motion.div
-                    className="mt-6 flex items-center gap-3 text-blue-500 hover:text-blue-700 group-hover:text-white transition-colors duration-300"
-                    whileHover={{ x: 10 }}
+                    variants={imageVariants}
+                    className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500"
                   >
-                    <button className="text-sm font-medium">Learn More</button>
-                    <ArrowRight className="h-5 w-5" />
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
                   </motion.div>
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-5">
+                      <motion.div
+                        className="text-blue-500"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <img src={feature.img} alt="" className="w-12" />
+                      </motion.div>
+                    </div>
+
+                    <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">
+                      {feature.description}
+                    </p>
+
+                    {/* Learn More Button + Arrow (Triggers on Main Card Hover) */}
+                    <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
+                      <motion.div
+                        className=" "
+                        variants={{
+                          hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } },
+                          initial: { x: -20, opacity: 0 },
+                        }}
+                      >
+                        <motion.button className="text-sm font-medium text-white">
+                          Learn More
+                        </motion.button>
+                      </motion.div>
+
+
+                      <motion.div className="h-5 w-5 text-black">
+                        <ArrowRight className="h-5 w-5 group-hover:text-white -translate-x-20 -z-50 group-hover:translate-x-0 transition-all duration-300 " />
+                      </motion.div>
+                    </div>
+                    
+                  </div>
+                </motion.div>
+              ))}
           </motion.div>
 
 
