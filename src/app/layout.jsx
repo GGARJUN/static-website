@@ -1,7 +1,8 @@
 import { Geist_Mono, Space_Grotesk, Dancing_Script } from "next/font/google";
 import "./globals.css";
-import Header from "../pages/Header/Header";
-import Footer from "../pages/Footer/Footer";
+import Footer from "@/pages/Footer/Footer";
+import Header from "@/pages/NavBar/Header";
+
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
