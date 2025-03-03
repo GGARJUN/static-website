@@ -1,26 +1,14 @@
 "use client";
 import { React, useState } from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import {
-    ArrowPathIcon,
-    Bars3Icon,
     ChartPieIcon,
     CursorArrowRaysIcon,
     FingerPrintIcon,
     SquaresPlusIcon,
-    XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronRightIcon, ChevronUpIcon } from "lucide-react";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 export function NavLinks() {
     const about = [
