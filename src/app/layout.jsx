@@ -35,8 +35,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${spaceGrotesk.variable} antialiased`}
       >
-        {/* <Header /> */}
-        <NavBar/>
+        <Header />
+        {/* <NavBar/> */}
         {children}
         <Footer/>
       </body>

@@ -57,15 +57,15 @@ const Testimonials = () => {
                 <CarouselItem key={index}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className=" aspect-auto  my-36 mx-20">
+                      <CardContent className=" aspect-auto  my-20 mx-20">
                         <div className="flex  items-center mb-4">
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            className="w-24 h-24 rounded-full mr-4 object-cover"
+                            className="w-20 h-20 rounded-full mr-4 object-cover"
                           />
                           <div>
-                            <h3 className="text-lg md:text-4xl 2xl:text-5xl font-semibold text-gray-800">
+                            <h3 className="text-lg md:text-4xl  font-semibold text-gray-800">
                               {testimonial.name}
                             </h3>
                             <p className="text-md md:text-2xl mt-3 text-gray-600">{testimonial.role}</p>
@@ -85,11 +85,11 @@ const Testimonials = () => {
           </Carousel>
         </div>
       </div>
-      <div className="absolute top-40 left-[15%]  -rotate-[20deg]">
-        <img src="https://img.freepik.com/free-photo/portrait-businesswoman-isolated-home_23-2148813223.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="h-40 w-40 object-cover rounded-full border-2 border-gray-900 p-1" />
+      <div className="absolute top-40 left-[22%]  -rotate-[12deg]">
+        <img src="https://img.freepik.com/free-photo/portrait-businesswoman-isolated-home_23-2148813223.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="h-32 w-32 object-cover rounded-full border-4 shadow-2xl border-gray-900 p-1" />
       </div>
-      <div className="absolute bottom-40 right-[15%]  rotate-[10deg]">
-        <img src="https://img.freepik.com/free-photo/portrait-smiling-young-businesswoman-standing-with-her-arm-crossed-against-gray-wall_23-2147943827.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="h-40 w-40 object-cover rounded-full border-2 border-gray-900 p-1" />
+      <div className="absolute bottom-40 right-[20%]  rotate-[2deg]">
+        <img src="https://img.freepik.com/free-photo/portrait-smiling-young-businesswoman-standing-with-her-arm-crossed-against-gray-wall_23-2147943827.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className="h-32 w-32 object-cover rounded-full border-4 shadow-2xl border-gray-900 p-1" />
       </div>
     </section>
   );

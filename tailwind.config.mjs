@@ -252,7 +252,7 @@ export default {
     		}
     	}
     },
-	plugins: [require("tailwindcss-animate"), addVariablesForColors,
+	plugins: [require("tailwindcss-animate",'tailwind-scrollbar-hide'), addVariablesForColors,
 		function ({ matchUtilities, theme }) {
 			matchUtilities(
 			  {

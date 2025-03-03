@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
     Dialog,
     DialogPanel,
@@ -64,12 +64,6 @@ const resources = [
     { name: 'News', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
 ]
 
-const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-]
 
 
 
@@ -105,11 +99,26 @@ const NavBar = () => {
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [isNestedOpen, setIsNestedOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const timeoutRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        clearTimeout(timeoutRef.current);
+        setIsOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => {
+            setIsOpen(false);
+        }, 2000); // Hide popover after 2 seconds
+    };
+
+
     return (
         <header
             className={`top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                    ? `fixed bg-white shadow-lg text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`
-                    : "absolute bg-white text-black"
+                ? `fixed bg-white shadow-lg text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`
+                : "absolute bg-white text-black"
                 }`}
         >
             <nav aria-label="Global" className="mx-auto flex  items-center justify-between px-20 2xl:py-8 py-4">
@@ -135,15 +144,13 @@ const NavBar = () => {
                 </div>
                 <PopoverGroup className="hidden lg:flex lg:gap-x-7">
                     <Popover className="relative">
-                        <PopoverButton className="inline-flex items-center gap-x-1 2xl:text-xl text-sm/6 font-semibold  group hover:text-blue-600 ">
+                        <PopoverButton className="inline-flex items-center gap-x-1 2xl:text-[1rem] text-sm/6 font-semibold  group hover:text-blue-600 ">
                             About Us
                             <ChevronUpIcon
                                 aria-hidden="true"
                                 className="size-5 flex-none text-gray-400 transition-transform duration-300 group-hover:text-blue-600 group-data-[open]:rotate-180"
                             />
                         </PopoverButton>
-
-
                         <PopoverPanel
                             transition
                             className="absolute top-full -left-8 z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
@@ -170,9 +177,10 @@ const NavBar = () => {
                         </PopoverPanel>
                     </Popover>
 
-                    <Popover className="relative">
+                    <Popover className="relative"
+                    >
                         {/* Main Popover Button */}
-                        <PopoverButton className="flex items-center gap-x-1 2xl:text-xl text-sm/6 font-semibold  group hover:text-blue-600">
+                        <PopoverButton className="flex items-center gap-x-1 2xl:text-[1rem] text-sm/6 font-semibold  group hover:text-blue-600">
                             Engineering Design Service
                             <ChevronUpIcon
                                 aria-hidden="true"
@@ -181,6 +189,7 @@ const NavBar = () => {
                         </PopoverButton>
 
                         {/* Main Popover Panel */}
+
                         <PopoverPanel className="absolute top-full left-0 z-10 mt-3 w-screen max-w-md overflow-x-visible rounded-3xl bg-white ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
                         >
                             <div className="p-4">
@@ -208,7 +217,7 @@ const NavBar = () => {
                                         onMouseLeave={() => setIsNestedOpen(false)}
                                         className="flex w-full items-center justify-evenly 2xl:text-xl text-sm font-semibold text-gray-900 group hover:text-blue-600 mt-3"
                                     >
-                                        Manufacturing Service
+                                        Electronic Design
                                         <ChevronRightIcon className="w-5 h-5 text-gray-400 transition-transform duration-300 group-hover:text-blue-600 group-hover:translate-x-1" />
                                     </PopoverButton>
 
@@ -243,10 +252,11 @@ const NavBar = () => {
                                 </Popover>
                             </div>
                         </PopoverPanel>
+
                     </Popover>
 
                     <Popover className="relative">
-                        <PopoverButton className="flex items-center gap-x-1 2xl:text-xl text-sm/6 font-semibold  group hover:text-blue-600">
+                        <PopoverButton className="flex items-center gap-x-1 2xl:text-[1rem] text-sm/6 font-semibold  group hover:text-blue-600">
                             Manufacturing Service
                             <ChevronUpIcon
                                 aria-hidden="true"
@@ -282,7 +292,7 @@ const NavBar = () => {
                     </Popover>
 
                     <Popover className="relative">
-                        <PopoverButton className="flex items-center gap-x-1 2xl:text-xl text-sm/6 font-semibold  group hover:text-blue-600">
+                        <PopoverButton className="flex items-center gap-x-1 2xl:text-[1rem] text-sm/6 font-semibold  group hover:text-blue-600">
                             Internet of things
                             <ChevronUpIcon
                                 aria-hidden="true"
@@ -320,7 +330,7 @@ const NavBar = () => {
                     <Popover className="relative">
                         {({ open }) => (
                             <>
-                                <PopoverButton className="flex items-center gap-x-1 2xl:text-xl text-sm/6 font-semibold  group hover:text-blue-600">
+                                <PopoverButton className="flex items-center gap-x-1 2xl:text-[1rem] text-sm/6 font-semibold  group hover:text-blue-600">
                                     Resources
                                     <ChevronUpIcon
                                         aria-hidden="true"
@@ -364,12 +374,12 @@ const NavBar = () => {
                         )}
                     </Popover>
 
-                    <a href="#" className="2xl:text-xl text-sm/6  font-semibold hover:text-blue-600">
+                    <a href="#" className="2xl:text-[1rem] text-sm/6  font-semibold hover:text-blue-600">
                         Case Studies
                     </a>
 
 
-                    <a href="#" className="2xl:text-xl text-sm/6 font-semibold hover:text-blue-600">
+                    <a href="#" className="2xl:text-[1rem] text-sm/6 font-semibold hover:text-blue-600">
                         Contect Us
                     </a>
 
@@ -381,20 +391,19 @@ const NavBar = () => {
                 <div className="fixed inset-0 z-10" />
                 <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
-                            <img
-                                alt=""
-                                src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                                className="h-8 w-auto"
-                            />
-                        </a>
+                        <Link href="/" className=" ">
+                            <h2
+                                className={`${scrolled ? "text-4xl font-bold duration-300" : "text-4xl font-bold"
+                                    }`}
+                            >
+                                SunKey
+                            </h2>
+                        </Link>
                         <button
                             type="button"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="-mt-2.5 rounded-md p-2.5 "
+                            className="ml-10  block items-center justify-center rounded-md p-2.5 text-gray-700 bg-black"
                         >
-                            <span className="sr-only">Close menu</span>
                             <XMarkIcon aria-hidden="true" className="size-6" />
                         </button>
                     </div>

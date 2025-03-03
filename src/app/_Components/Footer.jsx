@@ -39,7 +39,7 @@ const itemVariants = {
 const Footer = () => {
   const navigation = {
      SUNKEY:[],
-    "About Us": ["Who we are", "Careers", "Contact", "Partners"],
+    "About Us": ["Who we are", "Careers", "Partners"],
     "Engineering Design Services": ["Hardware", "Firmware", "Software", "Mechanical"],
     "Electronic Design": ["PCB Design Services", "PCB Layout", "SI/PI Analysis", "Reverse Engineering", "Design Modification Services", "Design for Manufacturability"],
     "Manufacturing Services": ["PCBA", "Test Fixtures", "Box Build"],
@@ -54,16 +54,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
+
         >
           {Object.entries(navigation).map(([category, items]) => (
             <motion.div
               key={category}
               className="space-y-4"
-              variants={itemVariants}
+
             >
               <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-gray-100">
                 {category}
