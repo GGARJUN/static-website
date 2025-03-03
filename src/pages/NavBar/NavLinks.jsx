@@ -10,7 +10,7 @@ import {
 import { ChevronRightIcon, ChevronUpIcon } from "lucide-react";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
-export function NavLinks() {
+const NavLinks = () => {
     const about = [
         { name: 'Who we are', description: 'Get a better understanding of your', href: "/about/who_we_are", icon: ChartPieIcon },
         { name: 'Careers', description: 'Speak directly to your customers', href: "/about/careers", icon: CursorArrowRaysIcon },
@@ -21,7 +21,8 @@ export function NavLinks() {
         { name: 'Firmware', description: 'Speak directly to your customers', href: '/engineering_design_services/firmware', icon: CursorArrowRaysIcon },
         { name: 'Software', description: 'Your customers’ data will be safe and secure', href: '/engineering_design_services/software', icon: FingerPrintIcon },
         { name: 'Mechanical', description: 'Connect with third-party tools', href: '/engineering_design_services/mechanical', icon: SquaresPlusIcon },
-        {name: 'Electronic Design', description: 'Connect with third-party tools', icon: CursorArrowRaysIcon,
+        {
+            name: 'Electronic Design', description: 'Connect with third-party tools', icon: CursorArrowRaysIcon,
             children: [
                 { name: 'PCB Design Service', description: 'Get a better understanding of your design', href: '/electronic_design/pcb_design_service', icon: ChartPieIcon },
                 { name: 'PCB Layout', description: 'Speak directly to your customers', href: '/electronic_design/pcb_layout', icon: CursorArrowRaysIcon },
@@ -233,4 +234,4 @@ export function NavLinks() {
     );
 }
 
-
+export default NavLinks;

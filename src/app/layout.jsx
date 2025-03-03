@@ -4,6 +4,7 @@ import Footer from "@/pages/Footer/Footer";
 import Header from "@/pages/NavBar/Header";
 
 
+
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
