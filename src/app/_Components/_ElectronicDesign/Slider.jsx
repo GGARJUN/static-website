@@ -5,19 +5,17 @@ import { Button } from "@/components/ui/button";
 
 // Animation Variants
 const itemVariants = {
-  hidden: { opacity: 0, y: 0, },
+  hidden: { opacity: 0, x: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: "spring", stiffness: 100, damping: 10, duration: 0.6 },
+    x: 0,
+    transition: { duration: 0.6, ease: "linear" },
   },
   hover: {
     boxShadow: "0 15px 25px rgba(0, 0, 0, 0.15)",
-    transition: { duration: 0.3 },
+    transition: { duration: 0.3, ease: "linear" },
   },
 };
-
 
 // Sample Data
 const design = [
@@ -59,13 +57,13 @@ const Slider = () => {
         <motion.div
           key={index}
           variants={itemVariants}
-          initial="initial"
-          whileHover="hover"
-          exit="initial"
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
           className="relative bg-white rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group overflow-hidden"
         >
           <div>
-            <img src={design[index].cimg} alt="" className="w-full h-64 rounded-t-xl object-cover" />
+            <img src={design[index].cimg} alt="" className="w-full h-64 rounded-t-xl object-cover transition-all duration-500 ease-linear" />
           </div>
 
           {/* Content */}
@@ -74,39 +72,37 @@ const Slider = () => {
               <motion.div
                 className="text-blue-500"
                 whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, ease: "linear" }}
               >
                 <img src={design[index].img} alt="" className="w-12" />
               </motion.div>
             </div>
 
-            <h3 className="text-3xl font-semibold mb-3 text-gray-900 transition-colors duration-300">
+            <h3 className="text-3xl font-semibold mb-3 text-gray-900 transition-all duration-500 ease-linear">
               {design[index].title}
             </h3>
-            <p className="text-gray-600 text-md leading-relaxed transition-colors duration-300">
+            <p className="text-gray-600 text-md leading-relaxed transition-all duration-500 ease-linear">
               {design[index].description}
             </p>
 
             {/* Learn More Button + Arrow (Triggers on Main Card Hover) */}
-            <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
+            <div className="flex items-center gap-3 transition-all duration-500 ease-linear mt-6">
               <motion.div
                 className=" "
-                variants={{
-                  hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } },
-                  initial: { x: -20, opacity: 0 },
-                }}
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1, transition: { duration: 0.6, ease: "linear" } }}
               >
                 <motion.button className="text-sm font-medium text-black">
                   Learn More
                 </motion.button>
               </motion.div>
 
-
-              <motion.div className="h-5 w-5 text-black">
-                <ArrowRight className="h-5 w-5 -translate-x-20  group-hover:translate-x-0 transition-all duration-300 " />
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1, transition: { duration: 0.6, ease: "linear" } }} className="h-5 w-5 text-black">
+                <ArrowRight className="h-5 w-5 " />
               </motion.div>
             </div>
-
           </div>
         </motion.div>
       </AnimatePresence>
@@ -129,8 +125,7 @@ const Slider = () => {
         {design.map((_, i) => (
           <button
             key={i}
-            className={`w-6 h-1 rounded-full transition-all ${i === index ? "bg-black shadow-lg" : "bg-gray-400"
-              }`}
+            className={`w-6 h-1 rounded-full transition-all duration-500 ease-linear ${i === index ? "bg-black shadow-lg" : "bg-gray-400"}`}
             onClick={() => setIndex(i)}
           ></button>
         ))}
