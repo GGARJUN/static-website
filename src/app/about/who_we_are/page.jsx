@@ -1,4 +1,4 @@
-import Banner from '@/app/_Components/Banner'
+import Banner from '@/pages/Hero/Banner'
 import React from 'react'
 
 const WhoWeAre = () => {
