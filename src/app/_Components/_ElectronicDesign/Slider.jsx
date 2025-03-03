@@ -13,7 +13,6 @@ const itemVariants = {
     transition: { type: "spring", stiffness: 100, damping: 10, duration: 0.6 },
   },
   hover: {
-
     boxShadow: "0 15px 25px rgba(0, 0, 0, 0.15)",
     transition: { duration: 0.3 },
   },
@@ -62,7 +61,7 @@ const Slider = () => {
           variants={itemVariants}
           initial="initial"
           whileHover="hover"
-          
+          exit="initial"
           className="relative bg-white rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group overflow-hidden"
         >
           <div>
@@ -89,7 +88,7 @@ const Slider = () => {
             </p>
 
             {/* Learn More Button + Arrow (Triggers on Main Card Hover) */}
-            <div className="flex items-center gap-3 transition-colors duration-300 mt-6 ">
+            <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
               <motion.div
                 className=" "
                 variants={{
