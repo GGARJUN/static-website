@@ -1,16 +1,26 @@
 "use client";
-import { React, useState } from "react";
+import { React, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
+    Bars3Icon,
     ChartPieIcon,
     CursorArrowRaysIcon,
     FingerPrintIcon,
     SquaresPlusIcon,
+    XMarkIcon,
 } from '@heroicons/react/24/outline'
+import {
+    Dialog,
+    DialogPanel,
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+} from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { ChevronRightIcon, ChevronUpIcon } from "lucide-react";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-
 const NavLinks = () => {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const about = [
         { name: 'Who we are', description: 'Get a better understanding of your', href: "/about/who_we_are", icon: ChartPieIcon },
         { name: 'Careers', description: 'Speak directly to your customers', href: "/about/careers", icon: CursorArrowRaysIcon },
@@ -33,6 +43,14 @@ const NavLinks = () => {
             ]
         }
     ];
+    const design= [
+        { name: 'PCB Design Service', description: 'Get a better understanding of your design', href: '/electronic_design/pcb_design_service', icon: ChartPieIcon },
+        { name: 'PCB Layout', description: 'Speak directly to your customers', href: '/electronic_design/pcb_layout', icon: CursorArrowRaysIcon },
+        { name: 'SI/PI Analysis', description: 'Speak directly to your customers', href: '/electronic_design/analysis', icon: FingerPrintIcon },
+        { name: 'Reverse Engineering', description: 'Connect with third-party tools', href: '/electronic_design/reverse_engineering', icon: SquaresPlusIcon },
+        { name: 'Design Modification Service', description: 'Modify and improve designs', href: '/electronic_design/design_modification_service', icon: CursorArrowRaysIcon },
+        { name: 'Design for Manufacturability', description: 'Connect with third-party tools', href: '/electronic_design/design_for_manufacturability', icon: ChartPieIcon },
+    ]
     const manufactring = [
         { name: 'PCBA', description: 'Get a better understanding of your ', href: '/manufacturing/pcba', icon: ChartPieIcon },
         { name: 'Test Fixture', description: 'Speak directly to your customers', href: '/manufacturing/text_fixture', icon: CursorArrowRaysIcon },
@@ -60,178 +78,293 @@ const NavLinks = () => {
         setOpenMenu(false);
         setOpenSubmenu(null);
     };
+    const [scrolled, setScrolled] = useState(false);
+    const [hidden, setHidden] = useState(false);
+    const lastScrollY = useRef(0); // Store last scroll position persistently
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            setScrolled(currentScrollY > 0); // True if scrolled down
+            if (currentScrollY > lastScrollY.current + 10) {
+                setHidden(true); // Hide when scrolling down
+            } else if (currentScrollY < lastScrollY.current - 10) {
+                setHidden(false); // Show when scrolling up
+            }
+            lastScrollY.current = currentScrollY; // Update last scroll position
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
-        <div className="flex justify-center items-center">
-            <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                                <div className="p-4">{about.map((item) => (
-                                    <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
-                                            <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
-                                        </div>
-                                        <div className="flex-auto">
-                                            <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}<span className="absolute inset-0" /></Link>
-                                            <p className="mt-1 text-gray-600">{item.description}</p>
-                                        </div>
-                                    </div>))}
-                                </div>
-                            </div>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
-            </NavigationMenu>
-            <nav className="relative">
-                <ul className="flex gap-4">
-                    <li className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        <button className="inline-flex gap-1 h-9 w-max items-center justify-center rounded-md 2xl:px-5 px-3 2xl:text-[1rem] text-sm font-medium focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50">
-                            Engineering Design Services
-                            <ChevronUpIcon className={`w-3 h-3 transition-transform duration-500 ${openMenu ? "rotate-180" : "rotate-0"}`} />
+        <div
+            className={`top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+                ? `fixed bg-white shadow-lg text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`
+                : "absolute bg-transparent text-white"
+                }`}
+        >
+            <div className="mx-auto flex items-center justify-between px-20 py-6">
+                <div>
+                    <Link href="/" className=" ">
+                        <h2
+                            className={`${scrolled ? "text-4xl font-bold duration-300" : "text-4xl font-bold"
+                                }`}
+                        >
+                            SunKey
+                        </h2>
+                    </Link>
+
+                    <div className="flex lg:hidden">
+                        <button
+                            type="button"
+                            onClick={() => setMobileMenuOpen(true)}
+                            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        >
+                            <span className="sr-only">Open main menu</span>
+                            <Bars3Icon aria-hidden="true" className="size-6" />
                         </button>
-                        {openMenu && (
-                            <div className="absolute left-0 top-8 mt-2 w-96 bg-white shadow-lg rounded-xl p-4 ring-1 ring-gray-900/5">
-                                {engineering.map((item, index) => (
-                                    <div key={item.name} className="relative" onMouseEnter={() => item.children && setOpenSubmenu(index)} onMouseLeave={() => setOpenSubmenu(null)}>
-                                        <div className="group flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-gray-100">
-                                            <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
-                                                {item.icon && <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
+                    </div>
+                </div>
+                <div className="hidden lg:flex lg:gap-10 items-center">
+                    <div className="flex justify-center items-center">
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                                            <div className="p-4">{about.map((item) => (
+                                                <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
+                                                    <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+                                                        <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
+                                                    </div>
+                                                    <div className="flex-auto">
+                                                        <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}<span className="absolute inset-0" /></Link>
+                                                        <p className="mt-1 text-gray-600">{item.description}</p>
+                                                    </div>
+                                                </div>))}
                                             </div>
-                                            <div className="flex-auto">
-                                                <Link href={item.href || "#"} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}</Link>
-                                                <p className="text-gray-600 text-xs">{item.description}</p>
-                                            </div>
-                                            {item.children && <ChevronRightIcon className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-2 duration-200" />}
                                         </div>
-                                        {item.children && openSubmenu === index && (
-                                            <div className="absolute left-[99%] -top-20 ml-2 w-96 bg-white shadow-lg rounded-xl p-4 ring-1 ring-gray-900/5">
-                                                {item.children.map((child) => (
-                                                    <div key={child.name} className="flex group items-center gap-x-6 p-4 rounded-lg text-sm hover:bg-gray-100">
-                                                        <div className="flex size-11 items-center justify-center flex-none bg-gray-100 rounded-lg group-hover:bg-white">
-                                                            {child.icon && <child.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                        <nav className="relative">
+                            <ul className="flex gap-4">
+                                <li className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                    <button className="inline-flex gap-1 h-9 w-max items-center justify-center rounded-md 2xl:px-5 px-3 2xl:text-[1rem] text-sm font-medium focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50">
+                                        Engineering Design Services
+                                        <ChevronUpIcon className={`w-3 h-3 transition-transform duration-500 ${openMenu ? "rotate-180" : "rotate-0"}`} />
+                                    </button>
+                                    {openMenu && (
+                                        <div className="absolute left-0 top-8 mt-2 w-96 bg-white shadow-lg rounded-xl p-4 ring-1 ring-gray-900/5">
+                                            {engineering.map((item, index) => (
+                                                <div key={item.name} className="relative" onMouseEnter={() => item.children && setOpenSubmenu(index)} onMouseLeave={() => setOpenSubmenu(null)}>
+                                                    <div className="group flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-gray-100">
+                                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+                                                            {item.icon && <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
                                                         </div>
                                                         <div className="flex-auto">
-                                                            <Link href={child.href || "#"} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{child.name}</Link>
-                                                            <p className="text-gray-600 text-xs">{child.description}</p>
+                                                            <Link href={item.href || "#"} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}</Link>
+                                                            <p className="text-gray-600 text-xs">{item.description}</p>
+                                                        </div>
+                                                        {item.children && <ChevronRightIcon className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-2 duration-200" />}
+                                                    </div>
+                                                    {item.children && openSubmenu === index && (
+                                                        <div className="absolute left-[99%] -top-20 ml-2 w-96 bg-white shadow-lg rounded-xl p-4 ring-1 ring-gray-900/5">
+                                                            {item.children.map((child) => (
+                                                                <div key={child.name} className="flex group items-center gap-x-6 p-4 rounded-lg text-sm hover:bg-gray-100">
+                                                                    <div className="flex size-11 items-center justify-center flex-none bg-gray-100 rounded-lg group-hover:bg-white">
+                                                                        {child.icon && <child.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
+                                                                    </div>
+                                                                    <div className="flex-auto">
+                                                                        <Link href={child.href || "#"} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{child.name}</Link>
+                                                                        <p className="text-gray-600 text-xs">{child.description}</p>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </li>
+                            </ul>
+                        </nav>
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger>Manufacturing Service</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                                            <div className="p-4">
+                                                {manufactring.map((item) => (
+                                                    <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
+                                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+                                                            <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
+                                                        </div>
+                                                        <div className="flex-auto">
+                                                            <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
+                                                                {item.name}
+                                                                <span className="absolute inset-0" />
+                                                            </Link>
+                                                            <p className="mt-1 text-gray-600">{item.description}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                             </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </li>
-                </ul>
-            </nav>
-            <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <NavigationMenuTrigger>Manufacturing Service</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                                <div className="p-4">
-                                    {manufactring.map((item) => (
-                                        <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
-                                            <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
-                                                <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
-                                            </div>
-                                            <div className="flex-auto">
-                                                <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
-                                                    {item.name}
-                                                    <span className="absolute inset-0" />
-                                                </Link>
-                                                <p className="mt-1 text-gray-600">{item.description}</p>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger>Internet of Things</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                                            <div className="p-4">
+                                                {iot.map((item) => (
+                                                    <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
+                                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+                                                            <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
+                                                        </div>
+                                                        <div className="flex-auto">
+                                                            <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
+                                                                {item.name}
+                                                                <span className="absolute inset-0" />
+                                                            </Link>
+                                                            <p className="mt-1 text-gray-600">{item.description}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
-            </NavigationMenu>
-            <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <NavigationMenuTrigger>Internet of Things</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                                <div className="p-4">
-                                    {iot.map((item) => (
-                                        <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
-                                            <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
-                                                <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
-                                            </div>
-                                            <div className="flex-auto">
-                                                <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
-                                                    {item.name}
-                                                    <span className="absolute inset-0" />
-                                                </Link>
-                                                <p className="mt-1 text-gray-600">{item.description}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
-            </NavigationMenu>
-            <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                            <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                                <div className="p-4">
-                                    {resources.map((item) => (
-                                        <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
-                                            <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
-                                                <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
-                                            </div>
-                                            <div className="flex-auto">
-                                                <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
-                                                    {item.name}
-                                                    <span className="absolute inset-0" />
-                                                </Link>
-                                                <p className="mt-1 text-gray-600">{item.description}</p>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                                            <div className="p-4">
+                                                {resources.map((item) => (
+                                                    <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
+                                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+                                                            <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
+                                                        </div>
+                                                        <div className="flex-auto">
+                                                            <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
+                                                                {item.name}
+                                                                <span className="absolute inset-0" />
+                                                            </Link>
+                                                            <p className="mt-1 text-gray-600">{item.description}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
                                         </div>
-                                    ))}
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <Link href="/docs" legacyBehavior passHref>
+                                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                            Case Studies
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <Link href="/docs" legacyBehavior passHref>
+                                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                            Contact Us
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                    </div>
+                </div>
+                <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden z-50">
+                    <div className="fixed inset-0 z-10" />
+                    <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div className="flex items-center justify-between">
+                            <Link href="/"><h2 className="text-4xl font-bold duration-300">SunKey</h2></Link>
+                            <button type="button" onClick={() => setMobileMenuOpen(false)} className="ml-10 block items-center justify-center rounded-md p-2.5 text-gray-700 bg-black"><XMarkIcon aria-hidden="true" className="size-6" /></button>
+                        </div>
+                        <div className="mt-6 flow-root">
+                            <div className="-my-6 divide-y divide-gray-500/10">
+                                <div className="space-y-2 py-6">
+                                    <Disclosure as="div" className="-mx-3">
+                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About Us<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
+                                        <DisclosurePanel className="mt-2 space-y-2">
+                                            {[...about].map((item) => (
+                                                <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
+                                            ))}
+                                        </DisclosurePanel>
+                                    </Disclosure>
+                                    <Disclosure as="div" className="-mx-3">
+                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Engineering Design Services<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
+                                        <DisclosurePanel className="mt-2 space-y-2">
+                                            {[...engineering].map((item) => (
+                                                <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
+                                            ))}
+                                        </DisclosurePanel>
+                                    </Disclosure>
+                                    <Disclosure as="div" className="-mx-3">
+                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Electronic Design<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
+                                        <DisclosurePanel className="mt-2 space-y-2">
+                                            {[...design].map((item) => (
+                                                <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
+                                            ))}
+                                        </DisclosurePanel>
+                                    </Disclosure>
+                                    <Disclosure as="div" className="-mx-3">
+                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Manufacturing Services<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
+                                        <DisclosurePanel className="mt-2 space-y-2">
+                                            {[...manufactring].map((item) => (
+                                                <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
+                                            ))}
+                                        </DisclosurePanel>
+                                    </Disclosure>
+                                    <Disclosure as="div" className="-mx-3">
+                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Internet of Things<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
+                                        <DisclosurePanel className="mt-2 space-y-2">
+                                            {[...iot].map((item) => (
+                                                <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
+                                            ))}
+                                        </DisclosurePanel>
+                                    </Disclosure>
+                                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Case Studies</a>
+                                    <Disclosure as="div" className="-mx-3">
+                                        <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Resources<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
+                                        <DisclosurePanel className="mt-2 space-y-2">
+                                            {[...resources].map((item) => (
+                                                <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
+                                            ))}
+                                        </DisclosurePanel>
+                                    </Disclosure>
+                                    <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact Us</a>
                                 </div>
                             </div>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
-            </NavigationMenu>
-            <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <Link href="/docs" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Case Studies
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
-            </NavigationMenu>
-            <NavigationMenu>
-                <NavigationMenuList>
-                    <NavigationMenuItem>
-                        <Link href="/docs" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Contact Us
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                </NavigationMenuList>
-            </NavigationMenu>
+                        </div>
+                    </DialogPanel>
+                </Dialog>
+            </div>
         </div>
     );
 }
 
 export default NavLinks;
+
