@@ -16,9 +16,9 @@ export default {
 	darkMode: "class",
 	theme: {
     	extend: {
-			boxShadow: {
-				input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
-			  },
+    		boxShadow: {
+    			input: '`0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`'
+    		},
     		colors: {
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
@@ -72,7 +72,6 @@ export default {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		animation: {
-
     			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
     			first: 'moveVertical 30s ease infinite',
     			second: 'moveInCircle 20s reverse infinite',
@@ -88,10 +87,11 @@ export default {
     			'spin-reverse-slower': 'spin-reverse 6s linear infinite',
     			aurora: 'aurora 60s linear infinite',
     			shine: 'shine var(--duration) infinite linear',
-    			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+    			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+    			'accordion-down': 'accordion-down 0.2s ease-out',
+    			'accordion-up': 'accordion-up 0.2s ease-out'
     		},
     		keyframes: {
-
     			scroll: {
     				to: {
     					transform: 'translate(calc(-50% - 0.5rem))'
@@ -249,6 +249,22 @@ export default {
     				},
     				to: {
     					transform: 'translateY(calc(-100% - var(--gap)))'
+    				}
+    			},
+    			'accordion-down': {
+    				from: {
+    					height: '0'
+    				},
+    				to: {
+    					height: 'var(--radix-accordion-content-height)'
+    				}
+    			},
+    			'accordion-up': {
+    				from: {
+    					height: 'var(--radix-accordion-content-height)'
+    				},
+    				to: {
+    					height: '0'
     				}
     			}
     		}

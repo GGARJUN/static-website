@@ -162,26 +162,26 @@ const Hardware = () => {
             </section>
 
             <div  className=" ">
-                <div ref={aboutRef} className="pb-72 pt-40  p-10">
+                <div ref={aboutRef} className="pb-72 pt-40 ">
                     <div ref={aboutInView} className="container mx-auto px-16">
                         <About />
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 p-10">
+                <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
                     <div ref={expertiseInView} className="container mx-auto px-16">
                         <Expertise/>
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="py-40   p-10">
+                <div ref={partnerRef} className="py-40   ">
                     <div ref={partnerInView} className="container mx-auto px-16">
                         <Partner/>
                     </div>
                 </div>
 
-                <div ref={faqRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 p-10">
-                    <div ref={faqInView} className="container mx-auto">
+                <div ref={faqRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                    <div ref={faqInView} className="container mx-auto px-16">
                         <FAQ/>
                     </div>
                 </div>
