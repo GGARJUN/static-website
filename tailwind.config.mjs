@@ -72,6 +72,7 @@ export default {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		animation: {
+
     			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
     			first: 'moveVertical 30s ease infinite',
     			second: 'moveInCircle 20s reverse infinite',
@@ -90,6 +91,7 @@ export default {
     			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
     		},
     		keyframes: {
+
     			scroll: {
     				to: {
     					transform: 'translate(calc(-50% - 0.5rem))'

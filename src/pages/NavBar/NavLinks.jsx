@@ -151,12 +151,12 @@ const NavLinks = () => {
                         <nav className="relative">
                             <ul className="flex gap-4">
                                 <li className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                    <button className="inline-flex gap-1 h-9 w-max items-center justify-center rounded-md 2xl:px-5 px-3 2xl:text-[1rem] text-sm font-medium focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50">
+                                    <button className="inline-flex gap-1 h-9 w-max items-center justify-center rounded-md 2xl:px-5 px-3 2xl:text-[1rem] text-sm font-medium  ">
                                         Engineering Design Services
                                         <ChevronUpIcon className={`w-3 h-3 transition-transform duration-500 ${openMenu ? "rotate-180" : "rotate-0"}`} />
                                     </button>
                                     {openMenu && (
-                                        <div className="absolute left-0 top-8 mt-2 w-96 bg-white shadow-lg rounded-xl p-4 ring-1 ring-gray-900/5">
+                                        <div className="absolute left-0 top-8 mt-2 w-96 bg-white shadow-lg rounded-xl p-4 ">
                                             {engineering.map((item, index) => (
                                                 <div key={item.name} className="relative" onMouseEnter={() => item.children && setOpenSubmenu(index)} onMouseLeave={() => setOpenSubmenu(null)}>
                                                     <div className="group flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-gray-100">
@@ -275,7 +275,7 @@ const NavLinks = () => {
                         <NavigationMenu>
                             <NavigationMenuList>
                                 <NavigationMenuItem>
-                                    <Link href="/docs" legacyBehavior passHref>
+                                    <Link href="/case_studies" legacyBehavior passHref>
                                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                             Case Studies
                                         </NavigationMenuLink>
@@ -286,7 +286,7 @@ const NavLinks = () => {
                         <NavigationMenu>
                             <NavigationMenuList>
                                 <NavigationMenuItem>
-                                    <Link href="/docs" legacyBehavior passHref>
+                                    <Link href="/contact_us" legacyBehavior passHref>
                                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                             Contact Us
                                         </NavigationMenuLink>
