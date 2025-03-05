@@ -1,13 +1,12 @@
+import ReverseEngineering from '@/pages/ElectronicDesign/ReverseEngineering/page'
 import React from 'react'
 
-const ReverseEngineering = () => {
+const ReverseEngineeringPage = () => {
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Reverse Engineering</h2>
-      </div>
-    </div>
+<main>
+  <ReverseEngineering/>
+</main>
   )
 }
 
-export default ReverseEngineering
+export default ReverseEngineeringPage

@@ -1,13 +1,12 @@
+import DesignforManufacturability from '@/pages/ElectronicDesign/DesignforManufacturability/page'
 import React from 'react'
 
-const DesignForManufacturability = () => {
+const DesignForManufacturabilityPage = () => {
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Design For Manufacturability</h2>
-      </div>
-    </div>
+    <main>
+      <DesignforManufacturability/>
+    </main>
   )
 }
 
-export default DesignForManufacturability
+export default DesignForManufacturabilityPage

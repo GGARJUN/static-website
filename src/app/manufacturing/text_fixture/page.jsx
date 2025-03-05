@@ -1,12 +1,11 @@
+import TextFixture from "@/pages/ManufacturingServices/TestFixtures/page"
 
-const TextFixture = () => {
+const TextFixturePage = () => {
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Text Fixture</h2>
-      </div>
-    </div>
+    <main>
+      <TextFixture />
+    </main>
   )
 }
 
-export default TextFixture
+export default TextFixturePage

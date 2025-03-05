@@ -1,13 +1,12 @@
+import PCBLayout from '@/pages/ElectronicDesign/PCBLayout/page'
 import React from 'react'
 
-const PCBLayout = () => {
+const PCBLayoutPage = () => {
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>PCB Layout</h2>
-      </div>
-    </div>
+    <main>
+      <PCBLayout />
+    </main>
   )
 }
 
-export default PCBLayout
+export default PCBLayoutPage

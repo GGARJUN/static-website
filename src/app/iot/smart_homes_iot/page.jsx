@@ -1,12 +1,11 @@
+import SmartHomes from "@/pages/IoT/SmartHomesIoT/page"
 
-const SmartHomes = () => {
+const SmartHomesPage = () => {
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Smart Homes</h2>
-      </div>
-    </div>
+    <main>
+      <SmartHomes />
+    </main>
   )
 }
 
-export default SmartHomes
+export default SmartHomesPage

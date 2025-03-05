@@ -1,13 +1,12 @@
+import Firmware from '@/pages/EngineeringDesignServices/Firmware/page'
 import React from 'react'
 
-const Firmware = () => {
+const FirmwarePage = () => {
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Firmware</h2>
-      </div>
-    </div>
+    <main>
+        <Firmware/>
+    </main>
   )
 }
 
-export default Firmware
+export default FirmwarePage
