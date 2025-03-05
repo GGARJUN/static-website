@@ -7,12 +7,14 @@ import {
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover"
 
 const FAQ = () => {
-  const imageUrl = "https://img.freepik.com/free-photo/scenes-people-work_23-2151895519.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
+  const image1 = "https://img.freepik.com/free-photo/scenes-people-work_23-2151895519.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
+  const image2 = "https://img.freepik.com/free-photo/woman-engineer-architect-working-modern-cad-program-sitting-desk-start-up-business-office_482257-5174.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
+
   return (
     <div>
       <h1 className='text-5xl font-bold mt-5'>FQA's</h1>
-      <div className="flex justify-between  mt-10">
-        <Accordion type="single" collapsible className="max-w-2xl">
+      <div className="flex items-center gap-40  mt-10">
+        <Accordion type="single" collapsible className="w-[650px]">
           <AccordionItem value="item-1">
             <AccordionTrigger>
               <h2>What tools do you use for hardware design?</h2>
@@ -56,11 +58,19 @@ const FAQ = () => {
           </AccordionItem>
         </Accordion>
 
-        <div className="h-[630px] w-[600px] col-span-4 rounded-xl shadow-lg relative  flex items-center justify-center">
+        {/* <div className="h-[630px] w-[600px] col-span-4 rounded-xl shadow-lg relative  flex items-center justify-center">
           <DirectionAwareHover imageUrl={imageUrl}>
-            {/* <p className="font-bold text-xl">In the mountains</p>
-                    <p className="font-normal text-sm">$1299 / night</p> */}
+
           </DirectionAwareHover>
+        </div> */}
+
+        <div className='relative left-0'>
+          <div className='2xl:h-[350px] 2xl:w-[300px] h-[250px] w-[200px] rounded-xl shadow-lg -rotate-12 object-cover'>
+            <DirectionAwareHover imageUrl={image1} />
+          </div>
+          <div className="h-[250px] w-[200px] 2xl:h-[350px] 2xl:w-[300px] rounded-xl shadow-lg absolute -bottom-40 2xl:left-60 left-40 rotate-12 object-cover">
+            <DirectionAwareHover imageUrl={image2} />
+          </div>
         </div>
       </div>
     </div>

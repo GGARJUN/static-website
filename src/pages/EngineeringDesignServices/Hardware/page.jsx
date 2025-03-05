@@ -13,7 +13,6 @@ import Expertise from "./components/Expertise";
 import Partner from "./components/Partner";
 import FAQ from "./components/FAQ";
 const Hardware = () => {
-
     const banners = [
         { img: "/banner1.png", title: "Innovative Engineering", subtitle: "Solutions for a Smarter Future", dtitle: "Engineering" },
         { img: "/banner2.jpg", title: "Cutting-Edge Technology", subtitle: "Empowering the Next Generation", dtitle: "Electronic" },
@@ -28,18 +27,15 @@ const Hardware = () => {
         const interval = setInterval(nextSlide, 5000);
         return () => clearInterval(interval);
     }, [index, isPlaying]);
-
     const [isFixed, setIsFixed] = useState(false);
     const [originalOffset, setOriginalOffset] = useState(0);
     const [hidden, setHidden] = useState(false);
     const lastScrollY = useRef(0);
-
     useLayoutEffect(() => {
         if (sectionRef.current) {
             setOriginalOffset(sectionRef.current.offsetTop);
         }
     }, []);
-
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
@@ -58,46 +54,34 @@ const Hardware = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [originalOffset]);
-
     const sectionRef = useRef(null);
     const aboutRef = useRef(null);
     const expertiseRef = useRef(null);
     const partnerRef = useRef(null);
     const faqRef = useRef(null);
-
     const sections = [
         { ref: aboutRef, label: "About the Service" },
         { ref: expertiseRef, label: "Our Expertise" },
         { ref: partnerRef, label: "Why Partner with Us" },
         { ref: faqRef, label: "FAQs" },
     ];
-
     const [activeIndex, setActiveIndex] = useState(0);
-
-    // ✅ Intersection Observer for Auto-Active State
     const { ref: aboutInView, inView: isAboutInView } = useInView({ threshold: 0.5 });
     const { ref: expertiseInView, inView: isExpertiseInView } = useInView({ threshold: 0.5 });
     const { ref: partnerInView, inView: isPartnerInView } = useInView({ threshold: 0.5 });
     const { ref: faqInView, inView: isFaqInView } = useInView({ threshold: 0.5 });
-
     useEffect(() => {
         if (isAboutInView) setActiveIndex(0);
         else if (isExpertiseInView) setActiveIndex(1);
         else if (isPartnerInView) setActiveIndex(2);
         else if (isFaqInView) setActiveIndex(3);
     }, [isAboutInView, isExpertiseInView, isPartnerInView, isFaqInView]);
-
-    // ✅ Smooth Scroll to Section
     const scrollToSection = (ref, index) => {
         if (ref?.current) {
             ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
             setActiveIndex(index);
         }
     };
-
-
-
-
     return (
         <section className="relative w-full  overflow-hidden">
             <div className="w-full h-[700px]  relative flex">
@@ -180,7 +164,7 @@ const Hardware = () => {
                     </div>
                 </div>
 
-                <div ref={faqRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                <div ref={faqRef} className="pb-72 pt-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
                     <div ref={faqInView} className="container mx-auto px-16">
                         <FAQ/>
                     </div>
