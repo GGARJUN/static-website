@@ -74,7 +74,7 @@ const ClientReview = () => {
     const svg = [{ start: "/star.svg" }, { start: "/star.svg" }, { start: "/star.svg" }, { start: "/star.svg" },]
 
     return (
-        <div className="relative  bg-[url('https://html.awaikenthemes.com/corprate/images/testimonial-bg-image.png')] bg-secondary bg-repeat-x bg-cover py-24 ">
+        <div className="relative py-40  bg-[url('https://html.awaikenthemes.com/corprate/images/testimonial-bg-image.png')] bg-secondary bg-repeat-x bg-cover py-24 ">
             <div className='px-16 container mx-auto'>
                 <div className='grid grid-cols-12  '>
                     <div className='col-span-12 lg:col-span-6'>

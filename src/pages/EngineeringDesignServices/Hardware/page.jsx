@@ -16,10 +16,10 @@ import CallUs from "./components/CallUs";
 import ClientReview from "./components/ClientReview";
 const Hardware = () => {
     const banners = [
-        { img: "/banner1.png",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Engineering" },
-        { img: "/banner2.jpg",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Cutting-Edge Technology", subtitle: "Empowering the Next Generation", dtitle: "Electronic" },
-        { img: "/banner3.jpg",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Sustainable Solutions", subtitle: "Building a Greener Tomorrow", dtitle: "Manufacturing" },
-        { img: "/banner4.jpg",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Sustainable Solutions",subtitle: "Building a Greener Tomorrow", dtitle: "Internet of Things" }
+        { img: "https://img.freepik.com/free-photo/futuristic-business-scene-with-ultra-modern-ambiance_23-2151003776.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Transforming" },
+        { img: "https://img.freepik.com/free-photo/abstract-futuristic-digital-technology-background-cpu-motherboard_587448-4810.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Embedded Systems Development", subtitle: "Smart integration of microcontrollers and firmware.", dtitle: "Embedded" },
+        { img: "https://img.freepik.com/free-photo/tired-woman-architect-working-modern-cad-program-overtime-sitting-desk-start-up-office-industrial-female-engineer-studying-prototype-idea-pc-showing-cad-software-device-display_482257-13399.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Prototyping & Testing", subtitle: "Creating and testing prototypes for market readiness.", dtitle: "Prototyping" },
+        { img: "https://img.freepik.com/free-photo/blurred-night-lights_23-2148139360.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Signal Integrity & Power Management",subtitle: "Optimized circuits for stability and power efficiency.", dtitle: "Power" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -103,7 +103,7 @@ const Hardware = () => {
                                 <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
                                     <Highlight>{banner.title}</Highlight>
                                     <br />
-                                    <span className="mt-4 block text-4xl md:text-5xl 2xl:text-7xl">{banner.subtitle}</span>
+                                    <span className="mt-8 block text-4xl md:text-5xl 2xl:text-6xl max-w-5xl font-medium">{banner.subtitle}</span>
                                 </h1>
                                 <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
                                     Read More <SquareArrowOutUpRight />
