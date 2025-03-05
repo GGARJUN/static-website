@@ -14,10 +14,10 @@ import Partner from "./components/Partner";
 import FAQ from "./components/FAQ";
 const Hardware = () => {
     const banners = [
-        { img: "/banner1.png", title: "Innovative Engineering", subtitle: "Solutions for a Smarter Future", dtitle: "Engineering" },
-        { img: "/banner2.jpg", title: "Cutting-Edge Technology", subtitle: "Empowering the Next Generation", dtitle: "Electronic" },
-        { img: "/banner3.jpg", title: "Sustainable Solutions", subtitle: "Building a Greener Tomorrow", dtitle: "Manufacturing" },
-        { img: "/banner4.jpg", title: "Smart Automation", subtitle: "Enhancing Efficiency & Productivity", dtitle: "Internet of Things" }
+        { img: "/banner1.png",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Engineering" },
+        { img: "/banner2.jpg",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Cutting-Edge Technology", subtitle: "Empowering the Next Generation", dtitle: "Electronic" },
+        { img: "/banner3.jpg",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Sustainable Solutions", subtitle: "Building a Greener Tomorrow", dtitle: "Manufacturing" },
+        { img: "/banner4.jpg",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Sustainable Solutions",subtitle: "Building a Greener Tomorrow", dtitle: "Internet of Things" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -88,7 +88,14 @@ const Hardware = () => {
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" />
+                            {/* <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" /> */}
+                            <video
+                                src={banner.video} // Replace with your video URL
+                                className="w-full h-full object-cover"
+                                autoPlay // Automatically plays
+                                loop // Loops the video
+                                muted // Starts muted
+                            />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                                 <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
@@ -145,7 +152,7 @@ const Hardware = () => {
                 </div>
             </section>
 
-            <div  className=" ">
+            <div className=" ">
                 <div ref={aboutRef} className="pb-72 pt-40 ">
                     <div ref={aboutInView} className="container mx-auto px-16">
                         <About />
@@ -154,19 +161,19 @@ const Hardware = () => {
 
                 <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
                     <div ref={expertiseInView} className="container mx-auto px-16">
-                        <Expertise/>
+                        <Expertise />
                     </div>
                 </div>
 
                 <div ref={partnerRef} className="py-40   ">
                     <div ref={partnerInView} className="container mx-auto px-16">
-                        <Partner/>
+                        <Partner />
                     </div>
                 </div>
 
                 <div ref={faqRef} className="pb-72 pt-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
                     <div ref={faqInView} className="container mx-auto px-16">
-                        <FAQ/>
+                        <FAQ />
                     </div>
                 </div>
             </div>
