@@ -43,7 +43,7 @@ const NavLinks = () => {
             ]
         }
     ];
-    const design= [
+    const design = [
         { name: 'PCB Design Service', description: 'Get a better understanding of your design', href: '/electronic_design/pcb_design_service', icon: ChartPieIcon },
         { name: 'PCB Layout', description: 'Speak directly to your customers', href: '/electronic_design/pcb_layout', icon: CursorArrowRaysIcon },
         { name: 'SI/PI Analysis', description: 'Speak directly to your customers', href: '/electronic_design/analysis', icon: FingerPrintIcon },
@@ -159,28 +159,32 @@ const NavLinks = () => {
                                         <div className="absolute left-0 top-8 mt-2 w-96 bg-white shadow-lg rounded-xl p-4 ">
                                             {engineering.map((item, index) => (
                                                 <div key={item.name} className="relative" onMouseEnter={() => item.children && setOpenSubmenu(index)} onMouseLeave={() => setOpenSubmenu(null)}>
-                                                    <div className="group flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-gray-100">
-                                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
-                                                            {item.icon && <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
+                                                    <Link href={item.href || "#"}>
+                                                        <div className="group flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-gray-100">
+                                                            <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+                                                                {item.icon && <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
+                                                            </div>
+                                                            <div className="flex-auto">
+                                                                <h2 className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}</h2>
+                                                                <p className="text-gray-600 text-xs">{item.description}</p>
+                                                            </div>
+                                                            {item.children && <ChevronRightIcon className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-2 duration-200" />}
                                                         </div>
-                                                        <div className="flex-auto">
-                                                            <Link href={item.href || "#"} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}</Link>
-                                                            <p className="text-gray-600 text-xs">{item.description}</p>
-                                                        </div>
-                                                        {item.children && <ChevronRightIcon className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-2 duration-200" />}
-                                                    </div>
+                                                    </Link>
                                                     {item.children && openSubmenu === index && (
                                                         <div className="absolute left-[99%] -top-20 ml-2 w-96 bg-white shadow-lg rounded-xl p-4 ring-1 ring-gray-900/5">
                                                             {item.children.map((child) => (
-                                                                <div key={child.name} className="flex group items-center gap-x-6 p-4 rounded-lg text-sm hover:bg-gray-100">
+                                                                <Link Link href={child.href || "#"} key={child.name}>
+                                                                <div  className="flex group items-center gap-x-6 p-4 rounded-lg text-sm hover:bg-gray-100">
                                                                     <div className="flex size-11 items-center justify-center flex-none bg-gray-100 rounded-lg group-hover:bg-white">
                                                                         {child.icon && <child.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
                                                                     </div>
                                                                     <div className="flex-auto">
-                                                                        <Link href={child.href || "#"} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{child.name}</Link>
+                                                                        <h2 className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{child.name}</h2>
                                                                         <p className="text-gray-600 text-xs">{child.description}</p>
                                                                     </div>
                                                                 </div>
+                                                                </Link>
                                                             ))}
                                                         </div>
                                                     )}

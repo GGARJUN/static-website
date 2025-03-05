@@ -12,6 +12,7 @@ import About from "./components/About";
 import Expertise from "./components/Expertise";
 import Partner from "./components/Partner";
 import FAQ from "./components/FAQ";
+import CallUs from "./components/CallUs";
 const Hardware = () => {
     const banners = [
         { img: "/banner1.png",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Engineering" },
@@ -165,13 +166,14 @@ const Hardware = () => {
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="py-40   ">
+                <div ref={partnerRef} className="pt-40   ">
                     <div ref={partnerInView} className="container mx-auto px-16">
                         <Partner />
                     </div>
+                    <CallUs/>
                 </div>
 
-                <div ref={faqRef} className="pb-72 pt-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
                     <div ref={faqInView} className="container mx-auto px-16">
                         <FAQ />
                     </div>
