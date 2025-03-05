@@ -98,8 +98,8 @@ const NavLinks = () => {
     return (
         <div
             className={`top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                ? `fixed bg-white shadow-lg text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`
-                : "absolute bg-transparent text-white"
+                ? `fixed bg-white border-b text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`
+                : "absolute bg-transparent text-white border-none"
                 }`}
         >
             <div className="mx-auto flex items-center justify-between px-20 py-6">

@@ -72,6 +72,7 @@ export default {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		animation: {
+				testimonialbgmove: 'testimonialbgmove 30s linear infinite',
     			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
     			first: 'moveVertical 30s ease infinite',
     			second: 'moveInCircle 20s reverse infinite',
@@ -92,6 +93,10 @@ export default {
     			'accordion-up': 'accordion-up 0.2s ease-out'
     		},
     		keyframes: {
+				testimonialbgmove: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' },
+				  },
     			scroll: {
     				to: {
     					transform: 'translate(calc(-50% - 0.5rem))'

@@ -51,7 +51,7 @@ export const AnimatedTooltip = ({
                 rotate: rotate,
                 whiteSpace: "nowrap",
               }}
-              className="absolute top-16  translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2">
+              className="absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2">
               <div
                 className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
               <div
@@ -63,14 +63,13 @@ export const AnimatedTooltip = ({
             </motion.div>
           )}
         </AnimatePresence>
-        <h2 onMouseMove={handleMouseMove}>{item.name}</h2>
-        {/* <Image
+        <Image
           onMouseMove={handleMouseMove}
           height={100}
           width={100}
           src={item.image}
           alt={item.name}
-          className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500" /> */}
+          className="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500" />
       </div>
     ))}
   </>);

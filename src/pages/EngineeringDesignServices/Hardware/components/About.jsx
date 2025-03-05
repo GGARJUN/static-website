@@ -10,7 +10,7 @@ const About = () => {
   const image2 = "https://img.freepik.com/free-photo/woman-engineer-architect-working-modern-cad-program-sitting-desk-start-up-business-office_482257-5174.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
   return (
     <div className='flex justify-between items-center gap-20'>
-      <div ref={ref} className="relative flex items-center justify-center">
+      <div ref={ref} className="relative flex items-center justify-center md:block hidden">
         <motion.div
           initial={{ x: -120, opacity: 0, scale: 0.9, rotate: -10 }}
           animate={isInView ? { x: 0, opacity: 1, scale: 1, rotate: -12 } : {}}

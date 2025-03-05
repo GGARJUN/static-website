@@ -13,6 +13,7 @@ import Expertise from "./components/Expertise";
 import Partner from "./components/Partner";
 import FAQ from "./components/FAQ";
 import CallUs from "./components/CallUs";
+import ClientReview from "./components/ClientReview";
 const Hardware = () => {
     const banners = [
         { img: "/banner1.png",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Engineering" },
@@ -89,14 +90,14 @@ const Hardware = () => {
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            {/* <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" /> */}
-                            <video
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" />
+                            {/* <video
                                 src={banner.video} // Replace with your video URL
                                 className="w-full h-full object-cover"
                                 autoPlay // Automatically plays
                                 loop // Loops the video
                                 muted // Starts muted
-                            />
+                            /> */}
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                                 <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
@@ -153,7 +154,7 @@ const Hardware = () => {
                 </div>
             </section>
 
-            <div className=" ">
+            <div>
                 <div ref={aboutRef} className="pb-72 pt-40 ">
                     <div ref={aboutInView} className="container mx-auto px-16">
                         <About />
@@ -171,6 +172,7 @@ const Hardware = () => {
                         <Partner />
                     </div>
                     <CallUs/>
+                    <ClientReview/>
                 </div>
 
                 <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">

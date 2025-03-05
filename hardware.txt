@@ -180,3 +180,91 @@ const Hardware = () => {
 }
 
 export default Hardware
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//banner
+
+                        {/* <div className='flex'>
+                            <div className='mt-20'>
+                                <h2 className="text-2xl font-extrabold  text-gray-800 flex items-center gap-2" >Client review</h2>
+                                <h1 className='mt-10 text-lg'>Partnering with SunKey Technologies gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.</h1>
+                                <div className="mt-8 flex items-center gap-5">
+                                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80" alt="" className='w-20 h-20 object-cover rounded-full' />
+                                    <div>
+                                        <h1 className='text-xl font-extrabold text-blue-600'>John Doe</h1>
+                                        <h1 className='mt-1'>Software Engineer</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='mt-20'>
+                                <h2 className="text-2xl font-extrabold  text-gray-800 flex items-center gap-2" >Client review</h2>
+                                <h1 className='mt-10 text-lg'>Partnering with SunKey Technologies gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.</h1>
+                                <div className="mt-8 flex items-center gap-5">
+                                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80" alt="" className='w-20 h-20 object-cover rounded-full' />
+                                    <div>
+                                        <h1 className='text-xl font-extrabold text-blue-600'>John Doe</h1>
+                                        <h1 className='mt-1'>Software Engineer</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='mt-20'>
+                                <h2 className="text-2xl font-extrabold  text-gray-800 flex items-center gap-2" >Client review</h2>
+                                <h1 className='mt-10 text-lg'>Partnering with SunKey Technologies gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.</h1>
+                                <div className="mt-8 flex items-center gap-5">
+                                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80" alt="" className='w-20 h-20 object-cover rounded-full' />
+                                    <div>
+                                        <h1 className='text-xl font-extrabold text-blue-600'>John Doe</h1>
+                                        <h1 className='mt-1'>Software Engineer</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <div className=" w-full flex items-center justify-center ">
+      <PinContainer
+        title="/ui.aceternity.com"
+        href="https://twitter.com/mannupaaji"
+      >
+        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+            Aceternity UI
+          </h3>
+          <div className="text-base !m-0 !p-0 font-normal">
+            <span className="text-slate-500 ">
+              Customizable Tailwind CSS and Framer Motion Components.
+            </span>
+          </div>
+          <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
+        </div>
+      </PinContainer>
+    </div>
