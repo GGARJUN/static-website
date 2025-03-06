@@ -66,15 +66,15 @@ const ClientReview = () => {
         { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-2.svg", title: "Innovative Approach" },
         { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-3.svg", title: "Client Centric Focused" },
         { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-4.svg", title: "Comprehensive Services" },
-        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-5.svg", title: "commitment to sustainability" },
-        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-6.svg", title: "24/7 support and maintenance" },
+        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-5.svg", title: "sustainability" },
+        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-6.svg", title: "24/7 maintenance" },
 
     ]
 
     const svg = [{ start: "/star.svg" }, { start: "/star.svg" }, { start: "/star.svg" }, { start: "/star.svg" },]
 
     return (
-        <div className="relative py-40  bg-[url('https://html.awaikenthemes.com/corprate/images/testimonial-bg-image.png')] bg-secondary bg-repeat-x bg-cover py-24 ">
+        <div className="relative py-40  bg-[url('https://html.awaikenthemes.com/corprate/images/testimonial-bg-image.png')] bg-secondary bg-repeat-x bg-cover  ">
             <div className='px-16 container mx-auto'>
                 <div className='grid grid-cols-12  '>
                     <div className='col-span-12 lg:col-span-6'>
@@ -112,9 +112,9 @@ const ClientReview = () => {
                                 pagination={{
                                     el: ".custom-pagination",
                                     type: "custom",
-                                    renderCustom: (swiper, current, total) => 
-                                      `<span class="text-xl font-bold text-gray-400  mx-2">${current} / ${total}</span>`
-                                  }}
+                                    renderCustom: (swiper, current, total) =>
+                                        `<span class="text-xl font-bold text-gray-400  mx-2">${current} / ${total}</span>`
+                                }}
                             >
                                 {reviews.map((review, index) => (
                                     <SwiperSlide key={index}>
@@ -140,20 +140,22 @@ const ClientReview = () => {
 
                                     </SwiperSlide>
                                 ))}
-                            <div className="custom-pagination text-end"></div>
+                                <div className="custom-pagination text-end"></div>
                             </Swiper>
                         </div>
                     </div>
                 </div>
 
-                <div className='w-full border mt-20 border-gray-200/70'></div>
-                <div className='mt-20 grid grid-cols-2 lg:grid-cols-6 w-full gap-5 justify-center items-center '>
-                    {names.map((item, index) => (
-                        <div key={index} className='flex flex-col gap-5'>
-                            <img src={item.img} alt={item.title} className='w-14 ' />
-                            <h2 className='font-bold text-2xl  text-blue-900 '>{item.title}</h2>
-                        </div>
-                    ))}
+                <div className='w-full border my-20 border-gray-200/70'></div>
+                <div className="overflow-hidden whitespace-nowrap w-full bg-gray-100 ">
+                    <div className="flex gap-10 animate-marquee">
+                        {names.concat(names).map((item, index) => (
+                            <div key={index} className="flex flex-col items-center gap-3 min-w-[200px]">
+                                <img src={item.img} alt={item.title} className="w-14" />
+                                <h2 className="font-bold text-lg text-blue-900">{item.title}</h2>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
