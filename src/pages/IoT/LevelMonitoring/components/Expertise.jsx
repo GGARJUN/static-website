@@ -1,10 +1,12 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
+
   const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
+    { img: "https://cdn-icons-png.freepik.com/256/11915/11915280.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Real-time Level Monitoring", description: "Providing accurate and real-time data on levels in tanks, silos, and containers." },
+    { img: "https://cdn-icons-png.freepik.com/256/12369/12369104.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Predictive Analytics", description: " Setting up automated alerts for low or high levels to prevent overflows or shortages." },
+    { img: "https://cdn-icons-png.freepik.com/256/18501/18501769.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Automated Alerts", description: "Automating tasks with smart machines and sensors to improve accuracy and efficiency.", },
+    { img: "https://cdn-icons-png.freepik.com/256/16011/16011590.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Customized Solutions", description: "Developing customized level monitoring solutions tailored to specific industry needs.", },
+    { img: "https://cdn-icons-png.freepik.com/256/9548/9548443.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Integration with Existing Systems", description: "Integrating level monitoring data with existing management systems for streamlined operations.", },
   ];
   return (
     <div>
@@ -16,7 +18,7 @@ const Expertise = () => {
     <div
       key={index}
       className={`bg-white cursor-pointer hover:bg-gradient-to-r from-purple-600 to-blue-400/90 p-6 rounded-xl shadow-lg transition-all duration-300 group
-        ${index === features.length - 1 ? "md:col-span-3 flex justify-center mx-auto md:mx-[390px] 2xl:mx-[478px]  " : ""}`}
+        ${index === features.length - 1 ? "md:col-span-2 flex justify-start  " : ""}`}
     >
       <div className="max-w-lg ">
         <img

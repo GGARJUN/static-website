@@ -1,10 +1,10 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
   const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
+    { img: "https://cdn-icons-png.freepik.com/256/14659/14659257.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Signal Integrity Analysis", description: "Conducting simulations to ensure signal quality and reliability." },
+    { img: "https://cdn-icons-png.freepik.com/256/11094/11094726.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Power Integrity Analysis", description: "Analyzing power distribution to prevent voltage drops and noise.", },
+    { img: "https://cdn-icons-png.freepik.com/256/9809/9809528.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "3D Modeling and Simulation", description: "Using 3D models to simulate PCB behavior under various conditions.", },
+    { img: "https://cdn-icons-png.freepik.com/256/3271/3271536.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Compliance in Industry Standards", description: "Ensuring designs meet international standards like IPC.", },
   ];
   return (
     <div>

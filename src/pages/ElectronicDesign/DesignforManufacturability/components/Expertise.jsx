@@ -1,10 +1,10 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
   const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
+    { img: "https://cdn-icons-png.freepik.com/256/745/745217.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Design Analysis", description: "Analyzing designs for manufacturability and identifying potential issues." },
+    { img: "https://cdn-icons-png.freepik.com/256/12640/12640222.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Component Selection", description: "Selecting components that are widely available and cost-effective.", },
+    { img: "https://cdn-icons-png.freepik.com/256/1041/1041394.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Layout Optimization", description: "Optimizing PCB layouts for efficient assembly and testing.", },
+    { img: "https://cdn-icons-png.freepik.com/256/16812/16812723.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Manufacturing Process Optimization", description: "Ensuring designs align with manufacturing processes for reduced costs and improved quality.", },
   ];
   return (
     <div>

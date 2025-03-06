@@ -1,10 +1,10 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
   const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
+    { img: "https://cdn-icons-png.freepik.com/256/2679/2679511.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Design Optimization", description: "Enhancing existing designs for better performance or cost reduction." },
+    { img: "https://cdn-icons-png.freepik.com/256/6213/6213751.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Component Upgrades", description: "Upgrading outdated components to the latest technology.", },
+    { img: "https://cdn-icons-png.freepik.com/256/2846/2846213.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Design Refinement", description: "Refining designs to improve manufacturability and reliability.", },
+    { img: "https://cdn-icons-png.freepik.com/256/16773/16773430.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Compliance Updates", description: "Ensuring designs meet current regulatory and industry standards.", },
   ];
   return (
     <div>

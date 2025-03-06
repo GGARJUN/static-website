@@ -8,7 +8,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const image1 = "https://img.freepik.com/free-photo/3d-rendering-futuristic-computer_23-2151004383.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
   return (
-    <div className='flex justify-between items-center gap-20'>
+    <div className='md:flex justify-between items-center gap-20'>
 
       <motion.div
         initial={{ opacity: 0, x: 100 }}
@@ -40,7 +40,7 @@ const About = () => {
         transition={{ duration: 1.5, ease: "easeInOut", type: "spring", stiffness: 80 }}
         whileHover={{ scale: 1.05, rotate: 0 }}
         ref={ref}
-        className=" w-96 md:w-[500px] 2xl:w-[600px] h-96 md:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
+        className=" md:w-[500px] 2xl:w-[600px] h-96 md:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
       >
         <DirectionAwareHover imageUrl={image1} />
       </motion.div>

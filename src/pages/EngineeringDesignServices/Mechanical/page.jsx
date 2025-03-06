@@ -161,7 +161,7 @@ const Mechanical = () => {
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                <div ref={expertiseRef} className="py-40 bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10   ">
                     <div ref={expertiseInView} className="container mx-auto px-16">
                         <Expertise />
                     </div>
@@ -171,11 +171,11 @@ const Mechanical = () => {
                     <div ref={partnerInView} className="container mx-auto px-16">
                         <Partner />
                     </div>
-                    <CallUs/>
                     <ClientReview/>
+                    <CallUs/>
                 </div>
 
-                <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                <div ref={faqRef} className="py-40    bg-gradient-to-tr from-pink-400/40 via-purple-100/30 to-blue-600/40">
                     <div ref={faqInView} className="container mx-auto px-16">
                         <FAQ />
                     </div>

@@ -14,7 +14,7 @@ import { ArrowRight } from "lucide-react";
 const FAQ = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const image1 = "https://img.freepik.com/free-photo/scenes-people-work_23-2151895519.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
+  const image1 = "https://img.freepik.com/free-photo/information-technology-connection-graphics-concept_53876-124766.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
 
   return (
     <div >
@@ -52,33 +52,36 @@ const FAQ = () => {
     <div className=" w-full  ">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger>1. What tools do you use for hardware design?</AccordionTrigger>
+          <AccordionTrigger>1. What types of software do you develop?
+          </AccordionTrigger>
           <AccordionContent>
-            We use industry-standard tools like PTC Windchill and Altair CAE Suite for our hardware design services.
+          We develop custom software tailored to meet specific business needs.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger>2. Can you help with prototyping?</AccordionTrigger>
+          <AccordionTrigger>2. Can you help with mobile and web application development?</AccordionTrigger>
           <AccordionContent>
-            Yes, we offer prototyping services to help you test and refine your product.
+          Yes, we develop applications for various platforms.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>3. How do you ensure design manufacturability?</AccordionTrigger>
+          <AccordionTrigger>3. How do you ensure software reliability?
+          </AccordionTrigger>
           <AccordionContent>
-            We conduct design for manufacturability analyses to ensure that your designs are optimized for production.
+          We conduct rigorous testing and validation to ensure software reliability.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
-          <AccordionTrigger>4. Do you provide thermal and structural analysis?</AccordionTrigger>
+          <AccordionTrigger>4. Do you provide software updates and maintenance?</AccordionTrigger>
           <AccordionContent>
-            Yes, we conduct thermal and structural analyses to ensure product reliability and performance.
+          Yes, we offer ongoing support for software updates and maintenance.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-5">
-          <AccordionTrigger>5. How do you handle complex design projects?</AccordionTrigger>
+          <AccordionTrigger>5. How do you handle complex software projects?
+          </AccordionTrigger>
           <AccordionContent>
-            We handle complex projects by integrating multiple design aspects into a logical and comprehensible process.
+          We handle complex projects by integrating multiple software components into a cohesive solution.
           </AccordionContent>
         </AccordionItem>
       </Accordion>

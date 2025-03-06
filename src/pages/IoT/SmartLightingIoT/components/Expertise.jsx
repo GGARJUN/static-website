@@ -1,10 +1,11 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
   const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
+    { img: "https://cdn-icons-png.freepik.com/256/3869/3869887.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Intelligent Lighting Control", description: "Developing systems that adjust lighting based on occupancy and ambient light." },
+    { img: "https://cdn-icons-png.freepik.com/256/17949/17949428.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Energy Efficiency", description: "Implementing solutions to reduce energy consumption and optimize resource usage." },
+    { img: "https://cdn-icons-png.freepik.com/256/6255/6255712.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Color Temperature Adjustment", description: "Adjusting color temperatures to enhance ambiance and productivity.", },
+    { img: "https://cdn-icons-png.freepik.com/256/7438/7438912.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Remote Monitoring and Control", description: "Enabling remote access to lighting systems for enhanced convenience and security.", },
+    { img: "https://cdn-icons-png.freepik.com/256/4826/4826355.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Integration with Smart Home Systems", description: "Integrating lighting systems with other smart home devices for seamless control.", },
   ];
   return (
     <div>
@@ -16,7 +17,7 @@ const Expertise = () => {
     <div
       key={index}
       className={`bg-white cursor-pointer hover:bg-gradient-to-r from-purple-600 to-blue-400/90 p-6 rounded-xl shadow-lg transition-all duration-300 group
-        ${index === features.length - 1 ? "md:col-span-3 flex justify-center mx-auto md:mx-[390px] 2xl:mx-[478px]  " : ""}`}
+        ${index === features.length - 1 ? "md:col-span-2 flex justify-start  " : ""}`}
     >
       <div className="max-w-lg ">
         <img

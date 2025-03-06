@@ -155,14 +155,14 @@ const PCBDesignService = () => {
             </section>
 
             <div>
-                <div ref={aboutRef} className="pb-72 pt-40 ">
+                <div ref={aboutRef} className="py-40 ">
                     <div ref={aboutInView} className="container mx-auto px-16">
                         <About />
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
-                    <div ref={expertiseInView} className="container mx-auto px-16">
+                <div ref={expertiseRef} className="pt-40 pb-60  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                    <div ref={expertiseInView} className="">
                         <Expertise />
                     </div>
                 </div>

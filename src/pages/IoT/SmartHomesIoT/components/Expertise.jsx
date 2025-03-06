@@ -1,10 +1,11 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
   const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
+    { img: "https://cdn-icons-png.freepik.com/256/7492/7492007.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Smart Lighting Systems", description: "Developing intelligent lighting systems that adjust based on occupancy and ambient light." },
+    { img: "https://cdn-icons-png.freepik.com/256/9658/9658201.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Home Automation", description: " Integrating systems for temperature control, security, and entertainment." },
+    { img: "https://cdn-icons-png.freepik.com/256/5994/5994452.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Energy Efficiency", description: "Implementing solutions to reduce energy consumption and optimize resource usage.", },
+    { img: "https://cdn-icons-png.freepik.com/256/9831/9831330.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Voice Control Integration", description: "Integrating voice assistants for seamless control of smart home devices.", },
+    { img: "https://cdn-icons-png.freepik.com/256/6128/6128630.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Remote Monitoring and Control", description: "Enabling remote access to home systems for enhanced convenience and security.", },
   ];
   return (
     <div>
@@ -16,7 +17,7 @@ const Expertise = () => {
     <div
       key={index}
       className={`bg-white cursor-pointer hover:bg-gradient-to-r from-purple-600 to-blue-400/90 p-6 rounded-xl shadow-lg transition-all duration-300 group
-        ${index === features.length - 1 ? "md:col-span-3 flex justify-center mx-auto md:mx-[390px] 2xl:mx-[478px]  " : ""}`}
+        ${index === features.length - 1 ? "md:col-span-2 flex justify-start  " : ""}`}
     >
       <div className="max-w-lg ">
         <img

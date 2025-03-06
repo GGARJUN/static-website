@@ -1,10 +1,10 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
   const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
+    { img: "https://cdn-icons-png.freepik.com/256/18582/18582912.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Component Placement", description: " Strategically placing components for optimal performance." },
+    { img: "https://cdn-icons-png.freepik.com/256/14170/14170669.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "SI & Power Integrity Analysis", description: "Ensuring signal and power integrity through advanced analysis.", },
+    { img: "https://cdn-icons-png.freepik.com/256/17808/17808870.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Thermal Management", description: "Designing PCBs with thermal management considerations.", },
+    { img: "https://cdn-icons-png.freepik.com/256/11981/11981597.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Design for Manufacturability", description: " Optimizing layouts for efficient production and Designing.", },
   ];
   return (
     <div>

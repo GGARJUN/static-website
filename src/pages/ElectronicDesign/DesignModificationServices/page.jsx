@@ -16,10 +16,10 @@ import CallUs from "./components/CallUs";
 import ClientReview from "./components/ClientReview";
 const DesignModificationService = () => {
     const banners = [
-        { img: "/banner1.png",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Engineering" },
-        { img: "/banner2.jpg",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Cutting-Edge Technology", subtitle: "Empowering the Next Generation", dtitle: "Electronic" },
-        { img: "/banner3.jpg",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Sustainable Solutions", subtitle: "Building a Greener Tomorrow", dtitle: "Manufacturing" },
-        { img: "/banner4.jpg",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Sustainable Solutions",subtitle: "Building a Greener Tomorrow", dtitle: "Internet of Things" }
+        { img: "https://img.freepik.com/free-photo/invalid-engineer-looking-building-model-computer-designing-layout-blueprint-construction-architect-wheelchair-using-touch-screen-monitor-analyze-architectural-structure_482257-34142.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Enhancing Existing Designs", subtitle: "Expert Design Modification Solutions", dtitle: "Design" },
+        { img: "https://img.freepik.com/free-photo/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla_482257-2640.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "System Performance Upgrades", subtitle: "Enhancing hardware and software integration", dtitle: "System" },
+        { img: "https://img.freepik.com/free-photo/graphic-designer-gaming-industry-talking-detail-with-his-colleague-analyzing-3d-design-level-explaining-production-creative-ideas-game-creators-working-videogame-illustration-company-office_482257-28158.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Mechanical Design Refinement", subtitle: "Optimizing product structures for durability and efficiency.", dtitle: "Refinement" },
+        { img: "/banner2.jpg",title: "Firmware Enhancements",subtitle: "Upgrading existing firmware for improved functionality", dtitle: "Firmware" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -103,7 +103,7 @@ const DesignModificationService = () => {
                                 <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
                                     <Highlight>{banner.title}</Highlight>
                                     <br />
-                                    <span className="mt-4 block text-4xl md:text-5xl 2xl:text-7xl">{banner.subtitle}</span>
+                                    <span className="mt-8 block text-4xl md:text-5xl 2xl:text-6xl max-w-5xl font-medium">{banner.subtitle}</span>
                                 </h1>
                                 <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
                                     Read More <SquareArrowOutUpRight />

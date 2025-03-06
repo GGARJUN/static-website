@@ -155,7 +155,7 @@ const PCBLayout = () => {
             </section>
 
             <div>
-                <div ref={aboutRef} className="pb-72 pt-40 ">
+                <div ref={aboutRef} className=" py-40 ">
                     <div ref={aboutInView} className="container mx-auto px-16">
                         <About />
                     </div>
@@ -171,8 +171,8 @@ const PCBLayout = () => {
                     <div ref={partnerInView} className="container mx-auto px-16">
                         <Partner />
                     </div>
-                    <CallUs/>
                     <ClientReview/>
+                    <CallUs/>
                 </div>
 
                 <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">

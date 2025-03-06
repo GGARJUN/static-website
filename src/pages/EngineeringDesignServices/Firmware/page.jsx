@@ -16,10 +16,10 @@ import CallUs from "./components/CallUs";
 import ClientReview from "./components/ClientReview";
 const Firmware = () => {
     const banners = [
-        { img: "https://img.freepik.com/free-photo/hand-touching-tablet_1134-117.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Unlocking Device Potential", subtitle: "Expert Firmware Solutions", dtitle: "Firmware" },
-        { img: "https://img.freepik.com/free-photo/saas-concept-collage_23-2149399280.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Firmware Optimization", subtitle: "Enhancing firmware efficiency with performance", dtitle: "Electronic" },
-        { img: "https://img.freepik.com/free-photo/standard-quality-control-collage-concept_23-2149595844.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: " Secure Boot & Firmware Updates", subtitle: "seamless over-the-air (OTA) updates.", dtitle: "Boot" },
-        { img: "https://img.freepik.com/free-photo/3d-rendering-futuristic-computer_23-2151004383.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Embedded Firmware Development",subtitle: "Custom firmware solutions optimized", dtitle: "optimized" }
+        { img: "https://img.freepik.com/free-photo/hand-touching-tablet_1134-117.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Unlocking Device Potential", subtitle: "Expert Firmware Solutions", dtitle: "Firmware" },
+        { img: "https://img.freepik.com/free-photo/saas-concept-collage_23-2149399280.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Firmware Optimization", subtitle: "Enhancing firmware efficiency with performance", dtitle: "Electronic" },
+        { img: "https://img.freepik.com/free-photo/standard-quality-control-collage-concept_23-2149595844.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: " Secure Boot & Firmware Updates", subtitle: "seamless over-the-air (OTA) updates.", dtitle: "Boot" },
+        { img: "https://img.freepik.com/free-photo/3d-rendering-futuristic-computer_23-2151004383.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a", title: "Embedded Firmware Development", subtitle: "Custom firmware solutions optimized", dtitle: "optimized" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -160,18 +160,19 @@ const Firmware = () => {
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                <div ref={expertiseRef} className="pt-40   bg-gray-100">
                     <div ref={expertiseInView} className="container mx-auto px-16">
                         <Expertise />
                     </div>
+                    <CallUs />
                 </div>
 
-                <div ref={partnerRef} className="pt-40   ">
-                    <div ref={partnerInView} className="container mx-auto px-16">
+                <div ref={partnerRef} className="pt-40   bg-gradient-to-r from-pink-300/40 via-yellow-100/60 to-blue-400/60">
+                    <div ref={partnerInView} className="container mx-auto px-16 pb-40">
                         <Partner />
                     </div>
-                    <CallUs/>
-                    <ClientReview/>
+
+                    <ClientReview />
                 </div>
 
                 <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
