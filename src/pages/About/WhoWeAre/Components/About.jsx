@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
 
-  const image1 = "https://img.freepik.com/free-photo/modern-electronic-circuit-board-black-background-3d-illustration_1057-45969.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
+  const image1 = "https://img.freepik.com/free-photo/kids-futuristic-school-classroom_23-2150892854.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid";
   return (
     <div className='md:flex justify-between items-center gap-20'>
       <motion.div
