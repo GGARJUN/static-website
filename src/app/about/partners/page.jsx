@@ -1,13 +1,12 @@
+import PartnerDetails from '@/pages/About/Partner/page'
 import React from 'react'
 
-const Patners = () => {
+const PatnersPage = () => {
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Patners</h2>
-      </div>
-    </div>
+<main>
+  <PartnerDetails/>
+</main>
   )
 }
 
-export default Patners
+export default PatnersPage

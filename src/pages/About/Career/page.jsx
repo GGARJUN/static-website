@@ -15,7 +15,7 @@ import CallUs from "./Components/CallUs";
 import FAQ from "./Components/FAQ";
 import Approach from "./Components/Approach";
 
-const WhoWeAre = () => {
+const Careers = () => {
   const banners = [
     { img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Who We Are", },
   ];
@@ -88,4 +88,4 @@ const WhoWeAre = () => {
   )
 }
 
-export default WhoWeAre
+export default Careers
