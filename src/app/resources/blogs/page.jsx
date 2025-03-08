@@ -10,13 +10,15 @@ import { FaXTwitter } from "react-icons/fa6";
 import Blogs from "@/pages/Resources/Blog/page";
 
 
+export const revalidate = 30;
+
 async function getData() {
   const query = groq`
   *[_type == 'post']{
     ...,
     author->,
       categories[]->,
-  } | order(_createdAt asc)
+  } | order(_createdAt desc)
     `;
 
   const posts = await client.fetch(query);
