@@ -1,8 +1,9 @@
 import { FaRegLightbulb, FaMedal, FaSearch, FaCheckCircle } from "react-icons/fa";
 import { AiOutlineRocket, AiOutlineCheckCircle } from "react-icons/ai";
 import { FaLightbulb } from "react-icons/fa6";
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
-export default function Dummy() {
+export default function HowWeWork() {
 
     const StatCard = ({ icon, number, text, bgColor }) => (
         <div
@@ -35,31 +36,51 @@ export default function Dummy() {
     );
 
     return (
-        <div className="relative mt-40 bg-[#071342] py-24 bg-[url('https://html.awaikenthemes.com/corprate/images/how-we-work-bg-image.png')] bg-cover bg-center bg-fixed">
+        <div className="relative  bg-[#240a59] py-24 bg-[url('https://html.awaikenthemes.com/corprate/images/how-we-work-bg-image.png')] bg-cover bg-center bg-fixed">
             <div className="container mx-auto px-8 lg:px-16 text-white">
                 {/* Stats Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-12">
                     <StatCard
                         icon={<FaRegLightbulb size={30} />}
-                        number="10K+"
+                        number={<div className="flex items-center gap-2">
+                            <NumberTicker
+                            value={10} 
+                            className="whitespace-pre-wrap  font-medium tracking-tighter text-white"
+                          /><p> K+</p>
+                        </div>}
                         text="We have successfully delivered 10K+ projects."
                         bgColor="bg-gradient-to-r from-blue-500 to-indigo-600"
                     />
                     <StatCard
                         icon={<AiOutlineRocket size={30} />}
-                        number="924+"
+                        number={<div className="flex items-center gap-2">
+                            <NumberTicker
+                            value={924} 
+                            className="whitespace-pre-wrap  font-medium tracking-tighter text-white"
+                          /><p> +</p>
+                        </div>}
                         text="We have successfully launched over marketing campaigns."
                         bgColor="bg-gradient-to-r from-purple-500 to-pink-500"
                     />
                     <StatCard
                         icon={<AiOutlineCheckCircle size={30} />}
-                        number="97%"
+                        number={<div className="flex items-center gap-2">
+                            <NumberTicker
+                            value={97} 
+                            className="whitespace-pre-wrap  font-medium tracking-tighter text-white"
+                          /><p> %</p>
+                        </div>}
                         text="We pride ourselves on maintaining a 97% success."
                         bgColor="bg-gradient-to-r from-green-500 to-teal-500"
                     />
                     <StatCard
                         icon={<FaMedal size={30} />}
-                        number="32+"
+                        number={<div className="flex items-center gap-2">
+                            <NumberTicker
+                            value={32} 
+                            className="whitespace-pre-wrap  font-medium tracking-tighter text-white"
+                          /><p> +</p>
+                        </div>}
                         text="We've been honored with 32+ industry awards."
                         bgColor="bg-gradient-to-r from-orange-500 to-red-500"
                     />
@@ -110,4 +131,20 @@ export default function Dummy() {
     );
 }
 
+// Component for Stats
+const StatCard = ({ icon, number, text }) => (
+    <div className="flex flex-col items-center space-y-3">
+        <div className="text-red-500">{icon}</div>
+        <h3 className="text-3xl font-bold">{number}</h3>
+        <p className="text-sm opacity-80">{text}</p>
+    </div>
+);
 
+// Component for Work Steps
+const StepCard = ({ step, title, text }) => (
+    <div className="mt-6 border-l-4 border-red-500 pl-4">
+        <h4 className="text-red-500 font-bold text-lg">Step {step}</h4>
+        <h3 className="text-xl font-semibold">{title}</h3>
+        <p className="text-sm opacity-80">{text}</p>
+    </div>
+);

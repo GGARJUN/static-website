@@ -1,12 +1,39 @@
+"use server"
+import { client } from "@/lib/createClient";
+import { groq } from "next-sanity";
+import { urlFor } from "@/lib/createClient";
+import { SquareArrowOutUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { FaArrowDown, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import Blogs from "@/pages/Resources/Blog/page";
 
-const Blos = () => {
+
+async function getData() {
+  const query = groq`
+  *[_type == 'post']{
+    ...,
+    author->,
+      categories[]->,
+  } | order(_createdAt asc)
+    `;
+
+  const posts = await client.fetch(query);
+
+  return posts;
+}
+
+
+export default async function BlogPage() { 
+  const posts = await getData()
+
+
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>Blos</h2>
-      </div>
+    <div>
+      <Blogs posts={posts}/>
     </div>
   )
 }
 
-export default Blos
+

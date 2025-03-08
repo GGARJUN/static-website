@@ -17,7 +17,7 @@ import Approach from "./Components/Approach";
 
 const CaseStudies = () => {
   const banners = [
-    { img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Who We Are", },
+    { img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Case Studies", },
   ];
 
   return (
@@ -27,7 +27,7 @@ const CaseStudies = () => {
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative ">
               <img src={banner.img} alt={banner.title} className="w-full h-full object-cover fixed -z-50" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/80"></div>
               <div className="absolute inset-0 flex flex-col  justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6 duration-500">
                   <Highlight>{banner.title}</Highlight>

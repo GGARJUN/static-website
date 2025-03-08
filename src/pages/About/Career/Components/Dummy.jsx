@@ -1,6 +1,7 @@
 import { FaRegLightbulb, FaMedal, FaSearch, FaCheckCircle } from "react-icons/fa";
 import { AiOutlineRocket, AiOutlineCheckCircle } from "react-icons/ai";
 import { FaLightbulb } from "react-icons/fa6";
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
 export default function Dummy() {
 
@@ -41,7 +42,12 @@ export default function Dummy() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-12">
                     <StatCard
                         icon={<FaRegLightbulb size={30} />}
-                        number="10K+"
+                        number={<div>
+                            <NumberTicker
+                            value={10}
+                            className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+                          /><p>K+</p>
+                        </div>}
                         text="We have successfully delivered 10K+ projects."
                         bgColor="bg-gradient-to-r from-blue-500 to-indigo-600"
                     />

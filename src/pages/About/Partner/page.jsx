@@ -17,7 +17,7 @@ import Approach from "./Components/Approach";
 
 const PartnerDetails = () => {
   const banners = [
-    { img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Who We Are", },
+    { img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Our Partners", },
   ];
 
   return (
@@ -51,6 +51,8 @@ const PartnerDetails = () => {
           </div>
         </div>
       </div>
+
+
       <div>
         <div className=" py-40 bg-white">
           <div className="container mx-auto px-16">
@@ -58,11 +60,11 @@ const PartnerDetails = () => {
           </div>
         </div>
 
-        <div className="py-40  bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100 ">
+        {/* <div className="py-40  bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100 ">
           <div className="container mx-auto px-16">
             <Expertise />
           </div>
-        </div>
+        </div> */}
 
         <div className="pt-40  bg-gray-100 ">
           <div className="">

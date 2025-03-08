@@ -15,6 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import ClientReview from "./Components/ClientReview";
 import CallUs from "./Components/CallUs";
+import { Highlight } from "@/components/ui/hero-highlight";
 
 const ContactUs = () => {
   const banners = [
@@ -63,19 +64,23 @@ const ContactUs = () => {
       </div>
 
 
-      <div className="relative -top-[120px] container mx-auto rounded-xl w-full bg-white shadow-xl h-96 2xl:h-[500px]">
+      <div className="relative -top-[120px] container mx-auto rounded-xl w-full bg-white shadow-xl h-[500px] 2xl:h-[600px]">
         <div className="grid  md:grid-cols-2 grid-cols-1 items-center justify-between gap-10">
-          <img src="https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="image" className="2xl:h-[500px] h-96 object-cover rounded-l-xl " />
-          <div className="md:max-w-lg mx-16 md:mx-0">
+          <img src="https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="image" className="2xl:h-[600px] h-[500px] object-cover rounded-l-xl " />
+          <div className="md:max-w-2xl mx-16 md:mx-0">
             <h2 className="text-5xl font-semibold text-blue-900">Let’s Talk</h2>
-            <p className="my-4 2xl:my-8 2xl:text-xl font-semibold text-blue-950">Let's make something great together. We are trusted by over 5000+ clients. Join them by using our services and grow your business.</p>
-            <p className="text-sm max-w-lg text-muted-foreground">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p className="my-4 2xl:my-8 2xl:text-xl md:mr-10 2xl:mr-0 font-semibold text-blue-950 text-justify">At SunKey Technologies, we believe in solving complex business challenges of the converging world by using cutting-edge technologies. Our team is dedicated to delivering innovative solutions that transform industries and enhance efficiency. Whether you have questions about our services or would like to explore how we can help your business thrive, we're here to assist you.
+            </p>
+            <p className=" text-justify text-foreground md:mr-10 2xl:mr-0">We're committed to understanding your unique needs and providing tailored support. Feel free to reach out to us using the contact form below or by visiting our office. We look forward to collaborating with you.
+            </p>
             <button className='group mt-4 2xl:mt-8 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Join Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-72 md:mt-20 mb-20 ">
+      <div className="container mx-auto  px-16 mt-[450px] md:mt-20 mb-20 ">
+        <h2 className="flex items-center gap-3 text-lg font-medium"><div className="bg-blue-600 h-2 w-2 rounded-full"></div> contact us</h2>
+        <h2 className="mt-10 text-5xl mb-20 font-semibold">Get in touch with us</h2>
         <div className="grid grid-cols-12 gap-20 items-start ">
           <div className="md:col-span-8 col-span-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -133,7 +138,7 @@ const ContactUs = () => {
             <p className="mt-5 text-muted-foreground">* These fields are required.</p>
           </div>
 
-          <div className="md:col-span-4 col-span-12 flex flex-col w-full gap-20">
+          <div className="md:col-span-4 col-span-12 flex flex-col w-full gap-20 ">
             {details.map((item, index) => (
               <div key={index} className="flex items-center gap-10">
                 <img src={item.img} alt="" className="w-20" />
@@ -146,46 +151,21 @@ const ContactUs = () => {
             ))}
           </div>
         </div>
+        <h2 className="mt-40 text-center text-4xl text-white ">
+          <Highlight className="px-5 py-5">Let me know if you need any adjustments or if this meets your expectations!</Highlight>
+        </h2>
       </div>
 
       <div className="">
-          <div className="container mx-auto ">
-          </div>
+          <div className=" ">
           <ClientReview />
           <CallUs />
+          </div>
         </div>
 
 
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497511.2328012295!2d79.87829923975285!3d13.047985080747324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1741358332238!5m2!1sen!2sin" width="800" height="600" loading="lazy" className="w-full"></iframe>
 
-
-      {/* <div>
-        <div className=" py-40 bg-white">
-          <div className="container mx-auto px-16">
-            <About />
-          </div>
-        </div>
-
-        <div className="py-40  bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100 ">
-          <div className="container mx-auto px-16">
-            <Expertise />
-          </div>
-        </div>
-
-        <div className="pt-40  bg-gray-100 ">
-          <div className="">
-            <Approach />
-          </div>
-        </div>
-
-
-
-        <div className="py-40 bg-gradient-to-r from-pink-100 via-blue-200 to-indigo-100 ">
-          <div className="container mx-auto px-16">
-            <FAQ />
-          </div>
-        </div>
-      </div> */}
     </div>
   )
 }
