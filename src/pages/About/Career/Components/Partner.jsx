@@ -1,6 +1,7 @@
 import { FaRegLightbulb, FaMedal, FaSearch, FaCheckCircle } from "react-icons/fa";
 import { AiOutlineRocket, AiOutlineCheckCircle } from "react-icons/ai";
 import { FaLightbulb } from "react-icons/fa6";
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
 export default function Partner() {
 
