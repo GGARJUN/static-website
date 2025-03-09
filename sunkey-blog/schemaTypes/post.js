@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'post',
@@ -11,9 +11,9 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name:"description",
-      title:"Description",
-      type:"string",
+      name: 'description',
+      title: 'Description',
+      type: 'text', // Changed to 'text' for better handling of long descriptions
     }),
     defineField({
       name: 'slug',
@@ -28,7 +28,7 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
     }),
     defineField({
       name: 'mainImage',
@@ -42,7 +42,13 @@ export default defineType({
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{ type: 'reference', to: { type: 'category' } }],
+    }),
+    defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'tag' }] }], // Fixed reference to `tag` correctly
     }),
     defineField({
       name: 'publishedAt',
@@ -61,10 +67,15 @@ export default defineType({
       title: 'title',
       author: 'author.name',
       media: 'mainImage',
+      tags: 'tags',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author, tags } = selection;
+      const tagNames = tags ? tags.map(tag => tag.title).join(', ') : 'No tags';
+      return {
+        ...selection,
+        subtitle: author ? `by ${author} | Tags: ${tagNames}` : `Tags: ${tagNames}`,
+      };
     },
   },
-})
+});

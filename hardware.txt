@@ -189,6 +189,29 @@ export default Hardware
 
 
 
+                                        {/* <div className="border my-5"></div> */}
+
+                                        {/* <div className="flex items-center gap-5">
+                                            <img
+                                                src={urlFor(post?.author?.image).url()}
+                                                width={70}
+                                                height={70}
+                                                alt={post.title || "Blog Post Image"}
+                                                className="rounded-full object-cover w-16"
+                                            />
+                                            <div>
+                                                <h1 className="font-medium text-lg">{post?.author.name}</h1>
+                                                <h1 className="text-muted-foreground font-medium">{post?.author.description}</h1>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-3 mt-8 justify-start text-blue-600">
+                                            <button className="font-medium opacity-0 group-hover:opacity-100 duration-300 transition-all">
+                                                Learn More
+                                            </button>
+                                            <span className="-translate-x-24 group-hover:translate-x-0 transition-transform duration-200">
+                                                <SquareArrowOutUpRight size={18} />
+                                            </span>
+                                        </div> */}
 
 
 

@@ -18,6 +18,7 @@ async function getData() {
     ...,
     author->,
       categories[]->,
+      tags[]->,
   } | order(_createdAt desc)
     `;
 
