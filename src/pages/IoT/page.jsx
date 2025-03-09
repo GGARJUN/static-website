@@ -14,7 +14,11 @@ import Partner from "./components/Partner";
 import FAQ from "./components/FAQ";
 import CallUs from "./components/CallUs";
 import ClientReview from "./components/ClientReview";
-const IndustrialIoT = () => {
+import LevelMonitoring from "./components/LevelMonitoring";
+import SmartLightIoT from "./components/SmartLightIoT";
+import SmartHomeIoT from "./components/SmartHomeIoT";
+import IndustrialIoT from "./components/IndustrialIoT";
+const IoT = () => {
     const banners = [
         { img: "https://img.freepik.com/free-photo/designer-using-3d-printer_23-2151037099.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Industrial IoT Services", subtitle: "Transforming Industries with Smart Solutions", dtitle: "Industrial IoT" },
         { img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Smart Sensor Integration", subtitle: "Seamless connectivity for real-time data monitoring.", dtitle: "Sensor" },
@@ -58,26 +62,42 @@ const IndustrialIoT = () => {
     }, [originalOffset]);
     const sectionRef = useRef(null);
     const aboutRef = useRef(null);
-    const expertiseRef = useRef(null);
-    const partnerRef = useRef(null);
+    const capabilitiesRef = useRef(null);
+    const industrialIoTRef = useRef(null);
+    const smarthomeIoTRef = useRef(null);
+    const smartlightIoTRef = useRef(null);
+    const levelRef = useRef(null);
+    const whyPartnerRef = useRef(null);
     const faqRef = useRef(null);
     const sections = [
         { ref: aboutRef, label: "About the Service" },
-        { ref: expertiseRef, label: "Our Expertise" },
-        { ref: partnerRef, label: "Why Partner with Us" },
+        { ref: capabilitiesRef, label: "Capabilities" },
+        { ref: industrialIoTRef, label: "Industrial IoT" },
+        { ref: smarthomeIoTRef, label: "Smart Home IoT" },
+        { ref: smartlightIoTRef, label: "Smart Lighting IoT" },
+        { ref: levelRef, label: "Level Monitoring" },
+        { ref: whyPartnerRef, label: "Why Partner" },
         { ref: faqRef, label: "FAQs" },
     ];
     const [activeIndex, setActiveIndex] = useState(0);
     const { ref: aboutInView, inView: isAboutInView } = useInView({ threshold: 0.5 });
-    const { ref: expertiseInView, inView: isExpertiseInView } = useInView({ threshold: 0.5 });
-    const { ref: partnerInView, inView: isPartnerInView } = useInView({ threshold: 0.5 });
+    const { ref: capabilities, inView: isCapabilities } = useInView({ threshold: 0.5 });
+    const { ref: industrialIoT, inView: isIndustrialIoT } = useInView({ threshold: 0.5 });
+    const { ref: smarthomeIoT, inView: isSmartHomelIoT } = useInView({ threshold: 0.5 });
+    const { ref: smartlightIoT, inView: isSmartLightlIoT } = useInView({ threshold: 0.5 });
+    const { ref: level, inView: isLevel } = useInView({ threshold: 0.5 });
+    const { ref: whyPartner, inView: isWhyPartner } = useInView({ threshold: 0.5 });
     const { ref: faqInView, inView: isFaqInView } = useInView({ threshold: 0.5 });
     useEffect(() => {
         if (isAboutInView) setActiveIndex(0);
-        else if (isExpertiseInView) setActiveIndex(1);
-        else if (isPartnerInView) setActiveIndex(2);
-        else if (isFaqInView) setActiveIndex(3);
-    }, [isAboutInView, isExpertiseInView, isPartnerInView, isFaqInView]);
+        else if (isCapabilities) setActiveIndex(1);
+        else if (isIndustrialIoT) setActiveIndex(2);
+        else if (isSmartHomelIoT) setActiveIndex(3);
+        else if (isSmartLightlIoT) setActiveIndex(4);
+        else if (isLevel) setActiveIndex(5);
+        else if (isWhyPartner) setActiveIndex(6);
+        else if (isFaqInView) setActiveIndex(7);
+    }, [isAboutInView, isCapabilities, isIndustrialIoT, isSmartHomelIoT, isSmartLightlIoT,isLevel,isWhyPartner, isFaqInView]);
     const scrollToSection = (ref, index) => {
         if (ref?.current) {
             ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -91,13 +111,6 @@ const IndustrialIoT = () => {
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
                             <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" />
-                            {/* <video
-                                src={banner.video} // Replace with your video URL
-                                className="w-full h-full object-cover"
-                                autoPlay // Automatically plays
-                                loop // Loops the video
-                                muted // Starts muted
-                            /> */}
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                                 <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
@@ -136,8 +149,8 @@ const IndustrialIoT = () => {
                 </div>
             </div>
 
-            <section ref={sectionRef} className={`md:px-[271px] px-20 transition-all duration-300 bg-white  w-full  ${isFixed ? "fixed top-0 w-full  shadow-md z-20" : ""} ${hidden ? " top-0 " : " top-[89px] "} transition-transform duration-700`}>
-                <div className="bg-white grid grid-cols-1  md:grid-cols-4 justify-center items-center ">
+            <section ref={sectionRef} className={` px-20 transition-all duration-300 bg-white  w-full  ${isFixed ? "fixed top-0 w-full  shadow-md z-20" : ""} ${hidden ? " top-0 " : " top-[89px] "} transition-transform duration-700`}>
+                <div className="bg-white grid grid-cols-1  md:grid-cols-8 justify-center items-center ">
                     {sections.map((section, index) => (
                         <button key={index} onClick={() => scrollToSection(section.ref, index)} className={`relative flex justify-center font-medium py-4 px-5 text-center  hover:bg-gray-200 transition-all`}>
                             {section.label}
@@ -161,18 +174,42 @@ const IndustrialIoT = () => {
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
-                    <div ref={expertiseInView} className="container mx-auto px-16">
+                <div ref={capabilitiesRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                    <div ref={capabilities} className="container mx-auto px-16">
                         <Expertise />
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="pt-40   ">
-                    <div ref={partnerInView} className="container mx-auto px-16">
+                <div ref={industrialIoTRef} className="py-40   ">
+                    <div ref={industrialIoT} className="container mx-auto px-16">
+                        <IndustrialIoT/>
+                    </div>
+                </div>
+
+                <div ref={smarthomeIoTRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                    <div ref={smarthomeIoT} className="container mx-auto px-16">
+                    <SmartHomeIoT />
+                    </div>
+                </div>
+
+                <div ref={smartlightIoTRef} className="py-40   ">
+                    <div ref={smartlightIoT} className="container mx-auto px-16">
+                        <SmartLightIoT />
+                    </div>
+                </div>
+
+                <div ref={levelRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                    <div ref={level} className="container mx-auto px-16">
+                    <LevelMonitoring/>
+                    </div>
+                </div>
+
+                <div ref={whyPartnerRef} className="pt-40   ">
+                    <div ref={whyPartner} className="container mx-auto px-16">
                         <Partner />
                     </div>
-                    <CallUs/>
-                    <ClientReview/>
+                    <CallUs />
+                    <ClientReview />
                 </div>
 
                 <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
@@ -186,4 +223,4 @@ const IndustrialIoT = () => {
     )
 }
 
-export default IndustrialIoT
+export default IoT

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import React from 'react';
 import { RichText } from './Components/RichText';
 import { format } from 'date-fns';
-import { FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import { FaArrowRight, FaArrowRightArrowLeft, FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 
 // Fetch Single Blog Data
 export const getPostData = async (slug) => {
@@ -36,10 +36,10 @@ export const getRelatedPosts = async (categories, tags, excludeSlug) => {
         }
     `;
 
-    return await client.fetch(query, { 
-        categories, 
-        tags, 
-        excludeSlug 
+    return await client.fetch(query, {
+        categories,
+        tags,
+        excludeSlug
     });
 };
 
@@ -82,48 +82,71 @@ export default async function SingleBlogArticle({ params }) {
     return (
         <div className="bg-gray-50 text-gray-900">
             <BlogBanner />
-            <div className="container mx-auto py-20 px-10">
+            <div className="container mx-auto py-20 px-10 md:px-0">
 
                 <div className='grid grid-cols-12 gap-10'>
                     {/* Blog Main Content */}
-                    <div className=" md:col-span-8 col-span-12  bg-white shadow-lg rounded-lg p-6">
+                    <div className=" md:col-span-9 col-span-12    rounded-lg">
+                        <div className="flex flex-wrap gap-2 ">
+                            {post?.categories?.map((item, index) => (
+                                <span key={`${item?._id || index}`} className=" text-blue-600  rounded-full text-xl font-semibold">
+                                    {item?.title}
+                                </span>
+                            ))}
+                        </div>
+                        <h1 className="text-4xl font-bold text-blue-900 mt-6">{post?.title}</h1>
+                        <p className="mt-4 text-lg text-gray-700">{post?.description}</p>
+                        <div className='flex items-end justify-between'>
+                            <div className="flex items-center gap-4 mt-6">
+                                <Image
+                                    src={urlFor(post?.author?.image).url()}
+                                    width={50}
+                                    height={50}
+                                    alt="Author Image"
+                                    className="w-14 h-14 rounded-full object-cover"
+                                />
+                                <div>
+                                    <p className="text-lg font-semibold text-blue-900">{post?.author?.name}</p>
+                                    <p className="text-gray-500 text-sm">{post?.author?.description}</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center justify-end  space-x-6 text-gray-600">
+                                <p className="text-sm">{post?._createdAt && format(new Date(post._createdAt), "MMMM dd, yyyy")}</p>
+                                <div className='h-2 w-2 rounded-full bg-blue-600'></div>
+                                <div className='flex justify-end  items-center gap-4 '>
+                                    <h2>Share</h2>
+                                    <div className='flex items-center gap-3 text-muted-foreground'>
+                                        <FaFacebook size={24} />
+                                        <FaXTwitter size={24} />
+                                        <FaLinkedin size={24} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='border w-full my-10'></div>
                         <Image
                             src={urlFor(post?.mainImage).url()}
                             width={800}
                             height={450}
                             alt="Main Image"
-                            className="w-full h-[400px] object-cover rounded-lg"
+                            className="w-full h-[400px] object-cover rounded-lg "
                         />
-                        <h1 className="text-4xl font-bold text-blue-900 mt-6">{post?.title}</h1>
-                        <div className="flex items-center mt-4 space-x-6 text-gray-600">
-                            <p className="text-sm">{post?._createdAt && format(new Date(post._createdAt), "MMMM dd, yyyy")}</p>
-                            <div className="flex flex-wrap gap-2">
+
+                        <div className="my-6">
+                            <PortableText value={post?.body} components={RichText} />
+                        </div>
+                        <div className='border w-full'></div>
+                        <h2 className='my-5 flex items-center gap-3 font-bold text-xl'>TAGS : <span>
+                            <div className="flex flex-wrap gap-2 ">
                                 {post?.categories?.map((item, index) => (
-                                    <span key={`${item?._id || index}`} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+                                    <span key={`${item?._id || index}`} className="bg-blue-100 text-blue-800 px-3 py-2 rounded-full text-sm font-semibold">
                                         {item?.title}
                                     </span>
                                 ))}
                             </div>
-
-                        </div>
-                        <p className="mt-4 text-lg text-gray-700">{post?.description}</p>
-                        <div className="flex items-center gap-4 mt-6">
-                            <Image
-                                src={urlFor(post?.author?.image).url()}
-                                width={50}
-                                height={50}
-                                alt="Author Image"
-                                className="w-14 h-14 rounded-full object-cover"
-                            />
-                            <div>
-                                <p className="text-lg font-semibold text-blue-900">{post?.author?.name}</p>
-                                <p className="text-gray-500 text-sm">{post?.author?.description}</p>
-                            </div>
-                        </div>
-                        <div className="my-6">
-                            <PortableText value={post?.body} components={RichText} />
-                        </div>
-                        <div className='flex justify-end  items-center gap-4'>
+                        </span></h2>
+                        <div className='border w-full'></div>
+                        <div className='flex justify-end  items-center gap-4 mt-5'>
                             <h2>Share</h2>
                             <div className='flex items-center gap-3 text-muted-foreground'>
                                 <FaFacebook size={24} />
@@ -135,7 +158,7 @@ export default async function SingleBlogArticle({ params }) {
 
 
                     {/* Recent Posts */}
-                    <div className='md:col-span-4 col-span-12'>
+                    <div className='md:col-span-3 col-span-12'>
                         <div className=''>
                             <h2 className="text-2xl font-semibold text-blue-900 mb-4">Recent Posts</h2>
                             <div className="flex flex-col gap-4">
@@ -153,17 +176,28 @@ export default async function SingleBlogArticle({ params }) {
                                                 <p className="text-lg font-medium text-blue-800">{item.title}</p>
                                                 <div className="flex items-center mt-4 space-x-6 text-gray-600">
                                                     <p className="text-sm">{post?._createdAt && format(new Date(post._createdAt), "MMMM dd, yyyy")}</p>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
                                     </Link>
                                 ))}
                             </div>
+
+                            <div className='w-full  bg-slate-200 mt-10 rounded-lg p-6'>
+                                <h2 className='text-2xl mb-5 '>Explore what's next in engineering</h2>
+                                <button className='flex items-center gap-3 bg-blue-600 px-6 py-3 font-semibold text-white rounded-lg group'>Learn More <FaArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+                            </div>
+
+                            <div className='mt-10 rounded-lg relative'>
+                                <img src="https://hcltech.imgix.net/sites/default/files/sidebar-advertisement/2024-08/cloud-banner-389-507-pixel-1.webp?auto=compress&fit=crop&ixlib=php-3.3.1" alt="" className='rounded-lg' />
+                                <div className='absolute top-6 left-6 '>
+                                    <h2 className=' text-white text-5xl'>Strategy and solutions to make innovation a habit</h2>
+                                    <button className='flex items-center gap-3 mt-5 bg-blue-600 px-6 py-3 font-semibold text-white rounded-lg group'>Learn More <FaArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+                                </div>
+                            </div>
                             {/* All Tags */}
-
-
-                            <h2 className="text-2xl font-semibold text-blue-900 mt-14">Tags</h2>
+                            {/* <h2 className="text-2xl font-semibold text-blue-900 mt-14">Tags</h2>
                             <div className="flex flex-wrap gap-x-3 gap-y-10 mt-7">
                                 {allTags.length > 0 ? (
                                     allTags.map((tag, index) => (
@@ -176,14 +210,14 @@ export default async function SingleBlogArticle({ params }) {
                                 ) : (
                                     <p className="text-gray-500">No tags found.</p>
                                 )}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
 
 
 
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
 
                     <div>
                         <h2 className="text-2xl font-semibold text-blue-900 mb-4">Related Posts</h2>
@@ -208,7 +242,7 @@ export default async function SingleBlogArticle({ params }) {
                             )}
                         </div>
                     </div>
-                </div> */}
+                </div>
 
 
             </div>
