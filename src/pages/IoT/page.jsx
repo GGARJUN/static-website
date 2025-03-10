@@ -174,7 +174,7 @@ const IoT = () => {
                     </div>
                 </div>
 
-                <div ref={capabilitiesRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                <div ref={capabilitiesRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 ">
                     <div ref={capabilities} className="container mx-auto px-16">
                         <Expertise />
                     </div>
@@ -186,7 +186,7 @@ const IoT = () => {
                     </div>
                 </div>
 
-                <div ref={smarthomeIoTRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                <div ref={smarthomeIoTRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
                     <div ref={smarthomeIoT} className="container mx-auto px-16">
                     <SmartHomeIoT />
                     </div>
@@ -198,7 +198,7 @@ const IoT = () => {
                     </div>
                 </div>
 
-                <div ref={levelRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                <div ref={levelRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 ">
                     <div ref={level} className="container mx-auto px-16">
                     <LevelMonitoring/>
                     </div>

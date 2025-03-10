@@ -13,29 +13,29 @@ const FAQ = () => {
 
   const faqItems = [
     {
-      question: "1. What types of industries benefit from Industrial IoT?",
+      question: "1. What types of IoT solutions do you offer?",
       answer:
-        "Industrial IoT benefits various sectors, including manufacturing, automotive, agriculture, and utilities.",
+        "We offer Industrial IoT, Smart Homes IoT, Smart Lighting IoT, and Level Monitoring solutions.",
     },
     {
-      question: "2. Can you help with predictive maintenance?",
+      question: "2. Can you help with industrial automation using IoT?",
       answer:
-        "Yes, we use sensors to predict equipment failures and reduce downtime.",
+        "Yes, we implement IoT technologies to enhance industrial efficiency and productivity.",
     },
     {
-      question: "3. Do you provide real-time monitoring solutions?",
+      question: "3. Do you provide smart home IoT solutions?",
       answer:
-        "Yes, we provide real-time data on production processes to optimize workflows.",
+        "Yes, we create smart home solutions that make living easier and more convenient.",
     },
     {
-      question: "4. How do you enhance industrial automation?",
+      question: "4. Can you develop smart lighting systems?",
       answer:
-        "We automate tasks with smart machines and sensors to improve accuracy and efficiency.",
+        "Yes, we develop intelligent lighting systems for energy efficiency and ambiance.",
     },
     {
-      question: "5. Do you offer asset tracking services?",
+      question: "5. Do you offer IoT-based level monitoring services?",
       answer:
-        "Yes, we track assets in real-time to improve logistics and supply chain management.",
+        "Yes, we provide IoT-based level monitoring solutions for various applications.",
     },
   ];
   return (

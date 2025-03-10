@@ -4,7 +4,7 @@ const CallUs = () => {
   return (
 
     <div
-      className="relative bg-[url('https://img.freepik.com/free-photo/lifestyle-designer-using-3d-printer_23-2151019900.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')] bg-cover bg-fixed bg-center mt-40 h-[900px] flex items-center justify-center"
+      className="relative bg-[url('https://img.freepik.com/free-photo/businessman-checking-his-phone_53876-93007.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')] bg-cover bg-fixed bg-center mt-40 h-[900px] flex items-center justify-center"
     >
        <div className="absolute  inset-0 bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40"></div>
       <div className="container mx-auto px-6 py-20 relative">

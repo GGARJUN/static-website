@@ -37,8 +37,11 @@ const About = () => {
         className="max-w-2xl"
       >
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-        <h1 className='text-5xl font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>SunKey Technologies,</span> Our Industrial IoT services</h1>
-        <p className='text-lg font-medium text-gray-600 tracking-wide'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Our Industrial IoT services</span>  focus on deploying smart devices and sensors to enhance operational efficiency, safety, and productivity in industrial settings. <br /><br /> Our team of experts helps integrate IoT technology into manufacturing processes, enabling real-time monitoring, predictive maintenance, and automation
+        <h1 className='text-5xl font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>SunKey Technologies,</span> Our IoT services</h1>
+        <p className='text-lg font-medium text-gray-600 tracking-wide'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Our Internet of Things (IoT) services</span>  focus on deploying smart devices and sensors to enhance efficiency, safety, and productivity across various sectors. Our team of experts integrates IoT technology into systems to provide real-time monitoring, automation, and data-driven insights. From industrial automation to smart home solutions, we help transform industries and living spaces by <span className='text-blue-600 font-semibold'>leveraging the power of IoT.</span>
+          <br /><br />
+          The <span className='text-blue-600 font-semibold'>Internet of Things (IoT)</span> is a network of physical devices, vehicles, appliances, and other objects embedded with sensors, software, and network connectivity. This allows them to collect and share data, creating a vast network of interconnected devices that can exchange data and perform various tasks autonomously.<span className='text-blue-600 font-semibold'> At SunKey Technologies, we leverage IoT technology</span> to enhance efficiency, safety, and productivity across various sectors.
+
         </p>
         <div className='flex items-center justify-center gap-40 mt-10'>
           <div className='flex items-center gap-3'>
