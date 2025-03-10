@@ -12,7 +12,7 @@
   display: none;
 }
 
-:root {
+/* :root {
   --font-space-grotesk: "Space Grotesk", sans-serif;
   --font-geist-mono: "Geist Mono", monospace;
   --font-dancing-script: "Dancing Script", cursive;
@@ -23,7 +23,7 @@ body {
 }
 .font2{
   font-family: var(--font-dancing-script);
-}
+} */
 /* @layer base {
   :root {
 

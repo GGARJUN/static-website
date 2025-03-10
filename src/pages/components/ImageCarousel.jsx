@@ -26,7 +26,7 @@ const ImageCarousel = () => {
   }, [index, isPlaying]);
 
   return (
-    <div className="flex flex-col justify-center gap-10">
+    <div className="flex flex-col justify-center gap-10 mt-10 md:mt-0">
       <div className="w-full mx-auto overflow-hidden rounded-lg shadow-xl">
         <AnimatePresence mode="wait">
           <motion.img

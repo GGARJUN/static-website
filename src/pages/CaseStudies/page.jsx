@@ -1,19 +1,20 @@
 "use client";
+
+import dynamic from "next/dynamic";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { Play, Pause, SquareArrowOutUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { SquareArrowOutUpRight } from "lucide-react";
 import { FaArrowDown, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-import About from "./Components/About";
-import Expertise from "./Components/Expertise";
-import Partner from "./Components/Partner";
-import ClientReview from "./Components/ClientReview";
-import CallUs from "./Components/CallUs";
-import FAQ from "./Components/FAQ";
-import Approach from "./Components/Approach";
+
+const About = dynamic(() => import("./Components/About"));
+const Expertise = dynamic(() => import("./Components/Expertise"));
+const ClientReview = dynamic(() => import("./Components/ClientReview"));
+const CallUs = dynamic(() => import("./Components/CallUs"));
+const FAQ = dynamic(() => import("./Components/FAQ"));
+const Approach = dynamic(() => import("./Components/Approach"));
+
 
 const CaseStudies = () => {
   const banners = [

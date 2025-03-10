@@ -1,4 +1,6 @@
 "use client";
+
+import dynamic from "next/dynamic";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -8,12 +10,11 @@ import { FaArrowDown, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import About from "./components/About";
-import Expertise from "./components/Expertise";
-import Partner from "./components/Partner";
-import FAQ from "./components/FAQ";
-import CallUs from "./components/CallUs";
-import ClientReview from "./components/ClientReview";
+const About = dynamic(() => import("./components/About"));
+const Expertise = dynamic(() => import("./components/Expertise"));
+const Partner = dynamic(() => import("./components/Partner"));
+const FAQ = dynamic(() => import("./components/FAQ"));
+const ClientReview = dynamic(() => import("./components/ClientReview"));
 const TextFixture = () => {
     const banners = [
         { img: "https://img.freepik.com/free-photo/quality-control-inspector-writing-reports-while-analzying-manufactured-steel-rod-cylinders-industrial-building_637285-4081.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Custom Test Fixtures", subtitle: "Ensuring Product Reliability", dtitle: "Fixtures" },

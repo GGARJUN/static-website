@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 import { Users, Lightbulb, UserCheck, Shield, ArrowRight } from "lucide-react";
 import ImageCarousel from "../components/ImageCarousel";
+import Image from "next/image";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.25, delayChildren: 0.4 } }
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.9, rotate: -10 }, visible: { opacity: 0.7, scale: 2, rotate: 0, transition: { duration: 0.9, ease: "easeOut" } }, hover: { opacity: 1 }
 };
 
 const itemVariants = {
@@ -34,35 +34,41 @@ const WhyWorkWithUs = () => (
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Why Work With Us</h2>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">SunKey Technologies stands out as a partner of choice for businesses seeking reliable, high-quality solutions</motion.p>
       </motion.div>
-      <div className="md:flex md:justify-between items-start md:gap-6 mt-20">
-        <div className="md:w-[50%] h-full rounded-lg mb-10 md:mb-0"><ImageCarousel /></div>
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-6">
-          {features.map(({ title, description, img, image }) => (
-            <motion.div key={title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
-              <motion.div className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
-                <img src={image} alt={title} className="w-full h-full object-cover rounded-xl" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
+      <div className="mt-20 grid grid-cols-12 gap-10">
+        <div className=" rounded-lg mb-10 md:mb-0 col-span-12 md:col-span-4 ">
+          <ImageCarousel />
+        </div>
+        <div className="col-span-12 md:col-span-8 md:justify-between md:gap-6">
+          <motion.div className="grid md:grid-cols-2 gap-6">
+            {features.map((feature) => (
+              <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
+                <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
+                  <Image priority src={feature.image} alt={feature.title} width={1000} height={100} className="w-full h-full object-cover rounded-xl" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
+                </motion.div>
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-5">
+                    <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
+                      <Image priority src={feature.img} alt={feature.title} width={100} height={100} className="w-12" />
+                    </motion.div>
+                  </div>
+                  <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300 line-clamp-1">{feature.title}</h3>
+                  <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300 line-clamp-2">{feature.description}</p>
+                  <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
+                    <motion.div variants={{ hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } }, initial: { x: -20, opacity: 0 } }}>
+                      <motion.button className="text-sm font-medium text-white">Learn More</motion.button>
+                    </motion.div>
+                    <motion.div className="h-5 w-5 text-black">
+                      <ArrowRight className="h-5 w-5 group-hover:text-white -translate-x-20 -z-50 group-hover:translate-x-0 transition-all duration-300" />
+                    </motion.div>
+                  </div>
+                </div>
               </motion.div>
-              <div className="relative z-10">
-                <div className="flex items-center justify-between mb-5">
-                  <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
-                    <img src={img} alt="" className="w-12" />
-                  </motion.div>
-                </div>
-                <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">{title}</h3>
-                <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">{description}</p>
-                <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
-                  <motion.div variants={{ hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } }, initial: { x: -20, opacity: 0 } }}>
-                    <motion.button className="text-sm font-medium text-white">Learn More</motion.button>
-                  </motion.div>
-                  <motion.div className="h-5 w-5 text-black">
-                    <ArrowRight className="h-5 w-5 group-hover:text-white -translate-x-20 -z-50 group-hover:translate-x-0 transition-all duration-300" />
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+
+        </div>
+
       </div>
     </div>
   </section>

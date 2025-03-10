@@ -1,4 +1,6 @@
 "use client";
+
+import dynamic from "next/dynamic";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -8,16 +10,18 @@ import { FaArrowDown, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import About from "./components/About";
-import Expertise from "./components/Expertise";
-import Partner from "./components/Partner";
-import FAQ from "./components/FAQ";
-import CallUs from "./components/CallUs";
-import ClientReview from "./components/ClientReview";
-import LevelMonitoring from "./components/LevelMonitoring";
-import SmartLightIoT from "./components/SmartLightIoT";
-import SmartHomeIoT from "./components/SmartHomeIoT";
-import IndustrialIoT from "./components/IndustrialIoT";
+
+const About = dynamic(() => import("./components/About"));
+const Expertise = dynamic(() => import("./components/Expertise"));
+const Partner = dynamic(() => import("./components/Partner"));
+const FAQ = dynamic(() => import("./components/FAQ"));
+const CallUs = dynamic(() => import("./components/CallUs"));
+const ClientReview = dynamic(() => import("./components/ClientReview"));
+const LevelMonitoring = dynamic(() => import("./components/LevelMonitoring"));
+const SmartLightIoT = dynamic(() => import("./components/SmartLightIoT"));
+const SmartHomeIoT = dynamic(() => import("./components/SmartHomeIoT"));
+const IndustrialIoT = dynamic(() => import("./components/IndustrialIoT"));
+
 const IoT = () => {
     const banners = [
         { img: "https://img.freepik.com/free-photo/designer-using-3d-printer_23-2151037099.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Industrial IoT Services", subtitle: "Transforming Industries with Smart Solutions", dtitle: "Industrial IoT" },

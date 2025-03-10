@@ -1,4 +1,5 @@
 "use client";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,9 +14,10 @@ import {
 import { ArrowRight } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import ClientReview from "./Components/ClientReview";
-import CallUs from "./Components/CallUs";
 import { Highlight } from "@/components/ui/hero-highlight";
+
+const ClientReview = dynamic(() => import("./Components/ClientReview"));
+const CallUs = dynamic(() => import("./Components/CallUs"));
 
 const ContactUs = () => {
   const banners = [

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FaArrowDown, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
+import Image from "next/image";
 const banners = [
   { img: "/banner1.png", title: "Innovative Engineering", subtitle: "Solutions for a Smarter Future", dtitle: "Engineering" },
   { img: "/banner2.jpg", title: "Cutting-Edge Technology", subtitle: "Empowering the Next Generation", dtitle: "Electronic" },
@@ -30,13 +31,13 @@ const Banner = () => {
         <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative">
-              <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" />
+              <Image priority src={banner.img} alt={banner.title} width={1000} height={100} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
                   <Highlight>{banner.title}</Highlight>
                   <br />
-                  <span className="mt-4 block text-4xl md:text-5xl 2xl:text-7xl">{banner.subtitle}</span>
+                  <span className="mt-6 font-normal block text-4xl md:text-5xl ">{banner.subtitle}</span>
                 </h1>
                 <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
                   Read More <SquareArrowOutUpRight />

@@ -1,4 +1,6 @@
 "use client";
+
+import dynamic from "next/dynamic";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -8,10 +10,11 @@ import { FaArrowDown, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import WhoWeAre from "./Components/WhoWeAre";
-import Culture from "./Components/Culture";
-import HowWeWork from "./Components/HowWeWork";
-import ApplyJob from "./Components/ApplyJob";
+
+const WhoWeAre = dynamic(() => import("./Components/WhoWeAre"));
+const Culture = dynamic(() => import("./Components/Culture"));
+const HowWeWork = dynamic(() => import("./Components/HowWeWork"));
+const ApplyJob = dynamic(() => import("./Components/ApplyJob"));
 
 const Careers = () => {
     const banners = [

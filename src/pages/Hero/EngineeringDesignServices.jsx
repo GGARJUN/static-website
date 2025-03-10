@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight } from "lucide-react";
 import ImageCarousel from "../components/ImageCarousel";
+import Image from "next/image";
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -30,35 +31,42 @@ const EngineeringDesignServices = () => {
                 <motion.p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
                     SunKey Technologies offers a wide range of engineering design services designed to meet the diverse needs of our clients. Our expertise includes
                 </motion.p>
-                <div className="md:flex justify-between gap-10">
-                    <div className="mt-10 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start ">
+                    {/* Tabs Section */}
+                    <div className="lg:col-span-8 w-full mt-6 lg:mt-10">
                         <Tabs defaultValue="Hardware">
-                            <TabsList className="bg-transparent border">
+                            {/* Tabs List */}
+                            <TabsList className="bg-transparent border flex flex-wrap">
                                 {services.map((service) => (
-                                    <TabsTrigger key={service.value} value={service.value}>
+                                    <TabsTrigger key={service.value} value={service.value} className="px-4 py-2">
                                         {service.title}
                                     </TabsTrigger>
                                 ))}
                             </TabsList>
+
+                            {/* Tabs Content */}
                             {services.map((service) => (
                                 <TabsContent key={service.value} value={service.value}>
-                                    <div className="border-2 hover:shadow-xl group h-[400px] hover:scale-105 duration-500 p-5 border-gray-900 rounded-2xl flex justify-between gap-7">
-                                        <div className="flex flex-col">
-                                            <img src={service.icon} alt="" className="w-14 object-cover my-4" />
-                                            <h2 className="text-2xl sm:text-3xl mt-3 font-extrabold mb-8 sm:mb-4 text-gray-900">
+                                    <div className="border-2 hover:shadow-xl group h-auto lg:h-[400px] hover:scale-105 duration-500 p-5 border-gray-900 rounded-2xl flex flex-col lg:flex-row justify-between gap-7">
+                                        {/* Left Section - Text */}
+                                        <div className="flex flex-col w-full lg:w-1/2">
+                                            <Image priority src={service.icon} alt={service.title} width={100} height={100} className="w-12 md:w-14 object-cover my-2 md:my-4" />
+                                            <h2 className="text-xl md:text-2xl lg:text-3xl mt-3 font-extrabold mb-6 text-gray-900">
                                                 {service.title}
                                             </h2>
-                                            <p className="text-gray-600 text-lg max-w-2xl leading-relaxed transition-colors duration-300">
+                                            <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
                                                 {service.description}
                                             </p>
-                                            <div className="mt-6 flex items-center gap-3 group-hover:text-blue-500 group-hover:translate-x-3 group-hover:duration-500 ease-in-out transition-all">
-                                                <button className="text-lg font-medium">Learn More</button>
-                                                <ArrowRight className="h-5 w-5" />
+                                            <div className="mt-4 flex items-center gap-2 md:gap-3 group-hover:text-blue-500 group-hover:translate-x-2 transition-all">
+                                                <button className="text-sm md:text-lg font-medium">Learn More</button>
+                                                <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
                                             </div>
                                         </div>
+
+                                        {/* Right Section - Image */}
                                         <div className="w-full lg:w-1/2 lg:mt-0 group-hover:scale-105 duration-500">
-                                            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl">
-                                                <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover rounded-2xl"/>
+                                            <div className="relative w-full h-[250px] lg:h-full rounded-2xl overflow-hidden shadow-xl">
+                                                <Image priority src={service.image} alt={service.title} width={1000} height={100} className="absolute inset-0 w-full h-full object-cover rounded-2xl" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
                                             </div>
                                         </div>
@@ -67,10 +75,13 @@ const EngineeringDesignServices = () => {
                             ))}
                         </Tabs>
                     </div>
-                    <div className=" md:w-[50%] rounded-lg mb-10 md:mb-0 ">
+
+                    {/* Image Carousel Section */}
+                    <div className="lg:col-span-4 w-full rounded-lg mb-6 lg:mb-10 mt-6 lg:mt-10">
                         <ImageCarousel />
                     </div>
                 </div>
+
             </div>
         </section>
     );
