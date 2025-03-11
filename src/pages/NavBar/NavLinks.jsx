@@ -118,7 +118,7 @@ const NavLinks = () => {
                     : "absolute bg-transparent text-white border-none"
                     }`}
             >
-                <div className="mx-auto flex items-center justify-between px-20 py-6">
+                <div className="mx-auto flex items-center justify-between md:px-20 px-10 py-6">
                     <div className="flex justify-between w-full">
                         <Link href="/" className=" ">
                             <h2
@@ -301,9 +301,16 @@ const NavLinks = () => {
                         </div>
                     </div>
                     <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden z-50">
-                        <div className="fixed inset-0 z-10" />
-                        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6  sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
-                            <div className="flex items-center justify-end">
+                        <div className="fixed inset-0 z-50" />
+                        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6  sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
+                            <div className="flex items-center justify-between">
+                            <Link href="/" className=" ">
+                            <h2
+                                className= "text-4xl font-bold duration-300"   
+                            >
+                                SunKey
+                            </h2>
+                        </Link>
                                 <button type="button" onClick={() => setMobileMenuOpen(false)} className="ml-10 block items-center justify-center rounded-md p-2.5  "><XMarkIcon aria-hidden="true" className="size-6" /></button>
                             </div>
                             <div className="mt-6 flow-root">
