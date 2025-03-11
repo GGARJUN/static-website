@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Lightbulb, UserCheck } from "lucide-react";
+import Image from "next/image";
 
 const CaseStudies = () => {
   const features = [
@@ -16,18 +17,18 @@ const CaseStudies = () => {
   return (
     <section className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center mb-8 sm:mb-4 text-gray-900" initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>Case Studies</motion.h2>
+        <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-4" initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>Case Studies</motion.h2>
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full gap-6 mt-20">
           {features.map((feature) => (
             <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
               <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
-                <img src={feature.image} alt={feature.title} className="w-full h-full object-cover rounded-xl" />
+                <Image priority src={feature.image} alt={feature.title} width={1000} height={1000} className="w-full h-full object-cover rounded-xl" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
               </motion.div>
-              <div className="rounded-t-xl"><img src={feature.timg} alt="" className="w-full h-72 rounded-t-xl object-cover" /></div>
+              <div className="rounded-t-xl"><Image priority src={feature.timg} alt={feature.title} width={1000} height={500}  className="w-full h-72 rounded-t-xl object-cover" /></div>
               <div className="relative z-10 2xl:py-14 py-10 px-8 2xl:px-10">
                 <div className="flex items-center justify-between mb-6">
-                  <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}><img src={feature.img} alt="" className="w-12" /></motion.div>
+                  <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}><Image priority src={feature.img} alt={feature.title} width={1000} height={500} className="w-12" /></motion.div>
                 </div>
                 <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">{feature.title}</h3>
                 <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">{feature.description}</p>

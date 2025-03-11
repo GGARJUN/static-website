@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const itemVariants = { hidden: { opacity: 0, x: 0 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "linear" } }, hover: { boxShadow: "0 15px 25px rgba(0, 0, 0, 0.15)", transition: { duration: 0.3, ease: "linear" } } };
 
@@ -27,10 +28,10 @@ const Slider = () => {
     <div className="relative w-full max-w-4xl mx-auto">
       <AnimatePresence mode="wait">
         <motion.div key={index} variants={itemVariants} initial="hidden" animate="visible" exit="hidden" className="relative bg-white rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group overflow-hidden">
-          <div><img src={design[index].cimg} alt="" className="w-full h-64 rounded-t-xl object-cover transition-all duration-500 ease-linear" /></div>
+          <div><Image priority src={design[index].cimg} alt={design[index].title} width={1000} height={1000} className="w-full h-64  rounded-t-xl object-cover transition-all duration-500 ease-linear" /></div>
           <div className="relative z-10 p-6">
             <div className="flex items-center justify-between mb-6">
-              <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6, ease: "linear" }}><img src={design[index].img} alt="" className="w-12" /></motion.div>
+              <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6, ease: "linear" }}><Image priority src={design[index].img} alt={design[index].title} width={1000} height={1000} className="w-12" /></motion.div>
             </div>
             <h3 className="text-3xl font-semibold mb-3 text-gray-900 transition-all duration-500 ease-linear">{design[index].title}</h3>
             <p className="text-gray-600 text-md leading-relaxed transition-all duration-500 ease-linear">{design[index].description}</p>

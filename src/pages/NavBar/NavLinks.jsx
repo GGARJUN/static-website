@@ -19,17 +19,17 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { ChevronRightIcon, ChevronUpIcon } from "lucide-react";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import Head from "next/head";
 const NavLinks = () => {
 
     const router = useRouter();
     const [canonicalUrl, setCanonicalUrl] = useState('');
-  
+
     useEffect(() => {
-      if (typeof window !== 'undefined') {
-        setCanonicalUrl(`https://electricalstaticwebsite.netlify.app${router.asPath}`);
-      }
+        if (typeof window !== 'undefined') {
+            setCanonicalUrl(`https://electricalstaticwebsite.netlify.app${router.asPath}`);
+        }
     }, [router.asPath]);
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -110,7 +110,7 @@ const NavLinks = () => {
     return (
         <>
             <Head>
-            {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+                {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
             </Head>
             <div
                 className={`top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
@@ -119,7 +119,7 @@ const NavLinks = () => {
                     }`}
             >
                 <div className="mx-auto flex items-center justify-between px-20 py-6">
-                    <div>
+                    <div className="flex justify-between w-full">
                         <Link href="/" className=" ">
                             <h2
                                 className={`${scrolled ? "text-4xl font-bold duration-300" : "text-4xl font-bold"
@@ -133,7 +133,7 @@ const NavLinks = () => {
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(true)}
-                                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 "
                             >
                                 <span className="sr-only">Open main menu</span>
                                 <Bars3Icon aria-hidden="true" className="size-6" />
@@ -302,10 +302,9 @@ const NavLinks = () => {
                     </div>
                     <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden z-50">
                         <div className="fixed inset-0 z-10" />
-                        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                            <div className="flex items-center justify-between">
-                                <Link href="/"><h2 className="text-4xl font-bold duration-300">SunKey</h2></Link>
-                                <button type="button" onClick={() => setMobileMenuOpen(false)} className="ml-10 block items-center justify-center rounded-md p-2.5 text-gray-700 bg-black"><XMarkIcon aria-hidden="true" className="size-6" /></button>
+                        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6  sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
+                            <div className="flex items-center justify-end">
+                                <button type="button" onClick={() => setMobileMenuOpen(false)} className="ml-10 block items-center justify-center rounded-md p-2.5  "><XMarkIcon aria-hidden="true" className="size-6" /></button>
                             </div>
                             <div className="mt-6 flow-root">
                                 <div className="-my-6 divide-y divide-gray-500/10">
@@ -342,15 +341,8 @@ const NavLinks = () => {
                                                 ))}
                                             </DisclosurePanel>
                                         </Disclosure>
-                                        <Disclosure as="div" className="-mx-3">
-                                            <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Internet of Things<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
-                                            <DisclosurePanel className="mt-2 space-y-2">
-                                                {[...iot].map((item) => (
-                                                    <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
-                                                ))}
-                                            </DisclosurePanel>
-                                        </Disclosure>
-                                        <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Case Studies</a>
+                                        <Link href="/iot" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Internet of Things</Link>
+                                        <Link href="/case_studies" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Case Studies</Link>
                                         <Disclosure as="div" className="-mx-3">
                                             <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Resources<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
                                             <DisclosurePanel className="mt-2 space-y-2">
@@ -359,7 +351,7 @@ const NavLinks = () => {
                                                 ))}
                                             </DisclosurePanel>
                                         </Disclosure>
-                                        <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact Us</a>
+                                        <Link href="/contact_us" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact Us</Link>
                                     </div>
                                 </div>
                             </div>

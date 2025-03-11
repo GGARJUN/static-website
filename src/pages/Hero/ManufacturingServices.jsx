@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, Play, Pause, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const ManufacturingServices = () => {
 
@@ -27,9 +28,11 @@ const ManufacturingServices = () => {
   return (
     <section className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <motion.h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center mb-8 sm:mb-4 text-gray-900" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>Manufacturing Services</motion.h2>
-          <motion.button className="border px-4 sm:px-6 py-2 sm:py-3 rounded-md text-gray-900 shadow-lg hover:scale-105 transition-all duration-300" variants={sectionVariants}>Learn More</motion.button>
+        <div className="md:flex justify-between items-center">
+          <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left md:text-center mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>Manufacturing Services</motion.h2>
+          <motion.button className=" flex gap-3 group border px-4 sm:px-6 py-2 sm:py-3 mt-5 md:mt-0 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out" variants={sectionVariants}>
+            Learn More <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
+          </motion.button>
         </div>
         <motion.p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>SunKey Technologies provides comprehensive manufacturing services to support your product development needs.</motion.p>
         <section className="relative w-full overflow-hidden rounded-xl">
@@ -37,7 +40,7 @@ const ManufacturingServices = () => {
             <motion.div className="flex w-full rounded-xl" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
               {banners.map((banner, i) => (
                 <div key={i} className="w-full flex-shrink-0 relative rounded-xl">
-                  <img src={banner.img} alt={banner.title} className="w-full h-[550px] object-cover rounded-xl" />
+                  <Image priority src={banner.img} alt={banner.title} width={1000} height={1000} className="w-full h-[550px] object-cover rounded-xl" />
                   <div className="absolute rounded-xl inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                   <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                     <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6">{banner.title}</h1>

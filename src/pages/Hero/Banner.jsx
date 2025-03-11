@@ -34,10 +34,10 @@ const Banner = () => {
               <Image priority src={banner.img} alt={banner.title} width={1000} height={100} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
                   <Highlight>{banner.title}</Highlight>
                   <br />
-                  <span className="mt-6 font-normal block text-4xl md:text-5xl ">{banner.subtitle}</span>
+                  <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
                 </h1>
                 <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
                   Read More <SquareArrowOutUpRight />

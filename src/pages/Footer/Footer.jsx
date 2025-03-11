@@ -57,7 +57,7 @@ const Footer = () => {
         <link rel="canonical" href={canonicalUrl} />
       </Head>
       <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-14 pb-10">
-        <div className="mx-20 px-4 sm:px-6 lg:px-12">
+        <div className="container mx-auto px-10">
           <div className="grid grid-cols-12 gap-5 md:gap-10">
             <div className="md:col-span-4 col-span-12 flex flex-col gap-8 mb-5 md:mb-0">
               <h2 className="text-4xl font-bold">SunKeyTechnology</h2>

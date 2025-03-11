@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Lightbulb, Users } from "lucide-react";
 import Slider from "../components/Slider";
+import Image from "next/image";
 
 const ElectronicDesign = () => {
 
@@ -23,10 +24,12 @@ const ElectronicDesign = () => {
     <section className="py-32 shadow-2xl bg-gradient-to-r  from-pink-300/10 via-blue-200  to-indigo-400/10 overflow-hidden  ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="md:flex justify-between items-center">
-          <motion.h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center mb-8 sm:mb-4 text-gray-900" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
+          <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left md:text-center mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
             Electronic Design
           </motion.h2>
-          <motion.button className="border px-4 sm:px-6 py-2 sm:py-3 mt-5 md:mt-0 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out" variants={sectionVariants}>Learn More</motion.button>
+          <motion.button className=" flex gap-3 group border px-4 sm:px-6 py-2 sm:py-3 mt-5 md:mt-0 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out" variants={sectionVariants}>
+            Learn More <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
+          </motion.button>
         </div>
         <motion.p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
           Our electronic design services are designed to help you bring your electronic products to life.
@@ -39,13 +42,13 @@ const ElectronicDesign = () => {
                 <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
                   {/* Image Layer */}
                   <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
-                    <img src={feature.image} alt={feature.title} className="w-full h-full object-cover rounded-xl" />
+                    <Image priority src={feature.image} alt={feature.title} width={1000} height={100} className="w-full h-full object-cover rounded-xl" />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
                   </motion.div>
                   {/* Content */}
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-5">
-                      <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}><img src={feature.img} alt="" className="w-12" /></motion.div>
+                      <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}><Image priority src={feature.img} alt={feature.title} width={100} height={100} className="w-12" /></motion.div>
                     </div>
                     <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">{feature.title}</h3>
                     <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">{feature.description}</p>
@@ -72,13 +75,13 @@ const ElectronicDesign = () => {
                 <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
                   {/* Image Layer */}
                   <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
-                    <img src={feature.image} alt={feature.title} className="w-full h-full object-cover rounded-xl" />
+                  <Image priority src={feature.image} alt={feature.title} width={1000} height={100} className="w-full h-full object-cover rounded-xl" />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
                   </motion.div>
                   {/* Content */}
                   <div className="relative z-10">
                     <div className="flex items-center justify-between mb-5">
-                      <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}><img src={feature.img} alt="" className="w-12" /></motion.div>
+                      <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}><Image priority src={feature.img} alt={feature.title} width={100} height={100} className="w-12" /></motion.div>
                     </div>
                     <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">{feature.title}</h3>
                     <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">{feature.description}</p>
