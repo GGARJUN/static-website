@@ -14,6 +14,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cdn-icons-png.freepik.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
         hostname: "assets.aceternity.com",
         pathname: "**",
       },

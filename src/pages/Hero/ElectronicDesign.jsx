@@ -12,12 +12,12 @@ const ElectronicDesign = () => {
   const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.25, delayChildren: 0.4 } } };
 
   const features = [
-    { icon: <Users className="h-12 w-12 text-blue-500" />, img: "/pcbservice.png", title: "PCB Design Services", description: "Creating PCBs that are both functional and efficient operation.", image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg" },
-    { icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "/layout.png", title: "PCB Layout", description: "Ensuring optimal component placement for better performance.", image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg" },
+    { icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12108/12108718.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Design Services", description: "Creating PCBs that are both functional and efficient operation.", image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg" },
+    { icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/365/365773.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Layout", description: "Ensuring optimal component placement for better performance.", image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg" },
   ];
   const features2 = [
-    { icon: <Users className="h-12 w-12 text-blue-500" />, img: "/analysis.png", title: "SI/PI Analysis", description: "Conducting signal integrity and power integrity analyses to ensure reliable operation.", image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
-    { icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "/reverse.png", title: "Reverse Engineering", description: "Analyzing existing products to improve or replicate them.", image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg" },
+    { icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/3321/3321721.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "SI/PI Analysis", description: "Conducting signal integrity and power integrity analyses to ensure reliable operation.", image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
+    { icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12539/12539913.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Reverse Engineering", description: "Analyzing existing products to improve or replicate them.", image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg" },
   ];
 
   return (

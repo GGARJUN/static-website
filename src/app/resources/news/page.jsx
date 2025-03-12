@@ -1,12 +1,30 @@
+"use server"
+import { client } from "@/lib/createClient";
+import { groq } from "next-sanity";
+import NewsPost from "./Components/NewsPost";
 
-const News = () => {
+async function getData() {
+  const query = groq`
+  *[_type == 'news']{
+    ...,
+    author->,
+      newsTags[]->,
+  } | order(_createdAt desc)
+    `;
+
+  const posts = await client.fetch(query);
+
+  return posts;
+}
+
+
+export default async function NewsPage() { 
+  const posts = await getData()
+
+
   return (
-    <div className='h-screen bg-gray-900 text-white pb-32 pt-40'>
-      <div className='container mx-auto'>
-      <h2 className='text-5xl font-bold'>News</h2>
-      </div>
+    <div>
+      <NewsPost posts={posts}/>
     </div>
   )
 }
-
-export default News
