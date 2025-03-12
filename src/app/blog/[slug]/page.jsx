@@ -1,5 +1,4 @@
 import { client, urlFor } from '@/lib/createClient';
-import BlogBanner from '@/pages/Resources/Blog/Components/BlogBanner';
 import { groq, PortableText } from 'next-sanity';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,6 +6,7 @@ import React from 'react';
 import { RichText } from './Components/RichText';
 import { format } from 'date-fns';
 import { FaArrowRight, FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
+import BlogBanner from './Components/BlogBanner';
 
 // Fetch Single Blog Data
 export const getPostData = async (slug) => {

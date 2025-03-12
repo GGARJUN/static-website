@@ -1,8 +1,8 @@
 import { client, urlFor } from '@/lib/createClient';
-import BlogBanner from '@/pages/Resources/Blog/Components/BlogBanner';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
 import Link from 'next/link';
+import BlogBanner from './Components/BlogBanner';
 
 export const getPostsByTag = async (tag) => {
     const query = groq`

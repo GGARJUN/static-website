@@ -3,7 +3,6 @@ import { useState, useMemo } from "react";
 import { urlFor } from "@/lib/createClient";
 import { format } from "date-fns";
 import Link from "next/link";
-import BlogBanner from "./NewsBanner";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import {
@@ -23,6 +22,7 @@ import {
     PaginationPrevious,
 } from "@/components/ui/pagination";
 import Image from "next/image";
+import NewsBanner from "./NewsBanner";
 
 const NewsPost = ({ posts = [] }) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -57,7 +57,7 @@ const NewsPost = ({ posts = [] }) => {
 
     return (
         <div>
-            <BlogBanner />
+            <NewsBanner />
             <div className="py-20 bg-white">
                 <div className="container mx-auto px-5 md:px-0">
                     <h2 className="text-4xl font-bold mb-10">All News</h2>

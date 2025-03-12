@@ -7,7 +7,7 @@ import React from 'react';
 import { RichText } from './Components/RichText';
 import { format } from 'date-fns';
 import { FaArrowRight, FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
-import NewsBanner from '@/pages/Resources/News/Components/NewsBanner';
+import NewsBanner from './Components/NewsBanner';
 
 
 // Fetch Single Blog Data
