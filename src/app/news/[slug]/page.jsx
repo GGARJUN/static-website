@@ -24,23 +24,24 @@ export const getPostData = async (slug) => {
     return await client.fetch(query);
 };
 
-// Fetch Related Posts (Matches both categories & tags)
-export const getRelatedPosts = async (tags, excludeSlug) => {
+// Fetch Related News Articles (Matching Tags Only)
+export const getRelatedPosts = async (newsTags, slug) => {
+    if (!newsTags.length) return []; // Return empty if no tags are available
+
     const query = groq`
-        *[_type == 'news' && slug.current != $excludeSlug && (
-            count(tags[@._ref in $tags]) > 0
-        )] | order(publishedAt desc) [0...3] {
+        *[_type == "news" && slug.current != $slug && 
+            count(newsTags[@._ref in $newsTags]) > 0
+        ] | order(publishedAt desc) [0...2] {
             title,
+            description,
             "slug": slug.current,
             "mainImage": mainImage.asset->url
         }
     `;
 
-    return await client.fetch(query, {
-        tags,
-        excludeSlug
-    });
+    return await client.fetch(query, { newsTags, slug });
 };
+
 
 // Fetch Recent Posts
 export const getRecentPosts = async () => {
@@ -69,13 +70,14 @@ export const getTagsWithPostCount = async () => {
 
 
 export default async function SingleNewsArticle({ params }) {
-    const post = await getPostData(params.slug);
-    const categories = post.categories?.map(c => c._ref) || [];
-    const tags = post.tags?.map(t => t._ref) || [];
+    const { slug } = await params; // Ensure params is awaited properly
+    const post = await getPostData(slug);
+    const newsTags = post.newsTags?.map((t) => t._id) || [];
+    const relatedPosts = await getRelatedPosts(newsTags, slug);
+    console.log(newsTags); // Debugging: Check fetched tags
 
-    const relatedPosts = await getRelatedPosts(categories, tags, params.slug);
     const recentPosts = await getRecentPosts();
-    const allTags = await getTagsWithPostCount();
+    // const allTags = await getTagsWithPostCount();
 
 
     return (
@@ -213,23 +215,21 @@ export default async function SingleNewsArticle({ params }) {
 
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
 
-                    <div>
-                        <h2 className="text-2xl font-semibold text-blue-900 mb-4">Related Posts</h2>
-                        <div className="space-y-4">
+
+                    <div className='mt-10'>
+                        <h2 className="text-2xl font-semibold text-blue-900 mb-4">Related News Posts</h2>
+                        <div className="grid md:grid-cols-3 gap-8">
                             {relatedPosts.length > 0 ? (
                                 relatedPosts.map((item) => (
-                                    <Link key={item.slug.current} href={`/blog/${item.slug.current}`}>
-                                        <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow hover:shadow-md transition">
+                                    <Link key={item.slug} href={`/news/${item.slug}`} className="block group border rounded-2xl shadow-xl">
                                             <Image
-                                                src={urlFor(item.mainImage).url()}
-                                                width={80}
-                                                height={80}
-                                                alt="Related Post Image"
-                                                className="w-20 h-20 rounded-lg object-cover"
-                                            />
-                                            <p className="text-lg font-medium text-blue-800">{item.title}</p>
+                                                src={item.mainImage} // Ensure `mainImage` is correctly accessed 
+                                                alt={item.title}
+                                                width={500} height={300} className="w-full h-[300px] object-cover rounded-t-xl" />
+                                            <div className="p-6">
+                                            <p className="text-2xl font-bold text-blue-950 line-clamp-1">{item.title}</p>
+                                            <p className="mt-5 line-clamp-3">{item.description}</p>
                                         </div>
                                     </Link>
                                 ))
@@ -238,7 +238,7 @@ export default async function SingleNewsArticle({ params }) {
                             )}
                         </div>
                     </div>
-                </div>
+
 
 
             </div>

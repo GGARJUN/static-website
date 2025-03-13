@@ -24,23 +24,22 @@ export const getPostData = async (slug) => {
 };
 
 // Fetch Related Posts (Matches both categories & tags)
-export const getRelatedPosts = async (categories, tags, excludeSlug) => {
+export const getRelatedPosts = async (categories, tags, slug) => {
+    if (!categories.length && !tags.length) return []; // Avoid fetching if both are empty
+
     const query = groq`
-        *[_type == 'post' && slug.current != $excludeSlug && (
+        *[_type == "post" && slug.current != $slug && (
             count(categories[@._ref in $categories]) > 0 &&
             count(tags[@._ref in $tags]) > 0
-        )] | order(publishedAt desc) [0...3] {
+        )] | order(publishedAt desc) [0...2] {
             title,
+            description,
             "slug": slug.current,
             "mainImage": mainImage.asset->url
         }
     `;
 
-    return await client.fetch(query, {
-        categories,
-        tags,
-        excludeSlug
-    });
+    return await client.fetch(query, { categories, tags, slug });
 };
 
 // Fetch Recent Posts
@@ -55,29 +54,16 @@ export const getRecentPosts = async () => {
     return await client.fetch(query);
 };
 
-// Get All Tags with Post Count
-export const getTagsWithPostCount = async () => {
-    const query = groq`
-        *[_type == "tag"]{
-            _id,
-            title,
-            "slug": slug.current,
-            "postCount": count(*[_type == "post" && references(^._id)])
-        } | order(postCount desc)
-    `;
-    return await client.fetch(query);
-};
+
 
 
 export default async function SingleBlogArticle({ params }) {
-    const post = await getPostData(params.slug);
-    const categories = post.categories?.map(c => c._ref) || [];
-    const tags = post.tags?.map(t => t._ref) || [];
-
-    const relatedPosts = await getRelatedPosts(categories, tags, params.slug);
+    const { slug } = await params; // Ensure params is awaited properly
+    const post = await getPostData(slug);
+    const categories = post.categories?.map(c => c._id) || [];
+    const tags = post.tags?.map(t => t._id) || [];
+    const relatedPosts = await getRelatedPosts(categories, tags, slug);
     const recentPosts = await getRecentPosts();
-    const allTags = await getTagsWithPostCount();
-
 
     return (
         <div className="bg-gray-50 text-gray-900">
@@ -138,7 +124,7 @@ export default async function SingleBlogArticle({ params }) {
                         <div className='border w-full'></div>
                         <h2 className='my-5 flex items-center gap-3 font-bold text-xl'>TAGS : <span>
                             <div className="flex flex-wrap gap-2 ">
-                                {post?.categories?.map((item, index) => (
+                                {post?.tags?.map((item, index) => (
                                     <span key={`${item?._id || index}`} className="bg-blue-100 text-blue-800 px-3 py-2 rounded-full text-sm font-semibold">
                                         {item?.title}
                                     </span>
@@ -200,22 +186,19 @@ export default async function SingleBlogArticle({ params }) {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                    <div>
-                        <h2 className="text-2xl font-semibold text-blue-900 mb-4">Related Posts</h2>
-                        <div className="space-y-4">
+                <div className='mt-10'>
+                        <h2 className="text-2xl font-semibold text-blue-900 mb-4">Related Blog Posts</h2>
+                        <div className="grid md:grid-cols-3 gap-8 ">
                             {relatedPosts.length > 0 ? (
                                 relatedPosts.map((item) => (
-                                    <Link key={item.slug.current} href={`/blog/${item.slug.current}`}>
-                                        <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow hover:shadow-md transition">
+                                    <Link key={item.slug} href={`/blog/${item.slug}`} className="block group border rounded-2xl shadow-xl">
                                             <Image
-                                                src={urlFor(item.mainImage).url()}
-                                                width={80}
-                                                height={80}
-                                                alt="Related Post Image"
-                                                className="w-20 h-20 rounded-lg object-cover"
-                                            />
-                                            <p className="text-lg font-medium text-blue-800">{item.title}</p>
+                                                src={item.mainImage} // Ensure `mainImage` is correctly accessed 
+                                                alt={item.title}
+                                                width={500} height={300} className="w-full h-[300px] object-cover rounded-t-xl" />
+                                            <div className="p-6">
+                                            <p className="text-2xl font-bold text-blue-950 line-clamp-1">{item.title}</p>
+                                            <p className="mt-5 line-clamp-3">{item.description}</p>
                                         </div>
                                     </Link>
                                 ))
@@ -224,7 +207,6 @@ export default async function SingleBlogArticle({ params }) {
                             )}
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     );

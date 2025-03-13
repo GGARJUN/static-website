@@ -32,7 +32,7 @@ const NewsPost = ({ posts = [] }) => {
 
     // Extract unique tags
     const tags = useMemo(() => {
-        const allTags = posts.flatMap((post) => post.tags?.map((tag) => tag.title) || []);
+        const allTags = posts.flatMap((post) => post.newsTags?.map((tag) => tag.title) || []);
         return ["Tags", ...new Set(allTags)];
     }, [posts]);
 
@@ -45,7 +45,7 @@ const NewsPost = ({ posts = [] }) => {
                 post.tags?.some((tag) => tag.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
             const matchesTag =
-                selectedTag === "Tags" || post.tags?.some((tag) => tag.title === selectedTag);
+                selectedTag === "Tags" || post.newsTags?.some((tag) => tag.title === selectedTag);
 
             return matchesSearch && matchesTag;
         });
@@ -130,7 +130,7 @@ const NewsPost = ({ posts = [] }) => {
                                                 ))}
                                             </div>
                                         </div>
-                                        <h1 className="text-2xl font-bold text-blue-950">{post.title}</h1>
+                                        <h1 className="text-2xl font-bold text-blue-950 line-clamp-1">{post.title}</h1>
                                         <p className="mt-5 line-clamp-3">{post.description}</p>
                                     </div>
                                 </Link>

@@ -67,14 +67,11 @@ export default defineType({
       title: 'title',
       author: 'author.name',
       media: 'mainImage',
-      tags: 'tags',
+
     },
     prepare(selection) {
-      const { author, tags } = selection;
-      const tagNames = tags ? tags.map(tag => tag.title).join(', ') : 'No tags';
       return {
         ...selection,
-        subtitle: author ? `by ${author} | Tags: ${tagNames}` : `Tags: ${tagNames}`,
       };
     },
   },

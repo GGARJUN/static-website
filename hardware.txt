@@ -318,3 +318,30 @@ export default Hardware
                                     <p className="text-gray-500">No tags found.</p>
                                 )}
                             </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+                            // Get All Tags with Post Count
+// export const getTagsWithPostCount = async () => {
+//     const query = groq`
+//         *[_type == "tag"]{
+//             _id,
+//             title,
+//             "slug": slug.current,
+//             "postCount": count(*[_type == "post" && references(^._id)])
+//         } | order(postCount desc)
+//     `;
+//     return await client.fetch(query);
+// };
+
+
+    // const allTags = await getTagsWithPostCount();
