@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const baseUrl = "https://electricalstaticwebsite.netlify.app"; // Change this to your domain
+const baseUrl = "https://electricalstaticwebsite.netlify.app"; 
+// const baseUrl = "http://localhost:3000"; 
 
 const pages = [
     "/",
@@ -29,6 +30,7 @@ const pages = [
 ];
 
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${pages
       .map(
