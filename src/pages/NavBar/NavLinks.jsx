@@ -65,7 +65,7 @@ const NavLinks = () => {
     ]
     const manufactring = [
         { name: 'PCBA', description: 'Get a better understanding of your ', href: '/manufacturing/pcba', icon: ChartPieIcon },
-        { name: 'Test Fixture', description: 'Speak directly to your customers', href: '/manufacturing/text_fixture', icon: CursorArrowRaysIcon },
+        { name: 'Test Fixture', description: 'Speak directly to your customers', href: '/manufacturing/test_fixture', icon: CursorArrowRaysIcon },
         { name: 'Box Build', description: 'Your customers’ data will be safe and secure', href: '/manufacturing/box_build', icon: FingerPrintIcon },
     ]
     const iot = [
@@ -279,7 +279,7 @@ const NavLinks = () => {
                             <NavigationMenu>
                                 <NavigationMenuList>
                                     <NavigationMenuItem>
-                                        <Link href="/case_studies" legacyBehavior passHref>
+                                        <Link href="/case-study" legacyBehavior passHref>
                                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                                 Case Studies
                                             </NavigationMenuLink>
@@ -290,7 +290,7 @@ const NavLinks = () => {
                             <NavigationMenu>
                                 <NavigationMenuList>
                                     <NavigationMenuItem>
-                                        <Link href="/contact_us" legacyBehavior passHref>
+                                        <Link href="/contact-us" legacyBehavior passHref>
                                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                                 Contact Us
                                             </NavigationMenuLink>
@@ -349,7 +349,7 @@ const NavLinks = () => {
                                             </DisclosurePanel>
                                         </Disclosure>
                                         <Link href="/iot" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Internet of Things</Link>
-                                        <Link href="/case_studies" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Case Studies</Link>
+                                        <Link href="/case-study" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Case Studies</Link>
                                         <Disclosure as="div" className="-mx-3">
                                             <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Resources<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
                                             <DisclosurePanel className="mt-2 space-y-2">
@@ -358,7 +358,7 @@ const NavLinks = () => {
                                                 ))}
                                             </DisclosurePanel>
                                         </Disclosure>
-                                        <Link href="/contact_us" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact Us</Link>
+                                        <Link href="/contact-us" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact Us</Link>
                                     </div>
                                 </div>
                             </div>

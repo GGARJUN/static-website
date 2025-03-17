@@ -109,7 +109,7 @@ const TextFixture = () => {
                 <Button varient="outline" onClick={() => setIsPlaying(!isPlaying)} className="absolute bottom-5 z-50 2xl:left-[60%] md:left-[70%] left-[85%] bg-transparent hover:bg-white hover:text-black border rounded-md hidden md:block">
                     {isPlaying ? <Pause className="w-5 h-5 " /> : <Play className="w-5 h-5 " />}
                 </Button>
-                <div className="absolute bottom-6 2xl:left-[32%] md:left-[30%] left-[5%] justify-start items-start md:flex z-50 gap-8 hidden md:block">
+                <div className="absolute bottom-6 2xl:left-[32%] md:left-[30%] left-[5%] justify-start items-start md:flex z-50 gap-8 hidden ">
                     {banners.map((_, i) => (
                         <div key={i} onClick={() => setIndex(i)} className="flex flex-col justify-start items-start gap-1 cursor-pointer">
                             <p className="text-white">{_.dtitle}</p>
@@ -138,8 +138,8 @@ const TextFixture = () => {
                             {activeIndex === index && (
                                 <motion.div
                                     className="absolute bottom-0 left-0 h-[4px] bg-gradient-to-r from-indigo-500 to-pink-500"
-                                    initial={{ width: 0 }}
-                                    animate={{ width: "100%" }}
+                                    initial={{ "inlineSize": "0%" }}
+                                    animate={{ "inlineSize": "100%" }}
                                     transition={{ duration: 1, ease: "easeInOut" }}
                                 />
                             )}
