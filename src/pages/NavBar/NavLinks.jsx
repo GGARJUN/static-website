@@ -68,12 +68,6 @@ const NavLinks = () => {
         { name: 'Test Fixture', description: 'Speak directly to your customers', href: '/manufacturing/test_fixture', icon: CursorArrowRaysIcon },
         { name: 'Box Build', description: 'Your customers’ data will be safe and secure', href: '/manufacturing/box_build', icon: FingerPrintIcon },
     ]
-    const iot = [
-        { name: 'Industrial Iot', description: 'Get a better understanding of your traffic', href: '/iot/industrial_iot', icon: ChartPieIcon },
-        { name: 'Smart Homes Iot', description: 'Speak directly to your customers', href: '/iot/smart_homes_iot', icon: CursorArrowRaysIcon },
-        { name: 'Smart Lighting Iot', description: 'Your customers’ data will be safe and secure', href: '/iot/smart_lighting_iot', icon: FingerPrintIcon },
-        { name: 'Level Monitoring', description: 'Connect with third-party tools', href: '/iot/level_monitoring', icon: SquaresPlusIcon },
-    ]
     const resources = [
         { name: 'Blogs', description: 'Get a better understanding of your traffic', href: '/resources/blogs', icon: ChartPieIcon },
         { name: 'News', description: 'Speak directly to your customers', href: '/resources/news', icon: CursorArrowRaysIcon },

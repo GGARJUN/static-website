@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-    const baseUrl = "https://electricalstaticwebsite.netlify.app/"; // Change this to your actual domain
+    const baseUrl = "https://electricalstaticwebsite.netlify.app"; // Change this to your actual domain
 
     const pages = [
         { loc: "/", priority: "1.0" },
@@ -21,12 +21,11 @@ export async function GET() {
         { loc: "/manufacturing/pcba", priority: "0.8" },
         { loc: "/manufacturing/test_fixture", priority: "0.8" },
         { loc: "/manufacturing/box_build", priority: "0.8" },
-        { loc: "/iot/industrial_iot", priority: "0.8" },
-        { loc: "/iot/smart_homes_iot", priority: "0.8" },
-        { loc: "/iot/smart_lighting_iot", priority: "0.8" },
-        { loc: "/iot/level_monitoring", priority: "0.8" },
+        { loc: "/iot", priority: "0.8" },
         { loc: "/resources/blogs", priority: "0.8" },
         { loc: "/resources/news", priority: "0.8" },
+        { loc: "/case-study", priority: "0.8" },
+        { loc: "/contact-us", priority: "0.8" },
     ];
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
