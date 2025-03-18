@@ -12,7 +12,7 @@ const Expertise = () => {
     <div className='lg:flex  justify-between items-center gap-10 '>
       <div className='max-w-3xl'>
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>our approach</h2>
-        <h1 className='text-5xl font-bold my-5 '>Innovative solutions driving<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> business success </span></h1>
+        <h1 className='title-all my-5 '>Innovative solutions driving<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> business success </span></h1>
         <p className='text-lg font-medium text-gray-600 tracking-wide mt-8'>Transform your business with cutting-edge solutions tailored to meet your unique challenges We leverage innovation and expertise to streamline processes.
         </p>
         {/* FAQ Section */}

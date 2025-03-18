@@ -1,16 +1,8 @@
 
-import { DirectionAwareHover } from "@/components/ui/direction-aware-hover"
-import { motion, useInView } from "framer-motion";
-import { useRef } from 'react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
-import { cn } from "@/lib/utils"; // Ensure you have this utility function or remove it
+
 
 const FAQ = () => {
 
@@ -53,8 +45,8 @@ const FAQ = () => {
         <div className="w-2 h-2 rounded-full bg-blue-600"></div>FAQ's
       </h2>
 
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <h1 className="text-4xl md:text-5xl font-bold my-5 text-center md:text-left">
+      <div className="flex flex-col md:flex-row items-start justify-between">
+        <h1 className="title-all  my-5 text-left">
           <span className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text">
             Find solutions to common <br />
           </span>

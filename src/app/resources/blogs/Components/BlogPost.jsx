@@ -84,10 +84,10 @@ const BlogPost = ({ posts = [] }) => {
                             />
                         </div>
 
-                        <div className="flex items-center mt-10 gap-10">
+                        <div className="lg:flex items-center mt-10 gap-10">
                             <h1>Filter by:</h1>
                             {/* Category Filter */}
-                            <div>
+                            <div className="lg:mt-0 mt-5">
                                 <Select onValueChange={setSelectedCategory} value={selectedCategory}>
                                     <SelectTrigger className="w-[300px] border px-4 py-6 rounded-md focus:ring-2 focus:ring-blue-500">
                                         <SelectValue placeholder="Select a category" />
@@ -103,7 +103,7 @@ const BlogPost = ({ posts = [] }) => {
                             </div>
 
                             {/* Tag Filter */}
-                            <div>
+                            <div className="lg:mt-0 mt-5">
                                 <Select onValueChange={setSelectedTag} value={selectedTag}>
                                     <SelectTrigger className="w-[300px] border px-4 py-6 rounded-md focus:ring-2 focus:ring-blue-500">
                                         <SelectValue placeholder="Select a tag" />

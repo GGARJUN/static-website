@@ -79,7 +79,7 @@ const ClientReview = () => {
             <div className=' container mx-auto px-5 sm:px-6 lg:px-8'>
                     <div className='w-full'>
                         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Client review</h2>
-                        <h1 className='text-5xl font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>What our clients</span> have to say about working with us</h1>
+                        <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>What our clients</span> have to say about working with us</h1>
                     </div>
 
                     <div className=' mt-20'>

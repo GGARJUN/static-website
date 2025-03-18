@@ -38,7 +38,7 @@ const About = () => {
       className="col-span-12 lg:col-span-6 2xl:col-span-6 mt-60 lg:mt-0 md:max-w-3xl max-w-md"
     >
          <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-         <h1 className='text-5xl font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>SunKey Technologies,</span> Our design for manufacturability (DFM) services</h1>
+         <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>SunKey Technologies,</span> Our design for manufacturability (DFM) services</h1>
          <p className='text-lg font-medium text-gray-600 tracking-wide'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Our design for manufacturability (DFM) services</span>  focus on ensuring that your electronic designs are optimized for efficient production. <br /><br /> Our team of skilled engineers works closely with you to analyze and refine your designs, reducing production costs and improving product reliability.
          </p>
       <div className='w-full border mt-8'></div>

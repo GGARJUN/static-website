@@ -211,15 +211,15 @@ const IoT = () => {
                 </div>
 
                 <div ref={whyPartnerRef} className="pt-40   ">
-                    <div ref={whyPartner} className="container mx-auto px-16">
+                    <div ref={whyPartner} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Partner />
                     </div>
                     <CallUs />
                     <ClientReview />
                 </div>
 
-                <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
-                    <div ref={faqInView} className="container mx-auto px-16">
+                <div ref={faqRef} className="py-20   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                    <div ref={faqInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <FAQ />
                     </div>
                 </div>

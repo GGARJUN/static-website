@@ -10,10 +10,10 @@ const IndustrialIoT = () => {
   ];
   return (
     <div>
-      <div className='flex flex-col justify-center items-center '>
-        <h2 className="text-xl   text-gray-800 flex items-center justify-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Industrial Internet of Things</h2>
-        <h2 className='mt-8 font-semibold text-center text-5xl bg-gradient-to-r from-purple-500  to-pink-500 text-transparent bg-clip-text'>Transforming Industries with Smart Solutions</h2>
-        <p className=' text-center px-32 mt-5'>We implement IoT technologies to enhance industrial efficiency and productivity. Our solutions include:
+      <div className='flex flex-col justify-center items-start '>
+        <h2 className="text-xl   text-gray-800 flex items-center  gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Industrial Internet of Things</h2>
+        <h2 className='mt-8 title-all bg-gradient-to-r from-purple-500  to-pink-500 text-transparent bg-clip-text'>Transforming Industries with Smart Solutions</h2>
+        <p className='   2xl:px-32 mt-5'>We implement IoT technologies to enhance industrial efficiency and productivity. Our solutions include:
         </p>
         <button className='group  mt-5 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Learn More <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
         <div className='relative mt-20'>

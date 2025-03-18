@@ -152,19 +152,19 @@ const PCBDesignService = () => {
             </section>
 
             <div>
-                <div ref={aboutRef} className="py-40 ">
+                <div ref={aboutRef} className="py-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="pt-40 pb-60 bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                <div ref={expertiseRef} className="pt-20 pb-60 bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
                     <div ref={expertiseInView} className="">
                         <Expertise />
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="pt-40   ">
+                <div ref={partnerRef} className="pt-20   ">
                     <div ref={partnerInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Partner />
                     </div>
@@ -172,7 +172,7 @@ const PCBDesignService = () => {
                     <ClientReview/>
                 </div>
 
-                <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                <div ref={faqRef} className="py-20   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
                     <div ref={faqInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <FAQ />
                     </div>
