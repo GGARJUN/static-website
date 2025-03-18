@@ -5,6 +5,7 @@ const NavLinks = dynamic(() => import("@/pages/NavBar/NavLinks"));
 
 import { Geist_Mono, Space_Grotesk, Dancing_Script } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={`${spaceGrotesk.className} antialiased`}>
         <NavLinks/>
         {children}
+        <Toaster />
         <Footer/>
       </body>
     </html>

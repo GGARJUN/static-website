@@ -1,7 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
-import { EmailTemplate } from "@/components/ui/email-template";
+import { EmailTemplate } from "@/app/contact-us/Components/email-template";
 
 // Ensure the API key is loaded
 if (!process.env.RESEND_API_KEY) {

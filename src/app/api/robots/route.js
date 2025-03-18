@@ -1,18 +1,18 @@
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
-export async function GET() {
-    const robotsTxt = `
-        User-agent: *
-        Allow: /
+// export async function GET() {
+//     const robotsTxt = `
+//         User-agent: *
+//         Allow: /
 
-        Sitemap: https://www.sunkeydesignsystems.com/sitemap.xml
-    `;
+//         Sitemap: https://www.sunkeydesignsystems.com/sitemap.xml
+//     `;
 
-    return new NextResponse(robotsTxt, {
-        headers: {
-            "Content-Type": "text/plain",
-        },
-    });
-}
+//     return new NextResponse(robotsTxt, {
+//         headers: {
+//             "Content-Type": "text/plain",
+//         },
+//     });
+// }
 
-export default GET;
+// export default GET;
