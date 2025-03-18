@@ -76,15 +76,15 @@ const FAQ = () => {
         </div>
         {/* Image Section */}
         <motion.div
-          initial={{ x: -120, opacity: 0, scale: 0.9, rotate: -10 }}
-          animate={isInView ? { x: 0, opacity: 1, scale: 1, rotate: 0 } : {}}
-          transition={{ duration: 1.5, ease: "easeInOut", type: "spring", stiffness: 80 }}
-          whileHover={{ scale: 1.05, rotate: 0 }}
-          ref={ref}
-          className=" md:w-[500px] 2xl:w-[630px] h-96 md:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
-        >
-          <DirectionAwareHover imageUrl={image1} />
-        </motion.div>
+      initial={{ x: -120, opacity: 0, scale: 0.9, rotate: -10 }}
+      animate={isInView ? { x: 0, opacity: 1, scale: 1, rotate: 0 } : {}}
+      transition={{ duration: 1.5, ease: "easeInOut", type: "spring", stiffness: 80 }}
+      whileHover={{ scale: 1.05, rotate: 0 }}
+      ref={ref}
+      className=" w-full lg:w-[500px] 2xl:w-[600px] h-auto lg:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
+    >
+      <DirectionAwareHover imageUrl={image1} />
+    </motion.div>
 
 
       </div>

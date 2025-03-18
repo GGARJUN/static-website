@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Who we are",
+    title: "Case Study",
     description: "Get a better understanding of your organization.",
   };
 

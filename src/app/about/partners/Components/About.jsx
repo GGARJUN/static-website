@@ -1,6 +1,7 @@
 import { DirectionAwareHover } from '@/components/ui/direction-aware-hover'
 import { ArrowRight } from 'lucide-react'
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 
 const About = () => {
@@ -39,7 +40,7 @@ const About = () => {
             {features.map((feature,index) => (
               <div key={index} className="border-t border-gray-200 pt-4">
                 <div className='flex  items-center  gap-3'>
-                  <img src={feature.img} alt="" className='w-16 h-16 rounded-full object-cover' />
+                  <Image priority height={20} width={40} src={feature.img} alt={feature.name} className='w-16 h-16 rounded-full object-cover' />
                   <div>
                     <dt className="font-medium text-gray-900">{feature.name}</dt>
                     <dd className="mt-2 text-sm text-gray-500">{feature.description}</dd>
@@ -50,22 +51,22 @@ const About = () => {
           </dl>
         </div>
         <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-          <img
+          <Image width={1000} height={500} priority
             alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
             src="https://img.freepik.com/free-photo/happy-joyful-female-woman-posing_74855-2895.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
             className="rounded-lg bg-gray-100 h-full w-full object-cover"
           />
-          <img
+          <Image width={1000} height={500} priority
             alt="Top down view of walnut card tray with embedded magnets and card groove."
             src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
             className="rounded-lg bg-gray-100 h-full w-full object-cover"
           />
-          <img
+          <Image width={1000} height={500} priority
             alt="Side of walnut card tray with card groove and recessed card area."
             src="https://img.freepik.com/free-photo/handsome-man-presenting-something_1368-87.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
             className="rounded-lg bg-gray-100 h-full w-full object-cover"
           />
-          <img
+          <Image width={1000} height={500} priority
             alt="Walnut card tray filled with cards and card angled in dedicated groove."
             src="https://img.freepik.com/free-photo/portrait-beautiful-girl-white-background_176420-55770.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
             className="rounded-lg bg-gray-100 h-full w-full object-cover"
@@ -85,7 +86,7 @@ const About = () => {
             <div className="flex gap-10 animate-marquee">
               {names.concat(names).map((item, index) => (
                 <div key={index} className="flex flex-col items-center gap-3 min-w-[200px]">
-                  <img src={item.img} alt={item.title} className="" width={158}
+                  <Image priority src={item.img} alt={item.title}  width={158}
                     height={48} />
 
                 </div>

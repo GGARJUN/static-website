@@ -23,17 +23,17 @@ const FAQ = () => {
   </h2>
   
   <div className="flex flex-col md:flex-row items-center justify-between">
-    <h1 className="text-4xl md:text-5xl font-bold my-5 text-center md:text-left">
-      <span className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text">
-        Find solutions to common <br />
-      </span>
-      questions
-    </h1>
-    <button className="group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md">
-      Contact Now 
-      <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
-    </button>
-  </div>
+        <h1 className="text-4xl md:text-5xl font-bold my-5 text-center md:text-left">
+          <span className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text">
+            Find solutions to common <br />
+          </span>
+          questions
+        </h1>
+        <button className="group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md">
+          Contact Now
+          <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
+        </button>
+      </div>
 
   <div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-10  mt-10 lg:mt-20">
     {/* Image Section */}
@@ -43,7 +43,7 @@ const FAQ = () => {
       transition={{ duration: 1.5, ease: "easeInOut", type: "spring", stiffness: 80 }}
       whileHover={{ scale: 1.05, rotate: 0 }}
       ref={ref}
-      className=" w-96 md:w-[500px] 2xl:w-[600px] h-96 md:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
+      className=" w-full lg:w-[500px] 2xl:w-[600px] h-auto lg:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
     >
       <DirectionAwareHover imageUrl={image1} />
     </motion.div>

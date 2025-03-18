@@ -10,6 +10,7 @@ import { FaArrowDown, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
 const Partner = dynamic(() => import("./components/Partner"));
@@ -88,24 +89,17 @@ const Software = () => {
     };
     return (
         <section className="relative w-full  overflow-hidden">
-            <div className="w-full h-[700px]  relative flex">
+            <div className="w-full h-screen  relative flex">
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" />
-                            {/* <video
-                                src={banner.video} // Replace with your video URL
-                                className="w-full h-full object-cover"
-                                autoPlay // Automatically plays
-                                loop // Loops the video
-                                muted // Starts muted
-                            /> */}
+                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-4xl md:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
                                     <Highlight>{banner.title}</Highlight>
                                     <br />
-                                    <span className="mt-8 block text-4xl md:text-5xl 2xl:text-6xl max-w-5xl font-medium">{banner.subtitle}</span>                               
+                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
                                 </h1>
                                 <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
                                     Read More <SquareArrowOutUpRight />
@@ -114,10 +108,11 @@ const Software = () => {
                         </div>
                     ))}
                 </motion.div>
-                <Button varient="outline" onClick={() => setIsPlaying(!isPlaying)} className="absolute bottom-5 z-50 2xl:left-[60%] md:left-[70%] left-[85%] bg-transparent hover:bg-white hover:text-black border rounded-md hidden md:block">
-                    {isPlaying ? <Pause className="w-5 h-5 " /> : <Play className="w-5 h-5 " />}
+
+                <Button varient="outline" onClick={() => setIsPlaying(!isPlaying)} className="absolute hover:bg-white hover:text-black z-50 bottom-5 2xl:left-[60%] xl:left-[70%] left-[90%] bg-transparent border rounded-md hidden md:block">
+                    {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                 </Button>
-                <div className="absolute bottom-6 2xl:left-[32%] md:left-[30%] left-[5%] justify-start items-start md:flex z-50 gap-8 hidden">
+                <div className="absolute bottom-6 z-50 2xl:left-[32%] xl:left-[30%] left-[5%] justify-start items-start hidden md:flex gap-8 ">
                     {banners.map((_, i) => (
                         <div key={i} onClick={() => setIndex(i)} className="flex flex-col justify-start items-start gap-1 cursor-pointer">
                             <p className="text-white">{_.dtitle}</p>
@@ -125,7 +120,7 @@ const Software = () => {
                         </div>
                     ))}
                 </div>
-                <div className="absolute bottom-6 w-full cursor-pointer text-white flex justify-between items-center px-20">
+                <div className="absolute bottom-6 cursor-pointer w-full text-white hidden xl:flex justify-between items-center px-20">
                     <div className="flex items-center gap-3">
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
@@ -138,7 +133,7 @@ const Software = () => {
                 </div>
             </div>
 
-            <section ref={sectionRef} className={`md:px-[271px] px-20 transition-all duration-300 bg-white  w-full  ${isFixed ? "fixed top-0 w-full  shadow-md z-20" : ""} ${hidden ? " top-0 " : " top-[89px] "} transition-transform duration-700`}>
+            <section ref={sectionRef} className={`lg:px-[271px] px-5  transition-all duration-300 bg-white  w-full md:block hidden ${isFixed ? "fixed top-0 w-full  shadow-md z-20" : ""} ${hidden ? " top-0 " : " top-[89px] "} transition-transform duration-700`}>
                 <div className="bg-white grid grid-cols-1  md:grid-cols-4 justify-center items-center ">
                     {sections.map((section, index) => (
                         <button key={index} onClick={() => scrollToSection(section.ref, index)} className={`relative flex justify-center font-medium py-4 px-5 text-center  hover:bg-gray-200 transition-all`}>
@@ -157,28 +152,28 @@ const Software = () => {
             </section>
 
             <div>
-                <div ref={aboutRef} className="pb-72 pt-40 ">
-                    <div ref={aboutInView} className="container mx-auto px-16">
+                <div ref={aboutRef} className="pb-72 pt-20 ">
+                    <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="py-40  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
-                    <div ref={expertiseInView} className="container mx-auto px-16">
+                <div ref={expertiseRef} className="py-20  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                    <div ref={expertiseInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Expertise />
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="pt-40   ">
-                    <div ref={partnerInView} className="container mx-auto px-16">
+                <div ref={partnerRef} className="pt-20   ">
+                    <div ref={partnerInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Partner />
                     </div>
                     <CallUs/>
                     <ClientReview/>
                 </div>
 
-                <div ref={faqRef} className="py-40   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
-                    <div ref={faqInView} className="container mx-auto px-16">
+                <div ref={faqRef} className="py-20   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                    <div ref={faqInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <FAQ />
                     </div>
                 </div>

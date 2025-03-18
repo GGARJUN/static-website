@@ -57,9 +57,9 @@ const Footer = () => {
         <link rel="canonical" href={canonicalUrl} />
       </Head>
       <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-14 pb-10">
-        <div className="container mx-auto px-10">
-          <div className="grid grid-cols-12 gap-5 md:gap-10">
-            <div className="md:col-span-4 col-span-12 flex flex-col gap-8 mb-5 md:mb-0">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-12 gap-5 md:gap-10 w-full">
+            <div className="lg:col-span-4 col-span-12 flex flex-col gap-8 mb-5 md:mb-0">
               <h2 className="text-4xl font-bold">SunKeyTechnology</h2>
               <p className="text-[14px] text-gray-400 max-w-md">
                 We empower businesses to innovate in the tech landscape by providing cutting-edge solutions in engineering design, electronics, IoT, and manufacturing.
@@ -70,7 +70,7 @@ const Footer = () => {
                 <FaLinkedinIn size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
               </div>
             </div>
-            <div className="md:col-span-8 col-span-12 grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="lg:col-span-8 col-span-12 grid grid-cols-2 md:grid-cols-3 gap-8">
               {Object.entries(navigation).map(([category, items]) => (
                 <div key={category} className="space-y-2">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-300">{category}</h3>
@@ -103,7 +103,7 @@ const Footer = () => {
             </div>
           </div>
           <span className="w-full border mt-10 border-gray-700 flex"></span>
-          <div className="mt-10 md:flex flex-row justify-between items-center">
+          <div className="mt-10 lg:flex flex-row justify-between items-center">
             <h2 className="text-gray-500 text-sm sm:text-base">Copyright © 2025 SunKey Technologies. All rights reserved.</h2>
             <h2 className="text-gray-500 text-sm sm:text-base md:mt-0 mt-2">User Terms & Conditions | Privacy Policy</h2>
           </div>

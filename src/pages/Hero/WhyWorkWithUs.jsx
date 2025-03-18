@@ -35,10 +35,10 @@ const WhyWorkWithUs = () => (
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-left md:text-center">SunKey Technologies stands out as a partner of choice for businesses seeking reliable, high-quality solutions</motion.p>
       </motion.div>
       <div className="mt-20 grid grid-cols-12 gap-10">
-        <div className=" rounded-lg mb-10 md:mb-0 col-span-12 md:col-span-4 ">
+        <div className=" rounded-lg mb-10 md:mb-0 col-span-12 xl:col-span-4 ">
           <ImageCarousel />
         </div>
-        <div className="col-span-12 md:col-span-8 md:justify-between md:gap-6">
+        <div className="col-span-12 xl:col-span-8 justify-between md:gap-6">
           <motion.div className="grid md:grid-cols-2 gap-6">
             {features.map((feature) => (
               <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">

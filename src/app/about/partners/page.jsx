@@ -7,6 +7,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 import { FaArrowDown, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
+import Image from "next/image";
 
 const About = dynamic(() => import("./Components/About"));
 const ClientReview = dynamic(() => import("./Components/ClientReview"));
@@ -26,7 +27,7 @@ const PartnerDetails = () => {
         <motion.div className="flex w-full h-full" >
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative ">
-              <img src={banner.img} alt={banner.title} className="w-full h-full object-cover fixed -z-50" />
+              <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
               <div className="absolute inset-0 flex flex-col  justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6 duration-500">
@@ -54,34 +55,25 @@ const PartnerDetails = () => {
 
 
       <div>
-        <div className=" py-40 bg-white">
-          <div className="container mx-auto px-16">
+        <div className=" py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <About />
           </div>
         </div>
 
-        {/* <div className="py-40  bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100 ">
-          <div className="container mx-auto px-16">
-            <Expertise />
-          </div>
-        </div> */}
-
-        <div className="pt-40  bg-gray-100 ">
+        <div className="py-20  bg-gray-100 ">
           <div className="">
             <Approach />
           </div>
         </div>
-
         <div className="">
-          <div className="container mx-auto px-16">
-            {/* <Partner /> */}
-          </div>
+
           <ClientReview />
           <CallUs />
         </div>
 
-        <div className="py-40 bg-gradient-to-r from-pink-100 via-blue-200 to-indigo-100 ">
-          <div className="container mx-auto px-16">
+        <div className="py-20 bg-gradient-to-r from-pink-100 via-blue-200 to-indigo-100 ">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <FAQ />
           </div>
         </div>

@@ -37,7 +37,7 @@ const Introduction = () => {
           We empower businesses to innovate in the tech landscape by providing cutting-edge solutions in engineering design, electronics, IoT, and manufacturing.
         </motion.p>
         <div className="mt-20 grid grid-cols-12 gap-10">
-          <div className="col-span-12 md:col-span-8 md:justify-between md:gap-6">
+          <div className="col-span-12 xl:col-span-8 md:justify-between md:gap-6">
             <motion.div className="grid md:grid-cols-2 gap-6">
               {features.map((feature) => (
                 <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
@@ -67,7 +67,7 @@ const Introduction = () => {
             </motion.div>
 
           </div>
-          <div className=" rounded-lg mb-10 md:mb-0 col-span-12 md:col-span-4 ">
+          <div className=" rounded-lg mb-10 md:mb-0 col-span-12 xl:col-span-4 ">
             <ImageCarousel />
           </div>
         </div>

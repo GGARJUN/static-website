@@ -55,6 +55,12 @@ const NavLinks = () => {
             ]
         }
     ];
+    const engineeringmob = [
+        { name: 'Hardware', description: 'Get a better understanding of your design', href: '/engineering_design_services/hardware', icon: ChartPieIcon },
+        { name: 'Firmware', description: 'Speak directly to your customers', href: '/engineering_design_services/firmware', icon: CursorArrowRaysIcon },
+        { name: 'Software', description: 'Your customers’ data will be safe and secure', href: '/engineering_design_services/software', icon: FingerPrintIcon },
+        { name: 'Mechanical', description: 'Connect with third-party tools', href: '/engineering_design_services/mechanical', icon: SquaresPlusIcon },
+    ];
     const design = [
         { name: 'PCB Design Service', description: 'Get a better understanding of your design', href: '/electronic_design/pcb_design_service', icon: ChartPieIcon },
         { name: 'PCB Layout', description: 'Speak directly to your customers', href: '/electronic_design/pcb_layout', icon: CursorArrowRaysIcon },
@@ -321,7 +327,7 @@ const NavLinks = () => {
                                         <Disclosure as="div" className="-mx-3">
                                             <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Engineering Design Services<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
                                             <DisclosurePanel className="mt-2 space-y-2">
-                                                {[...engineering].map((item) => (
+                                                {[...engineeringmob].map((item) => (
                                                     <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
                                                 ))}
                                             </DisclosurePanel>

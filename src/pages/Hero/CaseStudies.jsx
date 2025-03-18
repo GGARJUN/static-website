@@ -18,7 +18,7 @@ const CaseStudies = () => {
     <section className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-4" initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>Case Studies</motion.h2>
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-3 justify-center items-center w-full gap-6 mt-20">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center w-full gap-6 mt-20">
           {features.map((feature) => (
             <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
               <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">

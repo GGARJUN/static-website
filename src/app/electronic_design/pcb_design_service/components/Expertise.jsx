@@ -1,12 +1,6 @@
 import { LayoutGrid } from '@/components/ui/layout-grid';
 import { SquareArrowOutUpRight } from 'lucide-react'
 const Expertise = () => {
-  const features = [
-    { img: "https://cdn-icons-png.freepik.com/256/8004/8004316.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "CAD Design", description: "Utilizing tools like PTC Windchill and Altair CAE Suite to create detailed designs." },
-    { img: "https://cdn-icons-png.freepik.com/256/6864/6864012.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Prototyping", description: "Developing functional prototypes to test and refine your product.", },
-    { img: "https://cdn-icons-png.freepik.com/256/3696/3696916.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", },
-    { img: "https://cdn-icons-png.freepik.com/256/935/935559.png?uid=R110556143&ga=GA1.1.1704431159.1736575258", title: "Thermal and Structural Analysis", description: "Conducting analyses to ensure product reliability and performance.", },
-  ];
 
   const SkeletonOne = () => {
     return (
@@ -116,7 +110,7 @@ const Expertise = () => {
   return (
 
       <div className='w-full h-screen'>
-      <div className='container mx-auto px-16'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Our Expertise</h2>
         <h1 className='text-5xl font-bold my-5 max-w-4xl'><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>Our PCB </span>design expertise</h1>
       </div>

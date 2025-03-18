@@ -12,6 +12,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import Image from "next/image";
 
 
 
@@ -39,37 +40,43 @@ const ApplyJob = () => {
 
   return (
     <>
-      <div className="container mx-auto   mt-[450px] md:mt-20 mb-20 ">
+      <div className="    ">
 
-            <h2 className="flex items-center gap-3 text-lg font-medium"><div className="bg-blue-600 h-2 w-2 rounded-full"></div> Apply Job</h2>
-            <h2 className="mt-5 text-5xl mb-20 font-semibold">Get in touch with us</h2>
+        <h2 className="flex items-center gap-3 text-lg font-medium"><div className="bg-blue-600 h-2 w-2 rounded-full"></div> Apply Job</h2>
+        <h1 className='text-3xl sm:text-4xl md:text-5xl  font-bold  mt-5 mb-20'><span className='  bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Get in touch with us</span> </h1>
 
-        <div className="grid grid-cols-12 gap-20 items-start ">
-          <div className="md:col-span-7 col-span-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <div className="flex flex-col  space-y-2 w-[350px] md:w-full">
+        <div className="grid grid-cols-12 gap-6 lg:gap-20 items-start ">
+          {/* Left Column (Form Section) */}
+          <div className="lg:col-span-7 col-span-12">
+            {/* First Name and Last Name */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+              <div className="flex flex-col space-y-2 w-full">
                 <p>First Name *</p>
-                <Input placeholder="Enter Your First Name" className="py-7" />
+                <Input placeholder="Enter Your First Name" className="py-5 lg:py-7" />
               </div>
-              <div className="flex flex-col  space-y-2 w-[350px] md:w-full">
+              <div className="flex flex-col space-y-2 w-full">
                 <p>Last Name *</p>
-                <Input placeholder="Enter Your Last Name" className="py-7" />
+                <Input placeholder="Enter Your Last Name" className="py-5 lg:py-7" />
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
-              <div className="flex flex-col  space-y-2 w-[350px] md:w-full">
+
+            {/* Email and Phone */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 mt-6 lg:mt-10">
+              <div className="flex flex-col space-y-2 w-full">
                 <p>Email *</p>
-                <Input placeholder="Enter Your First Name" className="py-7" />
+                <Input placeholder="Enter Your Email" className="py-5 lg:py-7" />
               </div>
-              <div className="flex flex-col  space-y-2 w-[350px] md:w-full">
+              <div className="flex flex-col space-y-2 w-full">
                 <p>Phone *</p>
-                <Input placeholder="Enter Your First Name" className="py-7" />
+                <Input placeholder="Enter Your Phone Number" className="py-5 lg:py-7" />
               </div>
             </div>
-            <div className="flex flex-col mt-10 space-y-2 w-[350px]  md:w-full">
+
+            {/* Opening Position */}
+            <div className="flex flex-col mt-6 lg:mt-10 space-y-2 w-full">
               <p>Opening Position *</p>
               <Select>
-                <SelectTrigger className="py-7">
+                <SelectTrigger className="py-5 lg:py-7">
                   <SelectValue placeholder="Select a Position" />
                 </SelectTrigger>
                 <SelectContent>
@@ -83,19 +90,25 @@ const ApplyJob = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div className="mt-10 flex flex-col w-[350px] md:w-full  space-y-2">
+
+            {/* Message */}
+            <div className="flex flex-col mt-6 lg:mt-10 space-y-2 w-full">
               <p>Message</p>
-              <Textarea placeholder="Type your message here." className="py-7" />
+              <Textarea placeholder="Type your message here." className="py-5 lg:py-7" />
             </div>
-            <div className="flex flex-col mt-10 space-y-2 w-[350px] md:w-full">
+
+            {/* Upload Resume */}
+            <div className="flex flex-col mt-6 lg:mt-10 space-y-2 w-full">
               <p>Please upload your resume / CV *</p>
-              <Input type="file" className="py-7 pt-2" />
+              <Input type="file" className="py-5 lg:py-7 pt-2" />
             </div>
-            <div className="flex items-center space-x-4 mt-10">
-              <Checkbox id="terms" className="" />
+
+            {/* Terms and Conditions */}
+            <div className="flex items-center space-x-4 mt-6 lg:mt-10">
+              <Checkbox id="terms" />
               <div className="grid gap-1.5 leading-none">
                 <label
-                  htmlFor="terms1"
+                  htmlFor="terms"
                   className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                   Accept <span className="text-blue-600">terms and conditions</span>
@@ -105,22 +118,19 @@ const ApplyJob = () => {
                 </p>
               </div>
             </div>
-            <button className='group mt-4 2xl:mt-8 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Apply <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+
+            {/* Apply Button */}
+            <button className="group mt-6 lg:mt-8 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md">
+              Apply <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
+            </button>
+
+            {/* Required Fields Note */}
             <p className="mt-5 text-muted-foreground">* These fields are required.</p>
           </div>
 
-          <div className="md:col-span-5 col-span-12 flex flex-col  gap-20 ">
-          <img src="/applyjob.svg" alt="" className=" w-full h-[500px]" /> 
-            {/* {details.map((item, index) => (
-              <div key={index} className="flex items-center gap-10 bg-blue-400 p-7">
-                 <img src={item.img} alt="" className="w-20" /> 
-                <div className="flex flex-col space-y-1">
-                  <h1 className="text-2xl font-bold">{item.title}</h1>
-                  <p className="text-lg">{item.small}</p>
-                  <p className="text-lg">{item.desc}</p>
-                </div>
-              </div>
-            ))} */}
+          {/* Right Column (Image Section) */}
+          <div className="lg:col-span-5 col-span-12 hidden lg:block">
+            <Image width={1000} height={500} src="/applyjob.svg" alt="applyjobimg" className="w-full h-[500px]" />
           </div>
         </div>
       </div>

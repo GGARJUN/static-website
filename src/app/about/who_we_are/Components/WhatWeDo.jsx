@@ -3,12 +3,12 @@ import Image from 'next/image'
 import React from 'react'
 import Dummy from './Dummy'
 
-const Approach = () => {
+const whatWeDo = () => {
     return (
         <section>
             <div className='lg:flex justify-center items-center gap-40 w-full container mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='flex flex-col gap-5 items-end justify-end mb-20 lg:mb-0'>
-                    <Image priority src="https://img.freepik.com/free-photo/happy-motivated-colleagues-office_114579-2790.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="Innovative solutions image" width={400} height={400} className='rounded-xl shadow-xl w-full h-auto' />
+                    <Image src="https://img.freepik.com/free-photo/happy-motivated-colleagues-office_114579-2790.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="business success" width={400} height={400} className='rounded-xl shadow-xl w-full h-auto' />
                 </div>
 
 
@@ -43,11 +43,11 @@ const Approach = () => {
                     </div>
                     <div className='flex items-center justify-between gap-10 mt-10'>
                         <div className='flex items-center gap-3'>
-                           <Image priority src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-1.svg"  width={50} height={1000} alt="About-img1" />
+                           <Image src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-1.svg"  width={50} height={1000} alt="About-img1" />
                             <h2 className='font-bold text-gray-700 text-lg'>Ongoing support & <br />maintenance</h2>
                         </div>
                         <div className='flex items-center gap-3'>
-                            <Image priority src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-2.svg" width={50} height={1000} alt="About-img2" />
+                            <Image src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-2.svg" width={50} height={1000} alt="About-img2" />
                             <h2 className='font-bold text-gray-700 text-lg'>Comitment to continue <br /> improvement</h2>
                         </div>
                     </div>
@@ -60,4 +60,4 @@ const Approach = () => {
     )
 }
 
-export default Approach
+export default whatWeDo

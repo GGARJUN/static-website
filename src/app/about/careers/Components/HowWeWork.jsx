@@ -1,6 +1,7 @@
 import { FaRegLightbulb, FaMedal, FaSearch, FaCheckCircle } from "react-icons/fa";
 import { AiOutlineRocket, AiOutlineCheckCircle } from "react-icons/ai";
 import { FaLightbulb } from "react-icons/fa6";
+import Image from "next/image";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 
 export default function HowWeWork() {
@@ -36,8 +37,8 @@ export default function HowWeWork() {
     );
 
     return (
-        <div className="relative  bg-[#240a59] py-24 bg-[url('https://html.awaikenthemes.com/corprate/images/how-we-work-bg-image.png')] bg-cover bg-center bg-fixed">
-            <div className="container mx-auto px-8 lg:px-16 text-white">
+        <div className="relative  bg-[#071342] py-24 bg-[url('https://html.awaikenthemes.com/corprate/images/how-we-work-bg-image.png')] bg-cover bg-center bg-fixed">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-white">
                 {/* Stats Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-12">
                     <StatCard
@@ -87,64 +88,51 @@ export default function HowWeWork() {
                 </div>
 
                 {/* How We Work Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-between">
-                    <div>
-                        <h3 className="text-md mb-3 text-red-500 font-bold flex items-center gap-2"><div className="rounded-full w-2 h-2 bg-red-600 mb-1"></div> How We Work ?</h3>
-                        <h2 className="text-5xl font-bold">
-                            Driving <span className="text-red-500">innovation</span> <br />
-                            collaborative solutions
-                        </h2>
+                <div className="grid grid-cols-12 gap-10">
+                    <div className="col-span-12 lg:col-span-8 gap-12 items-center justify-between">
+                        <div>
+                            <h3 className="text-md mb-3 text-red-500 font-bold flex items-center gap-2"><div className="rounded-full w-2 h-2 bg-red-600 mb-1"></div> How We Work ?</h3>
+                            <h2 className="text-5xl font-bold">
+                                Driving <span className="text-red-500">innovation</span> <br />
+                                collaborative solutions
+                            </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                            <StepCard
-                                step="1"
-                                title="Discovery & Consultation"
-                                text="We begin with an in-depth consultation to understand your vision, goals, and challenges."
-                                icon={<FaSearch size={24} />}
-                            />
-                            <StepCard
-                                step="2"
-                                title="Concept Development"
-                                text="We brainstorm ideas and create initial concepts. We present these concepts to you for feedback."
-                                icon={<FaLightbulb size={24} />}
-                            />
-                            <StepCard
-                                step="3"
-                                title="Delivery & Ongoing Support"
-                                text="After thorough testing, we officially launch your project. Our team ensures a smooth transition and is on hand."
-                                icon={<FaCheckCircle size={24} />}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                                <StepCard
+                                    step="1"
+                                    title="Discovery & Consultation"
+                                    text="We begin with an in-depth consultation to understand your vision, goals, and challenges."
+                                    icon={<FaSearch size={24} />}
+                                />
+                                <StepCard
+                                    step="2"
+                                    title="Concept Development"
+                                    text="We brainstorm ideas and create initial concepts. We present these concepts to you for feedback."
+                                    icon={<FaLightbulb size={24} />}
+                                />
+                                <StepCard
+                                    step="3"
+                                    title="Delivery & Ongoing Support"
+                                    text="After thorough testing, we officially launch your project. Our team ensures a smooth transition and is on hand."
+                                    icon={<FaCheckCircle size={24} />}
+                                />
+                            </div>
+                        </div>
+                        </div>
+
+                        {/* Image */}
+                        <div className="col-span-12 lg:col-span-4 ">
+                            <Image width={500} height={700}
+                                src="https://img.freepik.com/free-photo/team-working-together-project_23-2149325440.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
+                                alt="Teamwork"
+                                className="rounded-lg shadow-lg w-full lg:w-[450px]"
                             />
                         </div>
-                    </div>
-
-                    {/* Image */}
-                    <div className="relative  2xl:left-[228px] md:left-24">
-                        <img
-                            src="https://img.freepik.com/free-photo/team-working-together-project_23-2149325440.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
-                            alt="Teamwork"
-                            className="rounded-lg shadow-lg w-full md:w-[450px]"
-                        />
-                    </div>
+                    
                 </div>
             </div>
         </div>
     );
 }
 
-// Component for Stats
-const StatCard = ({ icon, number, text }) => (
-    <div className="flex flex-col items-center space-y-3">
-        <div className="text-red-500">{icon}</div>
-        <h3 className="text-3xl font-bold">{number}</h3>
-        <p className="text-sm opacity-80">{text}</p>
-    </div>
-);
 
-// Component for Work Steps
-const StepCard = ({ step, title, text }) => (
-    <div className="mt-6 border-l-4 border-red-500 pl-4">
-        <h4 className="text-red-500 font-bold text-lg">Step {step}</h4>
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-sm opacity-80">{text}</p>
-    </div>
-);

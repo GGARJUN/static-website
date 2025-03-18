@@ -8,6 +8,16 @@
   -webkit-overflow-scrolling: touch;
 }
 
+@layer components {
+  .title-all {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
+  }
+  .para-all {
+    @apply text-lg lg:text-xl text-gray-800;
+  }
+}
+
+
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
 }

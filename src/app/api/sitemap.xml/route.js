@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-    const baseUrl = "https://electricalstaticwebsite.netlify.app"; // Change this to your actual domain
+    const baseUrl = "https://www.sunkeydesignsystems.com"; // Change this to your actual domain
+    // const baseUrl = "http://localhost:3000"; // Change this to your actual domain
 
     const pages = [
         { loc: "/", priority: "1.0" },
@@ -29,13 +30,16 @@ export async function GET() {
     ];
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map((page) => `
+${pages
+    .map(
+        (page) => `
     <url>
         <loc>${baseUrl}${page.loc}</loc>
         <priority>${page.priority}</priority>
-    </url>`).join("")}
+    </url>`
+    )
+    .join("")}
 </urlset>`;
 
     return new NextResponse(sitemap, {

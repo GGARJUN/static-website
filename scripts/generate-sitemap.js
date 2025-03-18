@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const baseUrl = "https://electricalstaticwebsite.netlify.app"; 
+const baseUrl = "https://www.sunkeydesignsystems.com"; 
+// const baseUrl = "https://electricalstaticwebsite.netlify.app"; 
 // const baseUrl = "http://localhost:3000"; 
 
 const pages = [

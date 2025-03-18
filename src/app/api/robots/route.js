@@ -5,7 +5,7 @@ export async function GET() {
         User-agent: *
         Allow: /
 
-        Sitemap: https://electricalstaticwebsite.netlify.app/sitemap.xml
+        Sitemap: https://www.sunkeydesignsystems.com/sitemap.xml
     `;
 
     return new NextResponse(robotsTxt, {

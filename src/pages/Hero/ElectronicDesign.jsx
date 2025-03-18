@@ -36,8 +36,8 @@ const ElectronicDesign = () => {
         </motion.p>
         <div className="w-full mb-10 grid grid-cols-12 gap-5">
           {/* First Section */}
-          <div className="md:col-span-4 col-span-12">
-            <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col gap-6">
+          <div className="lg:col-span-4 col-span-12">
+            <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex lg:flex-col gap-6">
               {features.map((feature) => (
                 <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
                   {/* Image Layer */}
@@ -66,16 +66,16 @@ const ElectronicDesign = () => {
           </div>
 
           {/* Second Section */}
-          <div className="md:col-span-4 col-span-12"><Slider /></div>
+          <div className="lg:col-span-4 col-span-12"><Slider /></div>
 
           {/* Third Section */}
-          <div className="md:col-span-4 col-span-12">
+          <div className="lg:col-span-4 col-span-12">
             <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col gap-6">
               {features2.map((feature) => (
                 <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
                   {/* Image Layer */}
                   <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
-                  <Image priority src={feature.image} alt={feature.title} width={1000} height={100} className="w-full h-full object-cover rounded-xl" />
+                    <Image priority src={feature.image} alt={feature.title} width={1000} height={100} className="w-full h-full object-cover rounded-xl" />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
                   </motion.div>
                   {/* Content */}

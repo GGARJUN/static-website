@@ -55,11 +55,6 @@ const Expertise = () => {
       </div>
     );
   };
-  // Custom Fixture Design: Designing fixtures tailored to your product's testing requirements.
-  // Fixture Manufacturing: Building fixtures with precision and quality.
-  // Integration with Automated Testing Systems: Ensuring compatibility with automated testing equipment.
-  // Testing and Validation: Conducting thorough testing to ensure fixture reliability.
-  
 
   const cards = [
     {

@@ -1,4 +1,5 @@
 import { ArrowRight, SquareArrowOutUpRight } from 'lucide-react'
+import Image from 'next/image';
 import React from 'react'
 
 const SmartLightIoT = () => {
@@ -20,7 +21,7 @@ const SmartLightIoT = () => {
 
 
       <div className='grid grid-cols-12 mt-24 gap-10  '>
-        <div className='col-span-8'>
+        <div className='col-span-12 lg:col-span-8'>
           <div className="gap-4 grid md:grid-cols-2 grid-cols-1  ">
             {features.map((item, index) => (
               <div
@@ -29,9 +30,9 @@ const SmartLightIoT = () => {
         ${index === features.length - 3 ? "md:col-span-2 flex justify-start  " : ""}`}
               >
                 <div className="max-w-lg ">
-                  <img
+                <Image priority width={40} height={40}
                     src={item.img}
-                    alt=""
+                    alt={item.title}
                     className="w-16 my-6  group-hover:-translate-y-3 transition-all duration-300"
                   />
                   <h3 className="text-gray-900 2xl:text-2xl text-xl font-bold mb-3 group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white line-clamp-1">
@@ -53,11 +54,8 @@ const SmartLightIoT = () => {
             ))}
           </div>
         </div>
-        <div className='relative  col-span-4'>
-          <img src="https://img.freepik.com/free-photo/door-leading-magical-world_23-2151038476.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className=' w-[] rounded-xl  object-cover shadow-xl h-full ' />
-          {/* <div className='absolute -bottom-8 font-semibold  shadow-xl left-[10%] text-xl  py-5 px-10 rounded-lg bg-white/70'>
-            ✨ Illuminating the Future
-          </div> */}
+        <div className='relative col-span-12 lg:col-span-4'>
+        <Image priority width={1200} height={600} src="https://img.freepik.com/free-photo/door-leading-magical-world_23-2151038476.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="SmartLight" className=' w-full rounded-xl  object-cover shadow-xl h-full ' />
         </div>
       </div>
     </div>

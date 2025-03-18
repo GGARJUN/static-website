@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import Image from 'next/image';
 const ClientReview = () => {
 
     const people = [
@@ -66,25 +67,25 @@ const ClientReview = () => {
         { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-2.svg", title: "Innovative Approach" },
         { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-3.svg", title: "Client Centric Focused" },
         { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-4.svg", title: "Comprehensive Services" },
-        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-5.svg", title: "commitment to sustainability" },
-        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-6.svg", title: "24/7 support and maintenance" },
+        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-5.svg", title: "sustainability" },
+        { img: "https://html.awaikenthemes.com/corprate/images/icon-facility-item-6.svg", title: "24/7 maintenance" },
 
     ]
 
     const svg = [{ start: "/star.svg" }, { start: "/star.svg" }, { start: "/star.svg" }, { start: "/star.svg" },]
 
     return (
-        <div className="relative  bg-[url('https://html.awaikenthemes.com/corprate/images/testimonial-bg-image.png')] bg-secondary bg-repeat-x bg-cover py-24 ">
-            <div className='px-16 container mx-auto'>
-                <div className='grid grid-cols-12  '>
-                    <div className='col-span-12 lg:col-span-6'>
+        <div className="relative   bg-[url('https://html.awaikenthemes.com/corprate/images/testimonial-bg-image.png')] bg-secondary bg-repeat-x bg-cover pb-20 ">
+            <div className=' container mx-auto px-5 sm:px-6 lg:px-8'>
+                    <div className='w-full'>
                         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Client review</h2>
-                        <h1 className='text-5xl font-bold my-5 max-w-lg'><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>What our clients</span> have to say about working with us</h1>
+                        <h1 className='text-5xl font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>What our clients</span> have to say about working with us</h1>
                     </div>
-                    <div className='col-span-12 lg:col-span-6 mt-5'>
-                        <div className='flex items-center gap-32 '>
-                            <img src="https://html.awaikenthemes.com/corprate/images/client-logo.svg" alt="" />
-                            <div className='flex  gap-9'>
+
+                    <div className=' mt-20'>
+                        <div className='md:flex items-center gap-32'>
+                            <Image priority src="https://html.awaikenthemes.com/corprate/images/client-logo.svg" alt="google" width={100} height={50} />
+                            <div className='flex mt-10  gap-9'>
                                 <div className="flex  ">
                                     <AnimatedTooltip items={people} />
                                 </div>
@@ -93,7 +94,7 @@ const ClientReview = () => {
                                         <h2 className='font-bold text-xl'>4.5</h2>
                                         <div className='flex w-full items-center justify-center gap-'>
                                             {svg.map((item, index) => (
-                                                <img key={index} src={item.start} alt="" className='w-7 h-7 -mt-1' />
+                                                <Image priority key={index} src={item.start} alt="svg-img" width={20} height={20} className='w-7 h-7 -mt-1' />
                                             ))}
                                         </div>
                                     </div>
@@ -101,7 +102,7 @@ const ClientReview = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="mt-20 -ml-5">
+                        <div className="mt-10 -ml-5">
                             <Swiper
                                 modules={[Autoplay, Pagination]}
                                 spaceBetween={20}
@@ -112,9 +113,9 @@ const ClientReview = () => {
                                 pagination={{
                                     el: ".custom-pagination",
                                     type: "custom",
-                                    renderCustom: (swiper, current, total) => 
-                                      `<span class="text-xl font-bold text-gray-400  mx-2">${current} / ${total}</span>`
-                                  }}
+                                    renderCustom: (swiper, current, total) =>
+                                        `<span class="text-xl font-bold text-gray-400  mx-2">${current} / ${total}</span>`
+                                }}
                             >
                                 {reviews.map((review, index) => (
                                     <SwiperSlide key={index}>
@@ -124,7 +125,7 @@ const ClientReview = () => {
                                             </h2>
                                             <p className="mt-4 text-lg text-gray-700">{review.review}</p>
                                             <div className="mt-6 flex items-center gap-5">
-                                                <img
+                                                <Image priority width={20} height={20}
                                                     src={review.img}
                                                     alt={review.name}
                                                     className="w-20 h-20 object-cover rounded-full"
@@ -140,20 +141,22 @@ const ClientReview = () => {
 
                                     </SwiperSlide>
                                 ))}
-                            <div className="custom-pagination text-end"></div>
+                                <div className="custom-pagination text-end"></div>
                             </Swiper>
                         </div>
                     </div>
-                </div>
 
-                <div className='w-full border mt-20 border-gray-200/70'></div>
-                <div className='mt-20 grid grid-cols-2 lg:grid-cols-6 w-full gap-5 justify-center items-center '>
-                    {names.map((item, index) => (
-                        <div key={index} className='flex flex-col gap-5'>
-                            <img src={item.img} alt={item.title} className='w-14 ' />
-                            <h2 className='font-bold text-2xl  text-blue-900 '>{item.title}</h2>
-                        </div>
-                    ))}
+
+                <div className='w-full border my-20 border-gray-200/70'></div>
+                <div className="overflow-hidden whitespace-nowrap w-full bg-gray-100 ">
+                    <div className="flex gap-10 animate-marquee">
+                        {names.concat(names).map((item, index) => (
+                            <div key={index} className="flex flex-col items-center gap-3 min-w-[200px]">
+                                <Image priority height={40} width={40} src={item.img} alt={item.title} className="w-14" />
+                                <h2 className="font-bold text-lg text-blue-900">{item.title}</h2>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

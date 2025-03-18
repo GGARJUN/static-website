@@ -1,4 +1,5 @@
 import { SquareArrowOutUpRight } from 'lucide-react'
+import Image from 'next/image';
 const Expertise = () => {
 
 
@@ -19,18 +20,18 @@ const Expertise = () => {
           <div
             key={index}
             className={`bg-white cursor-pointer hover:bg-gradient-to-r from-purple-600 to-blue-400/90 p-6 rounded-xl shadow-lg transition-all duration-300 group
-        ${index === features.length - 4 ? "md:col-span-3 flex justify-start  " : ""}`}
+        ${index === features.length - 4 ? "md:col-span-3 flex justify-start  " : "md:col-span-3 lg:col-span-1 "}`}
           >
             <div className="max-w-lg ">
-              <img
+              <Image priority width={40} height={40}
                 src={item.img}
-                alt=""
+                alt={item.title}
                 className="w-16 my-6  group-hover:-translate-y-3 transition-all duration-300"
               />
               <h3 className="text-gray-900 2xl:text-2xl text-xl font-bold mb-3 group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-md leading-relaxed group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">
+              <p className="line-clamp-2 text-gray-600 text-md leading-relaxed group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">
                 {item.description}
               </p>
               <div className="flex gap-3 mt-8 justify-start text-blue-600">

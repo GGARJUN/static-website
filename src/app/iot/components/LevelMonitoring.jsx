@@ -1,4 +1,5 @@
 import { ArrowRight, SquareArrowOutUpRight } from 'lucide-react'
+import Image from 'next/image';
 import React from 'react'
 
 const LevelMonitoring = () => {
@@ -16,23 +17,23 @@ const LevelMonitoring = () => {
         </p>
         <button className='group  mt-5 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Learn More <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
         <div className='relative mt-20'>
-          <img src="https://img.freepik.com/free-photo/business-person-futuristic-business-environment_23-2150970195.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="" className=' w-[1100px] rounded-3xl h-96  object-cover shadow-xl' />
-          <div className='absolute -bottom-8 font-semibold  shadow-xl left-[27%] text-xl  py-5 px-10 rounded-lg bg-white/70'>
+          <Image priority width={1200} height={600} src="https://img.freepik.com/free-photo/business-person-futuristic-business-environment_23-2150970195.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="level monitoring" className=' w-[1100px] rounded-3xl h-96  object-cover shadow-xl' />
+          <div className='absolute -bottom-8 font-semibold  shadow-xl left-[27%] text-xl  py-5 px-10 rounded-lg bg-white/70 hidden lg:block'>
             ✨ Accurate Monitoring for Efficient Operations
           </div>
         </div>
       </div>
-      <div className="gap-4 grid md:grid-cols-3 grid-cols-1 items-center justify-center mt-32">
+      <div className="gap-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center mt-32">
         {features.map((item, index) => (
           <div
             key={index}
-            className={`bg-white cursor-pointer hover:bg-gradient-to-r from-purple-600 to-blue-400/90 p-6 rounded-xl shadow-lg transition-all duration-300 group
+            className={`bg-slate-200 cursor-pointer hover:bg-gradient-to-r from-purple-600 to-blue-400/90 p-6 rounded-xl shadow-lg transition-all duration-300 group
         ${index === features.length - 4 ? "md:col-span-3 flex justify-start  " : ""}`}
           >
             <div className="max-w-lg ">
-              <img
+              <Image priority width={40} height={40}
                 src={item.img}
-                alt=""
+                alt={item.title}
                 className="w-16 my-6  group-hover:-translate-y-3 transition-all duration-300"
               />
               <h3 className="text-gray-900 2xl:text-2xl text-xl font-bold mb-3 group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">

@@ -11,17 +11,15 @@ const CallUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center  gap-8 ">
           {/* Video Play Button */}
           <div className="flex justify-center">
-            <a
-              href="https://www.youtube.com/watch?v=Y-x0efG1seA"
+            <div
               className="group relative flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-lg transition-transform duration-300 hover:scale-110"
-              data-cursor-text="Play"
             >
               <FaPlay className="text-2xl ml-1 text-red-600 group-hover:scale-110 transition-transform duration-200" />
-            </a>
+            </div>
           </div>
 
           {/* Intro Video Content */}
-          <div className="text-center md:text-left z">
+          <div className="text-center md:text-left ">
             <div className="space-y-4">
               {/* Section Title */}
               <h3 className="text-lg font-semibold text-white ">

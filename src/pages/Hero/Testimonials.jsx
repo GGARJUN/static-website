@@ -46,10 +46,10 @@ const Testimonials = () => {
           </Carousel>
         </div>
       </div>
-      <div className="md:block absolute hidden top-40 left-[22%] -rotate-[12deg]">
+      <div className="lg:block absolute hidden top-40 left-[22%] -rotate-[12deg]">
         <Image priority src="https://img.freepik.com/free-photo/portrait-businesswoman-isolated-home_23-2148813223.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="user img" width={100} height={100} className="h-32 w-32 object-cover rounded-full border-4 shadow-2xl border-gray-900 p-1" />
       </div>
-      <div className="md:block absolute hidden bottom-40 right-[21%] rotate-[2deg]">
+      <div className="lg:block absolute hidden bottom-40 right-[21%] rotate-[2deg]">
         <Image priority src="https://img.freepik.com/free-photo/portrait-smiling-young-businesswoman-standing-with-her-arm-crossed-against-gray-wall_23-2147943827.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="user img" width={100} height={100} className="h-32 w-32 object-cover rounded-full border-4 shadow-2xl border-gray-900 p-1" />
       </div>
     </section>

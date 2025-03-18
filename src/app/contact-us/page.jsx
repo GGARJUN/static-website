@@ -30,6 +30,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+import Image from "next/image";
 
 
 
@@ -97,7 +98,7 @@ const ContactUs = () => {
         <motion.div className="flex w-full h-full" >
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative ">
-              <img src={banner.img} alt={banner.title} className="w-full h-full object-cover  -z-50" />
+              <Image priority width={1000} height={500} src={banner.img} alt={banner.title} className="w-full h-full object-cover  -z-50" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90"></div>
               <div className="absolute inset-0 flex flex-col  justify-center items-center 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6 duration-500">
@@ -112,10 +113,10 @@ const ContactUs = () => {
       </div>
 
 
-      <div className="relative -top-[120px] container mx-auto rounded-xl w-full bg-white shadow-xl h-[500px] 2xl:h-[600px]">
-        <div className="grid  md:grid-cols-2 grid-cols-1 items-center justify-between gap-10">
-          <img src="https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="image" className="2xl:h-[600px] h-[500px] object-cover rounded-l-xl " />
-          <div className="md:max-w-2xl mx-16 md:mx-0">
+      <div className="relative -top-[120px] container mx-auto  rounded-xl  bg-white shadow-xl h-[450px] 2xl:h-[600px]">
+        <div className="grid  lg:grid-cols-2 grid-cols-1 items-center justify-between gap-10">
+          <Image priority width={500} height={500} src="https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="image" className="2xl:h-[600px] h-[450px] object-cover rounded-xl w-full" />
+          <div className="lg:max-w-2xl  md:mx-0">
             <h2 className="text-5xl font-semibold text-blue-900">Let’s Talk</h2>
             <p className="my-4 2xl:my-8 2xl:text-xl md:mr-10 2xl:mr-0 font-semibold text-blue-950 text-justify">At SunKey Technologies, we believe in solving complex business challenges of the converging world by using cutting-edge technologies. Our team is dedicated to delivering innovative solutions that transform industries and enhance efficiency. Whether you have questions about our services or would like to explore how we can help your business thrive, we're here to assist you.
             </p>
@@ -126,14 +127,14 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className="container mx-auto  px-16 mt-[450px] md:mt-20 mb-20 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-[450px] md:mt-[400px] lg:mt-20 mb-20 ">
         <h2 className="flex items-center gap-3 text-lg font-medium"><div className="bg-blue-600 h-2 w-2 rounded-full"></div> contact us</h2>
         <h2 className="mt-10 text-5xl mb-20 font-semibold">Get in touch with us</h2>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-12 gap-20 items-start">
-            <div className="md:col-span-8 col-span-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-12 lg:gap-20 items-start">
+            <div className="lg:col-span-8 col-span-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 container mx-auto">
                 <FormField
                   control={form.control}
                   name="firstname"
@@ -246,10 +247,10 @@ const ContactUs = () => {
               </Button>
               <p className="mt-5 text-muted-foreground">* These fields are required.</p>
             </div>
-            <div className="md:col-span-4 col-span-12 flex flex-col w-full gap-20">
+            <div className="lg:col-span-4 col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1  w-full gap-20 lg:mt-0 mt-10">
               {details.map((item, index) => (
                 <div key={index} className="flex items-center gap-10">
-                  <img src={item.img} alt="" className="w-20" />
+                  <Image priority width={40} height={40} src={item.img} alt={item.title} className="w-20" />
                   <div className="flex flex-col space-y-1">
                     <h1 className="text-2xl font-bold">{item.title}</h1>
                     <p className="text-lg">{item.small}</p>
@@ -262,7 +263,7 @@ const ContactUs = () => {
         </Form>
 
 
-        <h2 className="mt-40 text-center 2xl:text-4xl text-white ">
+        <h2 className="mt-40 text-center 2xl:text-4xl text-white hidden md:block">
           <Highlight className="px-5 py-5">Let me know if you need any adjustments or if this meets your expectations!</Highlight>
         </h2>
       </div>

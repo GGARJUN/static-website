@@ -19,7 +19,7 @@ const CallUs = () => {
           </div>
 
           {/* Intro Video Content */}
-          <div className="text-center md:text-left z">
+          <div className="text-center md:text-left ">
             <div className="space-y-4">
               {/* Section Title */}
               <h3 className="text-lg font-semibold text-white ">

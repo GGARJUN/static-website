@@ -20,11 +20,11 @@ const EngineeringDesignServices = () => {
     return (
         <section className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-                <div className="md:flex justify-between items-center">
-                    <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left md:text-center mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
+                <div className="md:flex justify-between items-start">
+                    <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left  mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
                         Engineering Design Services
                     </motion.h2>
-                    <motion.button className=" flex gap-3 group border px-4 sm:px-6 py-2 sm:py-3 mt-5 md:mt-0 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out" variants={sectionVariants}>
+                    <motion.button className=" flex gap-3 group border  px-4 sm:px-6 py-2 sm:py-3 mt-5 md:mt-0 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out" variants={sectionVariants}>
                         Learn More <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
                     </motion.button>
                 </div>

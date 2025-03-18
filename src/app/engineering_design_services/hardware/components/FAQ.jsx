@@ -22,8 +22,8 @@ const FAQ = () => {
     <div className="w-2 h-2 rounded-full bg-blue-600"></div>FAQ's
   </h2>
   
-  <div className="flex flex-col md:flex-row items-center justify-between">
-    <h1 className="text-4xl md:text-5xl font-bold my-5 text-center md:text-left">
+  <div className="flex flex-col lg:flex-row items-start justify-between">
+    <h1 className="title-all my-5 text-left">
       <span className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text">
         Find solutions to common <br />
       </span>
@@ -43,7 +43,7 @@ const FAQ = () => {
       transition={{ duration: 1.5, ease: "easeInOut", type: "spring", stiffness: 80 }}
       whileHover={{ scale: 1.05, rotate: 0 }}
       ref={ref}
-      className=" w-96 md:w-[500px] 2xl:w-[600px] h-96 md:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
+      className=" w-full lg:w-[500px] 2xl:w-[600px] h-auto lg:h-[500px] mt-5  rounded-xl shadow-lg object-cover"
     >
       <DirectionAwareHover imageUrl={image1} />
     </motion.div>
