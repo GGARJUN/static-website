@@ -32,7 +32,7 @@ const NavLinks = () => {
         }
     }, [router.asPath]);
 
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
     const about = [
         { name: 'Who we are', description: 'Get a better understanding of your', href: "/about/who_we_are", icon: ChartPieIcon },
         { name: 'Careers', description: 'Speak directly to your customers', href: "/about/careers", icon: CursorArrowRaysIcon },
@@ -78,35 +78,46 @@ const NavLinks = () => {
         { name: 'Blogs', description: 'Get a better understanding of your traffic', href: '/resources/blogs', icon: ChartPieIcon },
         { name: 'News', description: 'Speak directly to your customers', href: '/resources/news', icon: CursorArrowRaysIcon },
     ]
-    const [openMenu, setOpenMenu] = useState(false);
-    const [openSubmenu, setOpenSubmenu] = useState(null);
-    const [delayTimer, setDelayTimer] = useState(null);
-    const handleMouseEnter = () => {
-        const timer = setTimeout(() => setOpenMenu(true), 300);
-        setDelayTimer(timer);
+
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [delayTimer, setDelayTimer] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  const handleMouseEnter = () => {
+    const timer = setTimeout(() => setOpenMenu(true), 300);
+    setDelayTimer(timer);
+  };
+
+  const handleMouseLeave = () => {
+    clearTimeout(delayTimer);
+    setOpenMenu(false);
+    setOpenSubmenu(null);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 0);
+      if (currentScrollY > lastScrollY.current + 10) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollY.current - 10) {
+        setHidden(false);
+      }
+      lastScrollY.current = currentScrollY;
     };
-    const handleMouseLeave = () => {
-        clearTimeout(delayTimer);
-        setOpenMenu(false);
-        setOpenSubmenu(null);
-    };
-    const [scrolled, setScrolled] = useState(false);
-    const [hidden, setHidden] = useState(false);
-    const lastScrollY = useRef(0); // Store last scroll position persistently
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            setScrolled(currentScrollY > 0); // True if scrolled down
-            if (currentScrollY > lastScrollY.current + 10) {
-                setHidden(true); // Hide when scrolling down
-            } else if (currentScrollY < lastScrollY.current - 10) {
-                setHidden(false); // Show when scrolling up
-            }
-            lastScrollY.current = currentScrollY; // Update last scroll position
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false); // Close the mobile menu when a link is clicked
+  };
+
     return (
         <>
             <Head>
@@ -301,69 +312,197 @@ const NavLinks = () => {
                         </div>
                     </div>
                     <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden z-50">
-                        <div className="fixed inset-0 z-50" />
-                        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6  sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
-                            <div className="flex items-center justify-between">
-                            <Link href="/" className=" ">
-                            <h2
-                                className= "text-4xl font-bold duration-300"   
-                            >
-                                SunKey
-                            </h2>
+      <div className="fixed inset-0 z-50" />
+      <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="">
+            <h2 className="text-4xl font-bold duration-300">SunKey</h2>
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(false)}
+            className="ml-10 block items-center justify-center rounded-md p-2.5"
+          >
+            <XMarkIcon aria-hidden="true" className="size-6" />
+          </button>
+        </div>
+        <div className="mt-6 flow-root">
+          <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="space-y-2 py-6">
+              {/* About Us Section */}
+              <Disclosure as="div" className="-mx-3">
+                {({ open }) => (
+                  <>
+                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                      About Us
+                      <ChevronDownIcon
+                        aria-hidden="true"
+                        className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
+                      />
+                    </DisclosureButton>
+                    <DisclosurePanel className="mt-2 space-y-2">
+                      {[...about].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          passHref
+                          onClick={handleLinkClick}
+                          className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >
+                          {item.name}
                         </Link>
-                                <button type="button" onClick={() => setMobileMenuOpen(false)} className="ml-10 block items-center justify-center rounded-md p-2.5  "><XMarkIcon aria-hidden="true" className="size-6" /></button>
-                            </div>
-                            <div className="mt-6 flow-root">
-                                <div className="-my-6 divide-y divide-gray-500/10">
-                                    <div className="space-y-2 py-6">
-                                        <Disclosure as="div" className="-mx-3">
-                                            <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About Us<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
-                                            <DisclosurePanel className="mt-2 space-y-2">
-                                                {[...about].map((item) => (
-                                                    <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
-                                                ))}
-                                            </DisclosurePanel>
-                                        </Disclosure>
-                                        <Disclosure as="div" className="-mx-3">
-                                            <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Engineering Design Services<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
-                                            <DisclosurePanel className="mt-2 space-y-2">
-                                                {[...engineeringmob].map((item) => (
-                                                    <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
-                                                ))}
-                                            </DisclosurePanel>
-                                        </Disclosure>
-                                        <Disclosure as="div" className="-mx-3">
-                                            <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Electronic Design<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
-                                            <DisclosurePanel className="mt-2 space-y-2">
-                                                {[...design].map((item) => (
-                                                    <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
-                                                ))}
-                                            </DisclosurePanel>
-                                        </Disclosure>
-                                        <Disclosure as="div" className="-mx-3">
-                                            <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Manufacturing Services<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
-                                            <DisclosurePanel className="mt-2 space-y-2">
-                                                {[...manufactring].map((item) => (
-                                                    <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
-                                                ))}
-                                            </DisclosurePanel>
-                                        </Disclosure>
-                                        <Link href="/iot" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Internet of Things</Link>
-                                        <Link href="/case-study" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Case Studies</Link>
-                                        <Disclosure as="div" className="-mx-3">
-                                            <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Resources<ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" /></DisclosureButton>
-                                            <DisclosurePanel className="mt-2 space-y-2">
-                                                {[...resources].map((item) => (
-                                                    <DisclosureButton key={item.name} as="a" href={item.href} className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{item.name}</DisclosureButton>
-                                                ))}
-                                            </DisclosurePanel>
-                                        </Disclosure>
-                                        <Link href="/contact-us" passHref className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact Us</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </DialogPanel>
-                    </Dialog>
+                      ))}
+                    </DisclosurePanel>
+                  </>
+                )}
+              </Disclosure>
+
+              {/* Engineering Design Services Section */}
+              <Disclosure as="div" className="-mx-3">
+                {({ open }) => (
+                  <>
+                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                      Engineering Design Services
+                      <ChevronDownIcon
+                        aria-hidden="true"
+                        className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
+                      />
+                    </DisclosureButton>
+                    <DisclosurePanel className="mt-2 space-y-2">
+                      {[...engineeringmob].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          passHref
+                          onClick={handleLinkClick}
+                          className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </DisclosurePanel>
+                  </>
+                )}
+              </Disclosure>
+
+              {/* Electronic Design Section */}
+              <Disclosure as="div" className="-mx-3">
+                {({ open }) => (
+                  <>
+                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                      Electronic Design
+                      <ChevronDownIcon
+                        aria-hidden="true"
+                        className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
+                      />
+                    </DisclosureButton>
+                    <DisclosurePanel className="mt-2 space-y-2">
+                      {[...design].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          passHref
+                          onClick={handleLinkClick}
+                          className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </DisclosurePanel>
+                  </>
+                )}
+              </Disclosure>
+
+              {/* Manufacturing Services Section */}
+              <Disclosure as="div" className="-mx-3">
+                {({ open }) => (
+                  <>
+                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                      Manufacturing Services
+                      <ChevronDownIcon
+                        aria-hidden="true"
+                        className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
+                      />
+                    </DisclosureButton>
+                    <DisclosurePanel className="mt-2 space-y-2">
+                      {[...manufactring].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          passHref
+                          onClick={handleLinkClick}
+                          className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </DisclosurePanel>
+                  </>
+                )}
+              </Disclosure>
+
+              {/* Internet of Things Link */}
+              <Link
+                href="/iot"
+                passHref
+                onClick={handleLinkClick}
+                className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+              >
+                Internet of Things
+              </Link>
+
+              {/* Case Studies Link */}
+              <Link
+                href="/case-study"
+                passHref
+                onClick={handleLinkClick}
+                className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+              >
+                Case Studies
+              </Link>
+
+              {/* Resources Section */}
+              <Disclosure as="div" className="-mx-3">
+                {({ open }) => (
+                  <>
+                    <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                      Resources
+                      <ChevronDownIcon
+                        aria-hidden="true"
+                        className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
+                      />
+                    </DisclosureButton>
+                    <DisclosurePanel className="mt-2 space-y-2">
+                      {[...resources].map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          passHref
+                          onClick={handleLinkClick}
+                          className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </DisclosurePanel>
+                  </>
+                )}
+              </Disclosure>
+
+              {/* Contact Us Link */}
+              <Link
+                href="/contact-us"
+                passHref
+                onClick={handleLinkClick}
+                className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </div>
+      </DialogPanel>
+    </Dialog>
                 </div>
             </div>
         </>
