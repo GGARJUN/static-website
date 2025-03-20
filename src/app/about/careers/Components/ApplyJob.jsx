@@ -316,7 +316,7 @@ const ApplyJob = () => {
 
           {/* Right Column (Image Section) */}
           <div className="lg:col-span-5 col-span-12 hidden lg:block">
-            <Image width={1000} height={500} src="/applyjob.svg" alt="applyjobimg" className="w-full h-[500px]" />
+            <img loading='lazy'  src="/applyjob.svg" alt="applyjobimg" className="w-full h-[500px]" />
           </div>
         </form>
       </Form>

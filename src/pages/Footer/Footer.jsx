@@ -36,8 +36,8 @@ const Footer = () => {
       { name: "PCB Layout", href: "/electronic_design/pcb_layout" },
       { name: "SI/PI Analysis", href: "/electronic_design/analysis" },
       { name: "Reverse Engineering", href: "/electronic_design/reverse_engineering" },
-      { name: 'Design Modification Service',href: '/electronic_design/design_modification_service',},
-      { name: 'Design for Manufacturability',  href: '/electronic_design/design_for_manufacturability', },
+      { name: 'Design Modification Service', href: '/electronic_design/design_modification_service', },
+      { name: 'Design for Manufacturability', href: '/electronic_design/design_for_manufacturability', },
     ],
 
     "Manufacturing Services": [
@@ -56,13 +56,19 @@ const Footer = () => {
       <Head>
         <link rel="canonical" href={canonicalUrl} />
       </Head>
-      <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-14 pb-10">
+      <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-14 pb-10 relative">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-12 gap-5 md:gap-10 w-full">
             <div className="lg:col-span-4 col-span-12 flex flex-col gap-8 mb-5 md:mb-0">
-              <h2 className="text-4xl font-bold">SunKeyTechnology</h2>
-              <p className="text-[14px] text-gray-400 max-w-md">
+              <h2 className="text-4xl font-bold">Sunkey Design Systems Pvt Ltd</h2>
+              <p className="text-gray-300 max-w-md">
                 We empower businesses to innovate in the tech landscape by providing cutting-edge solutions in engineering design, electronics, IoT, and manufacturing.
+              </p>
+              <p className="text-gray-300">1&1A, UR Nagar Extn, Anna Nagar W Ext St, Chennai, Tamil Nadu 600101
+              </p>
+              <p className="text-gray-300">
+              v.jain@sunkeydesignsystems.com
+              kumar@sunkeydesignsystems.com
               </p>
               <div className="flex items-center gap-10">
                 <FaFacebookF size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
@@ -85,29 +91,37 @@ const Footer = () => {
               ))}
 
 
-                  <div className="text-lg sm:text-xl font-bold text-gray-300 hover:text-blue-400 cursor-pointer transition-colors duration-200">
-                    <Link href="/iot">Internet of Things</Link>
-                  </div>
-                  <div className="text-lg sm:text-xl font-bold text-gray-300 hover:text-blue-400 cursor-pointer transition-colors duration-200">
-                    <Link href="/case-study">Case Study</Link>
-                  </div>
-                  <div className="text-lg sm:text-xl font-bold text-gray-300 hover:text-blue-400 cursor-pointer transition-colors duration-200">
-                    <Link href="/contact-us">Contact Us</Link>
-                  </div>
+              <div className="text-lg sm:text-xl font-bold text-gray-300 hover:text-blue-400 cursor-pointer transition-colors duration-200">
+                <Link href="/iot">Internet of Things</Link>
+              </div>
+              <div className="text-lg sm:text-xl font-bold text-gray-300 hover:text-blue-400 cursor-pointer transition-colors duration-200">
+                <Link href="/case-study">Case Study</Link>
+              </div>
+              <div className="text-lg sm:text-xl font-bold text-gray-300 hover:text-blue-400 cursor-pointer transition-colors duration-200">
+                <Link href="/contact-us">Contact Us</Link>
+              </div>
 
 
               <div className="">
-                <Input type="text" placeholder="Enter Your Number" className="py-6" />
+                <Input type="text" placeholder="Enter Your Email" className="py-6" />
                 <Button className="bg-blue-600 mt-5">Request a Callback</Button>
               </div>
             </div>
           </div>
           <span className="w-full border mt-10 border-gray-700 flex"></span>
           <div className="mt-10 lg:flex flex-row justify-between items-center">
-            <h2 className="text-gray-500 text-sm sm:text-base">Copyright © 2025 SunKey Technologies. All rights reserved.</h2>
+            <h2 className="text-gray-500 text-sm sm:text-base">Copyright © 2025 Sunkey Design Systems Pvt Ltd. All rights reserved.</h2>
             <h2 className="text-gray-500 text-sm sm:text-base md:mt-0 mt-2">User Terms & Conditions | Privacy Policy</h2>
           </div>
         </div>
+
+        {/* <div className="absolute top-0 w-full">
+          <div className="container mx-auto ">
+            <div>
+              <h2>Do you have </h2>
+            </div>
+          </div>
+        </div> */}
       </footer>
     </>
   );

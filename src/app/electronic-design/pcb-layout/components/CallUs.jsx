@@ -4,9 +4,9 @@ const CallUs = () => {
   return (
 
     <div
-      className="relative bg-[url('https://img.freepik.com/free-photo/colleagues-working-together-call-center-with-headphones_23-2149256089.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')] bg-cover bg-fixed bg-center  h-[800px] flex items-center justify-center"
+      className="relative bg-[url('https://img.freepik.com/free-photo/young-businesswoman-having-fun-listening-music-headphones-while-working-computer-office_637285-5381.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')] bg-cover bg-fixed bg-center mt-40 h-[700px] flex items-center justify-center"
     >
-       <div className="absolute  inset-0 bg-gradient-to-r from-black/60 via-black/40 to-pink-500/40"></div>
+       <div className="absolute  inset-0 bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40"></div>
       <div className="container mx-auto px-6 py-20 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center  gap-8 ">
           {/* Video Play Button */}

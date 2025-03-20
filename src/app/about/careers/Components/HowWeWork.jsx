@@ -122,7 +122,7 @@ export default function HowWeWork() {
 
                         {/* Image */}
                         <div className="col-span-12 lg:col-span-4 ">
-                            <Image width={500} height={700}
+                            <img loading="lazy" 
                                 src="https://img.freepik.com/free-photo/team-working-together-project_23-2149325440.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
                                 alt="Teamwork"
                                 className="rounded-lg shadow-lg w-full lg:w-[450px]"

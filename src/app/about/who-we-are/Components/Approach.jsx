@@ -3,6 +3,7 @@ import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import { Accordion } from "@radix-ui/react-accordion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Expertise = () => {
 
@@ -38,13 +39,15 @@ const Expertise = () => {
             </AccordionItem>
           </Accordion>
         </div>
-        <button className='group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md mt-10'>Contact Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+        <Link href="/">
+          <button className=' mt-10 group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Contact Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+        </Link>
       </div>
 
-      
+
       <div className="relative w-full flex justify-end items-center mt-10 lg:mt-0">
         <div className="relative lg:w-[400px] md:h-[550px] w-full h-[500px]">
-          <Image priority width={1000} height={1000}
+          <img loading="lazy"
             src="https://img.freepik.com/free-photo/focused-leader-woman-enter-office-meeting-room-lean-conference-table-brainstorming-business-company-presentation-late-night-diverse-multi-ethnic-teamwork-solving-management-strategy_482257-16485.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
             alt="Office Meeting"
             className="w-full h-full object-cover rounded-lg shadow-lg"
@@ -53,14 +56,14 @@ const Expertise = () => {
 
         {/* Foreground Image */}
         <div className="absolute left-40 top-10 md:w-[300px] md:h-[400px] border-4 border-white shadow-lg 2xl:block hidden">
-        <Image priority width={1000} height={1000}
+          <img loading="lazy"
             src="https://img.freepik.com/free-photo/trans-person-working-office-with-colleagues_23-2149286984.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid"
             alt="Business Discussion"
             className="w-full h-full object-cover rounded-lg"
           />
         </div>
       </div>
-      
+
     </div >
   )
 }

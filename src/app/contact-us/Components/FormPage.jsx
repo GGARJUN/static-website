@@ -35,7 +35,10 @@ import { toast } from "sonner";
 export const formSchema = z.object({
   firstname: z.string().min(2, "First name is too short").max(50),
   lastname: z.string().min(2, "Last name is too short").max(50),
-  email: z.string().email("Invalid email"),
+  email: z.string().email("Invalid email").regex(
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Regex for strict email validation
+    'Please enter a valid email address'
+  ),
   service: z.string().min(1, "Please select a service"), // Ensure selection
   message: z.string().min(2, "Message is required"),
   terms: z.boolean().refine((val) => val === true, { message: "You must accept the terms." }),
@@ -61,46 +64,43 @@ const FormPage = () => {
   async function onSubmit(values) {
     setIsLoading(true);
     try {
-      // Send a POST request to the API route
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-  
-      // Parse the response
-      const data = await response.json();
-  
-      // Handle errors
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to send message");
-      }
-  
-      // Show success message
-      if (data.success) {
-        toast.success("Your message has been sent successfully!", {
-          description: "We'll get back to you soon.",
+        // Send a POST request to the API route
+        const response = await fetch("/api/sendEmail", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
         });
-      } else {
-        alert("Failed to send message: " + data.error);
-      }
+
+        // Parse the response
+        const data = await response.json();
+
+        // Check if the response is OK
+        if (!response.ok) {
+            throw new Error(data.error || "Failed to send message");
+        }
+
+        // Show success message
+        toast.success("Your message has been sent successfully!", {
+            description: "We'll get back to you soon.",
+        });
+
     } catch (error) {
-      // Handle network or other errors
-      console.error("Error:", error);
-      alert("An error occurred. Please try again later.");
+        console.error("Error:", error);
+        toast.error("An error occurred. Please try again later.");
     } finally {
-      setIsLoading(false);
+        setIsLoading(false);
     }
-  }
+}
+
 
   const details = [
     {
       img: "https://cdn-icons-png.freepik.com/256/4249/4249561.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
       title: "Address",
-      small: "Moonshine St. 14/05 Light City,",
-      desc: "London, United Kingdom"
+      small: "1&1A, UR Nagar Extn, Anna Nagar W Ext St, Chennai,",
+      desc: "Tamil Nadu 600101"
     },
     {
       img: "https://cdn-icons-png.freepik.com/256/4982/4982273.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
@@ -111,8 +111,8 @@ const FormPage = () => {
     {
       img: "https://cdn-icons-png.freepik.com/256/2164/2164894.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
       title: "Email",
-      small: "XYZ@gamail.com",
-      desc: "ABCD@gmail.com"
+      small: "v.jain@sunkeydesignsystems.com",
+      desc: "kumar@sunkeydesignsystems.com"
     },
   ]
   return (
@@ -155,9 +155,16 @@ const FormPage = () => {
                 <FormItem>
                   <FormLabel>Email *</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter Your Email" className="py-7" {...field} />
+                    <Input
+                      placeholder="Enter Your Email"
+                      className="py-7"
+                      {...field}
+                      onChange={(e) => {
+                        field.onChange(e); // Update the field value
+                      }}
+                    />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage /> {/* Display validation errors */}
                 </FormItem>
               )}
             />
@@ -240,7 +247,7 @@ const FormPage = () => {
         <div className="lg:col-span-4 col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1  w-full gap-20 lg:mt-0 mt-10">
           {details.map((item, index) => (
             <div key={index} className="flex items-center gap-10">
-              <Image priority width={40} height={40} src={item.img} alt={item.title} className="w-20" />
+              <img loading="lazy" src={item.img} alt={item.title} className="w-12" />
               <div className="flex flex-col space-y-1">
                 <h1 className="text-2xl font-bold">{item.title}</h1>
                 <p className="text-lg">{item.small}</p>

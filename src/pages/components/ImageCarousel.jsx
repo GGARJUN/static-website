@@ -33,6 +33,7 @@ const ImageCarousel = () => {
             key={index}
             src={images[index]}
             alt={`Slide ${index}`}
+            loading="lazy" 
             className="w-full h-[480px] object-cover rounded-lg"
             initial={{ opacity: 0, x: direction * 100 }}
             animate={{ opacity: 1, x: 0 }}

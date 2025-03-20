@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Highlight } from "@/components/ui/hero-highlight";
 import Image from "next/image";
+import Link from "next/link";
 
 const ClientReview = dynamic(() => import("./Components/ClientReview"));
 const FormPage = dynamic(() => import("./Components/FormPage"));
@@ -21,14 +22,13 @@ const ContactUs = () => {
         <motion.div className="flex w-full h-full" >
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative ">
-              <Image priority width={1000} height={500} src={banner.img} alt={banner.title} className="w-full h-full object-cover  -z-50" />
+              <img loading="lazy" src={banner.img} alt={banner.title} className="w-full h-full object-cover  -z-50" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90"></div>
               <div className="absolute inset-0 flex flex-col  justify-center items-center 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6 duration-500">
                   Get in Touch
                 </h1>
                 <p className="max-w-lg text-lg text-center">Have any questions? Reach out to us from our contact form and we will get back to you shortly.</p>
-
               </div>
             </div>
           ))}
@@ -38,21 +38,23 @@ const ContactUs = () => {
 
       <div className="relative -top-[120px] container mx-auto px-4 md:px-0  rounded-xl md:bg-white md:shadow-xl h-[450px] 2xl:h-[600px]">
         <div className="grid  lg:grid-cols-2 grid-cols-1 items-center justify-between gap-10 ">
-          <Image priority width={500} height={500} src="https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="image" className="2xl:h-[600px] h-[450px] object-cover rounded-xl w-full" />
+          <img loading="lazy" src="https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="image" className="2xl:h-[600px] h-[450px] object-cover rounded-xl w-full" />
           <div className="lg:max-w-2xl  md:mx-0">
             <h2 className="text-5xl font-semibold text-blue-900">Let’s Talk</h2>
             <p className="my-4 2xl:my-8 2xl:text-xl md:mr-10 2xl:mr-0 font-semibold text-blue-950 text-justify">At SunKey Technologies, we believe in solving complex business challenges of the converging world by using cutting-edge technologies. Our team is dedicated to delivering innovative solutions that transform industries and enhance efficiency. Whether you have questions about our services or would like to explore how we can help your business thrive, we're here to assist you.
             </p>
             <p className=" text-justify text-foreground md:mr-10 2xl:mr-0">We're committed to understanding your unique needs and providing tailored support. Feel free to reach out to us using the contact form below or by visiting our office. We look forward to collaborating with you.
             </p>
-            <button className='group mt-4 2xl:mt-8 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Join Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+            <Link href="/">
+              <button className='group mt-4 2xl:mt-8 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Join Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-[450px] md:mt-[400px] lg:mt-20 mb-20 ">
         <h2 className="flex items-center gap-3 text-lg font-medium"><div className="bg-blue-600 h-2 w-2 rounded-full"></div> contact us</h2>
-        <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>Get in touch with us</span></h1>
+        <h2 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>Get in touch with us</span></h2>
 
         <FormPage />
 

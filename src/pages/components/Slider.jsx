@@ -3,12 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const itemVariants = { hidden: { opacity: 0, x: 0 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "linear" } }, hover: { boxShadow: "0 15px 25px rgba(0, 0, 0, 0.15)", transition: { duration: 0.3, ease: "linear" } } };
 
 const design = [
-  { img: "/dms.png", title: "Design Modification Services", description: "Enhancing existing designs for better functionality or manufacturability.", cimg: "https://img.freepik.com/free-photo/man-architect-looking-tablet-with-building-design-plan-development-project-architectural-office-young-engineer-using-device-blueprint-model-construction-layout_482257-28750.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
-  { img: "/dfm.png", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", cimg: "https://img.freepik.com/free-photo/two-colleagues-factory_1303-14059.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
+  { link: "/", img: "/dms.png", title: "Design Modification Services", description: "Enhancing existing designs for better functionality or manufacturability.", cimg: "https://img.freepik.com/free-photo/man-architect-looking-tablet-with-building-design-plan-development-project-architectural-office-young-engineer-using-device-blueprint-model-construction-layout_482257-28750.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
+  { link: "/", img: "/dfm.png", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", cimg: "https://img.freepik.com/free-photo/two-colleagues-factory_1303-14059.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
 ];
 
 const Slider = () => {
@@ -28,17 +29,19 @@ const Slider = () => {
     <div className="relative w-full max-w-4xl mx-auto">
       <AnimatePresence mode="wait">
         <motion.div key={index} variants={itemVariants} initial="hidden" animate="visible" exit="hidden" className="relative bg-white rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group overflow-hidden">
-          <div><Image priority src={design[index].cimg} alt={design[index].title} width={1000} height={1000} className="w-full h-64  rounded-t-xl object-cover transition-all duration-500 ease-linear" /></div>
+          <div><img loading="lazy" src={design[index].cimg} alt={design[index].title} className="w-full h-64  rounded-t-xl object-cover transition-all duration-500 ease-linear" /></div>
           <div className="relative z-10 p-6">
             <div className="flex items-center justify-between mb-6">
               <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6, ease: "linear" }}><Image priority src={design[index].img} alt={design[index].title} width={1000} height={1000} className="w-12" /></motion.div>
             </div>
             <h3 className="text-3xl font-semibold mb-3 text-gray-900 transition-all duration-500 ease-linear">{design[index].title}</h3>
             <p className="text-gray-600 text-md leading-relaxed transition-all duration-500 ease-linear">{design[index].description}</p>
-            <div className="flex items-center gap-3 transition-all duration-500 ease-linear mt-6">
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1, transition: { duration: 0.6, ease: "linear" } }}><motion.button className="text-sm font-medium text-black">Learn More</motion.button></motion.div>
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1, transition: { duration: 0.6, ease: "linear" } }} className="h-5 w-5 text-black"><ArrowRight className="h-5 w-5" /></motion.div>
-            </div>
+            <Link href={design[index].link}>
+              <div className="flex items-center gap-3 transition-all duration-500 ease-linear mt-6">
+                <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1, transition: { duration: 0.6, ease: "linear" } }}><motion.button className="text-sm font-medium text-black">Learn More</motion.button></motion.div>
+                <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1, transition: { duration: 0.6, ease: "linear" } }} className="h-5 w-5 text-black"><ArrowRight className="h-5 w-5" /></motion.div>
+              </div>
+            </Link>
           </div>
         </motion.div>
       </AnimatePresence>

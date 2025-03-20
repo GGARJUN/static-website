@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Users, Lightbulb, UserCheck, Shield, ArrowRight } from "lucide-react";
 import ImageCarousel from "../components/ImageCarousel";
 import Image from "next/image";
+import Link from "next/link";
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.9, rotate: -10 }, visible: { opacity: 0.7, scale: 2, rotate: 0, transition: { duration: 0.9, ease: "easeOut" } }, hover: { opacity: 1 }
@@ -19,10 +20,10 @@ const glowVariants = {
 };
 
 const features = [
-  { icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/17378/17378291.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expertise", description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.", image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg" },
-  { icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/1087/1087815.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Innovation", description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.", image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg" },
-  { icon: <UserCheck className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/4658/4658169.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Customer-Centric", description: "Tailored solutions and exceptional support designed around your unique needs.", image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
-  { icon: <Shield className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/18716/18716482.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Quality Assurance", description: "Uncompromising standards ensure excellence in every project we deliver.", image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg" }
+  { link: "/", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/17378/17378291.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expertise", description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.", image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg" },
+  { link: "/", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/1087/1087815.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Innovation", description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.", image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg" },
+  { link: "/", icon: <UserCheck className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/4658/4658169.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Customer-Centric", description: "Tailored solutions and exceptional support designed around your unique needs.", image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
+  { link: "/", icon: <Shield className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/18716/18716482.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Quality Assurance", description: "Uncompromising standards ensure excellence in every project we deliver.", image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg" }
 ];
 
 const WhyWorkWithUs = () => (
@@ -43,7 +44,7 @@ const WhyWorkWithUs = () => (
             {features.map((feature) => (
               <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
                 <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
-                  <Image priority src={feature.image} alt={feature.title} width={1000} height={100} className="w-full h-full object-cover rounded-xl" />
+                  <img loading="lazy" src={feature.image} alt={feature.title} className="w-full h-full object-cover rounded-xl" />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-xl" />
                 </motion.div>
                 <div className="relative z-10">
@@ -55,9 +56,11 @@ const WhyWorkWithUs = () => (
                   <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300 line-clamp-1">{feature.title}</h3>
                   <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300 line-clamp-2">{feature.description}</p>
                   <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
-                    <motion.div variants={{ hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } }, initial: { x: -20, opacity: 0 } }}>
-                      <motion.button className="text-sm font-medium text-white">Learn More</motion.button>
-                    </motion.div>
+                    <Link href={feature.link} >
+                      <motion.div variants={{ hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } }, initial: { x: -20, opacity: 0 } }}>
+                        <motion.button className="text-sm font-medium text-white">Learn More</motion.button>
+                      </motion.div>
+                    </Link>
                     <motion.div className="h-5 w-5 text-black">
                       <ArrowRight className="h-5 w-5 group-hover:text-white -translate-x-20 -z-50 group-hover:translate-x-0 transition-all duration-300" />
                     </motion.div>

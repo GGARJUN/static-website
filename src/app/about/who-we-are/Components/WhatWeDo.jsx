@@ -2,13 +2,14 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import Dummy from './Dummy'
+import Link from 'next/link'
 
 const whatWeDo = () => {
     return (
         <section>
             <div className='lg:flex justify-center items-center gap-40 w-full container mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='flex flex-col gap-5 items-end justify-end mb-20 lg:mb-0'>
-                    <Image src="https://img.freepik.com/free-photo/happy-motivated-colleagues-office_114579-2790.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="business success" width={400} height={400} className='rounded-xl shadow-xl w-full h-auto' />
+                    <img loading='lazy' src="https://img.freepik.com/free-photo/happy-motivated-colleagues-office_114579-2790.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="business success" className='rounded-xl shadow-xl w-full h-auto' />
                 </div>
 
 
@@ -43,16 +44,18 @@ const whatWeDo = () => {
                     </div>
                     <div className='flex items-center justify-between gap-10 mt-10'>
                         <div className='flex items-center gap-3'>
-                           <Image src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-1.svg"  width={50} height={1000} alt="About-img1" />
+                            <img loading='lazy' src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-1.svg" alt="About-img1" />
                             <h2 className='font-bold text-gray-700 text-lg'>Ongoing support & <br />maintenance</h2>
                         </div>
                         <div className='flex items-center gap-3'>
-                            <Image src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-2.svg" width={50} height={1000} alt="About-img2" />
+                            <img loading='lazy' src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-2.svg" alt="About-img2" />
                             <h2 className='font-bold text-gray-700 text-lg'>Comitment to continue <br /> improvement</h2>
                         </div>
                     </div>
                     <div className='w-full border mt-8'></div>
-                    <button className='group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md mt-10'>Contact Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+                    <Link href="/">
+                        <button className='group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md mt-10'>Contact Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+                    </Link>
                 </div>
             </div>
             <Dummy />
