@@ -16,8 +16,10 @@ export async function POST(request) {
       port: 587, // Use 465 for SSL or 587 for TLS
       secure: false, // True for SSL, false for TLS
       auth: {
-        user: process.env.EMAIL_USER, // Your SMTP email (e.g., no-reply@sunkeydesignsystems.com)
-        pass: process.env.EMAIL_PASS, // Your SMTP password or App Password
+        user: "techarjung@gmail.com", // Your Gmail address
+        pass: "ifsi zovt nsjm xusd", // Your Gmail App Password
+        // user: process.env.EMAIL_USER, // Your Gmail address
+        // pass: process.env.EMAIL_PASS, // Your Gmail App Password
       },
       tls: {
         rejectUnauthorized: false, // Bypass SSL certificate validation (use with caution)
@@ -28,8 +30,9 @@ export async function POST(request) {
 
     // Define email content
     const mailOptions = {
-      from: `"Sunkey Design Systems" <${process.env.EMAIL_USER}>`, // Must be a verified domain email
-      to: process.env.EMAIL_RECEIVER, // Your receiving email
+      from: `"Sunkey Design Systems" <techarjung@gmail.com>`, // Must be a verified domain email
+      // to: process.env.EMAIL_RECEIVER, // Your receiving email
+      to: ["v.jain@sunkeydesignsystems.com", "kumar@sunkeydesignsystems.com","arjunganesh963@gmail.com"].join(","), // Your receiving email
       replyTo: email, // User's actual email (so you can reply directly)
       subject: "New Contact Form Submission",
       html: `

@@ -4,8 +4,10 @@ import nodemailer from 'nodemailer';
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Your Gmail address
-    pass: process.env.EMAIL_PASS, // Your Gmail App Password
+    user: "techarjung@gmail.com", // Your Gmail address
+    pass: "ifsi zovt nsjm xusd", // Your Gmail App Password
+    // user: process.env.EMAIL_USER, // Your Gmail address
+    // pass: process.env.EMAIL_PASS, // Your Gmail App Password
   },
 });
 
@@ -21,8 +23,10 @@ export async function POST(request) {
 
     // Define email options
     const mailOptions = {
-      from: email, // Sender's email
-      to: process.env.EMAIL_RECEIVER, // Recipient's email
+      from: `"Sunkey Design Systems" <techarjung@gmail.com>`, // Must be a verified domain email
+      // to: process.env.EMAIL_RECEIVER, // Your receiving email
+      to: ["v.jain@sunkeydesignsystems.com", "kumar@sunkeydesignsystems.com","arjunganesh963@gmail.com"].join(","), // Your receiving email
+      replyTo: email, // User's actual email (so you can reply directly)
       subject: 'New Job Application Submission',
       html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
