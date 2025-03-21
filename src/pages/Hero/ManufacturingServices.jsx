@@ -46,7 +46,7 @@ const ManufacturingServices = () => {
                   <img loading="lazy" src={banner.img} alt={banner.title} className="w-full h-[550px] object-cover rounded-xl" />
                   <div className="absolute rounded-xl inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                   <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                    <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6">{banner.title}</h1>
+                    <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6">{banner.title}</h2>
                     <p className="mt-4 text-2xl md:text-3xl 2xl:text-4xl">{banner.subtitle}</p>
                     <Link href={banner.link}>
                       <button className="group-hover:translate-x-5 duration-300 hover:bg-blue-500 hover:text-white mt-10 bg-white md:py-4 md:px-10 py-3 px-6 rounded-md font-semibold md:text-lg text-black flex items-center gap-4">Read More <span><SquareArrowOutUpRight /></span></button>

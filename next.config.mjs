@@ -12,6 +12,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "www.epectec.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
         hostname: "aceternity.com",
         pathname: "**",
       },
