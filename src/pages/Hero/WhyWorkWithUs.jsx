@@ -6,7 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const imageVariants = {
-  hidden: { opacity: 0, scale: 0.9, rotate: -10 }, visible: { opacity: 0.7, scale: 2, rotate: 0, transition: { duration: 0.9, ease: "easeOut" } }, hover: { opacity: 1 }
+  hidden: { opacity: 0, scale: 0.9, rotate: -10 },
+  visible: { opacity: 0.7, scale: 2, rotate: 0, transition: { duration: 0.9, ease: "easeOut" } },
+  hover: { opacity: 1 }
 };
 
 const itemVariants = {
@@ -27,20 +29,20 @@ const features = [
 ];
 
 const WhyWorkWithUs = () => (
-  <section style={{ backgroundImage: "url('https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')" }} className="py-32 bg-cover overflow-hidden relative">
+  <section style={{ backgroundImage: "url('https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')" }} className="py-16 md:py-32 bg-cover overflow-hidden relative">
     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
     <motion.div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 to-transparent" variants={glowVariants} animate="animate" />
     <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
       <motion.div initial={{ opacity: 0, y: -60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease: "easeOut" }} className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-left md:text-center mb-4">Why Work With Us</h2>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-left md:text-center">Sunkey Design Systems stands out as a partner of choice for businesses seeking reliable, high-quality solutions</motion.p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-left md:text-center mb-4">Why Work With Us</h2>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-left md:text-center">Sunkey Design Systems stands out as a partner of choice for businesses seeking reliable, high-quality solutions</motion.p>
       </motion.div>
-      <div className="mt-20 grid grid-cols-12 gap-10">
-        <div className=" rounded-lg mb-10 md:mb-0 col-span-12 xl:col-span-4 ">
+      <div className="mt-10 md:mt-20 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
+        <div className="rounded-lg mb-6 md:mb-0 col-span-12 xl:col-span-4">
           <ImageCarousel />
         </div>
-        <div className="col-span-12 xl:col-span-8 justify-between md:gap-6">
-          <motion.div className="grid md:grid-cols-2 gap-6">
+        <div className="col-span-12 xl:col-span-8">
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature) => (
               <motion.div key={feature.title} variants={itemVariants} initial="initial" whileHover="hover" className="relative bg-white p-6 rounded-xl shadow-md border border-blue-100 hover:border-blue-300 transition-all duration-300 group">
                 <motion.div variants={imageVariants} className="absolute inset-0 z-0 opacity-10 rounded-xl group-hover:opacity-100 transition-opacity duration-500">
@@ -53,10 +55,10 @@ const WhyWorkWithUs = () => (
                       <Image priority src={feature.img} alt={feature.title} width={100} height={100} className="w-12" />
                     </motion.div>
                   </div>
-                  <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300 line-clamp-1">{feature.title}</h3>
-                  <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300 line-clamp-2">{feature.description}</p>
+                  <h3 className="text-2xl sm:text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300 line-clamp-1">{feature.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-white transition-colors duration-300 line-clamp-2">{feature.description}</p>
                   <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
-                    <Link href={feature.link} >
+                    <Link href={feature.link}>
                       <motion.div variants={{ hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } }, initial: { x: -20, opacity: 0 } }}>
                         <motion.button className="text-sm font-medium text-white">Learn More</motion.button>
                       </motion.div>
@@ -69,9 +71,7 @@ const WhyWorkWithUs = () => (
               </motion.div>
             ))}
           </motion.div>
-
         </div>
-
       </div>
     </div>
   </section>

@@ -53,13 +53,13 @@ const Banner = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                 {i === 0 ? (
-                  <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                  <h1 className="text-4xl sm:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
                     <Highlight>{banner.title}</Highlight>
                     <br />
                     <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
                   </h1>
                 ) : (
-                  <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                  <h2 className="text-4xl sm:text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
                     <Highlight>{banner.title}</Highlight>
                     <br />
                     <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>

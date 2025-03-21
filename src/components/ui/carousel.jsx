@@ -281,7 +281,7 @@ const CarouselDots = () => {
   const totalSlides = api?.scrollSnapList().length || 0;
 
   return (
-    <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 flex items-center w-60 h-1 bg-white rounded-full overflow-hidden">
+    <div className="absolute hidden -bottom-20 left-1/2 -translate-x-1/2 md:flex items-center w-60 h-1 bg-white rounded-full overflow-hidden">
       <div
         className="h-full bg-black rounded-full transition-transform duration-300"
         style={{

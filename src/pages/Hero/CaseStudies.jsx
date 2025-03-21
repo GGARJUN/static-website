@@ -37,8 +37,8 @@ const CaseStudies = () => {
                 <div className="flex items-center justify-between mb-6">
                   <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}><img loading="lazy"  src={feature.img} alt={feature.title}  className="w-12" /></motion.div>
                 </div>
-                <h3 className="text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">{feature.title}</h3>
-                <p className="text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">{feature.description}</p>
+                <h3 className="line-clamp-1 md:line-clamp-none text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">{feature.title}</h3>
+                <p className="line-clamp-3 md:line-clamp-none text-gray-600 text-md leading-relaxed group-hover:text-white transition-colors duration-300">{feature.description}</p>
                 <Link href={feature.link}>
                   <div className="flex items-center gap-3 transition-colors duration-300 mt-6">
                     <motion.div variants={{ hover: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } }, initial: { x: -20, opacity: 0 } }}>

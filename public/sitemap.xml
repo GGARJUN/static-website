@@ -6,7 +6,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/about/who_we_are</loc>
+        <loc>https://www.sunkeydesignsystems.com/about/who-we-are</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -18,43 +18,43 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/engineering_design_services/hardware</loc>
+        <loc>https://www.sunkeydesignsystems.com/engineering-design-services/hardware</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/engineering_design_services/firmware</loc>
+        <loc>https://www.sunkeydesignsystems.com/engineering-design-services/firmware</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/engineering_design_services/software</loc>
+        <loc>https://www.sunkeydesignsystems.com/engineering-design-services/software</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/engineering_design_services/mechanical</loc>
+        <loc>https://www.sunkeydesignsystems.com/engineering-design-services/mechanical</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/electronic_design/pcb_design_service</loc>
+        <loc>https://www.sunkeydesignsystems.com/electronic-design/pcb-design-service</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/electronic_design/pcb_layout</loc>
+        <loc>https://www.sunkeydesignsystems.com/electronic-design/pcb-layout</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/electronic_design/analysis</loc>
+        <loc>https://www.sunkeydesignsystems.com/electronic-design/analysis</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/electronic_design/reverse_engineering</loc>
+        <loc>https://www.sunkeydesignsystems.com/electronic-design/reverse-engineering</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/electronic_design/design_modification_service</loc>
+        <loc>https://www.sunkeydesignsystems.com/electronic-design/design-modification-service</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/electronic_design/design_for_manufacturability</loc>
+        <loc>https://www.sunkeydesignsystems.com/electronic-design/design-for-manufacturability</loc>
         <priority>0.8</priority>
     </url>
     <url>
@@ -62,11 +62,11 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/manufacturing/test_fixture</loc>
+        <loc>https://www.sunkeydesignsystems.com/manufacturing/test-fixture</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sunkeydesignsystems.com/manufacturing/box_build</loc>
+        <loc>https://www.sunkeydesignsystems.com/manufacturing/box-build</loc>
         <priority>0.8</priority>
     </url>
     <url>
