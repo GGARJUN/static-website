@@ -18,8 +18,8 @@ const About = () => {
         className="lg:max-w-2xl"
       >
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-        <h1 className='title-all my-5 '>SunKey Technologies,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> our Firmware design services</span> </h1>
-        <p className='text-lg font-medium text-gray-600 tracking-wide'><span className='text-blue-600 font-semibold'>At SunKey Technologies,</span> Our firmware design services at SunKey Technologies focus on crafting firmware that optimizes device performance and functionality. <br /><br /> Our team of experienced firmware engineers works closely with you to develop firmware solutions that meet your specific requirements, ensuring seamless integration with hardware components.
+        <h1 className='title-all my-5 '>Sunkey Design Systems,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> our Firmware design services</span> </h1>
+        <p className='text-lg font-medium text-gray-600 tracking-wide'><span className='text-blue-600 font-semibold'>At Sunkey Design Systems,</span> Our firmware design services at Sunkey Design Systems focus on crafting firmware that optimizes device performance and functionality. <br /><br /> Our team of experienced firmware engineers works closely with you to develop firmware solutions that meet your specific requirements, ensuring seamless integration with hardware components.
 
         </p>
         <div className='md:flex  items-center justify-center gap-40 mt-10'>

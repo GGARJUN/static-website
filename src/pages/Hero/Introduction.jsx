@@ -8,9 +8,9 @@ import Link from "next/link";
 const Introduction = () => {
 
   const features = [
-    { link: "/", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/17009/17009449.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Engineering Design Service", description: "SunKey Technologies a wide range of engineering design services designed to meet the diverse.", image: "https://img.freepik.com/free-photo/man-architect-working-project-with-vr-glasses-new-technologies-3d_1268-29304.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
+    { link: "/", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/17009/17009449.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Engineering Design Service", description: "Sunkey Design Systems a wide range of engineering design services designed to meet the diverse.", image: "https://img.freepik.com/free-photo/man-architect-working-project-with-vr-glasses-new-technologies-3d_1268-29304.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
     { link: "/", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/4696/4696145.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Electronic Design", description: "Our electronic design services are designed to help you bring your electronic products to life.", image: "https://img.freepik.com/free-photo/close-up-wires-tech-background_23-2148882631.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
-    { link: "/", icon: <UserCheck className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/6008/6008678.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Manufacturing Service", description: "SunKey Technologies provides manufacturing services to support product development needs.", image: "https://img.freepik.com/free-photo/asian-male-engineer-specialist-with-measuring-machine-with-manipulator-armthreedimensional-coordinate-measurement-check-sizes-3d-check-sizes-parts-cmm-after-machining-process_609648-162.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
+    { link: "/", icon: <UserCheck className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/6008/6008678.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Manufacturing Service", description: "Sunkey Design Systems provides manufacturing services to support product development needs.", image: "https://img.freepik.com/free-photo/asian-male-engineer-specialist-with-measuring-machine-with-manipulator-armthreedimensional-coordinate-measurement-check-sizes-3d-check-sizes-parts-cmm-after-machining-process_609648-162.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
     { link: "/", icon: <Shield className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/11296/11296406.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Internet of Things", description: "We specialize in IoT solutions that transform industries and homes.", image: "https://img.freepik.com/free-photo/light-trails-buildings_1359-714.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" }
   ];
   const sectionVariants = {
@@ -28,7 +28,7 @@ const Introduction = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="md:flex justify-between items-center">
           <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left md:text-center mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-            SunKey Technologies
+            Sunkey Design Systems
           </motion.h2>
           <Link href="/">
             <motion.button className=" flex gap-3 group border px-4 sm:px-6 py-2 sm:py-3 mt-5 md:mt-0 rounded-md text-gray-900 shadow-lg hover:scale-105 duration-300 ease-in-out" variants={sectionVariants}>

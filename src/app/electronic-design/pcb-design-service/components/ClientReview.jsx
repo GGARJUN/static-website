@@ -43,21 +43,21 @@ const ClientReview = () => {
             name: "John Doe",
             role: "Software Engineer",
             review:
-                "Partnering with SunKey Technologies gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.",
+                "Partnering with Sunkey Design Systems gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.",
             img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
         },
         {
             name: "Alice Smith",
             role: "Product Manager",
             review:
-                "Partnering with SunKey Technologies gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.",
+                "Partnering with Sunkey Design Systems gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.",
             img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
         },
         {
             name: "Michael Johnson",
             role: "Hardware Engineer",
             review:
-                "Partnering with SunKey Technologies gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.",
+                "Partnering with Sunkey Design Systems gives you access to a team of skilled engineers who are dedicated to delivering high-quality hardware designs. We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in using advanced design tools ensures that your products are both innovative and reliable.",
             img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
         },
     ];

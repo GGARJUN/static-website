@@ -37,8 +37,8 @@ const About = () => {
         className="col-span-12 lg:col-span-6 2xl:col-span-6 mt-60 lg:mt-0 md:max-w-3xl max-w-md"
       >
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-        <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>SunKey Technologies,</span> Our design modification services</h1>
-        <p className='text-lg font-medium text-gray-600 tracking-wide'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Our design modification services</span> focus on enhancing existing electronic designs to improve functionality, reduce costs, or update outdated components. <br /><br /> Our team of skilled engineers works closely with you to understand your requirements and deliver high-quality design modification solutions.
+        <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>Sunkey Design Systems,</span> Our design modification services</h1>
+        <p className='text-lg font-medium text-gray-600 tracking-wide'>At Sunkey Design Systems,<span className='text-blue-600 font-semibold'>Our design modification services</span> focus on enhancing existing electronic designs to improve functionality, reduce costs, or update outdated components. <br /><br /> Our team of skilled engineers works closely with you to understand your requirements and deliver high-quality design modification solutions.
         </p>
         <div className='w-full border mt-8'></div>
         <button className='group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md mt-10'>Contact Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>

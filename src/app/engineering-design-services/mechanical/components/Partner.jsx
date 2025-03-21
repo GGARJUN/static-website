@@ -6,8 +6,8 @@ const Partner = () => {
         <div className='grid grid-cols-12 justify-center items-start gap-10'>
             <div className='max-w-2xl col-span-12 lg:col-span-7'>
                 <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Why Choose Us</h2>
-                <h1 className='text-5xl font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>Why Partner </span> with SunKey Technologies</h1>
-                <p className='text-lg font-medium text-gray-600 tracking-wide mt-14'>By partnering with SunKey Technologies, you gain access to a team of skilled <span className="text-blue-600">mechanical engineers</span> who are dedicated to delivering high-quality mechanical designs. <br /><br /> We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in <span className="text-blue-600">mechanical design</span> ensures that your products are both innovative and reliable.
+                <h1 className='text-5xl font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>Why Partner </span> with Sunkey Design Systems</h1>
+                <p className='text-lg font-medium text-gray-600 tracking-wide mt-14'>By partnering with Sunkey Design Systems, you gain access to a team of skilled <span className="text-blue-600">mechanical engineers</span> who are dedicated to delivering high-quality mechanical designs. <br /><br /> We prioritize customer satisfaction and work closely with you to understand your unique requirements. Our expertise in <span className="text-blue-600">mechanical design</span> ensures that your products are both innovative and reliable.
                 </p>
                 <div className='flex items-center justify-between mt-10'>
                     <h2 className='text-lg font-medium text-gray-600 tracking-wide'>Happy Customers</h2>

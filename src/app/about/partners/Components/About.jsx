@@ -33,7 +33,7 @@ const About = () => {
           <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Our Partners</h2>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl mt-5">Technical Specifications</h2>
           <p className="mt-4 text-gray-800">
-            At SunKey Technologies, we empower businesses to innovate and thrive in the rapidly evolving tech landscape. Our team of experts provides comprehensive engineering design services, electronic design solutions, manufacturing capabilities, and IoT innovations that drive success. With a focus on quality, reliability, and customer satisfaction, we help our clients achieve their goals efficiently.
+            At Sunkey Design Systems, we empower businesses to innovate and thrive in the rapidly evolving tech landscape. Our team of experts provides comprehensive engineering design services, electronic design solutions, manufacturing capabilities, and IoT innovations that drive success. With a focus on quality, reliability, and customer satisfaction, we help our clients achieve their goals efficiently.
           </p>
 
           <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">

@@ -16,8 +16,8 @@ const About = () => {
       className="lg:max-w-2xl "
     >
       <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-      <h1 className='title-all my-5 '>SunKey Technologies,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Our PCBA design services</span> </h1>
-      <p className='text-lg font-medium text-gray-600 tracking-wide'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Our PCB design services</span>  are designed to help you create innovative electronic products. Our team of experienced engineers uses the latest CAD software to ensure that your PCB designs are both functional and efficient. <br /><br /> From conceptualization to prototyping, we guide you through every step of the design process.</p>
+      <h1 className='title-all my-5 '>Sunkey Design Systems,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Our PCBA design services</span> </h1>
+      <p className='text-lg font-medium text-gray-600 tracking-wide'>At Sunkey Design Systems,<span className='text-blue-600 font-semibold'>Our PCB design services</span>  are designed to help you create innovative electronic products. Our team of experienced engineers uses the latest CAD software to ensure that your PCB designs are both functional and efficient. <br /><br /> From conceptualization to prototyping, we guide you through every step of the design process.</p>
       <div className='md:flex  items-center justify-center gap-40 mt-10'>
           <div className='flex items-center gap-3'>
             <Image priority width={40} height={40} src="https://html.awaikenthemes.com/corprate/images/icon-about-body-item-1.svg" alt="about-img1" />

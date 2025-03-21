@@ -21,6 +21,12 @@ const CallUs = dynamic(() => import("./components/CallUs"));
 const ClientReview = dynamic(() => import("./components/ClientReview"));
 
 const DesignforManufacturability = () => {
+    const scrollToNextSection = () => {
+        const nextSection = document.getElementById("next-section");
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     const banners = [
         { img: "https://img.freepik.com/free-photo/invalid-engineer-looking-building-model-computer-designing-layout-blueprint-construction-architect-wheelchair-using-touch-screen-monitor-analyze-architectural-structure_482257-34142.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Enhancing Existing Designs", subtitle: "Expert Design Modification Solutions", dtitle: "Design" },
         { img: "https://img.freepik.com/free-photo/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla_482257-2640.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "System Performance Upgrades", subtitle: "Enhancing hardware and software integration", dtitle: "System" },
@@ -124,7 +130,7 @@ const DesignforManufacturability = () => {
                     ))}
                 </div>
                 <div className="absolute bottom-6 cursor-pointer w-full text-white hidden xl:flex justify-between items-center px-20">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3" onClick={scrollToNextSection}>
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
@@ -155,7 +161,7 @@ const DesignforManufacturability = () => {
             </section>
 
             <div>
-            <div ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
+            <div id="next-section" ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>

@@ -17,8 +17,8 @@ const About = () => {
         className="lg:max-w-2xl"
       >
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-        <h1 className='title-all my-5 '>SunKey Technologies,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Our box build services</span> </h1>
-        <p className='text-lg font-medium text-gray-600 tracking-wide'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Our box build services</span>   focus on providing complete assembly solutions for your electronic products. From PCB assembly to final product packaging, <br /><br /> our team ensures that every step is handled with precision and care.
+        <h1 className='title-all my-5 '>Sunkey Design Systems,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Our box build services</span> </h1>
+        <p className='text-lg font-medium text-gray-600 tracking-wide'>At Sunkey Design Systems,<span className='text-blue-600 font-semibold'>Our box build services</span>   focus on providing complete assembly solutions for your electronic products. From PCB assembly to final product packaging, <br /><br /> our team ensures that every step is handled with precision and care.
         </p>
         <div className='md:flex  items-center justify-center gap-40 mt-10'>
           <div className='flex items-center gap-3'>

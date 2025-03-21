@@ -11,6 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
 const Partner = dynamic(() => import("./components/Partner"));
@@ -18,11 +19,17 @@ const FAQ = dynamic(() => import("./components/FAQ"));
 const CallUs = dynamic(() => import("./components/CallUs"));
 const ClientReview = dynamic(() => import("./components/ClientReview"));
 const Hardware = () => {
+    const scrollToNextSection = () => {
+        const nextSection = document.getElementById("next-section");
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     const banners = [
-        { img: "https://img.freepik.com/free-photo/futuristic-business-scene-with-ultra-modern-ambiance_23-2151003776.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Transforming" },
-        { img: "https://img.freepik.com/free-photo/abstract-futuristic-digital-technology-background-cpu-motherboard_587448-4810.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Embedded Systems Development", subtitle: "Smart integration of microcontrollers and firmware.", dtitle: "Embedded" },
-        { img: "https://img.freepik.com/free-photo/tired-woman-architect-working-modern-cad-program-overtime-sitting-desk-start-up-office-industrial-female-engineer-studying-prototype-idea-pc-showing-cad-software-device-display_482257-13399.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Prototyping & Testing", subtitle: "Creating and testing prototypes for market readiness.", dtitle: "Prototyping" },
-        { img: "https://www.epectec.com/images/pcb-signal-integrity.jpg",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Signal Integrity & Power Management",subtitle: "Optimized circuits for stability and power efficiency.", dtitle: "Power" }
+        {link:"/", img: "https://img.freepik.com/free-photo/futuristic-business-scene-with-ultra-modern-ambiance_23-2151003776.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Ideas into Reality", subtitle: "Expert Hardware Design Solutions", dtitle: "Transforming" },
+        {link:"/", img: "https://img.freepik.com/free-photo/abstract-futuristic-digital-technology-background-cpu-motherboard_587448-4810.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Embedded Systems Development", subtitle: "Smart integration of microcontrollers and firmware.", dtitle: "Embedded" },
+        {link:"/", img: "https://img.freepik.com/free-photo/tired-woman-architect-working-modern-cad-program-overtime-sitting-desk-start-up-office-industrial-female-engineer-studying-prototype-idea-pc-showing-cad-software-device-display_482257-13399.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Prototyping & Testing", subtitle: "Creating and testing prototypes for market readiness.", dtitle: "Prototyping" },
+        {link:"/", img: "https://www.epectec.com/images/pcb-signal-integrity.jpg",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Signal Integrity & Power Management",subtitle: "Optimized circuits for stability and power efficiency.", dtitle: "Power" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -93,17 +100,29 @@ const Hardware = () => {
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
-                                    <Highlight>{banner.title}</Highlight>
-                                    <br />
-                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
-                                </h1>
-                                <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
-                                    Read More <SquareArrowOutUpRight />
-                                </button>
+                                {i === 0 ? (
+                                    <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h2>
+                                )}
+                                <Link href={banner.link}>
+                                    <button
+                                        className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                                    >
+                                        Read More <SquareArrowOutUpRight />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -121,7 +140,7 @@ const Hardware = () => {
                     ))}
                 </div>
                 <div className="absolute bottom-6 cursor-pointer w-full text-white hidden xl:flex justify-between items-center px-20">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 cursor-pointer" onClick={scrollToNextSection}>
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
@@ -152,7 +171,7 @@ const Hardware = () => {
             </section>
 
             <div>
-            <div ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
+            <div id="next-section" ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>

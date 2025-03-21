@@ -14,8 +14,8 @@ const WhoWeAre = () => {
                 className=" col-span-12 lg:col-span-8"
             >
                 <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Who We Are</h2>
-                <h1 className='text-3xl sm:text-4xl md:text-5xl  font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> SunKey Technologies</span> </h1>
-                <p className='text-lg sm:text-xl text-gray-800'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Who We Are</span>  focus on creating PCB layouts that optimize functionality, performance, and manufacturability.<br /><br /> Our team of skilled engineers uses the latest design software to ensure that your PCB layouts are efficient and reliable.
+                <h1 className='text-3xl sm:text-4xl md:text-5xl  font-bold my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Sunkey Design Systems</span> </h1>
+                <p className='text-lg sm:text-xl text-gray-800'>At Sunkey Design Systems,<span className='text-blue-600 font-semibold'>Who We Are</span>  focus on creating PCB layouts that optimize functionality, performance, and manufacturability.<br /><br /> Our team of skilled engineers uses the latest design software to ensure that your PCB layouts are efficient and reliable.
 
                 </p>
                 <div className='md:flex  items-center justify-center gap-40 mt-10'>

@@ -27,8 +27,8 @@ const About = () => {
         className="lg:max-w-2xl mt-20 lg:mt-0"
       >
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-        <h1 className='title-all my-5 '>SunKey Technologies,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Our PCBA design services</span> </h1>
-        <p className='text-lg font-medium text-gray-600 tracking-wide'>At SunKey Technologies,<span className='text-blue-600 font-semibold'>Our test fixture services</span>  ocus on creating custom fixtures that help you test and validate your electronic products efficiently.  <br /><br />Our team of skilled engineers designs and manufactures <span className='text-blue-600'>test fixtures</span> that meet your specific testing needs.
+        <h1 className='title-all my-5 '>Sunkey Design Systems,<span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Our PCBA design services</span> </h1>
+        <p className='text-lg font-medium text-gray-600 tracking-wide'>At Sunkey Design Systems,<span className='text-blue-600 font-semibold'>Our test fixture services</span>  ocus on creating custom fixtures that help you test and validate your electronic products efficiently.  <br /><br />Our team of skilled engineers designs and manufactures <span className='text-blue-600'>test fixtures</span> that meet your specific testing needs.
         </p>
         <div className='md:flex  items-center justify-center gap-40 mt-10'>
           <div className='flex items-center gap-3'>

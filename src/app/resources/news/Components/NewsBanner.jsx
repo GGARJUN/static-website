@@ -5,6 +5,14 @@ import Image from "next/image";
 import { FaArrowDown, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 const NewsBanner = () => {
+    
+
+      const scrollToNextSection = () => {
+        const nextSection = document.getElementById("next-section");
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     const banners = [
         { img: "https://img.freepik.com/free-photo/futuristic-smart-city-with-5g-global-network-technology_53876-98438.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_authors_boost", title: "All News", },
     ];
@@ -28,7 +36,7 @@ const NewsBanner = () => {
                     ))}
                 </div>
                 <div className="absolute bottom-6 w-full cursor-pointer text-white flex justify-between items-center px-20">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3" onClick={scrollToNextSection}>
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>

@@ -32,7 +32,7 @@ const EngineeringDesignServices = () => {
                     </Link>
                 </div>
                 <motion.p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-                    SunKey Technologies offers a wide range of engineering design services designed to meet the diverse needs of our clients. Our expertise includes
+                    Sunkey Design Systems offers a wide range of engineering design services designed to meet the diverse needs of our clients. Our expertise includes
                 </motion.p>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start ">
                     {/* Tabs Section */}

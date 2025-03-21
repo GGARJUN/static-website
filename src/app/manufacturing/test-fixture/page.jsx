@@ -17,6 +17,12 @@ const Partner = dynamic(() => import("./components/Partner"));
 const FAQ = dynamic(() => import("./components/FAQ"));
 const ClientReview = dynamic(() => import("./components/ClientReview"));
 const TextFixture = () => {
+    const scrollToNextSection = () => {
+        const nextSection = document.getElementById("next-section");
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     const banners = [
         { img: "https://img.freepik.com/free-photo/quality-control-inspector-writing-reports-while-analzying-manufactured-steel-rod-cylinders-industrial-building_637285-4081.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Custom Test Fixtures", subtitle: "Ensuring Product Reliability", dtitle: "Fixtures" },
         { img: "https://img.freepik.com/free-photo/designers-team-working-3d-model_23-2149371852.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Functional Testing Solutions", subtitle: "Custom test fixtures to validate product performance.", dtitle: "Testing" },
@@ -120,7 +126,7 @@ const TextFixture = () => {
                     ))}
                 </div>
                 <div className="absolute bottom-6 cursor-pointer w-full text-white hidden xl:flex justify-between items-center px-20">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3" onClick={scrollToNextSection}>
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
@@ -151,7 +157,7 @@ const TextFixture = () => {
             </section>
 
             <div>
-                <div ref={aboutRef} className="py-20 ">
+                <div id="next-section" ref={aboutRef} className="py-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>

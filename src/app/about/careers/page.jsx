@@ -182,7 +182,7 @@ const Careers = () => {
 
                 <div className="bg-gradient-to-r from-purple-500 via-blue-700 to-blue-600  ">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:flex justify-between items-center">
-                        <p className="text-white text-xl lg:max-w-4xl">At SunKey Technologies, we empower businesses to innovate and thrive in the rapidly evolving tech landscape. Our team of experts provides comprehensive engineering design services, electronic design solutions, manufacturing capabilities, and IoT innovations that drive success. With a focus on quality, reliability, and customer satisfaction, we help our clients achieve their goals efficiently.
+                        <p className="text-white text-xl lg:max-w-4xl">At Sunkey Design Systems, we empower businesses to innovate and thrive in the rapidly evolving tech landscape. Our team of experts provides comprehensive engineering design services, electronic design solutions, manufacturing capabilities, and IoT innovations that drive success. With a focus on quality, reliability, and customer satisfaction, we help our clients achieve their goals efficiently.
                         </p>
                         <Link href="/">
                             <button className='group flex items-center shadow-lg border-2 mt-5 lg:mt-0 hover:bg-blue-700 text-white px-6 font-semibold py-4 gap-3 rounded-full '>Join Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>

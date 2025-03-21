@@ -37,8 +37,8 @@ const About = () => {
         className="col-span-12 lg:col-span-6 2xl:col-span-6 mt-60 lg:mt-0 md:max-w-3xl max-w-md"
       >
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
-        <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>SunKey Technologies,</span> our hardware design services</h1>
-        <p className='para-all '><span className='text-blue-600 font-semibold'>At SunKey Technologies,</span> our hardware design services are designed to help you create innovative products that meet your specific needs. <br /><br /> Our team of experienced engineers uses cutting-edge tools like CAD and CAE to ensure that your hardware designs are both functional and efficient. From conceptualization to prototyping, we guide you through every step of the design process.
+        <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'>Sunkey Design Systems,</span> our hardware design services</h1>
+        <p className='para-all '><span className='text-blue-600 font-semibold'>At Sunkey Design Systems,</span> our hardware design services are designed to help you create innovative products that meet your specific needs. <br /><br /> Our team of experienced engineers uses cutting-edge tools like CAD and CAE to ensure that your hardware designs are both functional and efficient. From conceptualization to prototyping, we guide you through every step of the design process.
         </p>
         <div className='w-full border mt-8'></div>
         <button className='group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md mt-10'>Contact Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>

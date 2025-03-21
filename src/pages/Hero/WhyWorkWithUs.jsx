@@ -33,7 +33,7 @@ const WhyWorkWithUs = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
       <motion.div initial={{ opacity: 0, y: -60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease: "easeOut" }} className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-left md:text-center mb-4">Why Work With Us</h2>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-left md:text-center">SunKey Technologies stands out as a partner of choice for businesses seeking reliable, high-quality solutions</motion.p>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-left md:text-center">Sunkey Design Systems stands out as a partner of choice for businesses seeking reliable, high-quality solutions</motion.p>
       </motion.div>
       <div className="mt-20 grid grid-cols-12 gap-10">
         <div className=" rounded-lg mb-10 md:mb-0 col-span-12 xl:col-span-4 ">

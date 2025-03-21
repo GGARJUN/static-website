@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "SunKey Technologies",
+  title: "Sunkey Design Systems",
   description: "We empower businesses to innovate in the tech landscape by providing cutting-edge solutions in engineering design, electronics, IoT, and manufacturing.",
 };
 export const revalidate = 30;

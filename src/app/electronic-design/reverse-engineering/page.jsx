@@ -18,6 +18,12 @@ const CallUs = dynamic(() => import("./components/CallUs"));
 const ClientReview = dynamic(() => import("./components/ClientReview"));
 
 const ReverseEngineering = () => {
+    const scrollToNextSection = () => {
+        const nextSection = document.getElementById("next-section");
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     const banners = [
         { img: "https://img.freepik.com/free-photo/man-using-futuristic-technology_1134-493.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Unlocking Existing Designs", subtitle: "Expert Reverse Engineering Solutions", dtitle: "Reverse" },
         { img: "/banner4.jpg", title: "PCB Reverse Engineering", subtitle: "Recreating circuit board designs for improvements", dtitle: "PCB" },
@@ -121,7 +127,7 @@ const ReverseEngineering = () => {
                     ))}
                 </div>
                 <div className="absolute bottom-6 cursor-pointer w-full text-white hidden xl:flex justify-between items-center px-20">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3" onClick={scrollToNextSection}>
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
@@ -152,7 +158,7 @@ const ReverseEngineering = () => {
             </section>
 
             <div>
-                <div ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
+                <div id="next-section" ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>

@@ -38,7 +38,7 @@ const About = () => {
       >
         <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>About the Service</h2>
         <h1 className='title-all my-5 '><span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> Our Mechanical design services</span> </h1>
-        <p className='para-all '><span className='text-blue-600 font-semibold'>Our mechanical design services</span>  at SunKey Technologies focus on providing mechanical design solutions that integrate seamlessly with electronic systems. <br /><br /> Our team of experienced mechanical engineers works closely with you to develop designs that meet your specific needs, from conceptualization to prototyping.
+        <p className='para-all '><span className='text-blue-600 font-semibold'>Our mechanical design services</span>  at Sunkey Design Systems focus on providing mechanical design solutions that integrate seamlessly with electronic systems. <br /><br /> Our team of experienced mechanical engineers works closely with you to develop designs that meet your specific needs, from conceptualization to prototyping.
         </p>
         <div className='w-full border mt-8'></div>
         <button className='group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md mt-10'>Contact Now <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>

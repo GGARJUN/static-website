@@ -13,10 +13,10 @@ const Partner = () => {
             <span className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text">
               Why Partner
             </span>{" "}
-            with SunKey Technologies
+            with Sunkey Design Systems
           </h1>
           <p className="text-base sm:text-lg font-medium text-gray-600 tracking-wide mt-6 md:mt-14">
-          By partnering with SunKey Technologies, you gain access to a team of skilled engineers and technicians who are dedicated to delivering <span className="text-blue-600">high-quality box build services.</span> We prioritize customer satisfaction and work closely with you to understand your unique requirements. <br /><br /> Our expertise in box build ensures that your products are fully assembled and ready for market.
+          By partnering with Sunkey Design Systems, you gain access to a team of skilled engineers and technicians who are dedicated to delivering <span className="text-blue-600">high-quality box build services.</span> We prioritize customer satisfaction and work closely with you to understand your unique requirements. <br /><br /> Our expertise in box build ensures that your products are fully assembled and ready for market.
           </p>
   
           {/* Progress Bars */}

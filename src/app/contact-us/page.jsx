@@ -41,7 +41,7 @@ const ContactUs = () => {
           <img loading="lazy" src="https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" alt="image" className="2xl:h-[600px] h-[450px] object-cover rounded-xl w-full" />
           <div className="lg:max-w-2xl  md:mx-0">
             <h2 className="text-5xl font-semibold text-blue-900">Let’s Talk</h2>
-            <p className="my-4 2xl:my-8 2xl:text-xl md:mr-10 2xl:mr-0 font-semibold text-blue-950 text-justify">At SunKey Technologies, we believe in solving complex business challenges of the converging world by using cutting-edge technologies. Our team is dedicated to delivering innovative solutions that transform industries and enhance efficiency. Whether you have questions about our services or would like to explore how we can help your business thrive, we're here to assist you.
+            <p className="my-4 2xl:my-8 2xl:text-xl md:mr-10 2xl:mr-0 font-semibold text-blue-950 text-justify">At Sunkey Design Systems, we believe in solving complex business challenges of the converging world by using cutting-edge technologies. Our team is dedicated to delivering innovative solutions that transform industries and enhance efficiency. Whether you have questions about our services or would like to explore how we can help your business thrive, we're here to assist you.
             </p>
             <p className=" text-justify text-foreground md:mr-10 2xl:mr-0">We're committed to understanding your unique needs and providing tailored support. Feel free to reach out to us using the contact form below or by visiting our office. We look forward to collaborating with you.
             </p>

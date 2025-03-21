@@ -18,6 +18,12 @@ const FAQ = dynamic(() => import("./components/FAQ"));
 const CallUs = dynamic(() => import("./components/CallUs"));
 const ClientReview = dynamic(() => import("./components/ClientReview"));
 const PCBDesignService = () => {
+    const scrollToNextSection = () => {
+        const nextSection = document.getElementById("next-section");
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     const banners = [
         { img: "https://img.freepik.com/free-photo/group-young-people-doing-experiments-robotics-laboratory-robot-tools-table_1268-23390.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Concepts into Reality", subtitle: "Expert PCB Design Solutions", dtitle: "PCB Design" },
         { img: "https://img.freepik.com/free-photo/young-man-woman-protective-glasses-doing-experiments-robotics-laboratory_1268-23382.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "High-Speed PCB Design", subtitle: "Optimized layouts for fast and reliable performance.", dtitle: "High-Speed" },
@@ -121,7 +127,8 @@ const PCBDesignService = () => {
                     ))}
                 </div>
                 <div className="absolute bottom-6 cursor-pointer w-full text-white hidden xl:flex justify-between items-center px-20">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3" onClick={scrollToNextSection}
+                    >
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
@@ -152,7 +159,7 @@ const PCBDesignService = () => {
             </section>
 
             <div>
-                <div ref={aboutRef} className="py-20 ">
+                <div id="next-section" ref={aboutRef} className="py-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>

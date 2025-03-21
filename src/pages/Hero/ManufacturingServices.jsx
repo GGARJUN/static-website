@@ -37,7 +37,7 @@ const ManufacturingServices = () => {
             </motion.button>
           </Link>
         </div>
-        <motion.p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>SunKey Technologies provides comprehensive manufacturing services to support your product development needs.</motion.p>
+        <motion.p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl my-4 sm:mb-10 mt-5" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>Sunkey Design Systems provides comprehensive manufacturing services to support your product development needs.</motion.p>
         <section className="relative w-full overflow-hidden rounded-xl">
           <div className="relative flex w-full h-full group">
             <motion.div className="flex w-full rounded-xl" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>

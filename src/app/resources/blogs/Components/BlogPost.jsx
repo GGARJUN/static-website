@@ -67,7 +67,7 @@ const BlogPost = ({ posts = [] }) => {
     return (
         <div>
             <BlogBanner />
-            <div className="py-20 bg-white">
+            <div id="next-section" className="py-20 bg-white">
                 <div className="container mx-auto px-5 md:px-0">
                     <h2 className="text-4xl font-bold mb-10">All Blogs</h2>
                     {/* Search and Filter Section */}
