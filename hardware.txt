@@ -1,3 +1,18 @@
+.env file 
+RESEND_API_KEY=re_FVcoVD4h_GKNbjTjvzxRFwUwsCaf379eH
+RESEND_FROM_EMAIL=onboarding@resend.dev
+
+
+EMAIL_USER=techarjung@gmail.com
+EMAIL_PASS=ifsi zovt nsjm xusd
+EMAIL_RECEIVER=arjunganesh963@gmail.com
+
+
+
+
+
+
+
 "use client";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "framer-motion";
