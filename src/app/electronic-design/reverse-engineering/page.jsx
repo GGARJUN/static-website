@@ -26,10 +26,10 @@ const ReverseEngineering = () => {
         }
     };
     const banners = [
-        {link:"/", img: "https://img.freepik.com/free-photo/man-using-futuristic-technology_1134-493.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Unlocking Existing Designs", subtitle: "Expert Reverse Engineering Solutions", dtitle: "Reverse" },
-        {link:"/", img: "/banner4.jpg", title: "PCB Reverse Engineering", subtitle: "Recreating circuit board designs for improvements", dtitle: "PCB" },
-        {link:"/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137526.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Firmware Extraction & Analysis", subtitle: "Recovering and analyzing firmware for optimization", dtitle: "Firmware" },
-        {link:"/", img: "/banner2.jpg", title: " Legacy System Modernization", subtitle: "Upgrading outdated hardware and software for improved", dtitle: "Modernization" }
+        { link: "/", img: "https://img.freepik.com/free-photo/man-using-futuristic-technology_1134-493.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Unlocking Existing Designs", subtitle: "Expert Reverse Engineering Solutions", dtitle: "Reverse" },
+        { link: "/", img: "/banner4.jpg", title: "PCB Reverse Engineering", subtitle: "Recreating circuit board designs for improvements", dtitle: "PCB" },
+        { link: "/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137526.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Firmware Extraction & Analysis", subtitle: "Recovering and analyzing firmware for optimization", dtitle: "Firmware" },
+        { link: "/", img: "/banner2.jpg", title: " Legacy System Modernization", subtitle: "Upgrading outdated hardware and software for improved", dtitle: "Modernization" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -98,7 +98,7 @@ const ReverseEngineering = () => {
         <section className="relative w-full  overflow-hidden">
             <div className="w-full h-screen  relative flex">
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
-                {banners.map((banner, i) => (
+                    {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
                             <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
@@ -144,10 +144,18 @@ const ReverseEngineering = () => {
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
-                    <div className="flex items-center gap-10">
-                        <FaFacebookF />
-                        <FaXTwitter />
-                        <FaLinkedinIn />
+                    <div className="md:flex items-center gap-5 hidden">
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaFacebookF />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaXTwitter />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaLinkedinIn />
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -171,7 +179,7 @@ const ReverseEngineering = () => {
             </section>
 
             <div>
-                <div id="next-section" ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
+                <div id="next-section" ref={aboutRef} className="py-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>

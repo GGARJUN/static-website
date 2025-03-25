@@ -13,16 +13,16 @@ const ElectronicDesign = () => {
   const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.25, delayChildren: 0.4 } } };
 
   const features = [
-    {link:"/", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12108/12108718.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Design Services", description: "Creating PCBs that are both functional and efficient operation.", image: "https://img.freepik.com/free-photo/one-businessman-using-wireless-technology-global-communications-generated-by-ai_188544-20422.jpg" },
-    {link:"/", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/365/365773.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Layout", description: "Ensuring optimal component placement for better performance.", image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg" },
+    {link:"/electronic-design/pcb-design-service", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12108/12108718.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Design Services", description: "Creating PCBs that are both functional and efficient operation.", image: "/Homepage/PCB Design Services.jpg" },
+    {link:"/electronic-design/pcb-layout", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/365/365773.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Layout", description: "Ensuring optimal component placement for better performance.", image: "/Homepage/PCB Layout.jpg" },
   ];
   const features2 = [
-    {link:"/", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/3321/3321721.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "SI/PI Analysis", description: "Conducting signal integrity and power integrity analyses to ensure reliable operation.", image: "https://img.freepik.com/free-photo/variety-people-multitasking-3d-cartoon-scene_23-2151294553.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
-    {link:"/", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12539/12539913.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Reverse Engineering", description: "Analyzing existing products to improve or replicate them.", image: "https://img.freepik.com/free-photo/standard-quality-control-collage_23-2149631023.jpg" },
+    {link:"/electronic-design/analysis", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/3321/3321721.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "SI/PI Analysis", description: "Conducting signal integrity and power integrity analyses to ensure reliable operation.", image: "/Homepage/SIPI Analysis.jpg" },
+    {link:"/electronic-design/reverse-engineering", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12539/12539913.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Reverse Engineering", description: "Analyzing existing products to improve or replicate them.", image: "/Homepage/Reverse Engineering.jpg" },
   ];
 
   return (
-    <section className="py-32 shadow-2xl bg-gradient-to-r  from-pink-300/10 via-blue-200  to-indigo-400/10 overflow-hidden  ">
+    <section id="Electronic" className="py-32 shadow-2xl bg-gradient-to-r  from-pink-300/10 via-blue-200  to-indigo-400/10 overflow-hidden  ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="md:flex justify-between items-center">
           <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left md:text-center mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>

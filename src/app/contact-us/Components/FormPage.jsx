@@ -20,15 +20,14 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
+import Link from "next/link";
 
 
 
@@ -64,43 +63,44 @@ const FormPage = () => {
   async function onSubmit(values) {
     setIsLoading(true);
     try {
-        // Send a POST request to the API route
-        const response = await fetch("/api/sendEmail", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(values),
-        });
+      // Send a POST request to the API route
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
-        // Parse the response
-        const data = await response.json();
+      // Parse the response
+      const data = await response.json();
 
-        // Check if the response is OK
-        if (!response.ok) {
-            throw new Error(data.error || "Failed to send message");
-        }
+      // Check if the response is OK
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
 
-        // Show success message
-        toast.success("Your message has been sent successfully!", {
-            description: "We'll get back to you soon.",
-        });
+      // Show success message
+      toast.success("Your message has been sent successfully!", {
+        description: "We'll get back to you soon.",
+      });
 
     } catch (error) {
-        console.error("Error:", error);
-        toast.error("An error occurred. Please try again later.");
+      console.error("Error:", error);
+      toast.error("An error occurred. Please try again later.");
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
-}
+  }
 
 
   const details = [
     {
       img: "https://cdn-icons-png.freepik.com/256/4249/4249561.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
       title: "Address",
-      small: "1&1A, UR Nagar Extn, Anna Nagar W Ext St, Chennai,",
-      desc: "Tamil Nadu 600101"
+      small: "1&1A, UR Nagar Extn, ",
+      extra: "Anna Nagar W Ext St,",
+      desc: "Chennai, Tamil Nadu 600101"
     },
     {
       img: "https://cdn-icons-png.freepik.com/256/4982/4982273.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
@@ -111,7 +111,6 @@ const FormPage = () => {
     {
       img: "https://cdn-icons-png.freepik.com/256/2164/2164894.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
       title: "Email",
-      small: "v.jain@sunkeydesignsystems.com",
       desc: "kumar@sunkeydesignsystems.com"
     },
   ]
@@ -250,11 +249,26 @@ const FormPage = () => {
               <img loading="lazy" src={item.img} alt={item.title} className="w-12" />
               <div className="flex flex-col space-y-1">
                 <h1 className="text-2xl font-bold">{item.title}</h1>
-                <p className="text-lg">{item.small}</p>
-                <p className="text-lg">{item.desc}</p>
+
+                {/* Render small only if it exists */}
+                {item.small && <p className="text-lg">{item.small}</p>}
+
+                {/* Render extra only if it exists */}
+                {item.extra && <p className="text-lg">{item.extra}</p>}
+
+                {/* Email should be a hyperlink */}
+                {item.title === "Email" ? (
+                  <Link href={`mailto:${item.desc}`} className="text-blue-500 underline text-lg">
+                    {item.desc}
+                  </Link>
+                ) : (
+                  // Render desc normally for other cases
+                  item.desc && <p className="text-lg">{item.desc}</p>
+                )}
               </div>
             </div>
           ))}
+
         </div>
       </form>
     </Form>

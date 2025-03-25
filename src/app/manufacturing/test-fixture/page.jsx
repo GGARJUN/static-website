@@ -11,6 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
 const Partner = dynamic(() => import("./components/Partner"));
@@ -24,10 +25,10 @@ const TextFixture = () => {
         }
     };
     const banners = [
-        { img: "https://img.freepik.com/free-photo/quality-control-inspector-writing-reports-while-analzying-manufactured-steel-rod-cylinders-industrial-building_637285-4081.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Custom Test Fixtures", subtitle: "Ensuring Product Reliability", dtitle: "Fixtures" },
-        { img: "https://img.freepik.com/free-photo/designers-team-working-3d-model_23-2149371852.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Functional Testing Solutions", subtitle: "Custom test fixtures to validate product performance.", dtitle: "Testing" },
-        { img: "https://img.freepik.com/free-photo/male-asian-caucasian-engineer-professional-having-discussion-standing-consult-machine-factory-two-expert-coworker-brainstorm-explaining-solves-process-cnc-operate-machine_609648-683.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Automated Test Systems", subtitle: "Enhancing accuracy with automated testing processes.", dtitle: "Automated" },
-        { img: "https://img.freepik.com/free-photo/male-jeweler-working-shop-with-measuring-device_23-2150914189.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Environmental Stress Testing", subtitle: "Simulating real-world conditions for durability assessment", dtitle: "Stress" }
+        {link:"/", img: "https://img.freepik.com/free-photo/quality-control-inspector-writing-reports-while-analzying-manufactured-steel-rod-cylinders-industrial-building_637285-4081.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Custom Test Fixtures", subtitle: "Ensuring Product Reliability", dtitle: "Fixtures" },
+        {link:"/", img: "https://img.freepik.com/free-photo/designers-team-working-3d-model_23-2149371852.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Functional Testing Solutions", subtitle: "Custom test fixtures to validate product performance.", dtitle: "Testing" },
+        {link:"/", img: "https://img.freepik.com/free-photo/male-asian-caucasian-engineer-professional-having-discussion-standing-consult-machine-factory-two-expert-coworker-brainstorm-explaining-solves-process-cnc-operate-machine_609648-683.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Automated Test Systems", subtitle: "Enhancing accuracy with automated testing processes.", dtitle: "Automated" },
+        {link:"/", img: "https://img.freepik.com/free-photo/male-jeweler-working-shop-with-measuring-device_23-2150914189.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Environmental Stress Testing", subtitle: "Simulating real-world conditions for durability assessment", dtitle: "Stress" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -98,17 +99,29 @@ const TextFixture = () => {
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
-                                    <Highlight>{banner.title}</Highlight>
-                                    <br />
-                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
-                                </h1>
-                                <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
-                                    Read More <SquareArrowOutUpRight />
-                                </button>
+                                {i === 0 ? (
+                                    <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h2>
+                                )}
+                                <Link href={banner.link}>
+                                    <button
+                                        className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                                    >
+                                        Read More <SquareArrowOutUpRight />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -130,10 +143,18 @@ const TextFixture = () => {
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
-                    <div className="flex items-center gap-10">
-                        <FaFacebookF />
-                        <FaXTwitter />
-                        <FaLinkedinIn />
+                    <div className="md:flex items-center gap-5 hidden">
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaFacebookF />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaXTwitter />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaLinkedinIn />
+                        </Link>
                     </div>
                 </div>
             </div>

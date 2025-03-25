@@ -40,7 +40,7 @@ const Partner = () => {
                         <div className='w-[78%] h-2 bg-gradient-to-tr from-[#fb7185] via-[#a21caf] to-[#6366f1] relative'></div>
                     </div>
                     <Link href={"/contact-us"}>
-                        <button className="group mt-7  flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md transition-all duration-300">
+                        <button className="group mt-10  flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md transition-all duration-300">
                             Contact Now
                             <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
                         </button>

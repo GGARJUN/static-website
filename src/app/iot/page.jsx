@@ -11,6 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
@@ -31,10 +32,10 @@ const IoT = () => {
         }
     };
     const banners = [
-        { img: "https://img.freepik.com/free-photo/designer-using-3d-printer_23-2151037099.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Industrial IoT Services", subtitle: "Transforming Industries with Smart Solutions", dtitle: "Industrial IoT" },
-        { img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Smart Sensor Integration", subtitle: "Seamless connectivity for real-time data monitoring.", dtitle: "Sensor" },
-        { img: "https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041855.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Industrial Automation Solutions", subtitle: "Enhancing efficiency with automated control systems.", dtitle: "Automation" },
-        { img: "https://img.freepik.com/free-photo/system-administrator-server-room-installing-newly-ordered-storage-unit_482257-94919.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Secure IoT Connectivity", subtitle: "Robust networking for reliable industrial communication.", dtitle: "Connectivity" }
+        {link:"/", img: "https://img.freepik.com/free-photo/designer-using-3d-printer_23-2151037099.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Industrial IoT Services", subtitle: "Transforming Industries with Smart Solutions", dtitle: "Industrial IoT" },
+        {link:"/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Smart Sensor Integration", subtitle: "Seamless connectivity for real-time data monitoring.", dtitle: "Sensor" },
+        {link:"/", img: "https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041855.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Industrial Automation Solutions", subtitle: "Enhancing efficiency with automated control systems.", dtitle: "Automation" },
+        {link:"/", img: "https://img.freepik.com/free-photo/system-administrator-server-room-installing-newly-ordered-storage-unit_482257-94919.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Secure IoT Connectivity", subtitle: "Robust networking for reliable industrial communication.", dtitle: "Connectivity" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -108,7 +109,7 @@ const IoT = () => {
         else if (isLevel) setActiveIndex(5);
         else if (isWhyPartner) setActiveIndex(6);
         else if (isFaqInView) setActiveIndex(7);
-    }, [isAboutInView, isCapabilities, isIndustrialIoT, isSmartHomelIoT, isSmartLightlIoT,isLevel,isWhyPartner, isFaqInView]);
+    }, [isAboutInView, isCapabilities, isIndustrialIoT, isSmartHomelIoT, isSmartLightlIoT, isLevel, isWhyPartner, isFaqInView]);
     const scrollToSection = (ref, index) => {
         if (ref?.current) {
             ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -121,20 +122,33 @@ const IoT = () => {
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
-                                    <Highlight>{banner.title}</Highlight>
-                                    <br />
-                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
-                                </h1>
-                                <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
-                                    Read More <SquareArrowOutUpRight />
-                                </button>
+                                {i === 0 ? (
+                                    <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h2>
+                                )}
+                                <Link href={banner.link}>
+                                    <button
+                                        className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                                    >
+                                        Read More <SquareArrowOutUpRight />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
+
                 </motion.div>
 
                 <Button varient="outline" onClick={() => setIsPlaying(!isPlaying)} className="absolute hover:bg-white hover:text-black z-50 bottom-5 2xl:left-[60%] xl:left-[70%] left-[90%] bg-transparent border rounded-md hidden md:block">
@@ -154,10 +168,18 @@ const IoT = () => {
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
-                    <div className="flex items-center gap-10">
-                        <FaFacebookF />
-                        <FaXTwitter />
-                        <FaLinkedinIn />
+                    <div className="md:flex items-center gap-5 hidden">
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaFacebookF />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaXTwitter />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaLinkedinIn />
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -181,7 +203,7 @@ const IoT = () => {
             </section>
 
             <div>
-            <div id="next-section" ref={aboutRef} className="2xl:pb-40 pt-40 lg:pt-20 pb-20 ">
+                <div id="next-section" ref={aboutRef} className="py-20 ">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>
@@ -195,13 +217,13 @@ const IoT = () => {
 
                 <div ref={industrialIoTRef} className="py-20   ">
                     <div ref={industrialIoT} className="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <IndustrialIoT/>
+                        <IndustrialIoT />
                     </div>
                 </div>
 
                 <div ref={smarthomeIoTRef} className="py-20  bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
                     <div ref={smarthomeIoT} className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <SmartHomeIoT />
+                        <SmartHomeIoT />
                     </div>
                 </div>
 
@@ -213,7 +235,7 @@ const IoT = () => {
 
                 <div ref={levelRef} className="py-20  bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 ">
                     <div ref={level} className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <LevelMonitoring/>
+                        <LevelMonitoring />
                     </div>
                 </div>
 

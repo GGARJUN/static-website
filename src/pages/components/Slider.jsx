@@ -8,8 +8,8 @@ import Link from "next/link";
 const itemVariants = { hidden: { opacity: 0, x: 0 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "linear" } }, hover: { boxShadow: "0 15px 25px rgba(0, 0, 0, 0.15)", transition: { duration: 0.3, ease: "linear" } } };
 
 const design = [
-  { link: "/", img: "/dms.png", title: "Design Modification Services", description: "Enhancing existing designs for better functionality or manufacturability.", cimg: "https://img.freepik.com/free-photo/man-architect-looking-tablet-with-building-design-plan-development-project-architectural-office-young-engineer-using-device-blueprint-model-construction-layout_482257-28750.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
-  { link: "/", img: "/dfm.png", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", cimg: "https://img.freepik.com/free-photo/two-colleagues-factory_1303-14059.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid" },
+  { link: "/electronic-design/design-modification-service", img: "/dms.png", title: "Design Modification Services", description: "Enhancing existing designs for better functionality or manufacturability.", cimg: "/Homepage/Design Modification Services.jpg" },
+  { link: "/electronic-design/design-for-manufacturability", img: "/dfm.png", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", cimg: "/Homepage/Design for Manufacturability.jpg" },
 ];
 
 const Slider = () => {

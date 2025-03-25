@@ -10,7 +10,7 @@ const Expertise = () => {
   return (
     <div>
       <h2 className="text-xl  text-gray-800 flex items-center gap-2" ><div className='w-2 h-2 rounded-full bg-blue-600'></div>Our Expertise</h2>
-      <h1 className='title-all my-5 max-w-4xl'>our hardware <span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> design expertise </span></h1>
+      <h2 className='title-all my-5 max-w-4xl'>our hardware <span className='bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text'> design expertise </span></h2>
 
       <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center mt-8 sm:mt-16 ">
         {features.map((item, index) => (
@@ -20,7 +20,7 @@ const Expertise = () => {
           ${index === features.length - 1 ? "lg:col-span-2 flex justify-start" : ""}`}
           >
             <div className="max-w-lg">
-            <Image priority width={40} height={40}
+            <img loading='lazy'
                     src={item.img}
                     alt={item.title}
                 className="w-16 my-6 group-hover:-translate-y-3 transition-all duration-300"
@@ -31,14 +31,14 @@ const Expertise = () => {
               <p className="text-gray-600 text-md leading-relaxed group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white line-clamp-2 2xl:line-clamp-1 ">
                 {item.description}
               </p>
-              <div className="flex gap-3 mt-8 justify-start text-blue-600">
+              {/* <div className="flex gap-3 mt-8 justify-start text-blue-600">
                 <button className="font-medium opacity-0 group-hover:opacity-100 duration-300 transition-all group-hover:text-white">
                   Learn More
                 </button>
                 <span className="-translate-x-24 group-hover:translate-x-0 transition-transform duration-200 group-hover:text-white">
                   <SquareArrowOutUpRight size={18} />
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}

@@ -2,6 +2,7 @@
 
 import { SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowDown, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 const BlogBanner = () => {
@@ -38,10 +39,18 @@ const BlogBanner = () => {
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
-                    <div className="flex items-center gap-10">
-                        <FaFacebookF />
-                        <FaXTwitter />
-                        <FaLinkedinIn />
+                    <div className="md:flex items-center gap-5 hidden">
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaFacebookF />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaXTwitter />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaLinkedinIn />
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import { ArrowRight, SquareArrowOutUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const SmartHomeIoT = () => {
@@ -34,14 +35,14 @@ const SmartHomeIoT = () => {
         <p className='mt-4 text-gray-600 text-lg max-w-2xl '>
           We create smart home solutions that make living easier and more convenient.
         </p>
-        <button className='mt-6 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md transition duration-300'>
-          Learn More <ArrowRight className='transition-transform duration-300' />
-        </button>
+        <Link href={"/"}>
+          <button className='group  mt-5 flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md '>Learn More <ArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
+        </Link>
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-10 mt-16'>
         <div className='lg:col-span-4'>
-          <Image priority width={1000} height={600} 
+          <img loading='lazy'  
             src="https://img.freepik.com/free-photo/close-up-hands-using-mouse_23-2148994173.jpg"
             alt="Smart Home" 
             className='w-full rounded-xl object-cover shadow-xl' 
@@ -55,8 +56,7 @@ const SmartHomeIoT = () => {
                 key={index}
                 className="bg-white cursor-pointer hover:bg-gradient-to-r from-purple-600 to-blue-400/90 p-6 rounded-xl shadow-lg transition-all duration-300 group"
               >
-                <Image priority width={40} height={40} 
-                  src={item.img} 
+                <img loading='lazy'                  src={item.img} 
                   alt={item.title} 
                   className="w-16 my-6 group-hover:-translate-y-3 transition-all duration-300" 
                 />
@@ -66,14 +66,14 @@ const SmartHomeIoT = () => {
                 <p className="text-gray-600 text-md leading-relaxed group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">
                   {item.description}
                 </p>
-                <div className="flex gap-3 mt-6 text-blue-600">
+                {/* <div className="flex gap-3 mt-6 text-blue-600">
                   <button className="opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white font-medium">
                     Learn More
                   </button>
                   <span className="-translate-x-24 group-hover:translate-x-0 transition-transform duration-300 group-hover:text-white">
                     <SquareArrowOutUpRight size={18} />
                   </span>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

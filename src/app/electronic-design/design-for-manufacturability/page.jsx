@@ -29,10 +29,10 @@ const DesignforManufacturability = () => {
         }
     };
     const banners = [
-        {link:"/", img: "https://img.freepik.com/free-photo/invalid-engineer-looking-building-model-computer-designing-layout-blueprint-construction-architect-wheelchair-using-touch-screen-monitor-analyze-architectural-structure_482257-34142.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Enhancing Existing Designs", subtitle: "Expert Design Modification Solutions", dtitle: "Design" },
-        {link:"/", img: "https://img.freepik.com/free-photo/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla_482257-2640.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "System Performance Upgrades", subtitle: "Enhancing hardware and software integration", dtitle: "System" },
-        {link:"/", img: "https://img.freepik.com/free-photo/graphic-designer-gaming-industry-talking-detail-with-his-colleague-analyzing-3d-design-level-explaining-production-creative-ideas-game-creators-working-videogame-illustration-company-office_482257-28158.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Mechanical Design Refinement", subtitle: "Optimizing product structures for durability and efficiency.", dtitle: "Refinement" },
-        {link:"/", img: "https://img.freepik.com/free-photo/upset-young-beautiful-businesswoman-gesturing-sitting-workplace_176420-3697.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",title: "Firmware Enhancements",subtitle: "Upgrading existing firmware for improved functionality", dtitle: "Firmware" }
+        { link: "/", img: "https://img.freepik.com/free-photo/invalid-engineer-looking-building-model-computer-designing-layout-blueprint-construction-architect-wheelchair-using-touch-screen-monitor-analyze-architectural-structure_482257-34142.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Enhancing Existing Designs", subtitle: "Expert Design Modification Solutions", dtitle: "Design" },
+        { link: "/", img: "https://img.freepik.com/free-photo/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla_482257-2640.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "System Performance Upgrades", subtitle: "Enhancing hardware and software integration", dtitle: "System" },
+        { link: "/", img: "https://img.freepik.com/free-photo/graphic-designer-gaming-industry-talking-detail-with-his-colleague-analyzing-3d-design-level-explaining-production-creative-ideas-game-creators-working-videogame-illustration-company-office_482257-28158.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Mechanical Design Refinement", subtitle: "Optimizing product structures for durability and efficiency.", dtitle: "Refinement" },
+        { link: "/", img: "https://img.freepik.com/free-photo/upset-young-beautiful-businesswoman-gesturing-sitting-workplace_176420-3697.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Firmware Enhancements", subtitle: "Upgrading existing firmware for improved functionality", dtitle: "Firmware" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -101,7 +101,7 @@ const DesignforManufacturability = () => {
         <section className="relative w-full  overflow-hidden">
             <div className="w-full h-screen  relative flex">
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
-                {banners.map((banner, i) => (
+                    {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
                             <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
@@ -147,10 +147,18 @@ const DesignforManufacturability = () => {
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
-                    <div className="flex items-center gap-10">
-                        <FaFacebookF />
-                        <FaXTwitter />
-                        <FaLinkedinIn />
+                    <div className="md:flex items-center gap-5 hidden">
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaFacebookF />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaXTwitter />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaLinkedinIn />
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -174,7 +182,7 @@ const DesignforManufacturability = () => {
             </section>
 
             <div>
-            <div id="next-section" ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
+                <div id="next-section" ref={aboutRef} className="py-20">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>

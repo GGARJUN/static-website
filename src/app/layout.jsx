@@ -1,11 +1,12 @@
 import dynamic from "next/dynamic";
+import "./globals.css";
+import { Geist_Mono, Space_Grotesk, Dancing_Script } from "next/font/google";
+import { Toaster } from "sonner";
+
 
 const Footer = dynamic(() => import("@/pages/Footer/Footer"));
 const NavLinks = dynamic(() => import("@/pages/NavBar/NavLinks"));
 
-import { Geist_Mono, Space_Grotesk, Dancing_Script } from "next/font/google";
-import "./globals.css";
-import { Toaster } from "sonner";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -17,9 +18,7 @@ export const metadata = {
   title: "Sunkey Design Systems",
   description: "We empower businesses to innovate in the tech landscape by providing cutting-edge solutions in engineering design, electronics, IoT, and manufacturing.",
   icons: {
-    icon: '/favicon.ico', // Using ICO format
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/Logo/SunKey-Design-Systems-Favicon.ico', // Using ICO format
   },
 };
 

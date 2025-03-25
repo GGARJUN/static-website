@@ -10,11 +10,67 @@ import { FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 
 const banners = [
-  { img: "/banner1.png", title: "Innovative Engineering", subtitle: "Solutions for a Smarter Future", dtitle: "Engineering", href: "/" },
-  { img: "/banner2.jpg", title: "Cutting-Edge Technology", subtitle: "Empowering the Next Generation", dtitle: "Electronic", href: "/" },
-  { img: "/banner3.jpg", title: "Sustainable Solutions", subtitle: "Building a Greener Tomorrow", dtitle: "Manufacturing", href: "/" },
-  { img: "/banner4.jpg", title: "Smart Automation", subtitle: "Enhancing Efficiency & Productivity", dtitle: "Internet of Things", href: "/" }
+  {
+    onClick: () => {
+      const nextSection = document.getElementById("Engineering");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    img: "/Homepage/Engineering Design Service.jpg",
+    title: "Innovative Engineering",
+    subtitle: "Solutions for a Smarter Future",
+    dtitle: "Engineering",
+    href: "/"
+  },
+  {
+    onClick: () => {
+      const nextSection = document.getElementById("Electronic");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    img: "/Homepage/Electronic Design.jpg",
+    title: "Cutting-Edge Technology",
+    subtitle: "Empowering the Next Generation",
+    dtitle: "Electronic",
+    href: "/"
+  },
+  {
+    onClick: () => {
+      const nextSection = document.getElementById("Manufacturing");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    img: "/Homepage/Manufacturing - Banner.jpg",
+    title: "Sustainable Solutions",
+    subtitle: "Building a Greener Tomorrow",
+    dtitle: "Manufacturing",
+    href: "/"
+  },
+  {
+    onClick: () => {
+      const nextSection = document.getElementById("IoT");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    img: "/Homepage/IOT - Banner.jpg",
+    title: "Smart Automation",
+    subtitle: "Enhancing Efficiency & Productivity",
+    dtitle: "Internet of Things",
+    href: "/"
+  }
 ];
+
+let Engineering = () => {
+  const nextSection = document.getElementById("Engineering");
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 
 const Banner = () => {
   const [index, setIndex] = useState(0);
@@ -37,6 +93,7 @@ const Banner = () => {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
@@ -65,13 +122,13 @@ const Banner = () => {
                     <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
                   </h2>
                 )}
-                <Link href={banner.href}>
-                  <button
-                    className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
-                  >
-                    Read More <SquareArrowOutUpRight />
-                  </button>
-                </Link>
+                {/* <Link href={banner.href}> */}
+                <button onClick={banner.onClick}
+                  className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                >
+                  Read More <SquareArrowOutUpRight />
+                </button>
+                {/* </Link> */}
               </div>
             </div>
           ))}
@@ -102,10 +159,18 @@ const Banner = () => {
             <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
             <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
           </div>
-          <div className="md:flex items-center gap-10 hidden">
-            <FaFacebookF />
-            <FaXTwitter />
-            <FaLinkedinIn />
+          <div className="md:flex items-center gap-5 hidden">
+            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+              <FaFacebookF />
+            </Link>
+
+            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+              <FaXTwitter />
+            </Link>
+
+            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+              <FaLinkedinIn />
+            </Link>
           </div>
         </div>
       </div>

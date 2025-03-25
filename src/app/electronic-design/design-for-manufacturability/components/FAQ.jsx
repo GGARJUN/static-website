@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 
@@ -40,22 +41,24 @@ const FAQ = () => {
   ];
   return (
     <>
-       {/* FAQ Header */}
+      {/* FAQ Header */}
       <h2 className="text-xl text-gray-800 flex items-center gap-2">
         <div className="w-2 h-2 rounded-full bg-blue-600"></div>FAQ's
       </h2>
 
       <div className="flex flex-col md:flex-row items-start justify-between">
-        <h1 className="title-all my-5 text-left">
+        <h2 className="title-all my-5 text-left">
           <span className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text">
             Find solutions to common <br />
           </span>
           questions
-        </h1>
-        <button className="group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md transition-all duration-300">
-          Contact Now
-          <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
-        </button>
+        </h2>
+        <Link href={"/contact-us"}>
+          <button className="group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md transition-all duration-300">
+            Contact Now
+            <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
+          </button>
+        </Link>
       </div>
 
       {/* FAQ Accordion */}

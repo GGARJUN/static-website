@@ -133,9 +133,9 @@ const NavLinks = () => {
           <div className="flex justify-between w-full">
             <Link href="/" className=" ">
               {scrolled ?
-                <img src="/blacklogo.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
+                <img src="/Logo/SunKey-Design-Systems-Logo.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
                 :
-                <img src="/whitelogo.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
+                <img src="/Logo/SunKey-Design-Systems-Logo-White.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
               }
             </Link>
 

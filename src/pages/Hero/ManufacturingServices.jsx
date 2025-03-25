@@ -3,14 +3,13 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, Play, Pause, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 
 const ManufacturingServices = () => {
   const banners = [
-    { link: "/", img: "/banner1.png", title: "PCBA (Printed Circuit Board Assembly)", subtitle: "Our PCBA services ensure high-quality, reliable circuit boards for your electronic products, with precision and efficiency.", dtitle: "Engineering" },
-    { link: "/", img: "/banner2.jpg", title: "Test Fixtures", subtitle: "We design and build custom test fixtures to ensure your products meet the highest standards of quality and reliability.", dtitle: "Electronic" },
-    { link: "/", img: "/banner3.jpg", title: "Box Build", subtitle: "From components to finished products, our box build services deliver complete assembly solutions for your manufacturing needs.", dtitle: "Manufacturing" },
+    { link: "/manufacturing/pcba", img: "/Homepage/PCBA (Printed Circuit Board Assembly).jpg", title: "PCBA (Printed Circuit Board Assembly)", subtitle: "Our PCBA services ensure high-quality, reliable circuit boards for your electronic products, with precision and efficiency.", dtitle: "Engineering" },
+    { link: "/manufacturing/test-fixture", img: "/Homepage/Test Fixtures.jpg", title: "Test Fixtures", subtitle: "We design and build custom test fixtures to ensure your products meet the highest standards of quality and reliability.", dtitle: "Electronic" },
+    { link: "/manufacturing/box-build", img: "/Homepage/Box Build.jpg", title: "Box Build", subtitle: "From components to finished products, our box build services deliver complete assembly solutions for your manufacturing needs.", dtitle: "Manufacturing" },
   ];
   const sectionVariants = { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", staggerChildren: 0.3 } } };
   const [index, setIndex] = useState(0);
@@ -26,7 +25,7 @@ const ManufacturingServices = () => {
   }, [index, isPlaying]);
 
   return (
-    <section className="py-16 md:py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
+    <section id="Manufacturing" className="py-16 md:py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         <div className="md:flex justify-between items-center">
           <motion.h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>Manufacturing Services</motion.h2>

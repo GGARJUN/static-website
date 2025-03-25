@@ -11,15 +11,15 @@ const sectionVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", staggerChildren: 0.3 } },
 };
 const services = [
-    {link:"/", value: "Hardware", title: "Hardware Design", description: "Developing innovative hardware solutions that meet specific requirements.", icon: "https://cdn-icons-png.freepik.com/256/17255/17255462.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "https://img.freepik.com/free-photo/3d-rendering-biorobots-concept_23-2149524396.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", },
-    {link:"/", value: "Firmware", title: "Firmware Development", description: "Crafting firmware that optimizes device performance and functionality.", icon: "https://cdn-icons-png.freepik.com/256/4548/4548508.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "https://img.freepik.com/free-vector/neon-fingerprint-background_23-2148366251.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", },
-    {link:"/", value: "Software", title: "Software Solutions", description: "Creating software applications that enhance user experience and efficiency.", icon: "https://cdn-icons-png.freepik.com/256/6008/6008435.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "https://img.freepik.com/free-vector/gradient-api-infographic_23-2149369787.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", },
-    {link:"/", value: "Mechanical", title: "Mechanical Engineering", description: "Providing mechanical design services that integrate seamlessly with electronic systems.", icon: "https://cdn-icons-png.freepik.com/256/2223/2223096.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "https://img.freepik.com/free-vector/gears-cog-wheels-3d-style-background_1017-28432.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", },
+    {link:'/engineering-design-services/hardware', value: "Hardware", title: "Hardware Design", description: "Developing innovative hardware solutions that meet specific requirements.", icon: "https://cdn-icons-png.freepik.com/256/17255/17255462.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "/Homepage/Hardware Design.jpg", },
+    {link:'/engineering-design-services/firmware', value: "Firmware", title: "Firmware Development", description: "Crafting firmware that optimizes device performance and functionality.", icon: "https://cdn-icons-png.freepik.com/256/4548/4548508.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "/Homepage/Firmware Development.jpg", },
+    {link:'/engineering-design-services/software', value: "Software", title: "Software Solutions", description: "Creating software applications that enhance user experience and efficiency.", icon: "https://cdn-icons-png.freepik.com/256/6008/6008435.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "/Homepage/Software Solutions.jpg", },
+    {link:'/engineering-design-services/mechanical', value: "Mechanical", title: "Mechanical Engineering", description: "Providing mechanical design services that integrate seamlessly with electronic systems.", icon: "https://cdn-icons-png.freepik.com/256/2223/2223096.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", image: "/Homepage/Mechanical Engineering.jpg", },
 ];
 
 const EngineeringDesignServices = () => {
     return (
-        <section className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
+        <section id="Engineering" className="py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-12">
                 <div className="md:flex justify-between items-start">
                     <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left  mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>

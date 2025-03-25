@@ -1,3 +1,4 @@
+import ScrollToTop from "@/pages/components/ScrollToTop";
 import dynamic from "next/dynamic";
 
 const Banner = dynamic(() => import("../pages/Hero/Banner"));
@@ -22,6 +23,7 @@ export default function Home() {
         <InternetOfThings />
         <Testimonials />
         {/* <CaseStudies /> */}
+        {/* <ScrollToTop/> */}
       </div>
   );
 }

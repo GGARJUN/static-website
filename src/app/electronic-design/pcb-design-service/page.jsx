@@ -26,10 +26,10 @@ const PCBDesignService = () => {
         }
     };
     const banners = [
-        {link:"/", img: "https://img.freepik.com/free-photo/group-young-people-doing-experiments-robotics-laboratory-robot-tools-table_1268-23390.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Concepts into Reality", subtitle: "Expert PCB Design Solutions", dtitle: "PCB Design" },
-        {link:"/", img: "https://img.freepik.com/free-photo/young-man-woman-protective-glasses-doing-experiments-robotics-laboratory_1268-23382.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "High-Speed PCB Design", subtitle: "Optimized layouts for fast and reliable performance.", dtitle: "High-Speed" },
-        {link:"/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137516.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Multi-Layer PCB Development", subtitle: "Compact and efficient circuit board solutions.", dtitle: "Multi-Layer" },
-        {link:"/", img: "https://img.freepik.com/free-photo/young-man-woman-protective-glasses-doing-experiments-robotics-laboratory_1268-23378.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "PCB Prototyping & Testing",subtitle: "Ensuring functionality with rigorous testing.", dtitle: "Testing" }
+        { link: "/", img: "https://img.freepik.com/free-photo/group-young-people-doing-experiments-robotics-laboratory-robot-tools-table_1268-23390.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Transforming Concepts into Reality", subtitle: "Expert PCB Design Solutions", dtitle: "PCB Design" },
+        { link: "/", img: "https://img.freepik.com/free-photo/young-man-woman-protective-glasses-doing-experiments-robotics-laboratory_1268-23382.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "High-Speed PCB Design", subtitle: "Optimized layouts for fast and reliable performance.", dtitle: "High-Speed" },
+        { link: "/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137516.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "Multi-Layer PCB Development", subtitle: "Compact and efficient circuit board solutions.", dtitle: "Multi-Layer" },
+        { link: "/", img: "https://img.freepik.com/free-photo/young-man-woman-protective-glasses-doing-experiments-robotics-laboratory_1268-23378.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a", title: "PCB Prototyping & Testing", subtitle: "Ensuring functionality with rigorous testing.", dtitle: "Testing" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -98,7 +98,7 @@ const PCBDesignService = () => {
         <section className="relative w-full  overflow-hidden">
             <div className="w-full h-screen  relative flex">
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
-                {banners.map((banner, i) => (
+                    {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
                             <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
@@ -144,10 +144,18 @@ const PCBDesignService = () => {
                         <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
-                    <div className="flex items-center gap-10">
-                        <FaFacebookF />
-                        <FaXTwitter />
-                        <FaLinkedinIn />
+                    <div className="md:flex items-center gap-5 hidden">
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaFacebookF />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaXTwitter />
+                        </Link>
+
+                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaLinkedinIn />
+                        </Link>
                     </div>
                 </div>
             </div>
