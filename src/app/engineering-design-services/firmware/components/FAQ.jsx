@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 
 const FAQ = () => {
@@ -23,16 +24,18 @@ const FAQ = () => {
       </h2>
 
       <div className="flex flex-col md:flex-row items-start justify-between">
-        <h1 className="title-all my-5 text-left">
+        <h2 className="title-all my-5 text-left">
           <span className="bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-500 via-purple-500 to-red-600 text-transparent bg-clip-text">
             Find solutions to common <br />
           </span>
           questions
-        </h1>
-        <button className="group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-6 font-semibold py-3 gap-3 rounded-md">
-          Contact Now
-          <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
-        </button>
+        </h2>
+        <Link href={"/contact-us"}>
+          <button className='group flex items-center shadow-lg bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 font-semibold gap-3 rounded-md mt-6 sm:mt-10 text-sm sm:text-base'>
+            Contact Now
+            <ArrowRight className='group-hover:translate-x-1 transition-all duration-300 w-4 h-4 sm:w-5 sm:h-5' />
+          </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-between lg:gap-40  mt-10 lg:mt-20">

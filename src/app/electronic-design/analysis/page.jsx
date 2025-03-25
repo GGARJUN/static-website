@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
 const Partner = dynamic(() => import("./components/Partner"));
@@ -25,10 +26,10 @@ const Analysis = () => {
         }
     };
     const banners = [
-        { img: "https://img.freepik.com/free-photo/mockup-laptop-server-farm-crosschecking_482257-89094.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Ensuring Signal Integrity", subtitle: "Expert SI/PI Analysis Solutions", dtitle: "SI/PI" },
-        { img: "https://img.freepik.com/free-photo/young-male-web-designers-working-computer_1303-19449.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Power Integrity Optimization", subtitle: "Ensuring stable power distribution and efficiency.", dtitle: "Integrity" },
-        { img: "https://img.freepik.com/free-photo/remote-control-sound-settings-from-tablet_169016-23700.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "3D Modeling and Simulation", subtitle: " Using 3D models to simulate PCB behavior", dtitle: "3D Modeling" },
-        { img: "https://img.freepik.com/free-photo/executive-doing-regular-server-checking_482257-89083.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Signal Integrity Analysis",subtitle: "Minimizing signal distortion for optimal performance.", dtitle: "Analysis" }
+        {link:"/", img: "https://img.freepik.com/free-photo/mockup-laptop-server-farm-crosschecking_482257-89094.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Ensuring Signal Integrity", subtitle: "Expert SI/PI Analysis Solutions", dtitle: "SI/PI" },
+        {link:"/", img: "https://img.freepik.com/free-photo/young-male-web-designers-working-computer_1303-19449.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Power Integrity Optimization", subtitle: "Ensuring stable power distribution and efficiency.", dtitle: "Integrity" },
+        {link:"/", img: "https://img.freepik.com/free-photo/remote-control-sound-settings-from-tablet_169016-23700.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: "3D Modeling and Simulation", subtitle: " Using 3D models to simulate PCB behavior", dtitle: "3D Modeling" },
+        {link:"/", img: "https://img.freepik.com/free-photo/executive-doing-regular-server-checking_482257-89083.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",video:"https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a",title: "Signal Integrity Analysis",subtitle: "Minimizing signal distortion for optimal performance.", dtitle: "Analysis" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -97,19 +98,31 @@ const Analysis = () => {
         <section className="relative w-full  overflow-hidden">
             <div className="w-full h-screen  relative flex">
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
-                    {banners.map((banner, i) => (
+                {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
-                                    <Highlight>{banner.title}</Highlight>
-                                    <br />
-                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
-                                </h1>
-                                <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
-                                    Read More <SquareArrowOutUpRight />
-                                </button>
+                                {i === 0 ? (
+                                    <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h2>
+                                )}
+                                <Link href={banner.link}>
+                                    <button
+                                        className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                                    >
+                                        Read More <SquareArrowOutUpRight />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -158,27 +171,27 @@ const Analysis = () => {
             </section>
 
             <div>
-            <div id="next-section" ref={aboutRef} className="2xl:pb-40 pt-40 lg-pt-20 pb-20 ">
+            <div id="next-section" ref={aboutRef} className="py-20">
                     <div ref={aboutInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <About />
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="py-20  bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
+                <div ref={expertiseRef} className="py-20 bg-gradient-to-r from-pink-300/10 via-purple-100 to-indigo-400/10 ">
                     <div ref={expertiseInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Expertise />
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="pt-20   ">
+                <div ref={partnerRef} className="py-20">
                     <div ref={partnerInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Partner />
                     </div>
-                    <CallUs/>
-                    <ClientReview/>
+                    {/* <CallUs/>
+                    <ClientReview/> */}
                 </div>
 
-                <div ref={faqRef} className="py-20   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
+                <div ref={faqRef} className="py-20 bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
                     <div ref={faqInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <FAQ />
                     </div>

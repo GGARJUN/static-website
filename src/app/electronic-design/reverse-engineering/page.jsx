@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
 const Partner = dynamic(() => import("./components/Partner"));
@@ -25,10 +26,10 @@ const ReverseEngineering = () => {
         }
     };
     const banners = [
-        { img: "https://img.freepik.com/free-photo/man-using-futuristic-technology_1134-493.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Unlocking Existing Designs", subtitle: "Expert Reverse Engineering Solutions", dtitle: "Reverse" },
-        { img: "/banner4.jpg", title: "PCB Reverse Engineering", subtitle: "Recreating circuit board designs for improvements", dtitle: "PCB" },
-        { img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137526.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Firmware Extraction & Analysis", subtitle: "Recovering and analyzing firmware for optimization", dtitle: "Firmware" },
-        { img: "/banner2.jpg", title: " Legacy System Modernization", subtitle: "Upgrading outdated hardware and software for improved", dtitle: "Modernization" }
+        {link:"/", img: "https://img.freepik.com/free-photo/man-using-futuristic-technology_1134-493.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Unlocking Existing Designs", subtitle: "Expert Reverse Engineering Solutions", dtitle: "Reverse" },
+        {link:"/", img: "/banner4.jpg", title: "PCB Reverse Engineering", subtitle: "Recreating circuit board designs for improvements", dtitle: "PCB" },
+        {link:"/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137526.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Firmware Extraction & Analysis", subtitle: "Recovering and analyzing firmware for optimization", dtitle: "Firmware" },
+        {link:"/", img: "/banner2.jpg", title: " Legacy System Modernization", subtitle: "Upgrading outdated hardware and software for improved", dtitle: "Modernization" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -97,19 +98,31 @@ const ReverseEngineering = () => {
         <section className="relative w-full  overflow-hidden">
             <div className="w-full h-screen  relative flex">
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
-                    {banners.map((banner, i) => (
+                {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
-                                    <Highlight>{banner.title}</Highlight>
-                                    <br />
-                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
-                                </h1>
-                                <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
-                                    Read More <SquareArrowOutUpRight />
-                                </button>
+                                {i === 0 ? (
+                                    <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h2>
+                                )}
+                                <Link href={banner.link}>
+                                    <button
+                                        className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                                    >
+                                        Read More <SquareArrowOutUpRight />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -170,12 +183,12 @@ const ReverseEngineering = () => {
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="pt-20   ">
+                <div ref={partnerRef} className="py-20   ">
                     <div ref={partnerInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Partner />
                     </div>
-                    <CallUs />
-                    <ClientReview />
+                    {/* <CallUs />
+                    <ClientReview /> */}
                 </div>
 
                 <div ref={faqRef} className="py-20   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">

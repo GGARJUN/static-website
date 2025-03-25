@@ -2,6 +2,7 @@ import { SquareArrowOutUpRight } from 'lucide-react'
 import { motion } from "framer-motion";
 import { DirectionAwareHover } from '@/components/ui/direction-aware-hover';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 const Expertise = () => {
@@ -38,17 +39,19 @@ const Expertise = () => {
                   <h3 className="text-gray-900 2xl:text-2xl text-xl font-bold mb-3 group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-md leading-relaxed group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">
+                  <p className="text-gray-600 line-clamp-2 2xl:line-clamp-none text-md leading-relaxed group-hover:-translate-y-3 transition-all duration-300 group-hover:text-white">
                     {item.description}
                   </p>
-                  <div className="flex gap-3 mt-8 justify-start text-blue-600">
-                    <button className="font-medium opacity-0 group-hover:opacity-100 duration-300 transition-all group-hover:text-white">
-                      Learn More
-                    </button>
-                    <span className="-translate-x-24 group-hover:translate-x-0 transition-transform duration-200 group-hover:text-white">
-                      <SquareArrowOutUpRight size={18} />
-                    </span>
-                  </div>
+                  <Link href={"/"} >
+                    <div className="flex gap-3 mt-8 justify-start text-blue-600">
+                      <button className="font-medium opacity-0 group-hover:opacity-100 duration-300 transition-all group-hover:text-white">
+                        Learn More
+                      </button>
+                      <span className="-translate-x-24 group-hover:translate-x-0 transition-transform duration-200 group-hover:text-white">
+                        <SquareArrowOutUpRight size={18} />
+                      </span>
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}

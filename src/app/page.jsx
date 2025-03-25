@@ -21,7 +21,7 @@ export default function Home() {
         <ManufacturingServices />
         <InternetOfThings />
         <Testimonials />
-        <CaseStudies />
+        {/* <CaseStudies /> */}
       </div>
   );
 }

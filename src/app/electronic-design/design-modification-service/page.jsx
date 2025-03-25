@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
@@ -25,10 +26,10 @@ const DesignModificationService = () => {
         }
     };
     const banners = [
-        { img: "https://img.freepik.com/free-photo/invalid-engineer-looking-building-model-computer-designing-layout-blueprint-construction-architect-wheelchair-using-touch-screen-monitor-analyze-architectural-structure_482257-34142.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Enhancing Existing Designs", subtitle: "Expert Design Modification Solutions", dtitle: "Design" },
-        { img: "https://img.freepik.com/free-photo/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla_482257-2640.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "System Performance Upgrades", subtitle: "Enhancing hardware and software integration", dtitle: "System" },
-        { img: "https://img.freepik.com/free-photo/graphic-designer-gaming-industry-talking-detail-with-his-colleague-analyzing-3d-design-level-explaining-production-creative-ideas-game-creators-working-videogame-illustration-company-office_482257-28158.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Mechanical Design Refinement", subtitle: "Optimizing product structures for durability and efficiency.", dtitle: "Refinement" },
-        { img: "/banner2.jpg",title: "Firmware Enhancements",subtitle: "Upgrading existing firmware for improved functionality", dtitle: "Firmware" }
+        {link:"/", img: "https://img.freepik.com/free-photo/invalid-engineer-looking-building-model-computer-designing-layout-blueprint-construction-architect-wheelchair-using-touch-screen-monitor-analyze-architectural-structure_482257-34142.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Enhancing Existing Designs", subtitle: "Expert Design Modification Solutions", dtitle: "Design" },
+        {link:"/", img: "https://img.freepik.com/free-photo/team-discussing-about-industrial-project-using-dual-monitors-setup-desing-d-gears-metalic-cla_482257-2640.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "System Performance Upgrades", subtitle: "Enhancing hardware and software integration", dtitle: "System" },
+        {link:"/", img: "https://img.freepik.com/free-photo/graphic-designer-gaming-industry-talking-detail-with-his-colleague-analyzing-3d-design-level-explaining-production-creative-ideas-game-creators-working-videogame-illustration-company-office_482257-28158.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Mechanical Design Refinement", subtitle: "Optimizing product structures for durability and efficiency.", dtitle: "Refinement" },
+        {link:"/", img: "/banner2.jpg",title: "Firmware Enhancements",subtitle: "Upgrading existing firmware for improved functionality", dtitle: "Firmware" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -97,19 +98,31 @@ const DesignModificationService = () => {
         <section className="relative w-full  overflow-hidden">
             <div className="w-full h-screen  relative flex">
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
-                    {banners.map((banner, i) => (
+                {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
-                                    <Highlight>{banner.title}</Highlight>
-                                    <br />
-                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
-                                </h1>
-                                <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
-                                    Read More <SquareArrowOutUpRight />
-                                </button>
+                                {i === 0 ? (
+                                    <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h2>
+                                )}
+                                <Link href={banner.link}>
+                                    <button
+                                        className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                                    >
+                                        Read More <SquareArrowOutUpRight />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

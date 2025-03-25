@@ -35,8 +35,8 @@ const NavLinks = () => {
 
   const about = [
     { name: 'Who we are', description: 'Get a better understanding of your', href: "/about/who-we-are", icon: ChartPieIcon },
-    { name: 'Careers', description: 'Speak directly to your customers', href: "/about/careers", icon: CursorArrowRaysIcon },
-    { name: 'Partners', description: 'Your customers’ data will be safe ', href: "/about/partners", icon: FingerPrintIcon },
+    // { name: 'Careers', description: 'Speak directly to your customers', href: "/about/careers", icon: CursorArrowRaysIcon },
+    // { name: 'Partners', description: 'Your customers’ data will be safe ', href: "/about/partners", icon: FingerPrintIcon },
   ]
   const engineering = [
     { name: 'Hardware', description: 'Get a better understanding of your design', href: '/engineering-design-services/hardware', icon: ChartPieIcon },
@@ -76,7 +76,7 @@ const NavLinks = () => {
   ]
   const resources = [
     { name: 'Blogs', description: 'Get a better understanding of your traffic', href: '/resources/blogs', icon: ChartPieIcon },
-    { name: 'News', description: 'Speak directly to your customers', href: '/resources/news', icon: CursorArrowRaysIcon },
+    // { name: 'News', description: 'Speak directly to your customers', href: '/resources/news', icon: CursorArrowRaysIcon },
   ]
 
 
@@ -129,15 +129,14 @@ const NavLinks = () => {
           : "absolute bg-transparent text-white border-none"
           }`}
       >
-        <div className="mx-auto flex items-center justify-between md:px-20 px-10 py-6">
+        <div className="mx-auto flex items-center justify-between gap-[200px] md:px-20 px-10 py-5">
           <div className="flex justify-between w-full">
             <Link href="/" className=" ">
-              <h2
-                className={`${scrolled ? "text-4xl font-bold duration-300" : "text-4xl font-bold"
-                  }`}
-              >
-                SunKey
-              </h2>
+              {scrolled ?
+                <img src="/blacklogo.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
+                :
+                <img src="/whitelogo.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
+              }
             </Link>
 
             <div className="flex lg:hidden">
@@ -287,7 +286,7 @@ const NavLinks = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <NavigationMenu>
+              {/* <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
                     <Link href="/case-study" legacyBehavior passHref>
@@ -297,7 +296,7 @@ const NavLinks = () => {
                     </Link>
                   </NavigationMenuItem>
                 </NavigationMenuList>
-              </NavigationMenu>
+              </NavigationMenu> */}
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -316,7 +315,7 @@ const NavLinks = () => {
             <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <Link href="/" className="">
-                  <h2 className="text-4xl font-bold duration-300">SunKey</h2>
+                  <img src="/blacklogo.png" alt="logo" className="h-14" />
                 </Link>
                 <button
                   type="button"
@@ -452,14 +451,14 @@ const NavLinks = () => {
                     </Link>
 
                     {/* Case Studies Link */}
-                    <Link
+                    {/* <Link
                       href="/case-study"
                       passHref
                       onClick={handleLinkClick}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                     >
                       Case Studies
-                    </Link>
+                    </Link> */}
 
                     {/* Resources Section */}
                     <Disclosure as="div" className="-mx-3">

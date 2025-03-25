@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
 const About = dynamic(() => import("./components/About"));
 const Expertise = dynamic(() => import("./components/Expertise"));
 const Partner = dynamic(() => import("./components/Partner"));
@@ -24,10 +25,10 @@ const Firmware = () => {
         }
     };
     const banners = [
-        { img: "https://img.freepik.com/free-photo/hand-touching-tablet_1134-117.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Unlocking Device Potential", subtitle: "Expert Firmware Solutions", dtitle: "Firmware" },
-        { img: "https://img.freepik.com/free-photo/saas-concept-collage_23-2149399280.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Firmware Optimization", subtitle: "Enhancing firmware efficiency with performance", dtitle: "Electronic" },
-        { img: "https://img.freepik.com/free-photo/standard-quality-control-collage-concept_23-2149595844.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: " Secure Boot & Firmware Updates", subtitle: "seamless over-the-air (OTA) updates.", dtitle: "Boot" },
-        { img: "https://img.freepik.com/free-photo/3d-rendering-futuristic-computer_23-2151004383.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a", title: "Embedded Firmware Development", subtitle: "Custom firmware solutions optimized", dtitle: "optimized" }
+        { link: "/", img: "https://img.freepik.com/free-photo/hand-touching-tablet_1134-117.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/1ef16701-112e-471a-9cf3-e91b92120e99/horizontal/previews/clear/small.mp4?token=exp=1741156094~hmac=77525dadf24a45c7d059607cf7ce881298165d9c410d3eb9cb4b16fa7477b484", title: "Unlocking Device Potential", subtitle: "Expert Firmware Solutions", dtitle: "Firmware" },
+        { link: "/", img: "https://img.freepik.com/free-photo/saas-concept-collage_23-2149399280.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/e0a04c27-bc83-472d-96b5-4fbf17438625/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=1e05fd670a76adc82f807907bec5117da797012e8074a311362f29b2a580cdb8", title: "Firmware Optimization", subtitle: "Enhancing firmware efficiency with performance", dtitle: "Electronic" },
+        { link: "/", img: "https://img.freepik.com/free-photo/standard-quality-control-collage-concept_23-2149595844.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/40fdac8a-cd70-473f-b774-8b5af417503c/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=5eba3302b53db4c9ddd82b5186da0ede6f2db6ad1858e061cab3d245ae7ea722", title: " Secure Boot & Firmware Updates", subtitle: "seamless over-the-air (OTA) updates.", dtitle: "Boot" },
+        { link: "/", img: "https://img.freepik.com/free-photo/3d-rendering-futuristic-computer_23-2151004383.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", video: "https://videocdn.cdnpk.net/videos/ec1661c4-6f1c-4bcf-a1dc-7ab96aa0d7b2/horizontal/previews/clear/small.mp4?token=exp=1741156379~hmac=232ba138f42dc8ed9082335cf883bef3a7370d8bc139820cab7313307a85a86a", title: "Embedded Firmware Development", subtitle: "Custom firmware solutions optimized", dtitle: "optimized" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -98,17 +99,29 @@ const Firmware = () => {
                 <motion.div className="flex w-full h-full" initial={{ x: "100%" }} animate={{ x: `-${index * 100}%` }} transition={{ type: "spring", stiffness: 50, damping: 10 }}>
                     {banners.map((banner, i) => (
                         <div key={i} className="w-full flex-shrink-0 h-full relative">
-                            <Image priority src={banner.img} alt={banner.title} fill className="w-full h-full object-cover" />
+                            <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
                             <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
-                                <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
-                                    <Highlight>{banner.title}</Highlight>
-                                    <br />
-                                    <span className="mt-6 font-normal block text-3xl md:text-5xl ">{banner.subtitle}</span>
-                                </h1>
-                                <button className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4">
-                                    Read More <SquareArrowOutUpRight />
-                                </button>
+                                {i === 0 ? (
+                                    <h1 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h1>
+                                ) : (
+                                    <h2 className="text-5xl 2xl:text-7xl font-medium mb-6 duration-500">
+                                        <Highlight>{banner.title}</Highlight>
+                                        <br />
+                                        <span className="mt-6 font-normal block text-3xl md:text-5xl">{banner.subtitle}</span>
+                                    </h2>
+                                )}
+                                <Link href={banner.link}>
+                                    <button
+                                        className="border duration-300 hover:bg-white text-white mt-6 bg-transparent md:py-3 md:px-8 py-3 px-6 rounded-md font-semibold md:text-lg hover:text-black flex items-center gap-4"
+                                    >
+                                        Read More <SquareArrowOutUpRight />
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -163,19 +176,19 @@ const Firmware = () => {
                     </div>
                 </div>
 
-                <div ref={expertiseRef} className="pt-20   bg-gray-100">
+                <div ref={expertiseRef} className="py-20   bg-gray-100">
                     <div ref={expertiseInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Expertise />
                     </div>
-                    <CallUs />
+                    {/* <CallUs /> */}
                 </div>
 
-                <div ref={partnerRef} className="pt-20   bg-gradient-to-r from-pink-300/40 via-yellow-100/60 to-blue-400/60">
-                    <div ref={partnerInView} className="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+                <div ref={partnerRef} className="py-20   bg-gradient-to-r from-pink-300/40 via-yellow-100/60 to-blue-400/60">
+                    <div ref={partnerInView} className="container mx-auto px-4 sm:px-6 lg:px-8 ">
                         <Partner />
                     </div>
 
-                    <ClientReview />
+                    {/* <ClientReview /> */}
                 </div>
 
                 <div ref={faqRef} className="py-20   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">

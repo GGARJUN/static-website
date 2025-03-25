@@ -16,7 +16,13 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   title: "Sunkey Design Systems",
   description: "We empower businesses to innovate in the tech landscape by providing cutting-edge solutions in engineering design, electronics, IoT, and manufacturing.",
+  icons: {
+    icon: '/favicon.ico', // Using ICO format
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
+
 export const revalidate = 30;
 export default function RootLayout({ children }) {
   return (

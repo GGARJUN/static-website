@@ -80,13 +80,12 @@ const [index, setIndex] = useState(0);
           </div>
         </div>
 
-        <div className="">
+        {/* <div className="">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            {/* <Partner /> */}
           </div>
           <ClientReview />
           <CallUs />
-        </div>
+        </div> */}
 
         <div className="py-20 bg-gradient-to-r from-pink-100 via-blue-200 to-indigo-100 ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
