@@ -169,12 +169,12 @@ const BoxBuild = () => {
                     </div>
                 </div>
 
-                <div ref={partnerRef} className="pt-20   ">
+                <div ref={partnerRef} className="py-20   ">
                     <div ref={partnerInView} className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <Partner />
                     </div>
                     {/* <CallUs/> */}
-                    <ClientReview/>
+                    {/* <ClientReview/> */}
                 </div>
 
                 <div ref={faqRef} className="py-20   bg-gradient-to-r from-pink-300/10 via-blue-200 to-indigo-400/10 ">
