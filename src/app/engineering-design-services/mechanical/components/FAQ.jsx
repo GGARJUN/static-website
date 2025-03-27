@@ -43,9 +43,9 @@ const FAQ = () => {
         <div className=" w-full  ">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>1. What tools do you use for mechanical design?              </AccordionTrigger>
+              <AccordionTrigger>1. What tools do you use for mechanical design?</AccordionTrigger>
               <AccordionContent>
-                We use industry-standard CAD tools for our mechanical design services.
+                We use industry-standard CAD & Solid work tools for our mechanical design services.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
