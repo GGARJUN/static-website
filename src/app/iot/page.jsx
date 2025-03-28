@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Play, Pause, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FaArrowDown, FaFacebookF } from "react-icons/fa";
+import { FaArrowDown, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
@@ -32,10 +32,10 @@ const IoT = () => {
         }
     };
     const banners = [
-        {link:"/", img: "https://img.freepik.com/free-photo/designer-using-3d-printer_23-2151037099.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Industrial IoT Services", subtitle: "Transforming Industries with Smart Solutions", dtitle: "Industrial IoT" },
-        {link:"/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Smart Sensor Integration", subtitle: "Seamless connectivity for real-time data monitoring.", dtitle: "Sensor" },
-        {link:"/", img: "https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041855.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Industrial Automation Solutions", subtitle: "Enhancing efficiency with automated control systems.", dtitle: "Automation" },
-        {link:"/", img: "https://img.freepik.com/free-photo/system-administrator-server-room-installing-newly-ordered-storage-unit_482257-94919.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Secure IoT Connectivity", subtitle: "Robust networking for reliable industrial communication.", dtitle: "Connectivity" }
+        { link: "/", img: "https://img.freepik.com/free-photo/designer-using-3d-printer_23-2151037099.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Industrial IoT Services", subtitle: "Transforming Industries with Smart Solutions", dtitle: "Industrial IoT" },
+        { link: "/", img: "https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Smart Sensor Integration", subtitle: "Seamless connectivity for real-time data monitoring.", dtitle: "Sensor" },
+        { link: "/", img: "https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041855.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Industrial Automation Solutions", subtitle: "Enhancing efficiency with automated control systems.", dtitle: "Automation" },
+        { link: "/", img: "https://img.freepik.com/free-photo/system-administrator-server-room-installing-newly-ordered-storage-unit_482257-94919.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Secure IoT Connectivity", subtitle: "Robust networking for reliable industrial communication.", dtitle: "Connectivity" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -169,15 +169,19 @@ const IoT = () => {
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
                     <div className="md:flex items-center gap-5 hidden">
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.facebook.com/profile.php?id=61574435144838"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaFacebookF />
                         </Link>
 
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.instagram.com/sunkeydesignsystems/"} target="_blank" className="hover:bg-blue-500 p-2 text-lg  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaInstagram />
+                        </Link>
+
+                        <Link href={"https://x.com/sunkeydesign"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaXTwitter />
                         </Link>
 
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.linkedin.com/company/106414983/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaLinkedinIn />
                         </Link>
                     </div>

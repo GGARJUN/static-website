@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Head from "next/head";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -74,9 +74,17 @@ const Footer = () => {
                 kumar@sunkeydesignsystems.com
               </Link>
               <div className="flex items-center gap-10">
-                <FaFacebookF size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
-                <FaXTwitter size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
-                <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank">
+
+                <Link href={"https://www.facebook.com/profile.php?id=61574435144838"} target="_blank">
+                  <FaFacebookF size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
+                </Link>
+                <Link href={"https://www.instagram.com/sunkeydesignsystems/"} target="_blank">
+                  <FaInstagram size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
+                </Link>
+                <Link href={"https://x.com/sunkeydesign"} target="_blank">
+                  <FaXTwitter size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
+                </Link>
+                <Link href={"https://www.linkedin.com/company/106414983/"} target="_blank">
                   <FaLinkedinIn size={40} className="px-2 py-2 rounded-xl bg-white text-black hover:scale-110 transition-all duration-300 hover:text-blue-500 border" />
                 </Link>
               </div>

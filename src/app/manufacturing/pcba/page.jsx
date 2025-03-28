@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Play, Pause, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FaArrowDown, FaFacebookF } from "react-icons/fa";
+import { FaArrowDown, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
@@ -25,10 +25,10 @@ const PCBA = () => {
         }
     };
     const banners = [
-        {link:"/", img: "https://img.freepik.com/free-photo/group-young-teens-celebrating-world-youth-day-by-doing-activities-together_23-2151478305.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert PCBA Solutions", subtitle: "Transforming Designs into Functional Products", dtitle: "PCBA" },
-        {link:"/", img: "https://img.freepik.com/free-photo/young-man-woman-protective-glasses-doing-experiments-robotics-laboratory-wooden-robot_1268-23374.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Assembly & Manufacturing", subtitle: "EHigh-quality assembly ensuring precision and reliability.", dtitle: "reliability" },
-        {link:"/", img: "https://img.freepik.com/free-photo/graphic-designer-gaming-industry-talking-detail-with-his-colleague-analyzing-3d-design-level-explaining-production-creative-ideas-game-creators-working-videogame-illustration-company-office_482257-28158.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Component Sourcing & Integration", subtitle: "Sourcing premium components for seamless functionality.", dtitle: "Integration" },
-        {link:"/", img: "https://img.freepik.com/free-photo/female-working-bike_23-2148836068.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Testing & Quality Assurance", subtitle: "Rigorous testing for optimal performance and durability.", dtitle: "Testing" }
+        { link: "/", img: "https://img.freepik.com/free-photo/group-young-teens-celebrating-world-youth-day-by-doing-activities-together_23-2151478305.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert PCBA Solutions", subtitle: "Transforming Designs into Functional Products", dtitle: "PCBA" },
+        { link: "/", img: "https://img.freepik.com/free-photo/young-man-woman-protective-glasses-doing-experiments-robotics-laboratory-wooden-robot_1268-23374.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Assembly & Manufacturing", subtitle: "EHigh-quality assembly ensuring precision and reliability.", dtitle: "reliability" },
+        { link: "/", img: "https://img.freepik.com/free-photo/graphic-designer-gaming-industry-talking-detail-with-his-colleague-analyzing-3d-design-level-explaining-production-creative-ideas-game-creators-working-videogame-illustration-company-office_482257-28158.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Component Sourcing & Integration", subtitle: "Sourcing premium components for seamless functionality.", dtitle: "Integration" },
+        { link: "/", img: "https://img.freepik.com/free-photo/female-working-bike_23-2148836068.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Testing & Quality Assurance", subtitle: "Rigorous testing for optimal performance and durability.", dtitle: "Testing" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -145,15 +145,19 @@ const PCBA = () => {
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
                     <div className="md:flex items-center gap-5 hidden">
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.facebook.com/profile.php?id=61574435144838"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaFacebookF />
                         </Link>
 
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.instagram.com/sunkeydesignsystems/"} target="_blank" className="hover:bg-blue-500 p-2 text-lg  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaInstagram />
+                        </Link>
+
+                        <Link href={"https://x.com/sunkeydesign"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaXTwitter />
                         </Link>
 
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.linkedin.com/company/106414983/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaLinkedinIn />
                         </Link>
                     </div>

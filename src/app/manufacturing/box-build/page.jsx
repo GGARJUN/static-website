@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Play, Pause, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FaArrowDown, FaFacebookF } from "react-icons/fa";
+import { FaArrowDown, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
@@ -25,10 +25,10 @@ const BoxBuild = () => {
         }
     };
     const banners = [
-        {link:"/", img: "https://img.freepik.com/free-photo/salesman-shows-color-swatches-lady-customer-new-kitchen-furniture_93675-134887.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Box Build Services", subtitle: "Completing Your Products", dtitle: "Box Build" },
-        {link:"/", img: "https://img.freepik.com/free-photo/medium-shot-woman-repairing-fashion-goods_23-2150628002.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Full-System Assembly", subtitle: "End-to-end integration of enclosures, wiring, and components.", dtitle: "Full-System" },
-        {link:"/", img: "https://img.freepik.com/free-photo/construction-architect-team-working-desk-office-blueprint-layout-caucasian-colleagues-standing_482257-2828.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Custom Enclosure Design", subtitle: "Tailored housings for durability and aesthetics.", dtitle: "Enclosure" },
-        {link:"/", img: "https://img.freepik.com/free-photo/close-up-volunteer-oganizing-stuff-donation_23-2149134437.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Cable & Wire Harness Assembly", subtitle: "Optimized wiring solutions for seamless connectivity.", dtitle: "Cable & Wire" }
+        { link: "/", img: "https://img.freepik.com/free-photo/salesman-shows-color-swatches-lady-customer-new-kitchen-furniture_93675-134887.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expert Box Build Services", subtitle: "Completing Your Products", dtitle: "Box Build" },
+        { link: "/", img: "https://img.freepik.com/free-photo/medium-shot-woman-repairing-fashion-goods_23-2150628002.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Full-System Assembly", subtitle: "End-to-end integration of enclosures, wiring, and components.", dtitle: "Full-System" },
+        { link: "/", img: "https://img.freepik.com/free-photo/construction-architect-team-working-desk-office-blueprint-layout-caucasian-colleagues-standing_482257-2828.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Custom Enclosure Design", subtitle: "Tailored housings for durability and aesthetics.", dtitle: "Enclosure" },
+        { link: "/", img: "https://img.freepik.com/free-photo/close-up-volunteer-oganizing-stuff-donation_23-2149134437.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Cable & Wire Harness Assembly", subtitle: "Optimized wiring solutions for seamless connectivity.", dtitle: "Cable & Wire" }
     ];
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -146,15 +146,19 @@ const BoxBuild = () => {
                         <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
                     </div>
                     <div className="md:flex items-center gap-5 hidden">
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.facebook.com/profile.php?id=61574435144838"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaFacebookF />
                         </Link>
 
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.instagram.com/sunkeydesignsystems/"} target="_blank" className="hover:bg-blue-500 p-2 text-lg  rounded-full  hover:scale-110 transition-all duration-300">
+                            <FaInstagram />
+                        </Link>
+
+                        <Link href={"https://x.com/sunkeydesign"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaXTwitter />
                         </Link>
 
-                        <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+                        <Link href={"https://www.linkedin.com/company/106414983/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
                             <FaLinkedinIn />
                         </Link>
                     </div>

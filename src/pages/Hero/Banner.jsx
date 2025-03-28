@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Play, Pause, SquareArrowOutUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FaArrowDown, FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaArrowDown, FaFacebookF, FaInstagram } from "react-icons/fa";
+// import { FaInstagram, FaXTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
+import { FaXTwitter } from "react-icons/fa6";
 
 const banners = [
   {
@@ -159,19 +160,25 @@ const Banner = () => {
             <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
             <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
           </div>
+
           <div className="md:flex items-center gap-5 hidden">
-            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+            <Link href={"https://www.facebook.com/profile.php?id=61574435144838"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
               <FaFacebookF />
             </Link>
 
-            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+            <Link href={"https://www.instagram.com/sunkeydesignsystems/"} target="_blank" className="hover:bg-blue-500 p-2 text-lg  rounded-full  hover:scale-110 transition-all duration-300">
+              <FaInstagram />
+            </Link>
+
+            <Link href={"https://x.com/sunkeydesign"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
               <FaXTwitter />
             </Link>
 
-            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+            <Link href={"https://www.linkedin.com/company/106414983/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
               <FaLinkedinIn />
             </Link>
           </div>
+          
         </div>
       </div>
     </section>

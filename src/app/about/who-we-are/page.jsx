@@ -3,17 +3,14 @@ import dynamic from "next/dynamic";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { motion } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
-import { FaArrowDown, FaFacebookF } from "react-icons/fa";
+import { FaArrowDown, FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 const Approach = dynamic(() => import("./Components/Approach"));
 const About = dynamic(() => import("./Components/About"));
-const ClientReview = dynamic(() => import("./Components/ClientReview"));
-const CallUs = dynamic(() => import("./Components/CallUs"));
 const FAQ = dynamic(() => import("./Components/FAQ"));
 const WhatWeDo = dynamic(() => import("./Components/WhatWeDo"));
 
@@ -27,7 +24,6 @@ const WhoWeAre = () => {
         nextSection.scrollIntoView({ behavior: "smooth" });
     }
 };
-const [index, setIndex] = useState(0);
   return (
     <div>
       <div className="w-full h-[650px] 2xl:h-[700px] relative flex">
@@ -54,19 +50,25 @@ const [index, setIndex] = useState(0);
             <FaArrowDown className="animate-bounce duration-800 ease-in-out" />
             <h2 className="font-semibold">SCROLL TO EXPLORE</h2>
           </div>
+
           <div className="md:flex items-center gap-5 hidden">
-            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+            <Link href={"https://www.facebook.com/profile.php?id=61574435144838"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
               <FaFacebookF />
             </Link>
 
-            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+            <Link href={"https://www.instagram.com/sunkeydesignsystems/"} target="_blank" className="hover:bg-blue-500 p-2 text-lg  rounded-full  hover:scale-110 transition-all duration-300">
+              <FaInstagram />
+            </Link>
+
+            <Link href={"https://x.com/sunkeydesign"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
               <FaXTwitter />
             </Link>
 
-            <Link href={"https://www.linkedin.com/company/sunkey-design-systems/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
+            <Link href={"https://www.linkedin.com/company/106414983/"} target="_blank" className="hover:bg-blue-500 p-2  rounded-full  hover:scale-110 transition-all duration-300">
               <FaLinkedinIn />
             </Link>
           </div>
+
         </div>
       </div>
       <div>
