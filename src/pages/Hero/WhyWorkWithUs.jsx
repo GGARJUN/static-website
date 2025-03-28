@@ -1,9 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { Users, Lightbulb, UserCheck, Shield, ArrowRight } from "lucide-react";
-import ImageCarousel from "../components/ImageCarousel";
-import Image from "next/image";
 import Link from "next/link";
+import WhyWorkSlider from "../components/WhyWorkSlider";
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.9, rotate: -10 },
@@ -39,7 +38,7 @@ const WhyWorkWithUs = () => (
       </motion.div>
       <div className="mt-10 md:mt-20 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
         <div className="rounded-lg mb-6 md:mb-0 col-span-12 xl:col-span-4">
-          <ImageCarousel />
+          <WhyWorkSlider />
         </div>
         <div className="col-span-12 xl:col-span-8">
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -52,7 +51,7 @@ const WhyWorkWithUs = () => (
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-5">
                     <motion.div className="text-blue-500" whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
-                      <Image priority src={feature.img} alt={feature.title} width={100} height={100} className="w-12" />
+                      <img loading="lazy"  src={feature.img} alt={feature.title} className="w-12" />
                     </motion.div>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-semibold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300 line-clamp-1">{feature.title}</h3>

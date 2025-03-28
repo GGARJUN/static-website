@@ -8,8 +8,8 @@ import Link from "next/link";
 const itemVariants = { hidden: { opacity: 0, x: 0 }, visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "linear" } }, hover: { boxShadow: "0 15px 25px rgba(0, 0, 0, 0.15)", transition: { duration: 0.3, ease: "linear" } } };
 
 const design = [
-  { link: "/electronic-design/design-modification-service", img: "/dms.png", title: "Design Modification Services", description: "Enhancing existing designs for better functionality or manufacturability.", cimg: "/Homepage/Design Modification Services.jpg" },
-  { link: "/electronic-design/design-for-manufacturability", img: "/dfm.png", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", cimg: "/Homepage/Design for Manufacturability.jpg" },
+  { link: "/electronic-design/design-modification-service", img: "https://cdn-icons-png.freepik.com/256/18495/18495340.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Design Modification Services", description: "Enhancing existing designs for better functionality or manufacturability.", cimg: "/Homepage/Design Modification Services.jpg" },
+  { link: "/electronic-design/design-for-manufacturability", img: "https://cdn-icons-png.freepik.com/256/3696/3696791.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Design for Manufacturability", description: "Ensuring designs are optimized for efficient production.", cimg: "/Homepage/Design for Manufacturability.jpg" },
 ];
 
 const Slider = () => {

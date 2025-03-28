@@ -2,9 +2,9 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight } from "lucide-react";
-import ImageCarousel from "../components/ImageCarousel";
-import Image from "next/image";
+
 import Link from "next/link";
+import EngDesignSlider from "../components/EngDesignSlider";
 
 const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -71,7 +71,7 @@ const EngineeringDesignServices = () => {
                                         {/* Right Section - Image */}
                                         <div className="w-full lg:w-1/2 lg:mt-0 group-hover:scale-105 duration-500">
                                             <div className="relative w-full h-[250px] lg:h-full rounded-2xl overflow-hidden shadow-xl">
-                                                <Image priority src={service.image} alt={service.title} width={1000} height={100} className="absolute inset-0 w-full h-full object-cover rounded-2xl" />
+                                                <img loading="lazy"  src={service.image} alt={service.title}  className="absolute inset-0 w-full h-full object-cover rounded-2xl" />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@ const EngineeringDesignServices = () => {
 
                     {/* Image Carousel Section */}
                     <div className="lg:col-span-4 w-full rounded-lg mb-6 lg:mb-10 mt-6 lg:mt-10">
-                        <ImageCarousel />
+                        <EngDesignSlider />
                     </div>
                 </div>
 

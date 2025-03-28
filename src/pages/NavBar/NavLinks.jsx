@@ -2,11 +2,24 @@
 import { React, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
+  BackwardIcon,
   Bars3Icon,
+  ChartBarIcon,
   ChartPieIcon,
+  CogIcon,
+  ComputerDesktopIcon,
+  CpuChipIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
+  FireIcon,
+  LightBulbIcon,
+  NewspaperIcon,
+  PresentationChartBarIcon,
+  ServerIcon,
+  Square3Stack3DIcon,
   SquaresPlusIcon,
+  UsersIcon,
+  WrenchScrewdriverIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import {
@@ -34,23 +47,23 @@ const NavLinks = () => {
 
 
   const about = [
-    { name: 'Who we are', description: 'Get a better understanding of your', href: "/about/who-we-are", icon: ChartPieIcon },
+    { name: 'Who we are', description: 'Get a better understanding of your', href: "/about/who-we-are", icon: UsersIcon },
     // { name: 'Careers', description: 'Speak directly to your customers', href: "/about/careers", icon: CursorArrowRaysIcon },
     // { name: 'Partners', description: 'Your customers’ data will be safe ', href: "/about/partners", icon: FingerPrintIcon },
   ]
   const engineering = [
-    { name: 'Hardware', description: 'Get a better understanding of your design', href: '/engineering-design-services/hardware', icon: ChartPieIcon },
-    { name: 'Firmware', description: 'Speak directly to your customers', href: '/engineering-design-services/firmware', icon: CursorArrowRaysIcon },
-    { name: 'Software', description: 'Your customers’ data will be safe ', href: '/engineering-design-services/software', icon: FingerPrintIcon },
-    { name: 'Mechanical', description: 'Connect with third-party tools', href: '/engineering-design-services/mechanical', icon: SquaresPlusIcon },
+    { name: 'Hardware', description: 'Get a better understanding of your', href: '/engineering-design-services/hardware', icon: WrenchScrewdriverIcon },
+    { name: 'Firmware', description: 'Speak directly to your customers', href: '/engineering-design-services/firmware', icon: FireIcon },
+    { name: 'Software', description: 'Your customers’ data will be safe ', href: '/engineering-design-services/software', icon: ComputerDesktopIcon },
+    { name: 'Mechanical', description: 'Connect with third-party tools', href: '/engineering-design-services/mechanical', icon: CogIcon },
     {
-      name: 'Electronic Design', description: 'Connect with third-party tools', icon: CursorArrowRaysIcon,
+      name: 'Electronic Design', description: 'Connect with third-party tools', icon: LightBulbIcon,
       children: [
         { name: 'PCB Design Service', description: 'Get a better understanding ', href: '/electronic-design/pcb-design-service', icon: ChartPieIcon },
-        { name: 'PCB Layout', description: 'Speak directly to your customers', href: '/electronic-design/pcb-layout', icon: CursorArrowRaysIcon },
-        { name: 'SI/PI Analysis', description: 'Speak directly to your customers', href: '/electronic-design/analysis', icon: FingerPrintIcon },
-        { name: 'Reverse Engineering', description: 'Connect with third-party tools', href: '/electronic-design/reverse-engineering', icon: SquaresPlusIcon },
-        { name: 'Design Modification Service', description: 'Modify and improve designs', href: '/electronic-design/design-modification-service', icon: CursorArrowRaysIcon },
+        { name: 'PCB Layout', description: 'Speak directly to your customers', href: '/electronic-design/pcb-layout', icon: CpuChipIcon },
+        { name: 'SI/PI Analysis', description: 'Speak directly to your customers', href: '/electronic-design/analysis', icon: ChartBarIcon },
+        { name: 'Reverse Engineering', description: 'Connect with third-party tools', href: '/electronic-design/reverse-engineering', icon: BackwardIcon },
+        { name: 'Design Modification Service', description: 'Modify and improve designs', href: '/electronic-design/design-modification-service', icon: PresentationChartBarIcon },
         { name: 'Design for Manufacturability', description: 'Connect with third-party tools', href: '/electronic-design/design-for-manufacturability', icon: ChartPieIcon },
       ]
     }
@@ -70,12 +83,12 @@ const NavLinks = () => {
     { name: 'Design for Manufacturability', description: 'Connect with third-party tools', href: '/electronic-design/design-for-manufacturability', icon: ChartPieIcon },
   ]
   const manufactring = [
-    { name: 'PCBA', description: 'Get a better understanding of your ', href: '/manufacturing/pcba', icon: ChartPieIcon },
-    { name: 'Test Fixture', description: 'Speak directly to your customers', href: '/manufacturing/test-fixture', icon: CursorArrowRaysIcon },
-    { name: 'Box Build', description: 'Your customers’ data will be safe ', href: '/manufacturing/box-build', icon: FingerPrintIcon },
+    { name: 'PCBA', description: 'Get a better understanding of your ', href: '/manufacturing/pcba', icon: CpuChipIcon },
+    { name: 'Test Fixture', description: 'Speak directly to your customers', href: '/manufacturing/test-fixture', icon: ServerIcon },
+    { name: 'Box Build', description: 'Your customers’ data will be safe ', href: '/manufacturing/box-build', icon: Square3Stack3DIcon },
   ]
   const resources = [
-    { name: 'Blogs', description: 'Get a better understanding of your ', href: '/resources/blogs', icon: ChartPieIcon },
+    { name: 'Blogs', description: 'Get a better  ', href: '/resources/blogs', icon: NewspaperIcon },
     // { name: 'News', description: 'Speak directly to your customers', href: '/resources/news', icon: CursorArrowRaysIcon },
   ]
 
@@ -141,21 +154,21 @@ const NavLinks = () => {
           : "absolute bg-transparent text-white border-none"
           }`}
       >
-        <div className="mx-auto flex items-center justify-between gap-[200px] md:px-20 px-10 py-5">
+        <div className="mx-auto flex items-center justify-between gap-[200px] md:px-20 px-10 lg:py-5 py-6">
           <div className="flex justify-between items-center w-full ">
             <Link href="/" className="flex-shrink-0">
               {scrolled ? (
-                <div className="w-20 sm:w-28 md:w-32 lg:w-40 h-auto">
+                <div className="w-20 sm:w-28 md:w-32 lg:w-40 h-full">
                   <img
-                    src="/Logo/SunKey-Design-Systems-Logo.png"
+                    src="/Logo/blacklogo.png"
                     alt="logo"
                     className="w-full h-full object-contain"
                   />
                 </div>
               ) : (
-                <div className="w-20 sm:w-28 md:w-32 lg:w-40 h-auto">
+                <div className="w-20 sm:w-28 md:w-32 lg:w-40 h-ful">
                   <img
-                    src="/Logo/SunKey-Design-Systems-Logo-White.png"
+                    src="/Logo/whitelogo.png"
                     alt="logo"
                     className="w-full h-full object-contain"
                   />
@@ -363,7 +376,7 @@ const NavLinks = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                      <div className="z-10 w-screen max-w-[250px] overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in ">
                         <div className="p-2">
                           {resources.map((item) => (
                             <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
@@ -416,7 +429,7 @@ const NavLinks = () => {
             <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <Link href="/" className="">
-                  <img src="/blacklogo.png" alt="logo" className="h-14" />
+                  <img src="/Logo/blacklogo.png" alt="logo" className="h-8" />
                 </Link>
                 <button
                   type="button"

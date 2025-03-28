@@ -1,9 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { Users, Lightbulb, UserCheck, Shield, ArrowRight } from "lucide-react";
-import ImageCarousel from "../components/ImageCarousel";
-import Image from "next/image";
 import Link from "next/link";
+import IntoSlider from "../components/IntoSlider";
 
 const Introduction = () => {
   const features = [
@@ -79,7 +78,7 @@ const Introduction = () => {
             </motion.div>
           </div>
           <div className="rounded-lg mb-6 md:mb-0 col-span-12 xl:col-span-4">
-            <ImageCarousel />
+            <IntoSlider/>
           </div>
         </div>
       </div>

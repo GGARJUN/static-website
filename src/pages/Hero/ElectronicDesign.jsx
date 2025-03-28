@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Lightbulb, Users } from "lucide-react";
 import Slider from "../components/Slider";
-import Image from "next/image";
 import Link from "next/link";
 
 const ElectronicDesign = () => {
