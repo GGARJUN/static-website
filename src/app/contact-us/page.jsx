@@ -18,7 +18,7 @@ const ContactUs = () => {
         <motion.div className="flex w-full h-full" >
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative ">
-              <img loading="lazy" src={banner.img} alt={banner.title} className="w-full h-full object-cover  -z-50" />
+              <img loading="lazy" src={banner.img} alt={banner.title} className="w-full h-full object-cover  -z-40" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90"></div>
               <div className="absolute inset-0 flex flex-col  justify-center items-center 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6 duration-500">

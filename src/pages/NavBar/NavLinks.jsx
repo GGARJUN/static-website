@@ -41,12 +41,12 @@ const NavLinks = () => {
   const engineering = [
     { name: 'Hardware', description: 'Get a better understanding of your design', href: '/engineering-design-services/hardware', icon: ChartPieIcon },
     { name: 'Firmware', description: 'Speak directly to your customers', href: '/engineering-design-services/firmware', icon: CursorArrowRaysIcon },
-    { name: 'Software', description: 'Your customers’ data will be safe and secure', href: '/engineering-design-services/software', icon: FingerPrintIcon },
+    { name: 'Software', description: 'Your customers’ data will be safe ', href: '/engineering-design-services/software', icon: FingerPrintIcon },
     { name: 'Mechanical', description: 'Connect with third-party tools', href: '/engineering-design-services/mechanical', icon: SquaresPlusIcon },
     {
       name: 'Electronic Design', description: 'Connect with third-party tools', icon: CursorArrowRaysIcon,
       children: [
-        { name: 'PCB Design Service', description: 'Get a better understanding of your design', href: '/electronic-design/pcb-design-service', icon: ChartPieIcon },
+        { name: 'PCB Design Service', description: 'Get a better understanding ', href: '/electronic-design/pcb-design-service', icon: ChartPieIcon },
         { name: 'PCB Layout', description: 'Speak directly to your customers', href: '/electronic-design/pcb-layout', icon: CursorArrowRaysIcon },
         { name: 'SI/PI Analysis', description: 'Speak directly to your customers', href: '/electronic-design/analysis', icon: FingerPrintIcon },
         { name: 'Reverse Engineering', description: 'Connect with third-party tools', href: '/electronic-design/reverse-engineering', icon: SquaresPlusIcon },
@@ -72,10 +72,10 @@ const NavLinks = () => {
   const manufactring = [
     { name: 'PCBA', description: 'Get a better understanding of your ', href: '/manufacturing/pcba', icon: ChartPieIcon },
     { name: 'Test Fixture', description: 'Speak directly to your customers', href: '/manufacturing/test-fixture', icon: CursorArrowRaysIcon },
-    { name: 'Box Build', description: 'Your customers’ data will be safe and secure', href: '/manufacturing/box-build', icon: FingerPrintIcon },
+    { name: 'Box Build', description: 'Your customers’ data will be safe ', href: '/manufacturing/box-build', icon: FingerPrintIcon },
   ]
   const resources = [
-    { name: 'Blogs', description: 'Get a better understanding of your traffic', href: '/resources/blogs', icon: ChartPieIcon },
+    { name: 'Blogs', description: 'Get a better understanding of your ', href: '/resources/blogs', icon: ChartPieIcon },
     // { name: 'News', description: 'Speak directly to your customers', href: '/resources/news', icon: CursorArrowRaysIcon },
   ]
 
@@ -88,16 +88,27 @@ const NavLinks = () => {
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
-  const handleMouseEnter = () => {
-    const timer = setTimeout(() => setOpenMenu(true), 300);
-    setDelayTimer(timer);
+  // const handleMouseEnter = () => {
+  //   const timer = setTimeout(() => setOpenMenu(true), 300);
+  //   setDelayTimer(timer);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   clearTimeout(delayTimer);
+  //   setOpenMenu(false);
+  //   setOpenSubmenu(null);
+  // };
+
+  const handleMouseEnter = (index) => {
+    if (engineering[index].children) {
+      setOpenSubmenu(index);
+    }
   };
 
   const handleMouseLeave = () => {
-    clearTimeout(delayTimer);
-    setOpenMenu(false);
     setOpenSubmenu(null);
   };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -118,6 +129,7 @@ const NavLinks = () => {
     setMobileMenuOpen(false); // Close the mobile menu when a link is clicked
   };
 
+
   return (
     <>
       <Head>
@@ -125,28 +137,40 @@ const NavLinks = () => {
       </Head>
       <div
         className={`top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-          ? `fixed bg-white border-b text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`
+          ? `fixed bg-white  border-b text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`
           : "absolute bg-transparent text-white border-none"
           }`}
       >
         <div className="mx-auto flex items-center justify-between gap-[200px] md:px-20 px-10 py-5">
-          <div className="flex justify-between w-full">
-            <Link href="/" className=" ">
-              {scrolled ?
-                <img src="/Logo/SunKey-Design-Systems-Logo.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
-                :
-                <img src="/Logo/SunKey-Design-Systems-Logo-White.png" alt="logo" className="w-full h-14 xl:w-full xl:h-full 2xl:h-12 object-cover" />
-              }
+          <div className="flex justify-between items-center w-full ">
+            <Link href="/" className="flex-shrink-0">
+              {scrolled ? (
+                <div className="w-20 sm:w-28 md:w-32 lg:w-40 h-auto">
+                  <img
+                    src="/Logo/SunKey-Design-Systems-Logo.png"
+                    alt="logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ) : (
+                <div className="w-20 sm:w-28 md:w-32 lg:w-40 h-auto">
+                  <img
+                    src="/Logo/SunKey-Design-Systems-Logo-White.png"
+                    alt="logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
             </Link>
 
             <div className="flex lg:hidden">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 "
+                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5  transition-colors"
               >
                 <span className="sr-only">Open main menu</span>
-                <Bars3Icon aria-hidden="true" className="size-6" />
+                <Bars3Icon aria-hidden="true" className="h-6 w-6 sm:h-8 sm:w-8" />
               </button>
             </div>
           </div>
@@ -158,15 +182,17 @@ const NavLinks = () => {
                     <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                        <div className="p-4">{about.map((item) => (
+                        <div className="p-2">{about.map((item) => (
                           <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
                             <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
                               <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
                             </div>
-                            <div className="flex-auto">
-                              <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}<span className="absolute inset-0" /></Link>
-                              <p className="mt-1 text-gray-600">{item.description}</p>
-                            </div>
+                            <NavigationMenuLink asChild>
+                              <div className="flex-auto">
+                                <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{item.name}<span className="absolute inset-0" /></Link>
+                                <p className="mt-1 text-gray-600">{item.description}</p>
+                              </div>
+                            </NavigationMenuLink>
                           </div>))}
                         </div>
                       </div>
@@ -174,17 +200,86 @@ const NavLinks = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <nav className="relative">
+
+
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Engineering Design Services</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="z-10 w-screen max-w-sm rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                        <div className="p-2">
+                          {engineering.map((item, index) => (
+                            <div
+                              key={item.name}
+                              className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100"
+                              onMouseEnter={() => handleMouseEnter(index)}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                              <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+                                <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600 transition-colors duration-200" />
+                              </div>
+                              <NavigationMenuLink asChild>
+                                <div className="flex-auto flex items-center justify-between">
+                                  <div>
+                                    <Link href={item.href || "#"} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
+                                      {item.name}
+                                      <span className="absolute inset-0" />
+                                    </Link>
+                                    <p className="mt-1 text-gray-600">{item.description}</p>
+                                  </div>
+                                  {item.children && <ChevronRightIcon className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-2 duration-200" />}
+                                </div>
+                              </NavigationMenuLink>
+                              {item.children && openSubmenu === index && (
+                                <div className="absolute left-[99%] -top-60 2xl:-top-40 ml-2 w-96 bg-white shadow-lg rounded-xl p-2 ring-1 ring-gray-900/5 z-50">
+                                  {item.children.map((child) => (
+                                    <div key={child.name} className="group/submenu relative">
+                                      <NavigationMenuLink asChild>
+                                        <Link href={child.href || "#"} className="flex items-center gap-x-6 p-4 rounded-lg text-sm/6 hover:bg-gray-100">
+                                          <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover/submenu:bg-white">
+                                            <child.icon aria-hidden="true" className="size-6 text-gray-600 group-hover/submenu:text-indigo-600 transition-colors duration-200" />
+                                          </div>
+                                          <div className="flex-auto">
+                                            <div className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">{child.name}</div>
+                                            <p className="mt-1 text-gray-600">{child.description}</p>
+                                          </div>
+                                        </Link>
+                                      </NavigationMenuLink>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+
+
+              {/* <nav className="relative">
                 <ul className="flex gap-4">
-                  <li className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <button className="inline-flex gap-1 h-9 w-max items-center justify-center rounded-md 2xl:px-5 px-3 2xl:text-[1rem] text-sm font-medium  ">
+                  <li
+                    className="relative"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <button className="inline-flex gap-1 h-9 w-max items-center justify-center rounded-md 2xl:px-5 px-3 2xl:text-[1rem] text-sm font-medium">
                       Engineering Design Services
                       <ChevronUpIcon className={`w-3 h-3 transition-transform duration-500 ${openMenu ? "rotate-180" : "rotate-0"}`} />
                     </button>
                     {openMenu && (
-                      <div className="absolute left-0 top-8 mt-2 w-96 bg-white shadow-lg rounded-xl p-4 ">
+                      <div className="absolute left-0 top-8 mt-2 w-96 bg-white shadow-lg rounded-xl p-4">
                         {engineering.map((item, index) => (
-                          <div key={item.name} className="relative" onMouseEnter={() => item.children && setOpenSubmenu(index)} onMouseLeave={() => setOpenSubmenu(null)}>
+                          <div
+                            key={item.name}
+                            className="relative"
+                            onMouseEnter={() => item.children && setOpenSubmenu(index)}
+                            onMouseLeave={() => setOpenSubmenu(null)}
+                          >
                             <Link href={item.href || "#"}>
                               <div className="group flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-gray-100">
                                 <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
@@ -200,7 +295,7 @@ const NavLinks = () => {
                             {item.children && openSubmenu === index && (
                               <div className="absolute left-[99%] -top-20 ml-2 w-96 bg-white shadow-lg rounded-xl p-4 ring-1 ring-gray-900/5">
                                 {item.children.map((child) => (
-                                  <Link Link href={child.href || "#"} key={child.name}>
+                                  <Link href={child.href || "#"} key={child.name}>
                                     <div className="flex group items-center gap-x-6 p-4 rounded-lg text-sm hover:bg-gray-100">
                                       <div className="flex size-11 items-center justify-center flex-none bg-gray-100 rounded-lg group-hover:bg-white">
                                         {child.icon && <child.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />}
@@ -220,26 +315,30 @@ const NavLinks = () => {
                     )}
                   </li>
                 </ul>
-              </nav>
+              </nav> */}
+
+
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Manufacturing Service</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                        <div className="p-4">
+                        <div className="p-2">
                           {manufactring.map((item) => (
                             <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
                               <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
                                 <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
                               </div>
-                              <div className="flex-auto">
-                                <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
-                                  {item.name}
-                                  <span className="absolute inset-0" />
-                                </Link>
-                                <p className="mt-1 text-gray-600">{item.description}</p>
-                              </div>
+                              <NavigationMenuLink asChild>
+                                <div className="flex-auto">
+                                  <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
+                                    {item.name}
+                                    <span className="absolute inset-0" />
+                                  </Link>
+                                  <p className="mt-1 text-gray-600">{item.description}</p>
+                                </div>
+                              </NavigationMenuLink>
                             </div>
                           ))}
                         </div>
@@ -265,19 +364,21 @@ const NavLinks = () => {
                     <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                        <div className="p-4">
+                        <div className="p-2">
                           {resources.map((item) => (
                             <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
                               <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
                                 <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
                               </div>
-                              <div className="flex-auto">
-                                <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
-                                  {item.name}
-                                  <span className="absolute inset-0" />
-                                </Link>
-                                <p className="mt-1 text-gray-600">{item.description}</p>
-                              </div>
+                              <NavigationMenuLink asChild>
+                                <div className="flex-auto">
+                                  <Link href={item.href} className="block font-semibold text-gray-900 2xl:text-[1rem] text-sm">
+                                    {item.name}
+                                    <span className="absolute inset-0" />
+                                  </Link>
+                                  <p className="mt-1 text-gray-600">{item.description}</p>
+                                </div>
+                              </NavigationMenuLink>
                             </div>
                           ))}
                         </div>

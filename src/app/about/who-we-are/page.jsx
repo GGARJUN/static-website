@@ -34,7 +34,7 @@ const [index, setIndex] = useState(0);
         <motion.div className="flex w-full h-full" >
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative ">
-              <img loading="lazy" src={banner.img} alt={banner.title} className="w-full h-full fixed -z-50 object-cover" />
+              <img loading="lazy" src={banner.img} alt={banner.title} className="w-full h-full fixed -z-40 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
               <div className="absolute inset-0 flex flex-col  justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6 duration-500">
