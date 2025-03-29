@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const ManufacturingServices = () => {
   const banners = [
-    { link: "/manufacturing/pcba", img: "/Homepage/PCBA (Printed Circuit Board Assembly).jpg", title: "PCBA (Printed Circuit Board Assembly)", subtitle: "Our PCBA services ensure high-quality, reliable circuit boards for your electronic products, with precision and efficiency.", dtitle: "Engineering" },
-    { link: "/manufacturing/test-fixture", img: "/Homepage/Test Fixtures.jpg", title: "Test Fixtures", subtitle: "We design and build custom test fixtures to ensure your products meet the highest standards of quality and reliability.", dtitle: "Electronic" },
-    { link: "/manufacturing/box-build", img: "/Homepage/Box Build.jpg", title: "Box Build", subtitle: "From components to finished products, our box build services deliver complete assembly solutions for your manufacturing needs.", dtitle: "Manufacturing" },
+    { link: "/manufacturing/pcba", img: "/pcba.jpg", title: "PCBA (Printed Circuit Board Assembly)", subtitle: "Our PCBA services ensure high-quality, reliable circuit boards for your electronic products, with precision and efficiency.", dtitle: "Engineering" },
+    { link: "/manufacturing/test-fixture", img: "/test-fixtures.jpg", title: "Test Fixtures", subtitle: "We design and build custom test fixtures to ensure your products meet the highest standards of quality and reliability.", dtitle: "Electronic" },
+    { link: "/manufacturing/box-build", img: "/box-build.jpg", title: "Box Build", subtitle: "From components to finished products, our box build services deliver complete assembly solutions for your manufacturing needs.", dtitle: "Manufacturing" },
   ];
   const sectionVariants = { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", staggerChildren: 0.3 } } };
   const [index, setIndex] = useState(0);

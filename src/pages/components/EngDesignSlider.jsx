@@ -4,10 +4,10 @@ import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const images = [
-"/Homepage/Hardware Design.jpg",
-"/Homepage/Firmware Development.jpg",
-"/Homepage/Software Solutions.jpg",
-"/Homepage/Mechanical Engineering.jpg",
+"/hardware-design.jpg",
+"/firmware-development.jpg",
+"/software-solutions.jpg",
+"/mechanical-engineering.jpg",
 ];
 
 const EngDesignSlider = () => {

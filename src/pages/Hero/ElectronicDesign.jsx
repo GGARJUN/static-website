@@ -12,12 +12,12 @@ const ElectronicDesign = () => {
   const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.25, delayChildren: 0.4 } } };
 
   const features = [
-    {link:"/electronic-design/pcb-design-service", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12108/12108718.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Design Services", description: "Creating PCBs that are both functional and efficient operation.", image: "/Homepage/PCB Design Services.jpg" },
-    {link:"/electronic-design/pcb-layout", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/365/365773.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Layout", description: "Ensuring optimal component placement for better performance.", image: "/Homepage/PCB Layout.jpg" },
+    {link:"/electronic-design/pcb-design-service", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12108/12108718.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Design Services", description: "Creating PCBs that are both functional and efficient operation.", image: "/pcb-design-services.jpg" },
+    {link:"/electronic-design/pcb-layout", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/365/365773.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "PCB Layout", description: "Ensuring optimal component placement for better performance.", image: "/pcb-layout.jpg" },
   ];
   const features2 = [
-    {link:"/electronic-design/analysis", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/3321/3321721.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "SI/PI Analysis", description: "Conducting signal integrity and power integrity analyses to ensure reliable operation.", image: "/Homepage/SIPI Analysis.jpg" },
-    {link:"/electronic-design/reverse-engineering", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12539/12539913.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Reverse Engineering", description: "Analyzing existing products to improve or replicate them.", image: "/Homepage/Reverse Engineering.jpg" },
+    {link:"/electronic-design/analysis", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/3321/3321721.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "SI/PI Analysis", description: "Conducting signal integrity and power integrity analyses to ensure reliable operation.", image: "/sipi-analysis.jpg" },
+    {link:"/electronic-design/reverse-engineering", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/12539/12539913.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Reverse Engineering", description: "Analyzing existing products to improve or replicate them.", image: "/reverse-engineering.jpg" },
   ];
 
   return (

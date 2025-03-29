@@ -21,10 +21,10 @@ const glowVariants = {
 };
 
 const features = [
-  { link: "/", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/17378/17378291.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expertise", description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.", image: "/Homepage/Expertise.jpg" },
-  { link: "/", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/1087/1087815.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Innovation", description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.", image: "/Homepage/Innovation.jpg" },
-  { link: "/", icon: <UserCheck className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/4658/4658169.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Customer-Centric", description: "Tailored solutions and exceptional support designed around your unique needs.", image: "/Homepage/Customer-Centric.jpg" },
-  { link: "/", icon: <Shield className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/18716/18716482.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Quality Assurance", description: "Uncompromising standards ensure excellence in every project we deliver.", image: "/Homepage/Quality Assurance.jpg" }
+  { link: "/", icon: <Users className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/17378/17378291.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Expertise", description: "Our seasoned professionals excel in engineering, electronics, manufacturing, and IoT solutions.", image: "/expertise.jpg" },
+  { link: "/", icon: <Lightbulb className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/1087/1087815.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Innovation", description: "Cutting-edge tech drives our solutions, keeping you at the forefront of progress.", image: "/innovation.jpg" },
+  { link: "/", icon: <UserCheck className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/4658/4658169.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Customer-Centric", description: "Tailored solutions and exceptional support designed around your unique needs.", image: "/customer-centric.jpg" },
+  { link: "/", icon: <Shield className="h-12 w-12 text-blue-500" />, img: "https://cdn-icons-png.freepik.com/256/18716/18716482.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Quality Assurance", description: "Uncompromising standards ensure excellence in every project we deliver.", image: "/quality-assurance.jpg" }
 ];
 
 const WhyWorkWithUs = () => (

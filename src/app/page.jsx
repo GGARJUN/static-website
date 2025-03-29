@@ -21,8 +21,6 @@ export default function Home() {
         <ElectronicDesign />
         <ManufacturingServices />
         <InternetOfThings />
-        {/* <Testimonials /> */}
-        {/* <CaseStudies /> */}
       </div>
   );
 }

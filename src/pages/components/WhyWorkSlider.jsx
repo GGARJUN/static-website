@@ -4,10 +4,10 @@ import { ArrowLeft, ArrowRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const images = [
-"/Homepage/Expertise.jpg",
-"/Homepage/Innovation.jpg",
-"/Homepage/Customer-Centric.jpg",
-"/Homepage/Quality Assurance.jpg",
+"/expertise.jpg",
+"/innovation.jpg",
+"/customer-centric.jpg",
+"/quality-assurance.jpg",
 ];
 
 const WhyWorkSlider = () => {

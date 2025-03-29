@@ -11,7 +11,7 @@ const InternetOfThings = () => {
       img: "/industri.png", name: "Industrial IoT", description: "Implementing IoT technologies to enhance industrial efficiency and productivity.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-1",
       background: (
         <div className="absolute right-0 origin-top rounded-md border transition-all duration-300 ease-out  group-hover:scale-105 w-full h-full">
-          <img loading="lazy" src="/Homepage/Industrial IOT.jpg" alt="SunKey" className="w-full h-full object-cover" />
+          <img loading="lazy" src="/industrial-iot.jpg" alt="SunKey" className="w-full h-full object-cover" />
         </div>
       ),
     },
@@ -19,7 +19,7 @@ const InternetOfThings = () => {
       img: "/home.png", name: "Smart Homes IoT", description: "Creating smart home solutions that make living easier and more convenient.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-2",
       background: (
         <div className="absolute right-0 origin-top rounded-md border transition-all duration-300 ease-out  group-hover:scale-105 w-full h-full">
-          <img loading="lazy" src="/Homepage/Smart Home IOT.jpg" alt="SunKey" className="w-full h-full object-cover" />
+          <img loading="lazy" src="/smart-home-iot.jpg" alt="SunKey" className="w-full h-full object-cover" />
         </div>
       ),
     },
@@ -27,7 +27,7 @@ const InternetOfThings = () => {
       img: "/light.png", name: "Smart Lighting IoT", description: "Developing intelligent lighting systems for energy efficiency and ambiance.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-2",
       background: (
         <div className="absolute right-0 origin-top rounded-md border transition-all duration-300 ease-out  group-hover:scale-105 w-full h-full">
-          <img loading="lazy" src="/Homepage/Smart Lightning IOT.jpg" alt="SunKey" className="w-full h-full object-cover" />
+          <img loading="lazy" src="/smart-lightning-iot.jpg" alt="SunKey" className="w-full h-full object-cover" />
         </div>
       ),
     },
@@ -35,7 +35,7 @@ const InternetOfThings = () => {
       img: "/level.png", name: "Level Monitoring", description: "Providing IoT-based level monitoring solutions for various applications.", className: "col-span-3 lg:col-span-1", href: "/iot", cta: "Learn more",
       background: (
         <div className="absolute right-0 origin-top  rounded-md border transition-all duration-300 ease-out group-hover:scale-105 h-full">
-          <img loading="lazy" src="/Homepage/Industrial IOT.jpg" alt="SunKey" className="h-full w-full object-cover" />
+          <img loading="lazy" src="/industrial-iot.jpg" alt="SunKey" className="h-full w-full object-cover" />
         </div>
       ),
     },

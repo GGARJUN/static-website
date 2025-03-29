@@ -18,7 +18,7 @@ const banners = [
         nextSection.scrollIntoView({ behavior: "smooth" });
       }
     },
-    img: "/Homepage/Engineering Design Service.jpg",
+    img: "/engineering-design-service.jpg",
     title: "Innovative Engineering",
     subtitle: "Solutions for a Smarter Future",
     dtitle: "Engineering",
@@ -31,7 +31,7 @@ const banners = [
         nextSection.scrollIntoView({ behavior: "smooth" });
       }
     },
-    img: "/Homepage/Electronic Design.jpg",
+    img: "/electronic-design.jpg",
     title: "Cutting-Edge Technology",
     subtitle: "Empowering the Next Generation",
     dtitle: "Electronic",
@@ -44,7 +44,7 @@ const banners = [
         nextSection.scrollIntoView({ behavior: "smooth" });
       }
     },
-    img: "/Homepage/Manufacturing - Banner.jpg",
+    img: "/manufacturing-banner.jpg",
     title: "Sustainable Solutions",
     subtitle: "Building a Greener Tomorrow",
     dtitle: "Manufacturing",
@@ -57,7 +57,7 @@ const banners = [
         nextSection.scrollIntoView({ behavior: "smooth" });
       }
     },
-    img: "/Homepage/IOT - Banner.jpg",
+    img: "/iot-banner.jpg",
     title: "Smart Automation",
     subtitle: "Enhancing Efficiency & Productivity",
     dtitle: "Internet of Things",
@@ -65,12 +65,7 @@ const banners = [
   }
 ];
 
-let Engineering = () => {
-  const nextSection = document.getElementById("Engineering");
-  if (nextSection) {
-    nextSection.scrollIntoView({ behavior: "smooth" });
-  }
-};
+
 
 
 const Banner = () => {
@@ -107,7 +102,7 @@ const Banner = () => {
         >
           {banners.map((banner, i) => (
             <div key={i} className="w-full flex-shrink-0 h-full relative">
-              <img src={banner.img} alt={banner.title} className="w-full h-full object-cover" loading="lazy" />
+              <img src={banner.img} alt={banner.title} className="w-full h-full object-cover"  />
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-start 2xl:px-40 md:px-20 px-10 text-white">
                 {i === 0 ? (

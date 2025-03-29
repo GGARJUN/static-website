@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 const images = [
 
-  "/Homepage/Engineering Design Service.jpg",
-  "/Homepage/Electronic Design.jpg",
-  "/Homepage/Manufacturing.jpg",
-  "/Homepage/IOT.jpg",
+  "/engineering-design-service.jpg",
+  "/electronic-design.jpg",
+  "/manufacturing.jpg",
+  "/iot.jpg",
 ];
 
 const IntoSlider = () => {
