@@ -26,7 +26,7 @@ const ManufacturingServices = () => {
 
   return (
     <section id="Manufacturing" className="py-16 md:py-32 shadow-2xl bg-gradient-to-r from-pink-300/10 via-purple-200 to-indigo-400/10 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="md:flex justify-between items-center">
           <motion.h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-left mb-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>Manufacturing Services</motion.h2>
           <Link href="/">

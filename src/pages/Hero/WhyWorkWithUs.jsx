@@ -31,7 +31,7 @@ const WhyWorkWithUs = () => (
   <section style={{ backgroundImage: "url('https://img.freepik.com/free-photo/person-using-ar-technology-their-daily-occupation_23-2151137351.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid')" }} className="py-16 md:py-32 bg-cover overflow-hidden relative">
     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
     <motion.div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 to-transparent" variants={glowVariants} animate="animate" />
-    <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <motion.div initial={{ opacity: 0, y: -60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease: "easeOut" }} className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-left md:text-center mb-4">Why Work With Us</h2>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-left md:text-center">Sunkey Design Systems stands out as a partner of choice for businesses seeking reliable, high-quality solutions</motion.p>

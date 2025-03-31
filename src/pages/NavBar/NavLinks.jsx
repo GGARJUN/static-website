@@ -100,6 +100,7 @@ const NavLinks = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
+  const timeoutRef = useRef(null);
 
   // const handleMouseEnter = () => {
   //   const timer = setTimeout(() => setOpenMenu(true), 300);
@@ -112,15 +113,41 @@ const NavLinks = () => {
   //   setOpenSubmenu(null);
   // };
 
+  // const handleMouseEnter = (index) => {
+  //   if (engineering[index].children) {
+  //     setOpenSubmenu(index);
+  //   }
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setOpenSubmenu(null);
+  // };
+
   const handleMouseEnter = (index) => {
+    // Clear any existing timeout to prevent premature closing
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     if (engineering[index].children) {
       setOpenSubmenu(index);
     }
   };
 
   const handleMouseLeave = () => {
-    setOpenSubmenu(null);
+    // Set a 2-second delay before closing the submenu
+    timeoutRef.current = setTimeout(() => {
+      setOpenSubmenu(null);
+    }, 1000); // 2000ms = 2 seconds
   };
+
+  // Cleanup timeout on component unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
 
   useEffect(() => {
@@ -154,7 +181,7 @@ const NavLinks = () => {
           : "absolute bg-transparent text-white border-none"
           }`}
       >
-        <div className="mx-auto flex items-center justify-between gap-[200px] md:px-20 px-10 lg:py-5 py-6">
+        <div className="mx-auto flex items-center justify-between  md:px-20 px-10 lg:py-5 py-6">
           <div className="flex justify-between items-center w-full ">
             <Link href="/" className="flex-shrink-0">
               {scrolled ? (
@@ -176,7 +203,7 @@ const NavLinks = () => {
               )}
             </Link>
 
-            <div className="flex lg:hidden">
+            <div className="flex xl:hidden">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
@@ -187,7 +214,7 @@ const NavLinks = () => {
               </button>
             </div>
           </div>
-          <div className="hidden lg:flex lg:gap-10 items-center">
+          <div className="hidden xl:flex lg:gap-10 items-center">
             <div className="flex justify-center items-center">
               <NavigationMenu>
                 <NavigationMenuList>
@@ -245,7 +272,11 @@ const NavLinks = () => {
                                 </div>
                               </NavigationMenuLink>
                               {item.children && openSubmenu === index && (
-                                <div className="absolute left-[99%] -top-60 2xl:-top-40 ml-2 w-96 bg-white shadow-lg rounded-xl p-2 ring-1 ring-gray-900/5 z-50">
+                                <div
+                                  className="absolute left-[99%] -top-60 2xl:-top-40 ml-2 w-96 bg-white shadow-lg rounded-xl p-2 ring-1 ring-gray-900/5 z-50"
+                                  onMouseEnter={() => clearTimeout(timeoutRef.current)} // Keep submenu open when hovering over it
+                                  onMouseLeave={handleMouseLeave} // Start the 2-second delay when leaving submenu
+                                >
                                   {item.children.map((child) => (
                                     <div key={child.name} className="group/submenu relative">
                                       <NavigationMenuLink asChild>
@@ -424,12 +455,12 @@ const NavLinks = () => {
               </NavigationMenu>
             </div>
           </div>
-          <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden z-50">
+          <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="xl:hidden z-50">
             <div className="fixed inset-0 z-50" />
-            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:ring-1 sm:max-w-sm sm:ring-gray-900/10">
+            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white md:px-20 px-10 px-6 py-6 sm:ring-1  sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <Link href="/" className="">
-                  <img src="/Logo/blacklogo.png" alt="logo" className="h-8" />
+                  <img src="/Logo/blacklogo.png" alt="logo" className="h-12" />
                 </Link>
                 <button
                   type="button"

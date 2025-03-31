@@ -1,12 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Head from "next/head";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const Footer = () => {
@@ -15,33 +12,33 @@ const Footer = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setCanonicalUrl(`https://electricalstaticwebsite.netlify.app${router.asPath}`);
+      setCanonicalUrl(`https://www.sunkeydesignsystems.com/${router.asPath}`);
     }
   }, [router.asPath]);
 
   const navigation = {
 
     "Engineering Design Services": [
-      { name: "Hardware", href: "/engineering_design_services/hardware" },
-      { name: "Firmware", href: "/engineering_design_services/firmware" },
-      { name: "Software", href: "/engineering_design_services/software" },
-      { name: "Mechanical", href: "/engineering_design_services/mechanical" },
+      { name: "Hardware", href: "/engineering-design-services/hardware" },
+      { name: "Firmware", href: "/engineering-design-services/firmware" },
+      { name: "Software", href: "/engineering-design-services/software" },
+      { name: "Mechanical", href: "/engineering-design-services/mechanical" },
     ],
     "Electronic Design": [
-      { name: "PCB Design Service", href: "/electronic_design/pcb_design_service" },
-      { name: "PCB Layout", href: "/electronic_design/pcb_layout" },
-      { name: "SI/PI Analysis", href: "/electronic_design/analysis" },
-      { name: "Reverse Engineering", href: "/electronic_design/reverse_engineering" },
-      { name: 'Design Modification Service', href: '/electronic_design/design_modification_service' },
-      { name: 'Design for Manufacturability', href: '/electronic_design/design_for_manufacturability' },
+      { name: "PCB Design Service", href: "/electronic-design/pcb-design-service" },
+      { name: "PCB Layout", href: "/electronic-design/pcb-layout" },
+      { name: "SI/PI Analysis", href: "/electronic-design/analysis" },
+      { name: "Reverse Engineering", href: "/electronic-design/reverse-engineering" },
+      { name: 'Design Modification Service', href: '/electronic-design/design-modification-service' },
+      { name: 'Design for Manufacturability', href: '/electronic-design/design-for-manufacturability' },
     ],
     "Manufacturing Services": [
       { name: "PCBA", href: "/manufacturing/pcba" },
-      { name: "Test Fixture", href: "/manufacturing/test_fixture" },
-      { name: "Box Build", href: "/manufacturing/box_build" },
+      { name: "Test Fixture", href: "/manufacturing/test-fixture" },
+      { name: "Box Build", href: "/manufacturing/box-build" },
     ],
     "About Us": [
-      { name: "Who we are", href: "/about/who_we_are" },
+      { name: "Who we are", href: "/about/who-we-are" },
       // { name: "Careers", href: "/about/careers" },
       // { name: "Partners", href: "/about/partners" },
     ],
@@ -57,7 +54,7 @@ const Footer = () => {
         <link rel="canonical" href={canonicalUrl} />
       </Head>
       <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-8 sm:pt-14 pb-6 sm:pb-10 relative">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-12 lg:gap-20 w-full">
             <div className="lg:col-span-4 col-span-1 flex flex-col gap-6 sm:gap-8 mb-6 sm:mb-0">
               <Link href={"/"}>
