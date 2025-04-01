@@ -181,7 +181,7 @@ const NavLinks = () => {
           : "absolute bg-transparent text-white border-none"
           }`}
       >
-        <div className="mx-auto flex items-center justify-between  md:px-20 px-10 lg:py-5 py-6">
+        <div className="mx-auto flex items-center justify-between  xl:px-20 px-10 lg:py-5 py-6">
           <div className="flex justify-between items-center w-full ">
             <Link href="/" className="flex-shrink-0">
               {scrolled ? (
@@ -203,7 +203,7 @@ const NavLinks = () => {
               )}
             </Link>
 
-            <div className="flex xl:hidden">
+            <div className="flex lg:hidden">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
@@ -214,7 +214,7 @@ const NavLinks = () => {
               </button>
             </div>
           </div>
-          <div className="hidden xl:flex lg:gap-10 items-center">
+          <div className="hidden lg:flex lg:gap-10 items-center">
             <div className="flex justify-center items-center">
               <NavigationMenu>
                 <NavigationMenuList>
@@ -223,7 +223,7 @@ const NavLinks = () => {
                     <NavigationMenuContent>
                       <div className="z-10 w-screen max-w-sm overflow-hidden rounded-xl ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
                         <div className="p-2">{about.map((item) => (
-                          <div key={item.name} className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
+                          <div key={item.name} className="group relative flex items-center gap-x-3 rounded-lg p-4 text-sm/6 hover:bg-gray-100">
                             <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
                               <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
                             </div>
@@ -455,9 +455,9 @@ const NavLinks = () => {
               </NavigationMenu>
             </div>
           </div>
-          <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="xl:hidden z-50">
+          <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden z-50">
             <div className="fixed inset-0 z-50" />
-            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white md:px-20 px-10 px-6 py-6 sm:ring-1  sm:ring-gray-900/10">
+            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white md:px-20 px-10  py-6 sm:ring-1  sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
                 <Link href="/" className="">
                   <img src="/Logo/blacklogo.png" alt="logo" className="h-12" />
