@@ -1,4 +1,5 @@
 import { client, urlFor } from '@/lib/createClient';
+
 import { groq, PortableText } from 'next-sanity';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,32 +7,31 @@ import React from 'react';
 import { RichText } from './Components/RichText';
 import { format } from 'date-fns';
 import { FaArrowRight, FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
-import BlogBanner from './Components/BlogBanner';
+import NewsBanner from './Components/NewsBanner';
+
 
 // Fetch Single Blog Data
 export const getPostData = async (slug) => {
     const query = groq`
-        *[_type == 'post' && slug.current == "${slug}"]{
+        *[_type == 'news' && slug.current == "${slug}"]{
             "currentSlug": slug.current,
             ...,
             body,
             author->,
-            categories[]->,
-            tags[]->,
+            newsTags[]->,
         }[0]
     `;
     return await client.fetch(query);
 };
 
-// Fetch Related Posts (Matches both categories & tags)
-export const getRelatedPosts = async (categories, tags, slug) => {
-    if (!categories.length && !tags.length) return []; // Avoid fetching if both are empty
+// Fetch Related News Articles (Matching Tags Only)
+export const getRelatedPosts = async (newsTags, slug) => {
+    if (!newsTags.length) return []; // Return empty if no tags are available
 
     const query = groq`
-        *[_type == "post" && slug.current != $slug && (
-            count(categories[@._ref in $categories]) > 0 &&
-            count(tags[@._ref in $tags]) > 0
-        )] | order(publishedAt desc) [0...2] {
+        *[_type == "news" && slug.current != $slug && 
+            count(newsTags[@._ref in $newsTags]) > 0
+        ] | order(publishedAt desc) [0...2] {
             title,
             description,
             "slug": slug.current,
@@ -39,13 +39,14 @@ export const getRelatedPosts = async (categories, tags, slug) => {
         }
     `;
 
-    return await client.fetch(query, { categories, tags, slug });
+    return await client.fetch(query, { newsTags, slug });
 };
+
 
 // Fetch Recent Posts
 export const getRecentPosts = async () => {
     const query = groq`
-        *[_type == 'post'] | order(publishedAt desc) [0...3] {
+        *[_type == 'news'] | order(publishedAt desc) [0...3] {
             title,
             slug,
             mainImage
@@ -54,27 +55,41 @@ export const getRecentPosts = async () => {
     return await client.fetch(query);
 };
 
+// Get All Tags with Post Count
+export const getTagsWithPostCount = async () => {
+    const query = groq`
+        *[_type == "newsTag"]{
+            _id,
+            title,
+            "slug": slug.current,
+            "postCount": count(*[_type == "newsTags" && references(^._id)])
+        } | order(postCount desc)
+    `;
+    return await client.fetch(query);
+};
 
 
-
-export default async function SingleBlogArticle({ params }) {
+export default async function SingleNewsArticle({ params }) {
     const { slug } = await params; // Ensure params is awaited properly
     const post = await getPostData(slug);
-    const categories = post.categories?.map(c => c._id) || [];
-    const tags = post.tags?.map(t => t._id) || [];
-    const relatedPosts = await getRelatedPosts(categories, tags, slug);
+    const newsTags = post.newsTags?.map((t) => t._id) || [];
+    const relatedPosts = await getRelatedPosts(newsTags, slug);
+    console.log(newsTags); // Debugging: Check fetched tags
+
     const recentPosts = await getRecentPosts();
+    // const allTags = await getTagsWithPostCount();
+
 
     return (
         <div className="bg-gray-50 text-gray-900">
-            <BlogBanner />
+            <NewsBanner />
             <div className="container mx-auto py-20 px-10 md:px-0">
 
                 <div className='grid grid-cols-12 gap-10'>
                     {/* Blog Main Content */}
                     <div className=" md:col-span-9 col-span-12    rounded-lg">
                         <div className="flex flex-wrap gap-2 ">
-                            {post?.categories?.map((item, index) => (
+                            {post?.newsTag?.map((item, index) => (
                                 <span key={`${item?._id || index}`} className=" text-blue-600  rounded-full text-xl font-semibold">
                                     {item?.title}
                                 </span>
@@ -122,15 +137,12 @@ export default async function SingleBlogArticle({ params }) {
                             <PortableText value={post?.body} components={RichText} />
                         </div>
                         <div className='border w-full'></div>
-                        <h2 className='my-5 flex items-center gap-3 font-bold text-xl'>TAGS : <span>
-                            <div className="flex flex-wrap gap-2 ">
-                                {post?.tags?.map((item, index) => (
-                                    <span key={`${item?._id || index}`} className="bg-blue-100 text-blue-800 px-3 py-2 rounded-full text-sm font-semibold">
-                                        {item?.title}
-                                    </span>
-                                ))}
-                            </div>
-                        </span></h2>
+                        <h2 className='my-5 flex items-center gap-3 font-bold text-xl'>
+                            TAGS: <span className="bg-blue-100 text-blue-800 px-3 py-2 rounded-full text-sm font-semibold">
+                                {post?.newsTags?.map(tag => tag.title).join(', ')}
+                            </span>
+                        </h2>
+
                         <div className='border w-full'></div>
                         <div className='flex justify-end  items-center gap-4 mt-5'>
                             <h2>Share</h2>
@@ -159,7 +171,7 @@ export default async function SingleBlogArticle({ params }) {
                                                 className="w-20 h-20 rounded-lg object-cover"
                                             />
                                             <div>
-                                                <p className="text-lg font-medium text-blue-800">{item.title}</p>
+                                                <p className="text-lg font-medium text-blue-800 line-clamp-1">{item.title}</p>
                                                 <div className="flex items-center mt-4 space-x-6 text-gray-600">
                                                     <p className="text-sm">{post?._createdAt && format(new Date(post._createdAt), "MMMM dd, yyyy")}</p>
 
@@ -182,16 +194,35 @@ export default async function SingleBlogArticle({ params }) {
                                     <button className='flex items-center gap-3 mt-5 bg-blue-600 px-6 py-3 font-semibold text-white rounded-lg group'>Learn More <FaArrowRight className='group-hover:translate-x-1 transition-all duration-300' /></button>
                                 </div>
                             </div>
+                            {/* All Tags */}
+                            {/* <h2 className="text-2xl font-semibold text-blue-900 mt-14">Tags</h2>
+                            <div className="flex flex-wrap gap-x-3 gap-y-10 mt-7">
+                                {allTags.length > 0 ? (
+                                    allTags.map((tag, index) => (
+                                        <Link key={tag._id || index} href={`/tags/${tag.slug}`} passHref className='hover:scale-105'>
+                                            <span className="cursor-pointer bg-blue-100 border border-blue-600 text-gray-900 px-5 py-3 rounded-lg text-md font-semibold hover:bg-blue-200 transition ">
+                                                {tag.title} ({tag.postCount})
+                                            </span>
+                                        </Link>
+                                    ))
+                                ) : (
+                                    <p className="text-gray-500">No tags found.</p>
+                                )}
+                            </div> */}
                         </div>
                     </div>
                 </div>
 
-                <div className='mt-10'>
-                        <h2 className="text-2xl font-semibold text-blue-900 mb-4">Related Blog Posts</h2>
-                        <div className="grid md:grid-cols-3 gap-8 ">
+
+
+
+
+                    <div className='mt-10'>
+                        <h2 className="text-2xl font-semibold text-blue-900 mb-4">Related News Posts</h2>
+                        <div className="grid md:grid-cols-3 gap-8">
                             {relatedPosts.length > 0 ? (
                                 relatedPosts.map((item) => (
-                                    <Link key={item.slug} href={`/blog/${item.slug}`} className="block group border rounded-2xl shadow-xl">
+                                    <Link key={item.slug} href={`/news/${item.slug}`} className="block group border rounded-2xl shadow-xl">
                                             <Image
                                                 src={item.mainImage} // Ensure `mainImage` is correctly accessed 
                                                 alt={item.title}
@@ -207,6 +238,9 @@ export default async function SingleBlogArticle({ params }) {
                             )}
                         </div>
                     </div>
+
+
+
             </div>
         </div>
     );

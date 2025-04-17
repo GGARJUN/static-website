@@ -89,7 +89,7 @@ const NavLinks = () => {
   ]
   const resources = [
     { name: 'Blogs', description: 'Get a better  ', href: '/resources/blogs', icon: NewspaperIcon },
-    // { name: 'News', description: 'Speak directly to your customers', href: '/resources/news', icon: CursorArrowRaysIcon },
+    { name: 'Case Study', description: 'Speak directly ', href: '/resources/news', icon: CursorArrowRaysIcon },
   ]
 
 

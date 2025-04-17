@@ -8,7 +8,7 @@ const InternetOfThings = () => {
 
   const features = [
     {
-      img: "/industri.png", name: "Industrial IoT", description: "Implementing IoT technologies to enhance industrial efficiency and productivity.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-1",
+      img: "https://cdn-icons-png.freepik.com/256/18706/18706183.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", name: "Industrial IoT", description: "Implementing IoT technologies to enhance industrial efficiency and productivity.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-1",
       background: (
         <div className="absolute right-0 origin-top rounded-md border transition-all duration-300 ease-out  group-hover:scale-105 w-full h-full">
           <img loading="lazy" src="/industrial-iot.jpg" alt="SunKey" className="w-full h-full object-cover" />
@@ -16,7 +16,7 @@ const InternetOfThings = () => {
       ),
     },
     {
-      img: "/home.png", name: "Smart Homes IoT", description: "Creating smart home solutions that make living easier and more convenient.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-2",
+      img: "https://cdn-icons-png.freepik.com/256/3321/3321394.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", name: "Smart Homes IoT", description: "Creating smart home solutions that make living easier and more convenient.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-2",
       background: (
         <div className="absolute right-0 origin-top rounded-md border transition-all duration-300 ease-out  group-hover:scale-105 w-full h-full">
           <img loading="lazy" src="/smart-home-iot.jpg" alt="SunKey" className="w-full h-full object-cover" />
@@ -24,7 +24,7 @@ const InternetOfThings = () => {
       ),
     },
     {
-      img: "/light.png", name: "Smart Lighting IoT", description: "Developing intelligent lighting systems for energy efficiency and ambiance.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-2",
+      img: "https://cdn-icons-png.freepik.com/256/3869/3869887.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", name: "Smart Lighting IoT", description: "Developing intelligent lighting systems for energy efficiency and ambiance.", href: "/iot", cta: "Learn more", className: "col-span-3 lg:col-span-2",
       background: (
         <div className="absolute right-0 origin-top rounded-md border transition-all duration-300 ease-out  group-hover:scale-105 w-full h-full">
           <img loading="lazy" src="/smart-lightning-iot.jpg" alt="SunKey" className="w-full h-full object-cover" />
@@ -32,7 +32,7 @@ const InternetOfThings = () => {
       ),
     },
     {
-      img: "/level.png", name: "Level Monitoring", description: "Providing IoT-based level monitoring solutions for various applications.", className: "col-span-3 lg:col-span-1", href: "/iot", cta: "Learn more",
+      img: "https://cdn-icons-png.freepik.com/256/13668/13668031.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", name: "Level Monitoring", description: "Providing IoT-based level monitoring solutions for various applications.", className: "col-span-3 lg:col-span-1", href: "/iot", cta: "Learn more",
       background: (
         <div className="absolute right-0 origin-top  rounded-md border transition-all duration-300 ease-out group-hover:scale-105 h-full">
           <img loading="lazy" src="/industrial-iot.jpg" alt="SunKey" className="h-full w-full object-cover" />

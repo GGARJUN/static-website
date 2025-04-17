@@ -10,7 +10,7 @@ const FormPage = dynamic(() => import("./Components/FormPage"));
 
 const ContactUs = () => {
   const banners = [
-    { img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Who We Are", },
+    { img: "https://img.freepik.com/free-photo/colleagues-working-project-discussing-details_114579-2817.jpg?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid", title: "Get in Touch", },
   ];
   return (
     <div className="bg-gray-50">
@@ -22,7 +22,7 @@ const ContactUs = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90"></div>
               <div className="absolute inset-0 flex flex-col  justify-center items-center 2xl:px-40 md:px-20 px-10 text-white">
                 <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-medium mb-6 duration-500">
-                  Get in Touch
+                  {banner.title}
                 </h1>
                 <p className="max-w-lg text-lg text-center">Have any questions? Reach out to us from our contact form and we will get back to you shortly.</p>
               </div>

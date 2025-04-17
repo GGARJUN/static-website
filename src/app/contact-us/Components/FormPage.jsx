@@ -111,7 +111,7 @@ const FormPage = () => {
     {
       img: "https://cdn-icons-png.freepik.com/256/2164/2164894.png?uid=R110556143&ga=GA1.1.1704431159.1736575258&semt=ais_hybrid",
       title: "Email",
-      desc: "kumar@sunkeydesignsystems.com"
+      desc: "sales@sunkeydesignsystems.com"
     },
   ]
   return (
